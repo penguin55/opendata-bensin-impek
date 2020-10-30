@@ -11,9 +11,24 @@ public class BossBehaviour : MonoBehaviour
     protected enum BossState
     {
         PREPARATION,
-        FINAL
+        FINAL,
+        DIE
     }
 
+    protected void Preparation()
+    {
+
+    }
+
+    protected void Final()
+    {
+
+    }
+
+    protected void Die()
+    {
+
+    }
 }
 
 [System.Serializable] 
