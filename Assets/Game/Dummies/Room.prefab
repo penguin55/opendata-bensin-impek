@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c2041d0b52416b049af6e989fa4dad04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f9a32fb7963c7d45b4eb7384219c982, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c2041d0b52416b049af6e989fa4dad04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f9a32fb7963c7d45b4eb7384219c982, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -232,7 +232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c2041d0b52416b049af6e989fa4dad04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f9a32fb7963c7d45b4eb7384219c982, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -313,7 +313,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c2041d0b52416b049af6e989fa4dad04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f9a32fb7963c7d45b4eb7384219c982, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -333,8 +333,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27342484971608902}
-  - component: {fileID: 1125229143429550340}
   - component: {fileID: 3530710087634333484}
+  - component: {fileID: 6479290079281098886}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -360,23 +360,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1125229143429550340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629328725952952121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac8906f1cb78f74b99e44e0fafa2517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doors:
-  - {fileID: 2397111832251004063}
-  - {fileID: 2494180990153669449}
-  - {fileID: 4395316165503697487}
-  - {fileID: 4751944480884918872}
 --- !u!212 &3530710087634333484
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,7 +399,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2041d0b52416b049af6e989fa4dad04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f9a32fb7963c7d45b4eb7384219c982, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,3 +410,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6479290079281098886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629328725952952121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11fc7dcd283b1b45a003b500e21144c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 2397111832251004063}
+  - {fileID: 2494180990153669449}
+  - {fileID: 4395316165503697487}
+  - {fileID: 4751944480884918872}
