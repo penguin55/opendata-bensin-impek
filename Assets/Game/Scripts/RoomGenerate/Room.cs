@@ -3,7 +3,6 @@
 public class Room : MonoBehaviour
 {
     [SerializeField] private GameObject[] doors;
-    [SerializeField] private bool enemyArea;
 
     private (int x, int y) position;
     private int room_id;
@@ -58,11 +57,6 @@ public class Room : MonoBehaviour
     private bool IsValueOnRange(int valueCheck, int minBoundInclude, int maxBoundExclude)
     {
         return valueCheck >= minBoundInclude && valueCheck < maxBoundExclude;
-    }
-
-    public bool IsEnemyArea()
-    {
-        return enemyArea;
     }
 
 }
