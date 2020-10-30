@@ -60,7 +60,7 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
-        TWTransition.FadeIn(() => TWLoading.LoadScene("SampleScene 1"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene("SampleScene"));
     }
 
     public void BackToMenu()
