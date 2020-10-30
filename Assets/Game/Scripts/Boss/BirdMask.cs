@@ -21,6 +21,7 @@ public class BirdMask : BossBehaviour
         switch (currentState)
         {
             case BossState.PREPARATION:
+                Preparation();
                 break;
             case State_BirdMask.IDLE:
                 Idle();
@@ -35,7 +36,11 @@ public class BirdMask : BossBehaviour
                 Swipe();
                 break;
             case BossState.FINAL:
+                Final();
                 stateIndex = 0;
+                break;
+            case BossState.DIE:
+                Die();
                 break;
         }
     }
