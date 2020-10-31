@@ -11,6 +11,8 @@ public class BirdMask_Laser : AttackEvent
     [SerializeField] private Vector2 offset;
     [SerializeField] private float timeToMove;
 
+    [SerializeField] private Animator attack;
+
     public override void ExecutePattern(UnityAction onComplete)
     {
         base.ExecutePattern(onComplete);
@@ -25,6 +27,7 @@ public class BirdMask_Laser : AttackEvent
 
     protected override void Attack()
     {
+        attack.SetBool("attack", true);
         DOTween.Sequence()
             .Append(damageArea[0].DOMove(target.position + Vector3.up * offset.y, timeToMove))
             .Join(damageArea[1].DOMove(target.position + Vector3.right * offset.x, timeToMove))
@@ -35,6 +38,7 @@ public class BirdMask_Laser : AttackEvent
 
     protected override void OnExit_Attack()
     {
+        attack.SetBool("attack", false);
         ActivateDamageArea(false);
         laserParent.SetActive(false);
         base.OnExit_Attack();

@@ -10,6 +10,8 @@ public class BirdMask_Swipe : AttackEvent
     [SerializeField] private float timeToMove;
     [SerializeField] private GameObject birdMask;
 
+    [SerializeField] private Animator attack;
+
     public override void ExecutePattern(UnityAction onComplete)
     {
         base.ExecutePattern(onComplete);
@@ -40,6 +42,7 @@ public class BirdMask_Swipe : AttackEvent
 
     protected override void Attack()
     {
+        attack.SetBool("attack", true);
         int indexToMove = moveToRight ? 1 : 0;
         Vector2 helicopterOffset;
         if (moveToRight)
@@ -58,6 +61,7 @@ public class BirdMask_Swipe : AttackEvent
 
     protected override void OnExit_Attack()
     {
+        attack.SetBool("attack", false);
         Vector2 helicopterOffset = new Vector2(0, birdMask.transform.position.y);
         base.OnExit_Attack();
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);

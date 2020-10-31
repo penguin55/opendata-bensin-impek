@@ -167,7 +167,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -405,7 +405,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -721,7 +721,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 1
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -787,7 +787,7 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 20}
+    m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1482,8 +1482,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1598,10 +1598,73 @@ ParticleSystem:
     animationType: 0
     rowIndex: 0
     cycles: 1
-    uvChannelMask: -1
+    uvChannelMask: 7
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 5215155751720875956, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 5545341055909612574, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 8564839338640433028, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -4963112713044791104, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -3971774064746638662, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 4599739558256374167, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 2650198028631611038, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 3710142828041079136, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 3860775551485645202, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -1593216014796271672, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 2326865087753621103, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -3822216980956366692, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -3898166408540386538, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -3029829033527068425, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -7714980029989924424, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 6288738162907139000, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 8071154373378220615, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 1514295589989050739, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -4546852610654440230, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 1812421146819325654, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -7410542426945577183, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 3960418669842549981, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -4289526041347717626, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -8497879381063224778, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -627529128463443710, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -4013840341311178444, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: 7564986650808306901, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -5854419666673234928, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -8705496362824570899, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -3754662162483479724, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -2963990881522289726, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
+    - sprite: {fileID: -7896666376343139173, guid: 9192974f0385a9e44a0456ff722e4845,
+        type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4830,7 +4893,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4849,9 +4912,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2074901245
+  m_SortingLayer: 5
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
