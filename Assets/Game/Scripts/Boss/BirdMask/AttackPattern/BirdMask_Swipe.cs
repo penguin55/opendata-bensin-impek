@@ -28,12 +28,12 @@ public class BirdMask_Swipe : AttackEvent
         if (moveToRight)
         {
             helicopterOffset = new Vector2(swipeAreaPosition[0].x, birdMask.transform.position.y);
-            swipeObject.position = swipeAreaPosition[0];
+            swipeObject.localPosition = swipeAreaPosition[0];
         }
         else
         {
             helicopterOffset = new Vector2(swipeAreaPosition[1].x, birdMask.transform.position.y);
-            swipeObject.position = swipeAreaPosition[1];
+            swipeObject.localPosition = swipeAreaPosition[1];
         }
         birdMask.transform.DOMove(helicopterOffset, 1).OnComplete(() => { base.OnEnter_Attack(); });
     }
