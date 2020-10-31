@@ -26,12 +26,15 @@ public class CharaBehaviour : MonoBehaviour
 
     private GameObject enemy;
 
+    [SerializeField] protected Animator anim;
+
 
     public void Init()
     {
         canDash = true;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         minX = kiriatas.transform.position.x;
         maxX = kananbawah.transform.position.x;
 
@@ -151,7 +154,13 @@ public class CharaBehaviour : MonoBehaviour
         {
             TakeDamage();
         }
+    }
 
+    public void UpdateAnimationWalk(float x, float y, float speed)
+    {
+        anim.SetFloat("x", x);
+        anim.SetFloat("y", y);
+        anim.SetFloat("speed", speed);
     }
 
     

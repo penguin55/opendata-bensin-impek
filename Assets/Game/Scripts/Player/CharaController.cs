@@ -24,6 +24,7 @@ public class CharaController : CharaBehaviour
         Clamp();
         Dash();
         KeyboardMovement();
+        UpdateAnimationWalk(lastDirection.x, lastDirection.y, direction.sqrMagnitude);
         Action();
     }
     public void KeyboardMovement()
