@@ -802,6 +802,7 @@ MonoBehaviour:
   projectilePrefabs: {fileID: 2267514720433620907, guid: ed8c3a93b9dbf2e43a2a035a4cb51466,
     type: 3}
   fireRate: 1
+  attack: {fileID: 305549208}
 --- !u!1 &123424748
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +972,7 @@ MonoBehaviour:
   target: {fileID: 887495209}
   offset: {x: 2, y: 2}
   timeToMove: 2
+  attack: {fileID: 305549208}
 --- !u!1 &148271823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,6 +5434,7 @@ MonoBehaviour:
   moveToRight: 1
   timeToMove: 2
   birdMask: {fileID: 305549206}
+  attack: {fileID: 305549208}
 --- !u!1 &1460507469
 GameObject:
   m_ObjectHideFlags: 0

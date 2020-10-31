@@ -10,6 +10,8 @@ public class BirdMask_Missile : AttackEvent
     [SerializeField] private GameObject projectilePrefabs;
     [SerializeField] protected float fireRate;
 
+    [SerializeField] private Animator attack;
+
     private int randomSpawn;
 
     private List<Transform> queueSpawn;
@@ -39,6 +41,7 @@ public class BirdMask_Missile : AttackEvent
 
     protected override void Attack()
     {
+        attack.SetBool("attack", true);
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
             .AppendInterval(fireRate)
@@ -51,6 +54,7 @@ public class BirdMask_Missile : AttackEvent
 
     protected override void OnExit_Attack()
     {
+        attack.SetBool("attack", false);
         deactiveMissileWasLaunch = false;
         Destroy(deactiveMissileProjectile);
         deactiveMissileProjectile = null;
