@@ -31,12 +31,12 @@ public class Birdmask_Machinegun : AttackEvent
         machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
             machinegunParent.SetActive(false);        
             base.Attack();
+            attack.SetBool("attack", false);
         });
     }
 
     protected override void OnExit_Attack()
     {
-        attack.SetBool("attack", false);
         base.OnExit_Attack();
     }
 }

@@ -22,6 +22,10 @@ public class MissileBM : DamageArea
 
         this.projectile = projectile;
         this.activeMissile = activeMissile;
+        if (activeMissile) projectile.GetComponent<Collider2D>().enabled = false;
+        else projectile.GetComponent<Collider2D>().enabled = true;
+
+        alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert"+transform.GetInstanceID());
 
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
@@ -29,10 +33,11 @@ public class MissileBM : DamageArea
     protected override void OnEnter_State()
     {
         base.OnEnter_State();
-
+        DOVirtual.DelayedCall(projectileTimeToMove/2f, () => collider.enabled = activeMissile);
         projectile.transform.DOMove(transform.position, projectileTimeToMove).SetEase(Ease.InSine).OnComplete( () =>
         {
-            collider.enabled = true;
+            DOTween.Kill("Alert" + transform.GetInstanceID());
+            alertProjectileSprite.DOFade(1f, 0f);
             OnExit_State();
         });
     }
@@ -41,8 +46,10 @@ public class MissileBM : DamageArea
     {
         base.OnExit_State();
 
-        alertProjectileSprite.enabled = false;
-        collider.enabled = false;
+        DOVirtual.DelayedCall(0.2f, () => {
+            collider.enabled = false;
+            alertProjectileSprite.enabled = false;
+        });
         if (activeMissile) Destroy(projectile);
     }
 }
