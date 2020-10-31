@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - projectiles
+  - damage area
   layers:
   - Default
   - TransparentFX

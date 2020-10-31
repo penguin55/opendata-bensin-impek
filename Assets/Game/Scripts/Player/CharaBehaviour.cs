@@ -105,7 +105,7 @@ public class CharaBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "projectiles" && PlayerDashing())
+        if(collision.CompareTag("projectiles")&& PlayerDashing())
         {
             projectiles = collision.attachedRigidbody;
             if (lastDirection != Vector2.zero && isDashed)
@@ -122,6 +122,11 @@ public class CharaBehaviour : MonoBehaviour
                     projectiles.velocity = lastDirection * data.DashSpeed;
                 }
             }
+        }
+
+        if (collision.CompareTag("damage area"))
+        {
+            TakeDamage();
         }
 
     }
