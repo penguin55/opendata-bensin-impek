@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissileBM : Projectile
+public class MissileBM : DamageArea
 {
     [SerializeField] private float projectileTimeToMove;
     private Collider2D collider;
@@ -30,7 +30,7 @@ public class MissileBM : Projectile
     {
         base.OnEnter_State();
 
-        projectile.transform.DOMove(transform.position, projectileTimeToMove).SetEase(Ease.InCubic).OnComplete( () =>
+        projectile.transform.DOMove(transform.position, projectileTimeToMove).SetEase(Ease.InSine).OnComplete( () =>
         {
             collider.enabled = true;
             OnExit_State();

@@ -9,24 +9,17 @@ public class BossBehaviour : MonoBehaviour
 
     protected AttackEvent currentAttackEvent;
 
-    protected enum BossState
-    {
-        PREPARATION,
-        FINAL,
-        DIE
-    }
-
-    protected void Preparation()
+    protected virtual void Preparation()
     {
 
     }
 
-    protected void Final()
+    protected virtual void Final()
     {
 
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
 
     }
