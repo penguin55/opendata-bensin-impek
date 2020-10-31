@@ -8,10 +8,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected CharaData data;
     [SerializeField] protected Vector2 direction, lastDirection;
     [SerializeField] protected float startDashTime, dashTime;
+    [SerializeField] protected float kickProjectilesTime, kickTime;
 
     protected bool isDashed, canDash, dead, insight = false;
     [SerializeField] protected float dashDelay;
-    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected Rigidbody2D rb, projectiles;
 
     [SerializeField] protected float timeMoveElapsed;
     [SerializeField] protected bool isAccelerating;
@@ -85,21 +86,12 @@ public class CharaBehaviour : MonoBehaviour
         return data.IsDashing;
     }
 
-    public void Stun()
-    {
-        //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-        //foreach (Collider2D enemy in hitEnemies)
-        //{
-        //    Debug.Log("Enemy Hit!");
-        //}
-    }
 
     public void TakeDamage()
     {
         if (data.Hp >= 1)
         {
-            
+
             data.Hp -= 1;
             Debug.Log(data.Hp);
             InGameUI.instance.uilive();
@@ -111,40 +103,27 @@ public class CharaBehaviour : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.tag == "Enemy")
-    //    {
-    //        enemy = collision.gameObject;
-    //        insight = true;
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "projectiles" && PlayerDashing())
+        {
+            projectiles = collision.attachedRigidbody;
+            if (lastDirection != Vector2.zero && isDashed)
+            {
+                if (dashTime <= 0)
+                {
+                    projectiles.velocity = Vector2.zero;
+                    isDashed = false;
+                    data.IsDashing = false;
+                }
+                else
+                {
+                    dashTime -= Time.deltaTime;
+                    projectiles.velocity = lastDirection * data.DashSpeed;
+                }
+            }
+        }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    enemy = null;
-    //    insight = false;
-    //}
-
-    //public void Detect(bool insight)
-    //{
-    //    if (insight)
-    //    {
-    //        double distance = Math.Sqrt(Math.Pow(this.transform.position.x - enemy.transform.position.x, 2)
-    //        + Math.Pow(this.transform.position.y - enemy.transform.position.y, 2));
-
-    //        Debug.Log("distance : " + distance);
-    //        if (distance < 3)
-    //        {
-    //            StartCoroutine(Damage());
-    //        }
-    //    }
-    //}
-
-    //IEnumerator Damage()
-    //{
-    //    TakeDamage();
-    //    yield return new WaitForSeconds(3f);
-    //}
-
+    }
 }
+   
