@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
+    public static BossBehaviour Instance;
+
     [SerializeField] protected int health;
     [SerializeField] protected AttackPattern[] patterns;
 

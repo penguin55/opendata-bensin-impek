@@ -796,7 +796,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107471342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1220,7 +1220,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152963764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1497,7 +1497,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176446944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2102,7 +2102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 8898114163766459424, guid: d78a6c0d20f6c5a4080d5ac45f727232,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3910,7 +3910,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725680120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -5162,7 +5162,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912747546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -13355,7 +13355,6 @@ MonoBehaviour:
   kickTime: 0
   dashDelay: 1
   rb: {fileID: 1683682980}
-  projectiles: {fileID: 0}
   timeMoveElapsed: 0
   isAccelerating: 0
   timeToStop: 0.2
@@ -15419,7 +15418,7 @@ PrefabInstance:
     - target: {fileID: 7211498279960710328, guid: 0c35111d8ac6b324c936380b408ee8a6,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c35111d8ac6b324c936380b408ee8a6, type: 3}

@@ -38,6 +38,11 @@ public class MissileBM : DamageArea
         {
             DOTween.Kill("Alert" + transform.GetInstanceID());
             alertProjectileSprite.DOFade(1f, 0f);
+            if (!activeMissile)
+            {
+                projectile.GetComponent<Animator>().SetTrigger("Jammed");
+                projectile.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            }
             OnExit_State();
         });
     }
@@ -51,5 +56,10 @@ public class MissileBM : DamageArea
             alertProjectileSprite.enabled = false;
         });
         if (activeMissile) Destroy(projectile);
+    }
+
+    public void Explode()
+    {
+        Destroy(projectile);
     }
 }

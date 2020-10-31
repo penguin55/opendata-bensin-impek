@@ -24,6 +24,7 @@ public class BirdMask : BossBehaviour
 
     private void Start()
     {
+        Instance = this;
         stateIndex = 0;
         currentState = State_BirdMask.MISSILE;
 

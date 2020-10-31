@@ -13,7 +13,7 @@ public class CharaBehaviour : MonoBehaviour
 
     protected bool isDashed,immune, canDash, dead, insight = false;
     [SerializeField] protected float dashDelay;
-    [SerializeField] protected Rigidbody2D rb, projectiles;
+    [SerializeField] protected Rigidbody2D rb;
 
     [SerializeField] protected float timeMoveElapsed;
     [SerializeField] protected bool isAccelerating;
@@ -147,21 +147,24 @@ public class CharaBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("projectiles")&& PlayerDashing())
+        if(collision.CompareTag("projectiles") && PlayerDashing())
         {
-            projectiles = collision.attachedRigidbody;
+            Rigidbody2D projectiles = collision.attachedRigidbody;
             if (lastDirection != Vector2.zero && isDashed)
             {
-                if (dashTime <= 0)
+                projectiles.GetComponent<Animator>().SetTrigger("Dash");
+                projectiles.GetComponent<SpriteRenderer>().sortingOrder = 5;
+                if (lastDirection.y > 0)
                 {
-                    projectiles.velocity = Vector2.zero;
-                    isDashed = false;
-                    data.IsDashing = false;
+                    projectiles.transform.up = projectiles.transform.position - BossBehaviour.Instance.transform.position;
+                    projectiles.DOMove(BossBehaviour.Instance.transform.position, 1f).SetEase(Ease.InSine).OnComplete(() => {
+                        projectiles.transform.parent.GetComponent<MissileBM>().Explode();
+                    });
                 }
                 else
                 {
-                    dashTime -= Time.deltaTime;
                     projectiles.velocity = lastDirection * data.DashSpeed;
+                    DOVirtual.DelayedCall(2f, ()=> Destroy(projectiles));
                 }
             }
         }
