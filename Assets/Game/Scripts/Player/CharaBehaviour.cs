@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected float startDashTime, dashTime;
     [SerializeField] protected float kickProjectilesTime, kickTime;
 
-    protected bool isDashed, canDash, dead, insight = false;
+    protected bool isDashed,immune, canDash, dead, insight = false;
     [SerializeField] protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb, projectiles;
 
@@ -91,11 +92,12 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (data.Hp >= 1)
         {
-
+            immune = true;
+            DOVirtual.DelayedCall(2f, () => { immune = false; });
             data.Hp -= 1;
             Debug.Log(data.Hp);
             InGameUI.instance.uilive();
-
+            
             if (data.Hp < 1)
             {
                 dead = true;
@@ -124,11 +126,13 @@ public class CharaBehaviour : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("damage area"))
+        if (collision.CompareTag("damage area")&& !immune)
         {
             TakeDamage();
         }
 
     }
+
+    
 }
    

@@ -5245,6 +5245,7 @@ MonoBehaviour:
   swipeObject: {fileID: 1176615468}
   moveToRight: 1
   timeToMove: 2
+  birdMask: {fileID: 1863560136}
 --- !u!1 &1460507469
 GameObject:
   m_ObjectHideFlags: 0
