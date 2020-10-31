@@ -57,8 +57,11 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void MoveAccelerate()
     {
+        if (isDashed) return;
+
         if (isAccelerating)
         {
+            if (!particle.isPlaying) particle.Play();
             Movement(1);
         }
         else
@@ -70,6 +73,7 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void Movement(float accelerate)
     {
+        if (accelerate < 0.2f) particle.Stop();
         transform.Translate(direction * data.Speed * Time.deltaTime * accelerate);
     }
 
