@@ -90,6 +90,8 @@ public class CharaBehaviour : MonoBehaviour
                 isDashed = false;
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
+                immune = true;
+                DOVirtual.DelayedCall(2f, () => { immune = false; });
                 this.GetComponent<BoxCollider2D>().isTrigger = false;
                 StartCoroutine(Delay());
             }
