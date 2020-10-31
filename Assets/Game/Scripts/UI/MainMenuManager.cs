@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
-        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene("SampleScene 1"));
     }
 
     public void Keluar()
