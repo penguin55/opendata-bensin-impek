@@ -41,7 +41,6 @@ public class BirdMask_Missile : AttackEvent
 
     protected override void Attack()
     {
-        attack.SetBool("attack", true);
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
             .AppendInterval(fireRate)
@@ -54,7 +53,6 @@ public class BirdMask_Missile : AttackEvent
 
     protected override void OnExit_Attack()
     {
-        attack.SetBool("attack", false);
         deactiveMissileWasLaunch = false;
         Destroy(deactiveMissileProjectile);
         deactiveMissileProjectile = null;
