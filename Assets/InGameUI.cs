@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject pauseMenuUI, DialogUI;
     [SerializeField] private GameObject[] hearts;
     [SerializeField] private Sprite newsprite;
     [SerializeField] private Sprite oldsprite;
+    [SerializeField][TextArea] private string [] chat;
+    [SerializeField] private Text dialog;
+    [SerializeField] private int index=0;
 
     public static InGameUI instance;
 
@@ -21,13 +24,35 @@ public class InGameUI : MonoBehaviour
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();
         });
-        isPaused = false;
+        Time.timeScale = 0f;
+        DialogUI.SetActive(true);
         uilive();
+    }
+
+    public void next()
+    {
+        index++;
+    }
+
+    public void Dialog()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DialogUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        if (index < chat.Length) dialog.text = chat[index];
+        if(index>= chat.Length)
+        {
+            DialogUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        Dialog();
         OpenPauseMenu();
     }
 
@@ -62,7 +87,7 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
-        TWTransition.FadeIn(() => TWLoading.LoadScene("SampleScene 1"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
     }
 
     public void BackToMenu()
