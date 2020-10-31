@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CharaController : CharaBehaviour
 {
-    [Header ("Input Controller")]
-    [SerializeField] private KeyCode moveUp;
-    [SerializeField] private KeyCode moveDown;
-    [SerializeField] private KeyCode moveRight;
-    [SerializeField] private KeyCode moveLeft;
-    [SerializeField] private KeyCode dash;
+    //[Header ("Input Controller")]
+    //[SerializeField] private KeyCode moveUp;
+    //[SerializeField] private KeyCode moveDown;
+    //[SerializeField] private KeyCode moveRight;
+    //[SerializeField] private KeyCode moveLeft;
+    //[SerializeField] private KeyCode dash;
 
 
     // Start is called before the first frame update
@@ -29,14 +29,14 @@ public class CharaController : CharaBehaviour
     {
         direction = Vector2.zero;
         /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
-        if (Input.GetKey(moveUp))
+        if (Input.GetKey(InputManager.instance.moveUp))
         {
             
             isAccelerating = true;
             direction += Vector2.up;
             lastDirection = Vector2.up;
         }
-        if (Input.GetKeyUp(moveUp))
+        if (Input.GetKeyUp(InputManager.instance.moveUp))
         {
             if (isAccelerating && lastDirection == Vector2.up)
             {
@@ -45,14 +45,14 @@ public class CharaController : CharaBehaviour
             }
         }
 
-        if (Input.GetKey(moveDown))
+        if (Input.GetKey(InputManager.instance.moveDown))
         {
             
             isAccelerating = true;
             direction += Vector2.down;
             lastDirection = Vector2.down;
         }
-        if (Input.GetKeyUp(moveDown))
+        if (Input.GetKeyUp(InputManager.instance.moveDown))
         {
             if (isAccelerating && lastDirection == Vector2.down)
             {
@@ -61,14 +61,14 @@ public class CharaController : CharaBehaviour
             }
         }
 
-        if (Input.GetKey(moveLeft))
+        if (Input.GetKey(InputManager.instance.moveLeft))
         {
        
             isAccelerating = true;
             direction += Vector2.left;
             lastDirection = Vector2.left; ;
         }
-        if (Input.GetKeyUp(moveLeft))
+        if (Input.GetKeyUp(InputManager.instance.moveLeft))
         {
             if (isAccelerating && lastDirection == Vector2.left)
             {
@@ -77,14 +77,14 @@ public class CharaController : CharaBehaviour
             }
         }
 
-        if (Input.GetKey(moveRight))
+        if (Input.GetKey(InputManager.instance.moveRight))
         {
             
             isAccelerating = true;
             direction += Vector2.right;
             lastDirection = Vector2.right;
         }
-        if (Input.GetKeyUp(moveRight))
+        if (Input.GetKeyUp(InputManager.instance.moveRight))
         {
             if (isAccelerating && lastDirection == Vector2.right)
             {
@@ -98,7 +98,7 @@ public class CharaController : CharaBehaviour
 
     public void Action()
     {
-        if (Input.GetKeyDown(dash))
+        if (Input.GetKeyDown(InputManager.instance.dash))
         {
             if (canDash)
             {
