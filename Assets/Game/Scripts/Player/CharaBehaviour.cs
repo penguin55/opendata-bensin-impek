@@ -19,6 +19,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected bool isAccelerating;
     [SerializeField] protected float timeToStop;
 
+    public GameObject kiriatas, kananbawah;
+    float minX, maxX, minY, maxY;
+    float posisilamaX, posisilamaY;
+    float posisibaruX, posisibaruY;
+
     private GameObject enemy;
 
 
@@ -27,8 +32,24 @@ public class CharaBehaviour : MonoBehaviour
         canDash = true;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
+        minX = kiriatas.transform.position.x;
+        maxX = kananbawah.transform.position.x;
+
+        maxY = kiriatas.transform.position.y;
+        minY = kananbawah.transform.position.y;
     }
 
+    protected void Clamp()
+    {
+        posisilamaX = this.transform.position.x;
+
+        posisibaruX = Mathf.Clamp(posisilamaX, minX, maxX);
+
+        posisilamaY = this.transform.position.y;
+
+        posisibaruY = Mathf.Clamp(posisilamaY, minY, maxY);
+        this.transform.position = new Vector3(posisibaruX, posisibaruY, 0f);
+    }
 
     protected void MoveAccelerate()
     {

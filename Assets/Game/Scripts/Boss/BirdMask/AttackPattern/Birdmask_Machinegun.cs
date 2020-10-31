@@ -11,6 +11,7 @@ public class Birdmask_Machinegun : AttackEvent
     [SerializeField] private Transform machinegunDothair;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private float timeToMove;
+    [SerializeField] private Animator attack;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -26,6 +27,7 @@ public class Birdmask_Machinegun : AttackEvent
 
     protected override void Attack()
     {
+        attack.SetBool("attack", true);
         machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
             machinegunParent.SetActive(false);        
             base.Attack();
@@ -34,6 +36,7 @@ public class Birdmask_Machinegun : AttackEvent
 
     protected override void OnExit_Attack()
     {
+        attack.SetBool("attack", false);
         base.OnExit_Attack();
     }
 }
