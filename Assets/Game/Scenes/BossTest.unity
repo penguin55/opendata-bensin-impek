@@ -5843,7 +5843,7 @@ GameObject:
   - component: {fileID: 951855454}
   - component: {fileID: 951855453}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13362,6 +13362,7 @@ MonoBehaviour:
   kiriatas: {fileID: 647493645}
   kananbawah: {fileID: 993335475}
   anim: {fileID: 0}
+  particle: {fileID: 951855454}
 --- !u!61 &1683682982
 BoxCollider2D:
   m_ObjectHideFlags: 0

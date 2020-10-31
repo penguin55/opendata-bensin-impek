@@ -27,6 +27,7 @@ public class CharaBehaviour : MonoBehaviour
     private GameObject enemy;
 
     [SerializeField] protected Animator anim;
+    [SerializeField] protected ParticleSystem particle;
 
 
     public void Init()
@@ -56,8 +57,11 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void MoveAccelerate()
     {
+        if (isDashed) return;
+
         if (isAccelerating)
         {
+            if (!particle.isPlaying) particle.Play();
             Movement(1);
         }
         else
@@ -69,6 +73,7 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void Movement(float accelerate)
     {
+        if (accelerate < 0.2f) particle.Stop();
         transform.Translate(direction * data.Speed * Time.deltaTime * accelerate);
     }
 
@@ -90,6 +95,7 @@ public class CharaBehaviour : MonoBehaviour
                 isDashed = false;
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
+                particle.Stop();
                 immune = true;
                 DOVirtual.DelayedCall(2f, () => { immune = false; });
                 this.GetComponent<BoxCollider2D>().isTrigger = false;
@@ -98,6 +104,8 @@ public class CharaBehaviour : MonoBehaviour
             else
             {
                 anim.SetBool("dash", true);
+                particle.Play();
+                timeMoveElapsed = 0f;
                 dashTime -= Time.deltaTime;
                 rb.velocity = lastDirection * data.DashSpeed;
             }
