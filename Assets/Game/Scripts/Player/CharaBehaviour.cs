@@ -24,10 +24,10 @@ public class CharaBehaviour : MonoBehaviour
     float posisilamaX, posisilamaY;
     float posisibaruX, posisibaruY;
 
-    [SerializeField] protected Animator anim;
-    [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
+    private GameObject enemy;
 
-    [SerializeField] private GameObject projectileDetect;
+    [SerializeField] protected Animator anim;
+    [SerializeField] protected ParticleSystem particle;
 
 
     public void Init()
@@ -52,7 +52,7 @@ public class CharaBehaviour : MonoBehaviour
         posisilamaY = this.transform.position.y;
 
         posisibaruY = Mathf.Clamp(posisilamaY, minY, maxY);
-        transform.position = new Vector3(posisibaruX, posisibaruY, 0f);
+        this.transform.position = new Vector3(posisibaruX, posisibaruY, 0f);
     }
 
     protected void MoveAccelerate()
@@ -61,7 +61,7 @@ public class CharaBehaviour : MonoBehaviour
 
         if (isAccelerating)
         {
-            if (!walkDustParticle.isPlaying) walkDustParticle.Play();
+            if (!particle.isPlaying) particle.Play();
             Movement(1);
         }
         else
@@ -73,7 +73,7 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void Movement(float accelerate)
     {
-        if (direction == Vector2.zero) walkDustParticle.Stop();
+        if (accelerate < 0.2f) particle.Stop();
         transform.Translate(direction * data.Speed * Time.deltaTime * accelerate);
     }
 
@@ -95,22 +95,31 @@ public class CharaBehaviour : MonoBehaviour
                 isDashed = false;
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
-                dashDustParticle.Stop();
-                immune = false;
-                DOVirtual.DelayedCall(dashDelay, () => canDash = true); 
+                particle.maxParticles = 2;
+                particle.emissionRate = 4;
+                particle.Stop();
+                immune = true;
+                DOVirtual.DelayedCall(2f, () => { immune = false; });
+                this.GetComponent<BoxCollider2D>().isTrigger = false;
+                StartCoroutine(Delay());
             }
             else
             {
                 anim.SetBool("dash", true);
-                if (walkDustParticle.isPlaying) walkDustParticle.Stop();
-                dashDustParticle.Play();
+                particle.maxParticles = 40;
+                particle.emissionRate = 80;
+                particle.Play();
                 timeMoveElapsed = 0f;
                 dashTime -= Time.deltaTime;
                 rb.velocity = lastDirection * data.DashSpeed;
-
-                DashingProjectile();
             }
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(this.dashDelay);
+        canDash = true;
     }
 
     public bool PlayerDashing()
@@ -121,44 +130,17 @@ public class CharaBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (!immune)
+        if (data.Hp >= 1)
         {
-            if (data.Hp >= 1)
+            immune = true;
+            DOVirtual.DelayedCall(2f, () => { immune = false; });
+            data.Hp -= 1;
+            Debug.Log(data.Hp);
+            InGameUI.instance.uilive();
+            
+            if (data.Hp < 1)
             {
-                immune = true;
-                DOTween.Kill("ImmuneDamage");
-                DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage");
-                data.Hp -= 1;
-                InGameUI.instance.uilive();
-
-                if (data.Hp < 1)
-                {
-                    dead = true;
-                }
-            }
-        }
-    }
-
-    private void DashingProjectile()
-    {
-        if (projectileDetect)
-        {
-            GameObject temp = projectileDetect;
-            temp.GetComponent<Animator>().SetTrigger("Dash");
-            temp.GetComponent<SpriteRenderer>().sortingOrder = 5;
-            if (lastDirection.y > 0)
-            {
-                temp.transform.up = temp.transform.position - BossBehaviour.Instance.transform.position;
-                float distance = Mathf.Sqrt((BossBehaviour.Instance.transform.position - temp.transform.position).sqrMagnitude);
-                temp.transform.DOMove(BossBehaviour.Instance.transform.position, distance/20f).SetEase(Ease.Linear).OnComplete(() =>
-                {
-                    temp.transform.parent.GetComponent<MissileBM>().Explode();
-                });
-            }
-            else
-            {
-                temp.GetComponent<Rigidbody2D>().velocity = lastDirection * data.DashSpeed;
-                DOVirtual.DelayedCall(2f, () => Destroy(temp));
+                dead = true;
             }
         }
     }
@@ -167,20 +149,29 @@ public class CharaBehaviour : MonoBehaviour
     {
         if(collision.CompareTag("projectiles") && PlayerDashing())
         {
-            projectileDetect = collision.gameObject;
+            Rigidbody2D projectiles = collision.attachedRigidbody;
+            if (lastDirection != Vector2.zero && isDashed)
+            {
+                projectiles.GetComponent<Animator>().SetTrigger("Dash");
+                projectiles.GetComponent<SpriteRenderer>().sortingOrder = 5;
+                if (lastDirection.y > 0)
+                {
+                    projectiles.transform.up = projectiles.transform.position - BossBehaviour.Instance.transform.position;
+                    projectiles.DOMove(BossBehaviour.Instance.transform.position, 1f).SetEase(Ease.InSine).OnComplete(() => {
+                        projectiles.transform.parent.GetComponent<MissileBM>().Explode();
+                    });
+                }
+                else
+                {
+                    projectiles.velocity = lastDirection * data.DashSpeed;
+                    DOVirtual.DelayedCall(2f, ()=> Destroy(projectiles));
+                }
+            }
         }
 
         if (collision.CompareTag("damage area")&& !immune)
         {
             TakeDamage();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (projectileDetect != null && collision.CompareTag("projectiles"))
-        {
-            projectileDetect = null;
         }
     }
 
