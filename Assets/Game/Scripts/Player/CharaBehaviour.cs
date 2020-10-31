@@ -89,11 +89,13 @@ public class CharaBehaviour : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 isDashed = false;
                 data.IsDashing = false;
+                anim.SetBool("dash", false);
                 this.GetComponent<BoxCollider2D>().isTrigger = false;
                 StartCoroutine(Delay());
             }
             else
             {
+                anim.SetBool("dash", true);
                 dashTime -= Time.deltaTime;
                 rb.velocity = lastDirection * data.DashSpeed;
             }
