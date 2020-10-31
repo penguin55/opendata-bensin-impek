@@ -1,13 +1,14 @@
 ﻿using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BirdMask_Missile : AttackEvent
 {
+    [SerializeField] private GameObject missileParent;
     [SerializeField] private Transform[] spawnProjectilePosition;
     [SerializeField] private GameObject projectilePrefabs;
+    [SerializeField] protected float fireRate;
 
     private int randomSpawn;
 
@@ -20,7 +21,6 @@ public class BirdMask_Missile : AttackEvent
     public override void ExecutePattern(UnityAction onComplete)
     {
         base.ExecutePattern(onComplete);
-        OnEnter_Attack();
     }
 
     private void Start()
@@ -28,15 +28,16 @@ public class BirdMask_Missile : AttackEvent
         queueSpawn = new List<Transform>();
     }
 
-    private void OnEnter_Attack()
+    protected override void OnEnter_Attack()
     {
+        missileParent.SetActive(true);
         deactiveMissileWasLaunch = false;
         queueSpawn.AddRange(spawnProjectilePosition);
 
-        DOVirtual.DelayedCall(delay_enter, Attack);
+        base.OnEnter_Attack();
     }
 
-    private void Attack()
+    protected override void Attack()
     {
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
@@ -44,16 +45,18 @@ public class BirdMask_Missile : AttackEvent
             .OnComplete(() =>
             {
                 if (queueSpawn.Count > 0) Attack();
-                else DOVirtual.DelayedCall(delay_exit, OnExit_Attack);
+                else base.Attack();
             });
     }
 
-    private void OnExit_Attack()
+    protected override void OnExit_Attack()
     {
         deactiveMissileWasLaunch = false;
         Destroy(deactiveMissileProjectile);
         deactiveMissileProjectile = null;
-        onCompleteAction.Invoke();
+        missileParent.SetActive(false);
+
+        base.OnExit_Attack();
     }
 
     private void SpawnProjectile()

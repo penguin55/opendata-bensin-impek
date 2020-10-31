@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Projectile : MonoBehaviour
+public class DamageArea : MonoBehaviour
 {
     [SerializeField] protected int damage;
     [SerializeField] protected UnityAction onCompleteAction;

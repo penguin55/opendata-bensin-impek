@@ -7,14 +7,19 @@ public class BirdMask : BossBehaviour
 {
     enum State_BirdMask
     {
+        PREPARATION,
+        FINAL,
+        DIE,
         IDLE,
         MACHINEGUN,
         MISSILE,
-        SWIPE
+        LASER,
+        SWIPE_TO_RIGHT,
+        SWIPE_TO_LEFT
     }
 
-    private System.Enum currentState;
-    private System.Enum [] stateSequences;
+    private State_BirdMask currentState;
+    [SerializeField] private State_BirdMask [] stateSequences;
     private int stateIndex;
 
     private void Start()
@@ -30,7 +35,7 @@ public class BirdMask : BossBehaviour
     {
         switch (currentState)
         {
-            case BossState.PREPARATION:
+            case State_BirdMask.PREPARATION:
                 Preparation();
                 break;
             case State_BirdMask.IDLE:
@@ -39,17 +44,22 @@ public class BirdMask : BossBehaviour
             case State_BirdMask.MISSILE:
                 Missile();
                 break;
+            case State_BirdMask.LASER:
+                Laser();
+                break;
             case State_BirdMask.MACHINEGUN:
                 MachineGun();
                 break;
-            case State_BirdMask.SWIPE:
-                Swipe();
+            case State_BirdMask.SWIPE_TO_RIGHT:
+                Swipe(true);
                 break;
-            case BossState.FINAL:
+            case State_BirdMask.SWIPE_TO_LEFT:
+                Swipe(false);
+                break;
+            case State_BirdMask.FINAL:
                 Final();
-                stateIndex = 0;
                 break;
-            case BossState.DIE:
+            case State_BirdMask.DIE:
                 Die();
                 break;
         }
@@ -61,25 +71,28 @@ public class BirdMask : BossBehaviour
     {
         stateIndex++;
         currentState = stateSequences[stateIndex];
+        UpdateState();
     }
 
+    #region IDLE
     private void OnEnterIdle()
     {
-
+        currentAttackEvent = patterns.First(e => e.attackName == "Missile").attackEvent;
     }
-
-    private void OnExitIdle()
-    {
-
-    }
-
 
     private void Idle()
     {
         OnEnterIdle();
-        OnExitIdle();
+        currentAttackEvent.ExecutePattern(OnExitIdle);
     }
 
+    private void OnExitIdle()
+    {
+        NextState();
+    }
+    #endregion
+
+    #region MISSILE
     private void OnEnterMissile()
     {
         currentAttackEvent = patterns.First(e => e.attackName == "Missile").attackEvent;
@@ -94,42 +107,73 @@ public class BirdMask : BossBehaviour
 
     private void OnExitMissile()
     {
-
+        NextState();
     }
+    #endregion
 
+    #region MACHINEGUN
     private void OnEnterMachineGun()
     {
-
-    }
-
-    private void OnExitMachineGun()
-    {
-
+        currentAttackEvent = patterns.First(e => e.attackName == "Machinegun").attackEvent;
     }
 
     private void MachineGun()
     {
         OnEnterMachineGun();
-        OnExitMachineGun();
+        currentAttackEvent.ExecutePattern(OnExitMachineGun);
     }
 
+    private void OnExitMachineGun()
+    {
+        NextState();
+    }
+    #endregion
+
+    #region SWIPE
     private void OnEnterSwipe()
     {
+        currentAttackEvent = patterns.First(e => e.attackName == "Swipe").attackEvent;
+    }
 
+    private void Swipe(bool moveRight)
+    {
+        OnEnterSwipe();
+        if (!moveRight) ((BirdMask_Swipe)currentAttackEvent).MoveToLeft();
+
+        currentAttackEvent.ExecutePattern(OnExitSwipe);
     }
 
     private void OnExitSwipe()
     {
-
+        NextState();
     }
+    #endregion
 
-    private void Swipe()
+    #region LASER
+    private void OnEnterLaser()
     {
-        OnEnterSwipe();
-        OnExitSwipe();
+        currentAttackEvent = patterns.First(e => e.attackName == "Laser").attackEvent;
     }
 
+    private void Laser()
+    {
+        OnEnterLaser();
+
+        currentAttackEvent.ExecutePattern(OnExitLaser);
+    }
+
+    private void OnExitLaser()
+    {
+        NextState();
+    }
+    #endregion
+
+    protected override void Final()
+    {
+        base.Final();
+
+        stateIndex = 0;
+        currentState = stateSequences[stateIndex];
+        UpdateState();
+    }
 }
-
-
-
