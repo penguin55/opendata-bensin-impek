@@ -14,7 +14,7 @@ public class KeyMapping : MonoBehaviour
     void Start()
     {
         menuKeymapping = transform.Find("KeyMapping");
-        menuKeymapping.gameObject.SetActive(false);
+        //menuKeymapping.gameObject.SetActive(false);
         waitingForKey = false;
 
         for (int i = 0; i < menuKeymapping.childCount; i++)
