@@ -2203,7 +2203,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1683682979}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &326622748
 Camera:
@@ -8525,7 +8525,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -6564396727231127062, guid: aa803eb45ccacd04f96968d79df6cdbc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8546,10 +8546,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683682976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.58, y: -4.35, z: -2.74675}
+  m_LocalPosition: {x: -9.64, y: -4.35, z: -2.74675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 951855452}
   - {fileID: 326622746}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -8603,7 +8602,6 @@ MonoBehaviour:
   kiriatas: {fileID: 647493645}
   kananbawah: {fileID: 993335475}
   anim: {fileID: 0}
-  particle: {fileID: 951855454}
 --- !u!61 &1683682982
 BoxCollider2D:
   m_ObjectHideFlags: 0
