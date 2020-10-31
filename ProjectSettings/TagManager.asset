@@ -42,6 +42,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Base
+    uniqueID: 382776055
+    locked: 0
+  - name: Base-shade
+    uniqueID: 1964294295
+    locked: 0
+  - name: Environment
+    uniqueID: 452787531
+    locked: 0
+  - name: Environment-shade
+    uniqueID: 865355985
+    locked: 0
+  - name: Game
+    uniqueID: 2074901245
+    locked: 0
+  - name: Fore
+    uniqueID: 1282694843
+    locked: 0
   - name: Overlay
     uniqueID: 1535834059
     locked: 0

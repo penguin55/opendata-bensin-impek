@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class BossBehaviour : MonoBehaviour
 {
-    protected int health;
-    protected AttackPattern[] patterns;
+    [SerializeField] protected int health;
+    [SerializeField] protected AttackPattern[] patterns;
+
+    protected AttackEvent currentAttackEvent;
 
     protected enum BossState
     {
@@ -36,5 +37,5 @@ public class AttackPattern
 {
     public string attackName;
 
-    public UnityAction attackEvent; 
+    public AttackEvent attackEvent; 
 }

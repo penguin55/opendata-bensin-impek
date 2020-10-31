@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BirdMask : BossBehaviour
@@ -15,6 +16,15 @@ public class BirdMask : BossBehaviour
     private System.Enum currentState;
     private System.Enum [] stateSequences;
     private int stateIndex;
+
+    private void Start()
+    {
+        stateIndex = 0;
+        currentState = State_BirdMask.MISSILE;
+
+        UpdateState();
+    }
+
 
     private void UpdateState()
     {
@@ -72,7 +82,14 @@ public class BirdMask : BossBehaviour
 
     private void OnEnterMissile()
     {
+        currentAttackEvent = patterns.First(e => e.attackName == "Missile").attackEvent;
+    }
 
+    private void Missile()
+    {
+        OnEnterMissile();
+
+        currentAttackEvent.ExecutePattern(OnExitMissile);
     }
 
     private void OnExitMissile()
@@ -80,11 +97,6 @@ public class BirdMask : BossBehaviour
 
     }
 
-    private void Missile()
-    {
-        OnEnterMissile();
-        OnExitMissile();
-    }
     private void OnEnterMachineGun()
     {
 
