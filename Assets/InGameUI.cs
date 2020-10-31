@@ -18,7 +18,9 @@ public class InGameUI : MonoBehaviour
     void Start()
     {
         instance = this;
-        TWTransition.FadeOut();
+        TWLoading.OnSuccessLoad(() => {
+            TWTransition.FadeOut();
+        });
         isPaused = false;
         uilive();
     }

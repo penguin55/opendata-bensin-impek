@@ -26,14 +26,4 @@ public class CharaData : MonoBehaviour
         
     }
 
-    public enum A
-    {
-        a, b, c
-    }
-
-    public enum B 
-    {
-        b = A.a,
-    }
-
 }
