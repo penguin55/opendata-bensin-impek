@@ -95,6 +95,8 @@ public class CharaBehaviour : MonoBehaviour
                 isDashed = false;
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
+                particle.maxParticles = 2;
+                particle.emissionRate = 4;
                 particle.Stop();
                 immune = true;
                 DOVirtual.DelayedCall(2f, () => { immune = false; });
@@ -104,6 +106,8 @@ public class CharaBehaviour : MonoBehaviour
             else
             {
                 anim.SetBool("dash", true);
+                particle.maxParticles = 40;
+                particle.emissionRate = 80;
                 particle.Play();
                 timeMoveElapsed = 0f;
                 dashTime -= Time.deltaTime;
