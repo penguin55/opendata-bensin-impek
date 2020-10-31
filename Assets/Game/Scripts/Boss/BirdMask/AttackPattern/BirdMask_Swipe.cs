@@ -24,18 +24,20 @@ public class BirdMask_Swipe : AttackEvent
 
     protected override void OnEnter_Attack()
     {
-       
+
         swipeObject.gameObject.SetActive(true);
-        Vector2 helicopterOffset; 
+        Vector2 helicopterOffset;
         if (moveToRight)
         {
             helicopterOffset = new Vector2(swipeAreaPosition[0].x, birdMask.transform.position.y);
             swipeObject.localPosition = swipeAreaPosition[0];
+            birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
         }
         else
         {
             helicopterOffset = new Vector2(swipeAreaPosition[1].x, birdMask.transform.position.y);
             swipeObject.localPosition = swipeAreaPosition[1];
+            birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
         }
         birdMask.transform.DOMove(helicopterOffset, 1).OnComplete(() => { base.OnEnter_Attack(); });
     }
@@ -48,10 +50,12 @@ public class BirdMask_Swipe : AttackEvent
         if (moveToRight)
         {
             helicopterOffset = new Vector2(swipeAreaPosition[1].x, birdMask.transform.position.y);
+            birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
         }
         else
         {
             helicopterOffset = new Vector2(swipeAreaPosition[0].x, birdMask.transform.position.y);
+            birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
         }
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
         swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove)
@@ -63,10 +67,14 @@ public class BirdMask_Swipe : AttackEvent
     {
         attack.SetBool("attack", false);
         Vector2 helicopterOffset = new Vector2(0, birdMask.transform.position.y);
-        base.OnExit_Attack();
-        birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
+        
+        if (moveToRight) birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
+        else birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
+
+        birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
+            birdMask.transform.DORotate(Vector3.zero, 0.5f);
+            base.OnExit_Attack();
+        });
         swipeObject.gameObject.SetActive(false);
     }
-
-
 }
