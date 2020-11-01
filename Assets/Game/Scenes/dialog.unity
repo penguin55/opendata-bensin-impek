@@ -121,84 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &124056320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 124056321}
-  - component: {fileID: 124056323}
-  - component: {fileID: 124056322}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &124056321
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124056320}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1298506547}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &124056322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124056320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Next
---- !u!222 &124056323
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124056320}
-  m_CullTransparentMesh: 0
 --- !u!1 &152948855
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,8 +196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 315, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 339, y: -108}
+  m_SizeDelta: {x: 216, y: 216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157544417
 MonoBehaviour:
@@ -950,8 +872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 438, y: 45}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 410, y: 60}
+  m_SizeDelta: {x: 336, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547463552
 MonoBehaviour:
@@ -1061,8 +983,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 438, y: 45}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 410, y: 60}
+  m_SizeDelta: {x: 336, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &718568004
 GameObject:
@@ -1378,8 +1300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 438, y: 45}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: 410, y: 60}
+  m_SizeDelta: {x: 336, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783852727
 MonoBehaviour:
@@ -1645,7 +1567,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 600}
+  m_SizeDelta: {x: 1232, y: 608}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908255904
 MonoBehaviour:
@@ -2085,8 +2007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 745, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 801, y: -108}
+  m_SizeDelta: {x: 216, y: 216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106214051
 MonoBehaviour:
@@ -2300,15 +2222,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 124056321}
+  m_Children: []
   m_Father: {fileID: 908255903}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: -251}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: 518, y: -290}
+  m_SizeDelta: {x: 152, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298506548
 MonoBehaviour:
@@ -2511,8 +2432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -390, y: 45}
-  m_SizeDelta: {x: 400, y: 400}
+  m_AnchoredPosition: {x: -385, y: 78}
+  m_SizeDelta: {x: 336, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362336108
 MonoBehaviour:
@@ -2901,84 +2822,6 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!1 &1652711907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1652711908}
-  - component: {fileID: 1652711910}
-  - component: {fileID: 1652711909}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1652711908
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652711907}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1757262536}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1652711909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652711907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Next
---- !u!222 &1652711910
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652711907}
-  m_CullTransparentMesh: 0
 --- !u!1 &1653407169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,7 +2963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1757262536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3131,15 +2974,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1652711908}
+  m_Children: []
   m_Father: {fileID: 203827615}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: -251}
-  m_SizeDelta: {x: 200, y: 60}
+  m_AnchoredPosition: {x: 518, y: -290}
+  m_SizeDelta: {x: 152, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757262537
 MonoBehaviour:
@@ -3304,8 +3146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 108, y: -108}
+  m_SizeDelta: {x: 216, y: 216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777395082
 MonoBehaviour:
@@ -3424,12 +3266,12 @@ PrefabInstance:
     - target: {fileID: 279148077430800414, guid: 26466540988e048499061a7c7846038c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -306
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 279148077430800414, guid: 26466540988e048499061a7c7846038c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 83
+      value: 117
       objectReference: {fileID: 0}
     - target: {fileID: 5353020872435484344, guid: 26466540988e048499061a7c7846038c,
         type: 3}
@@ -3455,7 +3297,7 @@ PrefabInstance:
     - target: {fileID: 5353020872435484344, guid: 26466540988e048499061a7c7846038c,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8891924823711662673, guid: 26466540988e048499061a7c7846038c,
         type: 3}
@@ -3665,7 +3507,7 @@ MonoBehaviour:
   selectItem: {fileID: 1102528621}
   chat:
   - Its been a long time
-  - I'm retired. You're not my commander anymore, and i don't have to take orders
+  - I've retired. You're not my commander anymore, and i don't have to take orders
     from you or anyone else.
   - You will take these orders. I know it.
   - What do you mean ?
@@ -3676,16 +3518,16 @@ MonoBehaviour:
     Now they are wrecking havoc across
     the country.'
   - What soldiers ?
-  - Some terrorist, they have figured the secret power of those artifact and turn
+  - Some terrorist, they have figured the secret power of those artefact and turn
     it into weapons
-  - Terrorist using an artifact as a weapon ?
+  - Terrorist using an artefact as a weapon ?
   - "Now you understand how serious the situation is. You'll have two \rmission objectives."
   - First destroy the weapon and second collect these artifact so we can secure it.
-  - Alright I'm in, but first i need to know what these weaponized artifact can do.
+  - Alright I'm in, but first i need to know what these weaponized artefact can do.
   - Okay i will explain to you as you prepare for the mission. we don't have much
     time.
   - "Wait, you will need this on your journey. \rBe careful you only can use one
-    artifact at the time,"
+    artefact at the time,"
   - and once it has been used you cannot use it again, so be wise.
   - 'Goodluck X, we are counting on you. Return to base after you destroy one weapon.
 
@@ -3729,11 +3571,31 @@ MonoBehaviour:
 
 '
   itemDesc:
-  - Ceremonial Axe Candrasa
-  - Deer Sculpture
-  - Mangkunegaran Legion Helmet
-  - Pair of Loro Bonyo
-  - Pustaha Laklak
+  - 'Ceremonial Axe Candrasa
+
+    This Candrasa bronze ax is usually used in ancient
+    Javanese rituals, its function as a symbol of sacrifice. Sacrifice one health
+    for better mobility'
+  - "Deer Sculpture\nThe deer statue in the life of the Keraton nobility is symbolized
+    as a \r\nsymbol of vigilance against enemy threats. Slow Down time for 5 seconds
+    (Can only be used once).\r\n"
+  - 'Mangkunegaran Legion Helmet
+
+    The Mangkunegaran Legion is a modern troop
+    formed by Pura Mangkunegaran which has high ability and is tough in its era.
+    Extra Armor
+
+'
+  - "Pair of Loro Bonyo\nA pair of loro blonyo statues comes from a village in Ponorogo
+    \r\nwhich is believed to be the embodiment of a pair of ancestors \r who are
+    believed to protect, help and heal various diseases, \r which is said to be according
+    to the story if someone is sick, \rby taking a little of the face of the statue
+    and giving a prayer a ritual \rthen the disease will be cured. Replenish health
+    during battle."
+  - "Pustaha Laklak\nAn ancient holy book called Pustaha which comes from Batak.
+    \r\nContains writings on traditional medical treatment methods, magic, \r\non
+    how to ward off evil (poda), incantations and prayers for \r\ngood things in
+    order to achieve certain goals. Invicibility for 3 Seconds"
   - 
   dialog: {fileID: 845007678}
   chara: {fileID: 1671847069}
@@ -3796,8 +3658,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 530, y: -100}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 570, y: -108}
+  m_SizeDelta: {x: 216, y: 216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833405983
 MonoBehaviour:
@@ -4157,7 +4019,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4a0f2a9b5839c5943a80fda9826f971c, type: 3}
-    m_FontSize: 50
+    m_FontSize: 47
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
@@ -4525,7 +4387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373, y: 228}
+  m_AnchoredPosition: {x: -402, y: 228}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026826129

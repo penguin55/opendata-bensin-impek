@@ -8,10 +8,10 @@ using TomWill;
 public class DialogUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogUI, selectBoss, selectItem;
-    [SerializeField] [TextArea] private string[] chat;
-    [SerializeField] [TextArea] private string[] charname;
-    [SerializeField] [TextArea] private string[] bossDesc;
-    [SerializeField] [TextArea] private string[] itemDesc;
+    [SerializeField] [TextArea(0,30)] private string[] chat;
+    [SerializeField] [TextArea(0, 30)] private string[] charname;
+    [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
+    [SerializeField] [TextArea(0, 30)] private string[] itemDesc;
     [SerializeField] private Text dialog, chara, boss, item;
     [SerializeField] private int index = 0, bossIndex,itemIndex;
     [SerializeField] private GameObject x, commander, heli, mysterious;
