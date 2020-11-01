@@ -21,6 +21,13 @@ public class TobecontinudUI : MonoBehaviour
 
     IEnumerator ToMainMenu()
     {
+        if (TimelineManager.instance.Director.duration >= 21)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
+            }
+        }
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
         TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
     }
