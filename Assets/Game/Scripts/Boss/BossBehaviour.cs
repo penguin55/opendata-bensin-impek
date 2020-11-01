@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine;
 public class BossBehaviour : MonoBehaviour
 {
     public static BossBehaviour Instance;
+
+    [SerializeField] private ParticleSystem explosion;
 
     [SerializeField] public int health;
     [SerializeField] protected AttackPattern[] patterns;
@@ -27,7 +30,14 @@ public class BossBehaviour : MonoBehaviour
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("helicopter_destroyed");
         TWAudioController.PlaySFX("helicopter_destroyed_2");
-        InGameUI.instance.GameWin();
+
+        DOTween.Sequence()
+            .AppendCallback(() => { explosion.Play(); })
+            .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
+            .AppendInterval(explosion.main.duration / 2)
+            .AppendCallback(() => { gameObject.SetActive(false); })
+            .AppendInterval(explosion.main.duration / 2)
+            .AppendCallback(() => InGameUI.instance.GameWin());
     }
 
     public void TakeDamage()
