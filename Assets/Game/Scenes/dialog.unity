@@ -2708,10 +2708,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1358214518}
     m_Modifications:
+    - target: {fileID: 279148077430800414, guid: 26466540988e048499061a7c7846038c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 279148077430800414, guid: 26466540988e048499061a7c7846038c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -320
+      objectReference: {fileID: 0}
+    - target: {fileID: 279148077430800414, guid: 26466540988e048499061a7c7846038c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 5353020872435484344, guid: 26466540988e048499061a7c7846038c,
         type: 3}
-      propertyPath: m_Text
-      value: 
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353020872435484344, guid: 26466540988e048499061a7c7846038c,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8891924823711662673, guid: 26466540988e048499061a7c7846038c,
         type: 3}
@@ -2823,46 +2843,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialog
       objectReference: {fileID: 0}
-    - target: {fileID: 8891924823711662674, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891924824092284752, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891924824092284752, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8891924825090152165, guid: 26466540988e048499061a7c7846038c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1829007654}
-    - target: {fileID: 8891924825090152165, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: next
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891924825574003280, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8352941
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891924825574003280, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.8392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891924825574003280, guid: 26466540988e048499061a7c7846038c,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.85882354
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26466540988e048499061a7c7846038c, type: 3}
 --- !u!1 &1829007653
@@ -2912,7 +2897,7 @@ MonoBehaviour:
   - What soldiers ?
   - Some terrorist, they have figured the secret power of those artifact and turn
     it into weapons
-  - Terrorist using a artifact as a weapon ?
+  - Terrorist using an artifact as a weapon ?
   - "Now you understand how serious the situation is. You'll have two \rmission objectives."
   - First destroy the weapon and second collect these artifact so we can secure it.
   - Alright I'm in, but first i need to know what these weaponized artifact can do.
