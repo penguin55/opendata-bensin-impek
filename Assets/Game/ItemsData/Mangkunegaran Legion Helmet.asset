@@ -17,4 +17,4 @@ MonoBehaviour:
   timeEffect: 0
   amountEffect: 0
   cost: 0
-  oneTimeUse: 0
+  oneTimeUse: 1
