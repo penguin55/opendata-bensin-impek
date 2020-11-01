@@ -54,28 +54,33 @@ public class DialogUI : MonoBehaviour
 
     public void button1()
     {
-        if(index ==12) bossIndex = 0;
+        TWAudioController.PlaySFX("click");
+        if (index ==12) bossIndex = 0;
         if (index == 15) itemIndex = 0;
     }
 
     public void button2()
     {
+        TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 1;
         if (index == 15) itemIndex = 1;
     }
     public void button3()
     {
+        TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 2;
         if (index == 15) itemIndex = 2;
     }
     public void button4()
     {
+        TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 3;
         if (index == 15) itemIndex = 3;
     }
 
     public void button5()
     {
+        TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 4;
         if (index == 15) itemIndex = 4;
     }
@@ -90,11 +95,13 @@ public class DialogUI : MonoBehaviour
     }
     public void next()
     {
+        TWAudioController.PlaySFX("click");
         index++;
     }
 
     public void SelectBoss()
     {
+        TWAudioController.PlaySFX("click");
         index++;
         selectBoss.SetActive(false);
         dialogUI.SetActive(true);
@@ -102,6 +109,7 @@ public class DialogUI : MonoBehaviour
 
     public void SelectItem()
     {
+        TWAudioController.PlaySFX("click");
         index++;
         selectItem.SetActive(false);
         dialogUI.SetActive(true);
@@ -173,6 +181,7 @@ public class DialogUI : MonoBehaviour
         {
             Debug.Log("Hi");
             TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+            TWAudioController.PlaySFX("transition");
         }
     }
 }

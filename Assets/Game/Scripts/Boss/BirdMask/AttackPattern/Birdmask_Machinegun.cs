@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,7 +29,8 @@ public class Birdmask_Machinegun : AttackEvent
     protected override void Attack()
     {
         attack.SetBool("attack", true);
-        machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
+        machinegunDothair.DOMove(movePosition[1].position, timeToMove)
+            .SetEase(Ease.Linear).OnUpdate(()=> { TWAudioController.PlaySFX("machine_gun"); }).OnComplete(() => {
             machinegunParent.SetActive(false);        
             base.Attack();
             attack.SetBool("attack", false);

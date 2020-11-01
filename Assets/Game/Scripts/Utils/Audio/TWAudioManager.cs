@@ -14,11 +14,20 @@ namespace TomWill
 
         void Awake()
         {
-            audioController = GetComponent<TWAudioController>();
-            audioLibrary = GetComponent<TWAudioLibrary>();
+            if (TWAudioController.Instance == null)
+            {
+                audioController = GetComponent<TWAudioController>();
+                audioLibrary = GetComponent<TWAudioLibrary>();
 
-            audioController.CreateInstance();
-            TWAudioController.SetUpController(audioLibrary);
+                audioController.CreateInstance();
+                TWAudioController.SetUpController(audioLibrary);
+            }
+
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 }

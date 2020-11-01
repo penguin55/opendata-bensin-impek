@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -59,7 +60,7 @@ public class BirdMask_Swipe : AttackEvent
         }
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
         swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove)
-            .SetEase(Ease.Linear)
+            .SetEase(Ease.Linear).OnUpdate(() => { TWAudioController.PlaySFX("machine_gun"); })
             .OnComplete(() => base.Attack());
     }
 
