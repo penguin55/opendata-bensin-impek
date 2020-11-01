@@ -20,25 +20,24 @@ public class ItemData : ScriptableObject
     [SerializeField] private float cost;
     [SerializeField] private bool oneTimeUse;
 
-    public void TakeEffect()
+    private bool onDelay;
+
+    public bool TakeEffect()
     {
         switch (effect)
         {
             case ItemEffect.IMMUNE:
-                Immune_Effect();
-                break;
+                return Immune_Effect();
             case ItemEffect.SHIELD:
-                Shield_Effect();
-                break;
+                return Shield_Effect();
             case ItemEffect.SLOW_MOTION:
-                Slowmo_Effect();
-                break;
+                return Slowmo_Effect();
             case ItemEffect.HEAL:
-                Heal_Effect();
-                break;
+                return Heal_Effect();
             case ItemEffect.SACRIFICE:
-                Sacrifice_Effect();
-                break;
+                return Sacrifice_Effect();
+            default:
+                return false;
         }
     }
 
@@ -47,33 +46,49 @@ public class ItemData : ScriptableObject
         return oneTimeUse;
     }
 
-    private void Immune_Effect()
+    private bool Immune_Effect()
     {
         GameVariables.PLAYER_IMMUNE = true;
-        DOVirtual.DelayedCall(timeEffect, () => { GameVariables.PLAYER_IMMUNE = false; });
-    }
-
-    private void Shield_Effect()
-    {
-
-    }
-
-    private void Slowmo_Effect()
-    {
-        GameVariables.SLOW_MO = true;
-        Time.timeScale = Mathf.Clamp(amountEffect, 0, 1);
-        DOVirtual.DelayedCall(timeEffect, () => {
-            Time.timeScale = 1;
-            GameVariables.SLOW_MO = false;
+        DOVirtual.DelayedCall(timeEffect, () => { 
+            GameVariables.PLAYER_IMMUNE = false; 
         });
+        return true;
     }
 
-    private void Heal_Effect()
+    private bool Shield_Effect()
+    {
+        return false;
+    }
+
+    private bool Slowmo_Effect()
+    {
+        if (!onDelay)
+        {
+            onDelay = true;
+            GameVariables.SLOW_MO = true;
+            Time.timeScale = Mathf.Clamp(amountEffect, 0, 1);
+            DOVirtual.DelayedCall(timeEffect, () =>
+            {
+                Time.timeScale = 1;
+                GameVariables.SLOW_MO = false;
+                onDelay = false;
+            });
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool Heal_Effect()
     {
         CharaData.hp = CharaData.maxhp;
+        InGameUI.instance.uilive();
+
+        return true;
     }
 
-    private void Sacrifice_Effect()
+    private bool Sacrifice_Effect()
     {
         CharaData.hp-=cost;
 
@@ -81,5 +96,6 @@ public class ItemData : ScriptableObject
 
         InGameUI.instance.uilive();
         GameVariables.SPEED_BUFF = amountEffect;
+        return true;
     }
 }

@@ -23,7 +23,16 @@ public class ItemManager : MonoBehaviour
     {
         if (activeItem)
         {
-            activeItem.TakeEffect();
+            bool status = activeItem.TakeEffect();
+
+            if (status)
+            {
+
+            }else
+            {
+
+            }
+
             if (activeItem.CheckIsOneTimeUse()) buttonActive.interactable = false;
         }
     }
