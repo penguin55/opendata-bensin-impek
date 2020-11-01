@@ -32,7 +32,7 @@ public class BirdMask_Laser : AttackEvent
             .Append(damageArea[0].DOMove(target.position + Vector3.up * offset.y, timeToMove))
             .Join(damageArea[1].DOMove(target.position + Vector3.right * offset.x, timeToMove))
             .Join(damageArea[2].DOMove(target.position + Vector3.down * offset.y, timeToMove))
-            .Join(damageArea[3].DOMove(target.position + Vector3.left * offset.x, timeToMove))
+            .Join(damageArea[3].DOMove(target.position + Vector3.left * offset.x, timeToMove)).OnUpdate(()=> { CameraShake.instance.Shake(1, 1, 2); })
             .OnComplete(() => base.Attack());
     }
 

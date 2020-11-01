@@ -60,7 +60,7 @@ public class BirdMask_Swipe : AttackEvent
         }
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
         swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove)
-            .SetEase(Ease.Linear).OnUpdate(() => { TWAudioController.PlaySFX("machine_gun"); })
+            .SetEase(Ease.Linear).OnUpdate(() => { TWAudioController.PlaySFX("machine_gun"); CameraShake.instance.Shake(1, 1, 2); })
             .OnComplete(() => base.Attack());
     }
 
