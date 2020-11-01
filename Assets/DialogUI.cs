@@ -149,6 +149,29 @@ public class DialogUI : MonoBehaviour
         if (index >= chat.Length)
         {
             index = 0;
+            dialogUI.SetActive(false);
+            commander.SetActive(false);
+            x.SetActive(false);
+            heli.SetActive(false);
+            StartCoroutine(End());
+        }
+    }
+
+    IEnumerator End()
+    {
+        TimelineManager.instance.Director.Play();
+        Debug.Log((float)TimelineManager.instance.Director.duration);
+        yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
+        Debug.Log((float)TimelineManager.instance.Director.duration);
+        Debug.Log(TimelineManager.instance.Director.state);
+        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+    }
+
+    public void EndTimeline()
+    {
+        if (TimelineManager.instance.Director.state != UnityEngine.Playables.PlayState.Playing)
+        {
+            Debug.Log("Hi");
             TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
         }
     }
