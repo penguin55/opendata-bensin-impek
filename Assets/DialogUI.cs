@@ -16,28 +16,18 @@ public class DialogUI : MonoBehaviour
     [SerializeField] private int index = 0, bossIndex,itemIndex;
     [SerializeField] private GameObject x, commander, heli, mysterious;
 
-    private bool canSkip;
 
     // Start is called before the first frame update
     void Start()
     {
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.FadeOut( () => canSkip = true);
+            TWTransition.FadeOut();
         });
         bossIndex = 4;
         itemIndex = 5;
         Dialog();
     }
 
-    private void Update()
-    {
-        if (canSkip)
-        {
-            dialogUI.SetActive(false);
-            selectItem.SetActive(true);
-            canSkip = false;
-        }
-    }
 
     public void ChangeImage()
     {
@@ -149,7 +139,6 @@ public class DialogUI : MonoBehaviour
         {
             dialogUI.SetActive(false);
             selectItem.SetActive(true);
-            canSkip = false;
         }
         if (index >= chat.Length)
         {
