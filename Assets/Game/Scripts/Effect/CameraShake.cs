@@ -12,7 +12,7 @@ public class CameraShake : MonoBehaviour
 
     void Start()
     {
-        Shake();
+        
     }
 
     void Update()
