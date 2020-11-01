@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 4.7
+    m_Start: 7.033333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 6475137948475407045}
     m_Duration: 8.81666666666667
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 5
   m_Retroactive: 0
-  m_EmitOnce: 0
+  m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: f74dd8793397497488cbeffe4af5f55c, type: 2}
 --- !u!74 &-2405248644800940035
 AnimationClip:
