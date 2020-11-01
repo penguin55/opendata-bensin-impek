@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     public KeyCode moveDown { get; set; }
     public KeyCode moveRight { get; set; }
     public KeyCode dash { get; set; }
+    public KeyCode activateItem { get; set; }
 
     void Awake()
     {
@@ -26,7 +27,7 @@ public class InputManager : MonoBehaviour
         moveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftKey", "A"));
         moveDown = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("downKey", "S"));
         moveRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", "D"));
-        dash = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "E"));
-        Debug.Log(System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "E")));
+        dash = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "Space"));
+        activateItem = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "E"));
     }
 }

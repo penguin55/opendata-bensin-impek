@@ -4,14 +4,16 @@ using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager manager;
     [SerializeField] private ItemData[] items;
 
     private static ItemData activeItem;
-    [SerializeField] private Button buttonActive;
+    [SerializeField] private Image activateItemImage;
 
     private void Start()
     {
-        if (buttonActive) buttonActive.interactable = activeItem != null;
+        manager = this;
+        if (activateItemImage) activateItemImage.color = activeItem ? Color.white : Color.red;
     }
 
     public void ChooseItem(string itemName)
@@ -23,17 +25,24 @@ public class ItemManager : MonoBehaviour
     {
         if (activeItem)
         {
-            bool status = activeItem.TakeEffect();
-
-            if (status)
+            if (activateItemImage.color != Color.red)
             {
+                bool status = activeItem.TakeEffect();
 
-            }else
-            {
+                if (status)
+                {
 
+                }
+                else
+                {
+
+                }
+
+                if (activeItem.CheckIsOneTimeUse())
+                {
+                    activateItemImage.color = Color.red;
+                }
             }
-
-            if (activeItem.CheckIsOneTimeUse()) buttonActive.interactable = false;
         }
     }
 }

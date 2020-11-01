@@ -26,6 +26,7 @@ public class DialogUI : MonoBehaviour
         });
         bossIndex = 4;
         itemIndex = 5;
+        Dialog();
     }
 
 

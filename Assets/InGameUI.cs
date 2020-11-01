@@ -44,10 +44,9 @@ public class InGameUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && dialogUI.activeSelf)
         {
             TWAudioController.PlaySFX("click");
-            SceneManager.LoadScene("ToBeContinued");
             TWAudioController.PlaySFX("transition");
             dialogUI.SetActive(false);
-            TWTransition.FadeIn();
+            TWTransition.FadeIn( ()=> SceneManager.LoadScene("ToBeContinued"));
         }
     }
 
@@ -93,11 +92,9 @@ public class InGameUI : MonoBehaviour
         else
         {
             TWAudioController.PlaySFX("click");
-            SceneManager.LoadScene("ToBeContinued");
             TWAudioController.PlaySFX("transition");
             dialogUI.SetActive(false);
-            TWTransition.FadeIn();
-
+            TWTransition.FadeIn(() => SceneManager.LoadScene("ToBeContinued"));
         }
     }
 

@@ -29,7 +29,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
 
-    [SerializeField] private GameObject projectileDetect;
+    private GameObject projectileDetect;
 
 
     public void Init()

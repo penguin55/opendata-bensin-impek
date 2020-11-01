@@ -30,6 +30,7 @@ public class CharaController : CharaBehaviour
         KeyboardMovement();
         UpdateAnimationWalk(lastDirection.x, lastDirection.y, direction.sqrMagnitude);
         Action();
+        ActivateItem();
     }
     public void KeyboardMovement()
     {
@@ -115,6 +116,14 @@ public class CharaController : CharaBehaviour
 
                 immune = true;
             }
+        }
+    }
+
+    private void ActivateItem()
+    {
+        if (Input.GetKeyDown(InputManager.instance.activateItem))
+        {
+            ItemManager.manager.ActivateItem();
         }
     }
 }
