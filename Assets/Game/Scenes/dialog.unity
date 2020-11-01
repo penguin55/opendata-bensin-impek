@@ -122,7 +122,10 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of cc74b88... Timeline
 --- !u!1 &124056320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2347,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652711907}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
+>>>>>>> parent of cc74b88... Timeline
+=======
 >>>>>>> parent of cc74b88... Timeline
 --- !u!114 &1671847069 stripped
 MonoBehaviour:
