@@ -61,9 +61,10 @@ public class MissileBM : DamageArea
             projectile.GetComponent<SpriteRenderer>().enabled = false;
             ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
             particle.Play();
-            DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
-                TWAudioController.PlaySFX("rocket_impact");
-                CameraShake.instance.Shake(1,3,10);
+
+            TWAudioController.PlaySFX("rocket_impact");
+            CameraShake.instance.Shake(1, 3, 10);
+            DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => { 
                 Destroy(projectile);
             });
         }
@@ -79,9 +80,10 @@ public class MissileBM : DamageArea
         projectile.GetComponent<SpriteRenderer>().enabled = false;
         ParticleSystem particle = projectile.transform.GetChild(1).GetComponent<ParticleSystem>();
         particle.Play();
+
+        TWAudioController.PlaySFX("helicopter_damage");
+        CameraShake.instance.Shake(1, 3, 10);
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
-            TWAudioController.PlaySFX("helicopter_damage");
-            CameraShake.instance.Shake(1, 3, 10);
             BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
         });

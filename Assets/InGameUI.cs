@@ -7,17 +7,23 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, WinGameUI;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI;
     [SerializeField] private GameObject[] hearts, heartsBos;
+    [SerializeField] [TextArea(0, 30)] private string[] chat;
+    [SerializeField] [TextArea(0, 30)] private string[] charname;
     [SerializeField] private Sprite newsprite;
     [SerializeField] private Sprite oldsprite;
-    
+    [SerializeField] private GameObject x, commander, heli, mysterious;
+    [SerializeField] private int index = 0;
+    [SerializeField] private Text dialog, chara;
+
 
     public static InGameUI instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        index = 0;
         instance = this;
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();
@@ -35,7 +41,61 @@ public class InGameUI : MonoBehaviour
         
         OpenPauseMenu();
         GameOver();
+        ChangeImage();
+        Dialog();
     }
+
+    public void ChangeImage()
+    {
+        if (charname[index].Contains("X"))
+        {
+            x.SetActive(true);
+            commander.SetActive(false);
+            heli.SetActive(false);
+            mysterious.SetActive(false);
+        }
+        if (charname[index].Contains("Terrorcopter"))
+        {
+            x.SetActive(false);
+            commander.SetActive(false);
+            heli.SetActive(true);
+            mysterious.SetActive(false);
+        }
+    }
+
+    public void Dialog()
+    {
+        
+       if (Input.GetKeyDown(KeyCode.Space))
+       {
+            TWAudioController.PlaySFX("click");
+            TWTransition.FadeIn(() => TWLoading.LoadScene("ToBeContinued"));
+            TWAudioController.PlaySFX("transition");
+            dialogUI.SetActive(false);
+       }
+        
+        if (index < chat.Length)
+        {
+            dialog.text = chat[index];
+            chara.text = charname[index];
+        }
+        else
+        {
+            TWAudioController.PlaySFX("click");
+            TWTransition.FadeIn(() => TWLoading.LoadScene("ToBeContinued"));
+            TWAudioController.PlaySFX("transition");
+            dialogUI.SetActive(false);
+        }
+    }
+
+
+    public void next()
+    {
+        TWAudioController.PlaySFX("click");
+        index++;
+    }
+
+
 
     public void OpenPauseMenu()
     {

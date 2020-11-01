@@ -58,10 +58,25 @@ public class BirdMask_Swipe : AttackEvent
             helicopterOffset = new Vector2(swipeAreaPosition[0].x, birdMask.transform.position.y);
             birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
         }
+
+        Sound("machine_gun");
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
-        swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove)
-            .SetEase(Ease.Linear).OnUpdate(() => { TWAudioController.PlaySFX("machine_gun"); CameraShake.instance.Shake(1, 1, 2); })
-            .OnComplete(() => base.Attack());
+        swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            DOTween.Kill("MachineGun_Sound");
+            base.Attack();
+        });
+    }
+
+    private void Sound(string name)
+    {
+        float audioLength = TWAudioController.AudioLength(name, "SFX");
+        DOTween.Sequence()
+            .AppendCallback(() => TWAudioController.PlaySFX(name))
+            .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
+            .PrependInterval(audioLength)
+            .SetLoops(-1)
+            .SetId("MachineGun_Sound");
     }
 
     protected override void OnExit_Attack()

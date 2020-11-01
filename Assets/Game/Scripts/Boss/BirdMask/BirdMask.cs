@@ -70,9 +70,12 @@ public class BirdMask : BossBehaviour
 
     private void NextState()
     {
-        stateIndex++;
-        currentState = stateSequences[stateIndex];
-        UpdateState();
+        if (!GameVariables.GAME_OVER)
+        {
+            stateIndex++;
+            currentState = stateSequences[stateIndex];
+            UpdateState();
+        }
     }
 
     #region IDLE

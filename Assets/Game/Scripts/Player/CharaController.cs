@@ -24,6 +24,7 @@ public class CharaController : CharaBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameVariables.GAME_OVER) return;
         Clamp();
         Dash();
         KeyboardMovement();
