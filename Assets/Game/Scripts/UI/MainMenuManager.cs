@@ -12,11 +12,14 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        TWAudioController.PlaySFX("click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("dialog"));
+        TWAudioController.PlaySFX("transition");
     }
 
     public void Keluar()
     {
+        TWAudioController.PlaySFX("click");
         Application.Quit();
     }
 }
