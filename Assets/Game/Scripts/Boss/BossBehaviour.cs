@@ -27,6 +27,7 @@ public class BossBehaviour : MonoBehaviour
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("helicopter_destroyed");
         TWAudioController.PlaySFX("helicopter_destroyed_2");
+        InGameUI.instance.GameWin();
     }
 
     public void TakeDamage()

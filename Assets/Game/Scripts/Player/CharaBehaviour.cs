@@ -142,6 +142,7 @@ public class CharaBehaviour : MonoBehaviour
                     dead = true;
                     GameVariables.STILL_ALIVE = false;
                     GameVariables.GAME_OVER = true;
+                    InGameUI.instance.GameOver();
                 }
             }
         }

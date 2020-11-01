@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TomWill;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, obtainCoin;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
     [SerializeField] [TextArea(0, 30)] private string[] charname;
@@ -23,6 +24,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameVariables.GAME_OVER = false;
         index = 0;
         instance = this;
         TWLoading.OnSuccessLoad(() => {
@@ -38,10 +40,20 @@ public class InGameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         OpenPauseMenu();
-        GameOver();
-        ChangeImage();
+        if (Input.GetKeyDown(KeyCode.Space) && dialogUI.activeSelf)
+        {
+            TWAudioController.PlaySFX("click");
+            SceneManager.LoadScene("ToBeContinued");
+            TWAudioController.PlaySFX("transition");
+            dialogUI.SetActive(false);
+            TWTransition.FadeIn();
+        }
+    }
+
+    public void GameWin()
+    {
+        dialogUI.SetActive(true);
         Dialog();
     }
 
@@ -61,30 +73,31 @@ public class InGameUI : MonoBehaviour
             heli.SetActive(true);
             mysterious.SetActive(false);
         }
+        if (charname[index].Contains("Colonel"))
+        {
+            x.SetActive(false);
+            commander.SetActive(true);
+            heli.SetActive(false);
+            mysterious.SetActive(false);
+        }
     }
 
     public void Dialog()
     {
-        
-       if (Input.GetKeyDown(KeyCode.Space))
-       {
-            TWAudioController.PlaySFX("click");
-            TWTransition.FadeIn(() => TWLoading.LoadScene("ToBeContinued"));
-            TWAudioController.PlaySFX("transition");
-            dialogUI.SetActive(false);
-       }
-        
         if (index < chat.Length)
         {
             dialog.text = chat[index];
             chara.text = charname[index];
+            ChangeImage();
         }
         else
         {
             TWAudioController.PlaySFX("click");
-            TWTransition.FadeIn(() => TWLoading.LoadScene("ToBeContinued"));
+            SceneManager.LoadScene("ToBeContinued");
             TWAudioController.PlaySFX("transition");
             dialogUI.SetActive(false);
+            TWTransition.FadeIn();
+
         }
     }
 
@@ -93,6 +106,17 @@ public class InGameUI : MonoBehaviour
     {
         TWAudioController.PlaySFX("click");
         index++;
+        if (index == 2)
+        {
+            obtainCoin.SetActive(true);
+            dialogUI.SetActive(false);
+        }
+        else if(obtainCoin.activeSelf)
+        {
+            obtainCoin.SetActive(false);
+            dialogUI.SetActive(true);
+        }
+        Dialog();
     }
 
 

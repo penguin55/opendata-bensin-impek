@@ -28,14 +28,6 @@ public class DialogUI : MonoBehaviour
         itemIndex = 5;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Dialog();
-        BossDesc();
-        ItemDesc();
-        ChangeImage();
-    }
 
     public void ChangeImage()
     {
@@ -60,6 +52,8 @@ public class DialogUI : MonoBehaviour
         TWAudioController.PlaySFX("click");
         if (index ==12) bossIndex = 0;
         if (index == 15) itemIndex = 0;
+        BossDesc();
+        ItemDesc();
     }
 
     public void button2()
@@ -67,18 +61,24 @@ public class DialogUI : MonoBehaviour
         TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 1;
         if (index == 15) itemIndex = 1;
+        BossDesc();
+        ItemDesc();
     }
     public void button3()
     {
         TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 2;
         if (index == 15) itemIndex = 2;
+        BossDesc();
+        ItemDesc();
     }
     public void button4()
     {
         TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 3;
         if (index == 15) itemIndex = 3;
+        BossDesc();
+        ItemDesc();
     }
 
     public void button5()
@@ -86,6 +86,7 @@ public class DialogUI : MonoBehaviour
         TWAudioController.PlaySFX("click");
         if (index == 12) bossIndex = 4;
         if (index == 15) itemIndex = 4;
+        ItemDesc();
     }
 
     public void ItemDesc()
@@ -100,6 +101,7 @@ public class DialogUI : MonoBehaviour
     {
         TWAudioController.PlaySFX("click");
         index++;
+        Dialog();
     }
 
     public void SelectBoss()
@@ -149,12 +151,14 @@ public class DialogUI : MonoBehaviour
         {
             dialog.text = chat[index];
             chara.text = charname[index];
+            ChangeImage();
         }
 
         if (index >= 12 && index < 13)
         {
             dialogUI.SetActive(false);
             selectBoss.SetActive(true);
+            
         }
         if (index >= 15 && index < 16)
         {
