@@ -34,6 +34,7 @@ public class CharaBehaviour : MonoBehaviour
 
     public void Init()
     {
+        GameVariables.STILL_ALIVE = true;
         canDash = true;
         dead = false;
         data.Hp = 3;
@@ -139,6 +140,8 @@ public class CharaBehaviour : MonoBehaviour
                 if (data.Hp < 1)
                 {
                     dead = true;
+                    GameVariables.STILL_ALIVE = false;
+                    GameVariables.GAME_OVER = true;
                 }
             }
         }

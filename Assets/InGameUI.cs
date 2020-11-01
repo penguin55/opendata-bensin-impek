@@ -18,6 +18,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameVariables.GAME_OVER = false;
         instance = this;
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();

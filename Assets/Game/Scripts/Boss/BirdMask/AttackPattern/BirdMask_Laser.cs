@@ -29,12 +29,19 @@ public class BirdMask_Laser : AttackEvent
     protected override void Attack()
     {
         TWAudioController.PlaySFX("laser");
+
+        DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
+
         DOTween.Sequence()
             .Append(damageArea[0].DOMove(target.position + Vector3.up * offset.y, timeToMove))
             .Join(damageArea[1].DOMove(target.position + Vector3.right * offset.x, timeToMove))
             .Join(damageArea[2].DOMove(target.position + Vector3.down * offset.y, timeToMove))
-            .Join(damageArea[3].DOMove(target.position + Vector3.left * offset.x, timeToMove)).OnUpdate(()=> { CameraShake.instance.Shake(1, 1, 2); })
-            .OnComplete(() => base.Attack());
+            .Join(damageArea[3].DOMove(target.position + Vector3.left * offset.x, timeToMove))
+            .OnComplete(() =>
+            {
+                DOTween.Kill("ShakeLaser");
+                base.Attack();
+            });
     }
 
     protected override void OnExit_Attack()
