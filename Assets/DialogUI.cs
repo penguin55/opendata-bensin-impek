@@ -9,7 +9,8 @@ public class DialogUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogUI;
     [SerializeField] [TextArea] private string[] chat;
-    [SerializeField] private Text dialog;
+    [SerializeField] [TextArea] private string[] charname;
+    [SerializeField] private Text dialog, chara;
     [SerializeField] private int index = 0;
     // Start is called before the first frame update
     void Start()
@@ -34,9 +35,15 @@ public class DialogUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+            dialogUI.SetActive(false);
+            Time.timeScale = 1f;
         }
-        if (index < chat.Length) dialog.text = chat[index];
+        if (index < chat.Length)
+        {
+            dialog.text = chat[index];
+            chara.text = charname[index];
+        }
+            
         if (index >= chat.Length)
         {
             dialogUI.SetActive(false);
