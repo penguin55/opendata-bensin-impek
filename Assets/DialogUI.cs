@@ -15,11 +15,14 @@ public class DialogUI : MonoBehaviour
     [SerializeField] private Text dialog, chara, boss, item;
     [SerializeField] private int index = 0, bossIndex,itemIndex;
     [SerializeField] private GameObject x, commander, heli, mysterious;
+
+    private bool canSkip;
+
     // Start is called before the first frame update
     void Start()
     {
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.FadeOut();
+            TWTransition.FadeOut( () => canSkip = true);
         });
         bossIndex = 4;
         itemIndex = 5;
@@ -117,25 +120,29 @@ public class DialogUI : MonoBehaviour
 
     public void Dialog()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canSkip)
         {
-            if (index < 12)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                index = 12;
-            }
-            if (index >= 12 && index < 13)
-            {
-                dialogUI.SetActive(false);
-                selectBoss.SetActive(true);
-            }
-            if(index == 13)
-            {
-                index = 15;
-            }
-            else if (index >= 15 && index < 16)
-            {
-                dialogUI.SetActive(false);
-                selectItem.SetActive(true);
+                if (index < 12)
+                {
+                    index = 12;
+                }
+                if (index >= 12 && index < 13)
+                {
+                    dialogUI.SetActive(false);
+                    selectBoss.SetActive(true);
+                }
+                if (index == 13)
+                {
+                    index = 15;
+                }
+                else if (index >= 15 && index < 16)
+                {
+                    dialogUI.SetActive(false);
+                    selectItem.SetActive(true);
+                    canSkip = false;
+                }
             }
         }
         if (index < chat.Length)
@@ -153,6 +160,7 @@ public class DialogUI : MonoBehaviour
         {
             dialogUI.SetActive(false);
             selectItem.SetActive(true);
+            canSkip = false;
         }
         if (index >= chat.Length)
         {
