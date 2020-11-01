@@ -89,6 +89,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 302af92bc5b67f744aebca9cdec07138, type: 3}
   - name: transition
     clip: {fileID: 8300000, guid: c0261b3bf803e574c9b813cdc9ca2501, type: 3}
+  - name: laser
+    clip: {fileID: 8300000, guid: ec5e9c1f35bd7b644a24840b50201e0d, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
   m_ObjectHideFlags: 0

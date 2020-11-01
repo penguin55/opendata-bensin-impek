@@ -36,6 +36,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         canDash = true;
         dead = false;
+        data.Hp = 3;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
