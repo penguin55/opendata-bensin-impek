@@ -6,7 +6,7 @@ public class BossBehaviour : MonoBehaviour
 {
     public static BossBehaviour Instance;
 
-    [SerializeField] protected int health;
+    [SerializeField] public int health;
     [SerializeField] protected AttackPattern[] patterns;
 
     protected AttackEvent currentAttackEvent;
@@ -25,7 +25,22 @@ public class BossBehaviour : MonoBehaviour
     {
 
     }
+
+    public void TakeDamage()
+    {
+        if (health >= 1)
+        {
+            health -= 1;
+            InGameUI.instance.UpdateHpBos(health);
+
+            if (health < 1)
+            {
+                Die();
+            }
+        }
+    }
 }
+
 
 [System.Serializable] 
 public class AttackPattern
@@ -34,3 +49,5 @@ public class AttackPattern
 
     public AttackEvent attackEvent; 
 }
+
+
