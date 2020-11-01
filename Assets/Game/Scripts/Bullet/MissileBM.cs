@@ -9,9 +9,11 @@ public class MissileBM : DamageArea
     private GameObject projectile;
 
     private bool activeMissile;
+    private bool deactiveMissileDashed;
 
     public void Launch(GameObject projectile, float timeToLaunch, bool activeMissile = true)
     {
+        deactiveMissileDashed = false;
         collider = GetComponent<Collider2D>();
         alertProjectileSprite = GetComponent<SpriteRenderer>();
 
@@ -64,6 +66,11 @@ public class MissileBM : DamageArea
         }
     }
 
+    public void DashDeactiveMissile()
+    {
+        deactiveMissileDashed = true;
+    }
+
     public void Explode()
     {
         projectile.GetComponent<SpriteRenderer>().enabled = false;
@@ -72,5 +79,10 @@ public class MissileBM : DamageArea
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
             Destroy(projectile);
         });
+    }
+
+    public bool DeactiveMissileDashed()
+    {
+        return !activeMissile && deactiveMissileDashed;
     }
 }

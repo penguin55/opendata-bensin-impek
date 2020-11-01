@@ -19,6 +19,7 @@ public class BirdMask_Missile : AttackEvent
 
     private bool deactiveMissileWasLaunch;
     private GameObject deactiveMissileProjectile;
+    private MissileBM deactiveMissileParent;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -54,9 +55,16 @@ public class BirdMask_Missile : AttackEvent
     protected override void OnExit_Attack()
     {
         deactiveMissileWasLaunch = false;
-        Destroy(deactiveMissileProjectile);
+        if (!deactiveMissileParent.DeactiveMissileDashed())
+        {
+            Destroy(deactiveMissileProjectile);
+            missileParent.SetActive(false);
+        } else
+        {
+            DOVirtual.DelayedCall(3f, () => missileParent.SetActive(false));
+        }
+        
         deactiveMissileProjectile = null;
-        missileParent.SetActive(false);
 
         base.OnExit_Attack();
     }
@@ -82,6 +90,8 @@ public class BirdMask_Missile : AttackEvent
                 if (!activeMissile) deactiveMissileWasLaunch = true;
             }
         }
+
+        if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileBM>();
 
         GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
         spawnChoicePosition.GetComponent<MissileBM>().Launch(missile, 2f, activeMissile);

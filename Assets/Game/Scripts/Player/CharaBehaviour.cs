@@ -144,6 +144,7 @@ public class CharaBehaviour : MonoBehaviour
         if (projectileDetect)
         {
             GameObject temp = projectileDetect;
+            temp.transform.parent.GetComponent<MissileBM>().DashDeactiveMissile();
             temp.GetComponent<Animator>().SetTrigger("Dash");
             temp.GetComponent<SpriteRenderer>().sortingOrder = 5;
             if (lastDirection.y > 0)
