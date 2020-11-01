@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
         moveDown = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("downKey", "S"));
         moveRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", "D"));
         dash = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "Space"));
-        activateItem = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dashKey", "E"));
+        activateItem = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("activateKey", "E"));
+        Debug.Log((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("activateKey", "E")));
     }
 }

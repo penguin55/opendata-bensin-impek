@@ -95,6 +95,11 @@ public class KeyMapping : MonoBehaviour
                 buttonText.text = InputManager.instance.moveUp.ToString(); //Set button text to new key
                 PlayerPrefs.SetString("dashKey", InputManager.instance.moveUp.ToString()); //save new key to PlayerPrefs
                 break;
+            case "activate":
+                InputManager.instance.activateItem = newKey; //Set move up to new keycode
+                buttonText.text = InputManager.instance.activateItem.ToString(); //Set button text to new key
+                PlayerPrefs.SetString("activateKey", InputManager.instance.activateItem.ToString()); //save new key to PlayerPrefs
+                break;
         }
 
         yield return null;
