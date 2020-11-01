@@ -123,7 +123,10 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of cc74b88... Timeline
 =======
 >>>>>>> parent of cc74b88... Timeline
 --- !u!1 &124056320
@@ -2348,6 +2351,9 @@ CanvasRenderer:
   m_GameObject: {fileID: 1652711907}
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of cc74b88... Timeline
+=======
 >>>>>>> parent of cc74b88... Timeline
 =======
 >>>>>>> parent of cc74b88... Timeline
