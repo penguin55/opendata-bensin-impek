@@ -45,4 +45,9 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
+
+    public ItemData GetActiveItem()
+    {
+        return activeItem;
+    }
 }

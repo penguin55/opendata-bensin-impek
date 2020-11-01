@@ -10,6 +10,7 @@ public class InGameUI : MonoBehaviour
     private bool isPaused;
     [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, obtainCoin;
     [SerializeField] private GameObject[] hearts, heartsBos;
+    [SerializeField] private GameObject shields;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
     [SerializeField] [TextArea(0, 30)] private string[] charname;
     [SerializeField] private Sprite newsprite;
@@ -31,8 +32,6 @@ public class InGameUI : MonoBehaviour
             TWTransition.FadeOut();
         });
         TWAudioController.PlayBGM("VsBoss", TWAudioController.PlayType.AUTO);
-        uilive();
-        UpdateHpBos(BossBehaviour.Instance.health);
     }
 
   
@@ -175,7 +174,7 @@ public class InGameUI : MonoBehaviour
         TWAudioController.PlaySFX("transition");
     }
 
-    public void uilive()
+    public void UpdateLive()
     {
         int i = 0;
         while (i < CharaData.maxhp)
@@ -191,6 +190,11 @@ public class InGameUI : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void UpdateShield()
+    {
+        shields.SetActive(CharaData.shield > 0);
     }
 
     public void UpdateHpBos(int health)

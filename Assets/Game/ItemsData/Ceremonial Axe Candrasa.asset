@@ -18,3 +18,4 @@ MonoBehaviour:
   amountEffect: 0
   cost: 1
   oneTimeUse: 1
+  activateOnStart: 1

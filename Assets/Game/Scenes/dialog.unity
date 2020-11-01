@@ -3951,7 +3951,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28afaf147693b6541beb43624acd5d17, type: 2}
   - {fileID: 11400000, guid: 8dcf3fecb821de1418c88aa15386e7e9, type: 2}
   - {fileID: 11400000, guid: f6e630136fd948c4c926d2b2cca74aab, type: 2}
-  buttonActive: {fileID: 0}
+  activateItemImage: {fileID: 0}
 --- !u!4 &1864985036
 Transform:
   m_ObjectHideFlags: 0
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3971739785158469495}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd5f350ceac9a2b4b96b1ab219bf55b8, type: 3}
   m_Name: 
@@ -4882,7 +4882,6 @@ MonoBehaviour:
   anim: {fileID: 3971739785158469503}
   walkDustParticle: {fileID: 3971739785890822281}
   dashDustParticle: {fileID: 3971739785375069775}
-  projectileDetect: {fileID: 0}
 --- !u!50 &3971739785158469491
 Rigidbody2D:
   serializedVersion: 4

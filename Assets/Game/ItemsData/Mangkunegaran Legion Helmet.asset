@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Mangkunegaran Legion Helmet
   effect: 1
   timeEffect: 0
-  amountEffect: 0
+  amountEffect: 1
   cost: 0
   oneTimeUse: 1
+  activateOnStart: 1

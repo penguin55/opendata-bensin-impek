@@ -46,6 +46,14 @@ public class CharaBehaviour : MonoBehaviour
 
         maxY = kiriatas.transform.position.y;
         minY = kananbawah.transform.position.y;
+
+        if (ItemManager.manager.GetActiveItem() && ItemManager.manager.GetActiveItem().ActivateOnStart)
+        {
+            ItemManager.manager.ActivateItem();
+        }
+
+        InGameUI.instance.UpdateLive();
+        InGameUI.instance.UpdateShield();
     }
 
     protected void Clamp()
@@ -134,8 +142,15 @@ public class CharaBehaviour : MonoBehaviour
                 immune = true;
                 DOTween.Kill("ImmuneDamage");
                 DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage");
-                data.Hp -= 1;
-                InGameUI.instance.uilive();
+
+                if (data.Shield > 0)
+                {
+                    data.Shield -= 1;
+                    InGameUI.instance.UpdateShield();
+                }
+                else data.Hp -= 1;
+
+                InGameUI.instance.UpdateLive();
 
                 if (data.Hp < 1)
                 {

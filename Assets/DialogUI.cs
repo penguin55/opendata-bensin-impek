@@ -29,6 +29,34 @@ public class DialogUI : MonoBehaviour
         Dialog();
     }
 
+    private void Update()
+    {
+        if (canSkip)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (index < 12)
+                {
+                    index = 12;
+                }
+                if (index >= 12 && index < 13)
+                {
+                    dialogUI.SetActive(false);
+                    selectBoss.SetActive(true);
+                }
+                if (index == 13)
+                {
+                    index = 15;
+                }
+                else if (index >= 15 && index < 16)
+                {
+                    dialogUI.SetActive(false);
+                    selectItem.SetActive(true);
+                    canSkip = false;
+                }
+            }
+        }
+    }
 
     public void ChangeImage()
     {
@@ -123,31 +151,6 @@ public class DialogUI : MonoBehaviour
 
     public void Dialog()
     {
-        if (canSkip)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (index < 12)
-                {
-                    index = 12;
-                }
-                if (index >= 12 && index < 13)
-                {
-                    dialogUI.SetActive(false);
-                    selectBoss.SetActive(true);
-                }
-                if (index == 13)
-                {
-                    index = 15;
-                }
-                else if (index >= 15 && index < 16)
-                {
-                    dialogUI.SetActive(false);
-                    selectItem.SetActive(true);
-                    canSkip = false;
-                }
-            }
-        }
         if (index < chat.Length)
         {
             dialog.text = chat[index];

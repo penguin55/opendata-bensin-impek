@@ -19,8 +19,11 @@ public class ItemData : ScriptableObject
     [SerializeField] private float amountEffect;
     [SerializeField] private float cost;
     [SerializeField] private bool oneTimeUse;
+    [SerializeField] private bool activateOnStart;
 
     private bool onDelay;
+
+    public bool ActivateOnStart { get => activateOnStart;}
 
     public bool TakeEffect()
     {
@@ -57,7 +60,9 @@ public class ItemData : ScriptableObject
 
     private bool Shield_Effect()
     {
-        return false;
+        CharaData.shield = 1;
+        InGameUI.instance.UpdateShield();
+        return true;
     }
 
     private bool Slowmo_Effect()
@@ -83,7 +88,7 @@ public class ItemData : ScriptableObject
     private bool Heal_Effect()
     {
         CharaData.hp = CharaData.maxhp;
-        InGameUI.instance.uilive();
+        InGameUI.instance.UpdateLive();
 
         return true;
     }
@@ -94,7 +99,7 @@ public class ItemData : ScriptableObject
 
         if (CharaData.hp < 0) CharaData.hp = 0;
 
-        InGameUI.instance.uilive();
+        InGameUI.instance.UpdateLive();
         GameVariables.SPEED_BUFF = amountEffect;
         return true;
     }
