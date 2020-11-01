@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
@@ -23,7 +24,8 @@ public class BossBehaviour : MonoBehaviour
 
     protected virtual void Die()
     {
-
+        TWAudioController.PlaySFX("helicopter_destroyed");
+        TWAudioController.PlaySFX("helicopter_destroyed_2");
     }
 
     public void TakeDamage()
