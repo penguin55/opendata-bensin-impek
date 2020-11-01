@@ -29,12 +29,25 @@ public class Birdmask_Machinegun : AttackEvent
     protected override void Attack()
     {
         attack.SetBool("attack", true);
-        machinegunDothair.DOMove(movePosition[1].position, timeToMove)
-            .SetEase(Ease.Linear).OnUpdate(()=> { TWAudioController.PlaySFX("machine_gun"); CameraShake.instance.Shake(1, 1, 2); }).OnComplete(() => {
+
+        Sound("machine_gun");
+        machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
             machinegunParent.SetActive(false);        
             base.Attack();
             attack.SetBool("attack", false);
+            DOTween.Kill("MachineGun_Sound");
         });
+    }
+
+    private void Sound(string name)
+    {
+        float audioLength = TWAudioController.AudioLength(name, "SFX");
+        DOTween.Sequence()
+            .AppendCallback(() => TWAudioController.PlaySFX(name))
+            .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
+            .PrependInterval(audioLength)
+            .SetLoops(-1)
+            .SetId("MachineGun_Sound");
     }
 
     protected override void OnExit_Attack()

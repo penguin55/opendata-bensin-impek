@@ -80,9 +80,21 @@ namespace TomWill
         {
             Instance.playSFX(musicName);
         }
+
+        public static float AudioLength(string name, string type)
+        {
+            return Instance ? Instance.getAudioLength(name, type) : -1;
+        }
         #endregion
 
         #region Internal Function
+        private float getAudioLength(string name, string type)
+        {
+            if (type.Equals("SFX")) return audioLibrary.GetSFXClip(name).length;
+            else if (type.Equals("BGM")) return audioLibrary.GetBGMClip(name).length;
+            else return -1;
+        }
+
         private void createInstance()
         {
             if (instance == null)
