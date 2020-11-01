@@ -8,7 +8,7 @@ public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
     [SerializeField] private GameObject pauseMenuUI;
-    [SerializeField] private GameObject[] hearts;
+    [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private Sprite newsprite;
     [SerializeField] private Sprite oldsprite;
     
@@ -23,6 +23,7 @@ public class InGameUI : MonoBehaviour
             TWTransition.FadeOut();
         });
         uilive();
+        UpdateHpBos(BossBehaviour.Instance.health);
     }
 
   
@@ -86,6 +87,24 @@ public class InGameUI : MonoBehaviour
             else
             {
                 hearts[i].GetComponent<Image>().overrideSprite = newsprite;
+            }
+            i++;
+        }
+    }
+
+    public void UpdateHpBos(int health)
+    {
+        int i = 0;
+        while (i < 3)
+        {
+            heartsBos[i].SetActive(true);
+            if (i < health)
+            {
+                heartsBos[i].GetComponent<Image>().overrideSprite = oldsprite;
+            }
+            else
+            {
+                heartsBos[i].GetComponent<Image>().overrideSprite = newsprite;
             }
             i++;
         }
