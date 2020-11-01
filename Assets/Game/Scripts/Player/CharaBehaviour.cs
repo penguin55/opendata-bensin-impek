@@ -12,7 +12,8 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected float startDashTime, dashTime;
     [SerializeField] protected float kickProjectilesTime, kickTime;
 
-    protected bool isDashed,immune, canDash, dead, insight = false;
+    protected bool isDashed,immune, canDash, insight = false;
+    public bool dead;
     [SerializeField] protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb;
 
@@ -34,6 +35,7 @@ public class CharaBehaviour : MonoBehaviour
     public void Init()
     {
         canDash = true;
+        dead = false;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

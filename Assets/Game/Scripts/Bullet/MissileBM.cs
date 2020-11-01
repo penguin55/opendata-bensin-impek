@@ -63,6 +63,7 @@ public class MissileBM : DamageArea
             particle.Play();
             DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
                 TWAudioController.PlaySFX("rocket_impact");
+                CameraShake.instance.Shake(1,3,10);
                 Destroy(projectile);
             });
         }
@@ -80,6 +81,7 @@ public class MissileBM : DamageArea
         particle.Play();
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
             TWAudioController.PlaySFX("helicopter_damage");
+            CameraShake.instance.Shake(1, 3, 10);
             BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
         });
