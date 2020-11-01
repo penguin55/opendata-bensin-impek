@@ -75,11 +75,18 @@ public class DialogUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            index = 12;
+            if (index < 12)
+            {
+                index = 12;
+            }
             if (index >= 12 && index < 13)
             {
                 dialogUI.SetActive(false);
                 selectBoss.SetActive(true);
+            }
+            if(index == 13)
+            {
+                index = 15;
             }
             else if (index >= 15 && index < 16)
             {
