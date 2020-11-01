@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -243,50 +243,12 @@ MonoBehaviour:
   loadingController: {fileID: 7717325304182284158}
   loadingImageLib: {fileID: 4438794202054250988}
   loadingFrames:
-  - {fileID: 21300000, guid: f701b7fc2fd6bfc479be6d80c28691a9, type: 3}
-  - {fileID: 21300000, guid: 6b94d466dda49934ca815192f44e0fc3, type: 3}
-  - {fileID: 21300000, guid: e1ce7f8757a72eb459ce0385b3b34777, type: 3}
-  - {fileID: 21300000, guid: 507cea7e07b851045b5c2dc8e49917ec, type: 3}
-  - {fileID: 21300000, guid: 8d633efd74f13be45a43089cffd59030, type: 3}
-  - {fileID: 21300000, guid: 515922751bd61de46bfe0d4ad968cf45, type: 3}
-  - {fileID: 21300000, guid: 2081fd0b607657e4f92e1d7d1ba0c757, type: 3}
-  - {fileID: 21300000, guid: 6e8b20502cfcc174aa9373e5fce0d148, type: 3}
-  - {fileID: 21300000, guid: d0f42317546efde479313cce5a4a1bd7, type: 3}
-  - {fileID: 21300000, guid: 8ddb375b95957314e837d1c76807da42, type: 3}
-  - {fileID: 21300000, guid: f6c2e8d7b1b3bc143bab7c611876e46a, type: 3}
-  - {fileID: 21300000, guid: 844665a811daf1847807170d0a13a44c, type: 3}
-  - {fileID: 21300000, guid: 73145435068cc81429059708cc0d5546, type: 3}
-  - {fileID: 21300000, guid: 7904c9ad17a54e94c92f52360c74592a, type: 3}
-  - {fileID: 21300000, guid: 6cad6e66bb04d2c4895b0b9549d8e2ff, type: 3}
-  - {fileID: 21300000, guid: c3a08b45fe9759942a50b33f9628cc38, type: 3}
-  - {fileID: 21300000, guid: 018afd896f1cc2a40878df160e36e0d3, type: 3}
-  - {fileID: 21300000, guid: e5cc98044cc07b942b43571e1accdbf2, type: 3}
-  - {fileID: 21300000, guid: 8a2ed391c467e614bb7e83e26ba5b660, type: 3}
-  - {fileID: 21300000, guid: dc2e8364fa3b7ec4bbd5f9be67020d95, type: 3}
-  - {fileID: 21300000, guid: 8a5a430a3d8686d4399098c03de4644d, type: 3}
-  - {fileID: 21300000, guid: 575773004693c354890faecada7b9bd5, type: 3}
-  - {fileID: 21300000, guid: bb9d54b01232c0a4b98747b41bb0adae, type: 3}
-  - {fileID: 21300000, guid: 331c3e269ae74b14199145594463e529, type: 3}
-  - {fileID: 21300000, guid: 244d020fb2269d644bc3e1d1e130f470, type: 3}
-  - {fileID: 21300000, guid: f72fec2e98a970d4b981a3388fd855fd, type: 3}
-  - {fileID: 21300000, guid: 5de888bcdec052640a952039dfa644bf, type: 3}
-  - {fileID: 21300000, guid: 20f687d65a771ff4c9b1eee65e328bd3, type: 3}
-  - {fileID: 21300000, guid: 61fd655c0594c334cad22e6bda5d5404, type: 3}
-  - {fileID: 21300000, guid: 21cd30e33540e324883e2cad066f77ae, type: 3}
-  - {fileID: 21300000, guid: 82bdc68e57320be49a7b526fc7250c92, type: 3}
-  - {fileID: 21300000, guid: d2b4c930af52eab4c9e53209bfadfaa0, type: 3}
-  - {fileID: 21300000, guid: 10dcd35f092ea2845be4156c593d57f1, type: 3}
-  - {fileID: 21300000, guid: 17f64c3225d18a744a3f76a6a7f60d8a, type: 3}
-  - {fileID: 21300000, guid: f8b199c62d33c724681704494735531d, type: 3}
-  - {fileID: 21300000, guid: efdb80b41de38e541a8fd11f4b77916f, type: 3}
-  - {fileID: 21300000, guid: e9a1e52f454c5874381137d86ea7e629, type: 3}
-  - {fileID: 21300000, guid: 3a324c27fba3b3d48b9644b2c2d41c15, type: 3}
-  - {fileID: 21300000, guid: c80675bd12619a943b9c333b3acfd794, type: 3}
-  - {fileID: 21300000, guid: ecefee3cf7d36444f988068225ed62bf, type: 3}
-  - {fileID: 21300000, guid: 3a6d215672d011c4b932f712c80d9efa, type: 3}
-  - {fileID: 21300000, guid: f22c13551cabe9847bf8249deb13d129, type: 3}
+  - {fileID: -5409457797693382528, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
+  - {fileID: 8367321211191815013, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
+  - {fileID: 8529701674059788066, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
+  - {fileID: 5836381435516433563, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
   currentFrame: 0
-  fps: 42
+  fps: 4
 --- !u!1 &5597763075600180606
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +307,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 1535834059
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &3811373776587502001
 MonoBehaviour:
@@ -446,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
