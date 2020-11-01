@@ -11,8 +11,9 @@ public class DialogUI : MonoBehaviour
     [SerializeField] [TextArea] private string[] chat;
     [SerializeField] [TextArea] private string[] charname;
     [SerializeField] [TextArea] private string[] bossDesc;
-    [SerializeField] private Text dialog, chara, boss;
-    [SerializeField] private int index = 0, bossIndex;
+    [SerializeField] [TextArea] private string[] itemDesc;
+    [SerializeField] private Text dialog, chara, boss, item;
+    [SerializeField] private int index = 0, bossIndex,itemIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class DialogUI : MonoBehaviour
             TWTransition.FadeOut();
         });
         bossIndex = 4;
+        itemIndex = 5;
     }
 
     // Update is called once per frame
@@ -27,27 +29,41 @@ public class DialogUI : MonoBehaviour
     {
         Dialog();
         BossDesc();
+        ItemDesc();
     }
 
     public void button1()
     {
-        bossIndex = 0;
+        if(index ==12) bossIndex = 0;
+        if (index == 15) itemIndex = 0;
     }
 
     public void button2()
     {
-        bossIndex = 1;
+        if (index == 12) bossIndex = 1;
+        if (index == 15) itemIndex = 1;
     }
     public void button3()
     {
-        bossIndex = 2;
+        if (index == 12) bossIndex = 2;
+        if (index == 15) itemIndex = 2;
     }
     public void button4()
     {
-        bossIndex = 3;
+        if (index == 12) bossIndex = 3;
+        if (index == 15) itemIndex = 3;
     }
 
+    public void button5()
+    {
+        if (index == 12) bossIndex = 4;
+        if (index == 15) itemIndex = 4;
+    }
 
+    public void ItemDesc()
+    {
+        item.text = itemDesc[itemIndex];
+    }
     public void BossDesc()
     {
         boss.text = bossDesc[bossIndex];
