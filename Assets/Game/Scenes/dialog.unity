@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 157544419}
   - component: {fileID: 157544418}
   - component: {fileID: 157544417}
+  - component: {fileID: 157544420}
   m_Layer: 5
   m_Name: BirdMask
   m_TagString: Untagged
@@ -313,6 +314,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157544415}
   m_CullTransparentMesh: 0
+--- !u!114 &157544420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157544415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &178674906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1294,7 @@ GameObject:
   - component: {fileID: 718568008}
   - component: {fileID: 718568007}
   - component: {fileID: 718568006}
+  - component: {fileID: 718568009}
   m_Layer: 5
   m_Name: BirdMask (3)
   m_TagString: Untagged
@@ -1402,6 +1423,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718568004}
   m_CullTransparentMesh: 0
+--- !u!114 &718568009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718568004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &744385906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1454,7 @@ GameObject:
   - component: {fileID: 744385910}
   - component: {fileID: 744385909}
   - component: {fileID: 744385908}
+  - component: {fileID: 744385911}
   m_Layer: 5
   m_Name: BirdMask
   m_TagString: Untagged
@@ -1542,6 +1583,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744385906}
   m_CullTransparentMesh: 0
+--- !u!114 &744385911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744385906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &783852725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2043,7 @@ GameObject:
   - component: {fileID: 1009171133}
   - component: {fileID: 1009171132}
   - component: {fileID: 1009171131}
+  - component: {fileID: 1009171134}
   m_Layer: 5
   m_Name: BirdMask (4)
   m_TagString: Untagged
@@ -2111,6 +2172,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009171129}
   m_CullTransparentMesh: 0
+--- !u!114 &1009171134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009171129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1026681908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2267,6 +2347,7 @@ GameObject:
   - component: {fileID: 1106214053}
   - component: {fileID: 1106214052}
   - component: {fileID: 1106214051}
+  - component: {fileID: 1106214054}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2396,6 +2477,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106214049}
   m_CullTransparentMesh: 0
+--- !u!114 &1106214054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106214049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1151475258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2668,7 @@ GameObject:
   - component: {fileID: 1298506550}
   - component: {fileID: 1298506549}
   - component: {fileID: 1298506548}
+  - component: {fileID: 1298506551}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2685,6 +2786,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298506546}
   m_CullTransparentMesh: 0
+--- !u!114 &1298506551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298506546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1358214517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,6 +3156,7 @@ GameObject:
   - component: {fileID: 1513696848}
   - component: {fileID: 1513696847}
   - component: {fileID: 1513696846}
+  - component: {fileID: 1513696849}
   m_Layer: 5
   m_Name: BirdMask (2)
   m_TagString: Untagged
@@ -3164,6 +3285,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513696844}
   m_CullTransparentMesh: 0
+--- !u!114 &1513696849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513696844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1595217603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,6 +3559,7 @@ GameObject:
   - component: {fileID: 1757262539}
   - component: {fileID: 1757262538}
   - component: {fileID: 1757262537}
+  - component: {fileID: 1757262540}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3536,6 +3677,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757262535}
   m_CullTransparentMesh: 0
+--- !u!114 &1757262540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757262535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1759083244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,6 +3744,7 @@ GameObject:
   - component: {fileID: 1777395084}
   - component: {fileID: 1777395083}
   - component: {fileID: 1777395082}
+  - component: {fileID: 1777395085}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -3713,6 +3874,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777395080}
   m_CullTransparentMesh: 0
+--- !u!114 &1777395085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777395080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1829007653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3878,6 +4058,7 @@ GameObject:
   - component: {fileID: 1833405985}
   - component: {fileID: 1833405984}
   - component: {fileID: 1833405983}
+  - component: {fileID: 1833405986}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -4007,6 +4188,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833405981}
   m_CullTransparentMesh: 0
+--- !u!114 &1833405986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833405981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1862549192
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,6 +4613,7 @@ GameObject:
   - component: {fileID: 1898237962}
   - component: {fileID: 1898237961}
   - component: {fileID: 1898237960}
+  - component: {fileID: 1898237963}
   m_Layer: 5
   m_Name: BirdMask (1)
   m_TagString: Untagged
@@ -4541,6 +4742,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898237958}
   m_CullTransparentMesh: 0
+--- !u!114 &1898237963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898237958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d05f1dc11615e447af43788a298cbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.1
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1954778713
 PrefabInstance:
   m_ObjectHideFlags: 0

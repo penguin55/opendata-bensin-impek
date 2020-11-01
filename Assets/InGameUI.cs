@@ -53,6 +53,7 @@ public class InGameUI : MonoBehaviour
 
     public void Resume()
     {
+        TWAudioController.PlaySFX("click");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -67,12 +68,16 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
+        TWAudioController.PlaySFX("click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+        TWAudioController.PlaySFX("transition");
     }
 
     public void BackToMenu()
     {
+        TWAudioController.PlaySFX("click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
+        TWAudioController.PlaySFX("transition");
     }
 
     public void uilive()

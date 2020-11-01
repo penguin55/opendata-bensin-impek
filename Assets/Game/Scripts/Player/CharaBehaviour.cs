@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 
 public class CharaBehaviour : MonoBehaviour
@@ -123,6 +124,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (!immune)
         {
+            TWAudioController.PlaySFX("player_damaged");
             if (data.Hp >= 1)
             {
                 immune = true;
@@ -161,6 +163,7 @@ public class CharaBehaviour : MonoBehaviour
                 temp.GetComponent<Rigidbody2D>().velocity = lastDirection * data.DashSpeed;
                 DOVirtual.DelayedCall(2f, () => Destroy(temp));
             }
+            projectileDetect = null;
         }
     }
 
