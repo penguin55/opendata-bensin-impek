@@ -13365,6 +13365,7 @@ MonoBehaviour:
   dashTime: 0
   kickProjectilesTime: 0
   kickTime: 0
+  dead: 0
   dashDelay: 1
   rb: {fileID: 1683682980}
   timeMoveElapsed: 0
@@ -13666,6 +13667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 685950666}
+  gameOverUI: {fileID: 848541510}
+  WinGameUI: {fileID: 0}
   hearts:
   - {fileID: 1860103013}
   - {fileID: 920753612}

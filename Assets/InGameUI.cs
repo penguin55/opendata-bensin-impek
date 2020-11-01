@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, WinGameUI;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private Sprite newsprite;
     [SerializeField] private Sprite oldsprite;
@@ -34,6 +34,7 @@ public class InGameUI : MonoBehaviour
     {
         
         OpenPauseMenu();
+        GameOver();
     }
 
     public void OpenPauseMenu()
@@ -51,7 +52,18 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-
+    public void GameOver()
+    {
+        if (CharaController.instance.dead)
+        {
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            gameOverUI.SetActive(false);
+        }
+    }
 
     public void Resume()
     {
