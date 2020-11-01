@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,7 +28,7 @@ public class BirdMask_Laser : AttackEvent
 
     protected override void Attack()
     {
-        
+        TWAudioController.PlaySFX("laser");
         DOTween.Sequence()
             .Append(damageArea[0].DOMove(target.position + Vector3.up * offset.y, timeToMove))
             .Join(damageArea[1].DOMove(target.position + Vector3.right * offset.x, timeToMove))
