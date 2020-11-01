@@ -146,8 +146,9 @@ public class DialogUI : MonoBehaviour
             dialogUI.SetActive(false);
             selectItem.SetActive(true);
         }
-        if (index > chat.Length)
+        if (index >= chat.Length)
         {
+            index = 0;
             TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
         }
     }

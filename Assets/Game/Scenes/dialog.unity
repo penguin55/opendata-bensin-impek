@@ -3532,6 +3532,9 @@ MonoBehaviour:
   - 'Goodluck X, we are counting on you. Return to base after you destroy one weapon.
 
 '
+  - 'Goodluck X, we are counting on you. Return to base after you destroy one weapon.
+
+'
   charname:
   - 'Colonel : '
   - 'X :'
@@ -3545,6 +3548,7 @@ MonoBehaviour:
   - 'Colonel : '
   - 'Colonel : '
   - 'X :'
+  - 'Colonel : '
   - 'Colonel : '
   - 'Colonel : '
   - 'Colonel : '
