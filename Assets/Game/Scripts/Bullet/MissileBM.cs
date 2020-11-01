@@ -77,6 +77,7 @@ public class MissileBM : DamageArea
         ParticleSystem particle = projectile.transform.GetChild(1).GetComponent<ParticleSystem>();
         particle.Play();
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
+            BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
         });
     }

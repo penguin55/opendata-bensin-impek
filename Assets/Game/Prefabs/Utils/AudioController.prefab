@@ -57,7 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f2b7a9fda5ff34da3e2b3a2b004bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmClips: []
+  bgmClips:
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: ea23bc9957534eb498b1b65251f051fd, type: 3}
+  - name: VsBoss
+    clip: {fileID: 8300000, guid: 45236595c3a7b0641874bf76f0c80357, type: 3}
   sfxClips: []
 --- !u!114 &5958740494214816576
 MonoBehaviour:

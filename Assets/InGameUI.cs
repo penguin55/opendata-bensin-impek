@@ -22,6 +22,7 @@ public class InGameUI : MonoBehaviour
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();
         });
+        TWAudioController.PlayBGM("VsBoss", TWAudioController.PlayType.AUTO);
         uilive();
         UpdateHpBos(BossBehaviour.Instance.health);
     }

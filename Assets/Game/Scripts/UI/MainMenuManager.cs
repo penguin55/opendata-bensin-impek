@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         TWTransition.FadeOut();
+        TWAudioController.PlayBGM("MainMenu", TWAudioController.PlayType.AUTO);
     }
     public void PlayGame()
     {
