@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 
 public class MissileBM : DamageArea
@@ -26,7 +27,7 @@ public class MissileBM : DamageArea
         else projectile.GetComponent<Collider2D>().enabled = true;
 
         alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
-
+        TWAudioController.PlaySFX("rocket_launch");
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
 
@@ -61,6 +62,7 @@ public class MissileBM : DamageArea
             ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
             particle.Play();
             DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
+                TWAudioController.PlaySFX("rocket_impact");
                 Destroy(projectile);
             });
         }
@@ -77,6 +79,7 @@ public class MissileBM : DamageArea
         ParticleSystem particle = projectile.transform.GetChild(1).GetComponent<ParticleSystem>();
         particle.Play();
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
+            TWAudioController.PlaySFX("helicopter_damage");
             BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
         });

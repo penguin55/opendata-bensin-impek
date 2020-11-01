@@ -62,6 +62,7 @@ namespace TomWill
         #region Public Function
         public static void PlayBGM(string musicName, PlayType playType, bool loop = true)
         {
+            Debug.Log(musicName);
             Instance?.playBGM(musicName, playType, loop);
         }
 
