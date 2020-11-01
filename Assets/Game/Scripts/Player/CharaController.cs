@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharaController : CharaBehaviour
 {
+    public static CharaController instance;
     //[Header ("Input Controller")]
     //[SerializeField] private KeyCode moveUp;
     //[SerializeField] private KeyCode moveDown;
@@ -16,6 +17,7 @@ public class CharaController : CharaBehaviour
     void Start()
     {
         Init();
+        instance = this;
     }
 
     // Update is called once per frame

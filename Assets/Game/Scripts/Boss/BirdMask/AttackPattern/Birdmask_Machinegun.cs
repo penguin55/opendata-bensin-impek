@@ -30,7 +30,7 @@ public class Birdmask_Machinegun : AttackEvent
     {
         attack.SetBool("attack", true);
         machinegunDothair.DOMove(movePosition[1].position, timeToMove)
-            .SetEase(Ease.Linear).OnUpdate(()=> { TWAudioController.PlaySFX("machine_gun"); }).OnComplete(() => {
+            .SetEase(Ease.Linear).OnUpdate(()=> { TWAudioController.PlaySFX("machine_gun"); CameraShake.instance.Shake(1, 1, 2); }).OnComplete(() => {
             machinegunParent.SetActive(false);        
             base.Attack();
             attack.SetBool("attack", false);

@@ -10,9 +10,10 @@ public class CameraShake : MonoBehaviour
     [SerializeField] private float strength;
     [SerializeField] private int vibrato;
 
+    public static CameraShake instance;
     void Start()
     {
-        
+        instance = this;
     }
 
     void Update()
@@ -20,8 +21,12 @@ public class CameraShake : MonoBehaviour
         
     }
 
-    public void Shake()
+    public void Shake(float duration, float strength, int vibrato)
     {
-        main.DOShakeRotation(duration, strength, vibrato);
+        this.duration = duration;
+        this.strength = strength;
+        this.vibrato = vibrato;
+        main.DOShakeRotation(this.duration, this.strength, this.vibrato);
     }
+
 }
