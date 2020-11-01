@@ -25,6 +25,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         GameVariables.GAME_OVER = false;
         index = 0;
         instance = this;
@@ -162,6 +163,7 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1;
         TWAudioController.PlaySFX("click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
         TWAudioController.PlaySFX("transition");
@@ -169,9 +171,10 @@ public class InGameUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        Time.timeScale = 1;
         TWAudioController.PlaySFX("click");
-        TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
         TWAudioController.PlaySFX("transition");
+        TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
     }
 
     public void UpdateLive()
