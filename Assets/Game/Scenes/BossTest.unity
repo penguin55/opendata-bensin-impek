@@ -2092,7 +2092,7 @@ RectTransform:
   - {fileID: 1807305070}
   - {fileID: 1432146428}
   m_Father: {fileID: 849484008}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3123,8 +3123,8 @@ RectTransform:
   - {fileID: 685950667}
   - {fileID: 2101746901}
   - {fileID: 1708098238}
-  - {fileID: 41454555}
   - {fileID: 530195370}
+  - {fileID: 41454555}
   - {fileID: 848541511}
   - {fileID: 1169302558}
   - {fileID: 2033551656}
@@ -18825,7 +18825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ff17838d48cb243bf2f9e5c1faf599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   dashSpeed: 50
 --- !u!212 &1683682978
 SpriteRenderer:

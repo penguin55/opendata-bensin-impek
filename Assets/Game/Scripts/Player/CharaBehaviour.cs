@@ -87,7 +87,8 @@ public class CharaBehaviour : MonoBehaviour
     protected void Movement(float accelerate)
     {
         if (direction == Vector2.zero) walkDustParticle.Stop();
-        transform.Translate(direction * data.Speed * Time.deltaTime * accelerate);
+        float newSpeed = data.Speed * (GameVariables.SPEED_BUFF > 0 ? GameVariables.SPEED_BUFF : 1);
+        transform.Translate(direction * newSpeed * Time.deltaTime * accelerate);
     }
 
 
