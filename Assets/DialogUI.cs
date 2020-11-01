@@ -14,6 +14,7 @@ public class DialogUI : MonoBehaviour
     [SerializeField] [TextArea] private string[] itemDesc;
     [SerializeField] private Text dialog, chara, boss, item;
     [SerializeField] private int index = 0, bossIndex,itemIndex;
+    [SerializeField] private GameObject x, commander, heli, mysterious;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,25 @@ public class DialogUI : MonoBehaviour
         Dialog();
         BossDesc();
         ItemDesc();
+        ChangeImage();
+    }
+
+    public void ChangeImage()
+    {
+        if (charname[index].Contains("X "))
+        {
+            x.SetActive(true);
+            commander.SetActive(false);
+            heli.SetActive(false);
+            mysterious.SetActive(false);
+        }
+        if (charname[index].Contains("Colonel"))
+        {
+            x.SetActive(false);
+            commander.SetActive(true);
+            heli.SetActive(false);
+            mysterious.SetActive(false);
+        }
     }
 
     public void button1()
