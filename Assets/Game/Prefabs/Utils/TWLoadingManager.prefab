@@ -243,10 +243,10 @@ MonoBehaviour:
   loadingController: {fileID: 7717325304182284158}
   loadingImageLib: {fileID: 4438794202054250988}
   loadingFrames:
-  - {fileID: -5409457797693382528, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
-  - {fileID: 8367321211191815013, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
-  - {fileID: 8529701674059788066, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
-  - {fileID: 5836381435516433563, guid: 1a5b1698561609b4eaea47b8af7ee89b, type: 3}
+  - {fileID: -5806529067753707982, guid: ceaef8ce28ec0514689e263cd4828336, type: 3}
+  - {fileID: 6784980306633295244, guid: ceaef8ce28ec0514689e263cd4828336, type: 3}
+  - {fileID: 4013565222133113555, guid: ceaef8ce28ec0514689e263cd4828336, type: 3}
+  - {fileID: -2704500336646863611, guid: ceaef8ce28ec0514689e263cd4828336, type: 3}
   currentFrame: 0
   fps: 4
 --- !u!1 &5597763075600180606
