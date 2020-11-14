@@ -9168,6 +9168,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a320d85e40d1fd42b443cfc1a6ec011, type: 3}
+--- !u!95 &797749869 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3494481358638326764, guid: fc74bd448fa8474499d3df5505d89bc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878537485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801476421
 GameObject:
   m_ObjectHideFlags: 0
@@ -28036,6 +28042,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 797749869}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_prepare
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9072407222113779540, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_IsActive
@@ -28253,6 +28269,21 @@ PrefabInstance:
       propertyPath: spawnProjectilePosition.Array.data[24]
       value: 
       objectReference: {fileID: 1759990184}
+    - target: {fileID: 9072407222282582849, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 797749869}
+    - target: {fileID: 9072407222282582849, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407222282582849, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_prepare
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9072407222468737655, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -28405,6 +28436,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9072407223554454831, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 797749869}
+    - target: {fileID: 9072407223554454831, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407223554454831, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_prepare
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9072407223684026449, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_IsActive
@@ -28483,6 +28529,16 @@ PrefabInstance:
     - target: {fileID: 9072407223758102058, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407224035810287, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 797749869}
+    - target: {fileID: 9072407224035810287, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: delay_prepare
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -57,9 +57,6 @@ public class BossBehaviour : MonoBehaviour
         if (health >= 1)
         {
             health -= 1;
-
-            //sprite.material = WhiteFlash;
-            //DOVirtual.DelayedCall(FlashDelay, () => { sprite.material = DefaultMaterial; });
             InGameUI.instance.UpdateHpBos(health);
 
             if (health < 1)
