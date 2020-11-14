@@ -9,6 +9,8 @@ public class MissileBM : DamageArea
     private SpriteRenderer alertProjectileSprite;
     private GameObject projectile;
 
+    [SerializeField] private SpriteRenderer sign;
+
     private bool activeMissile;
     private bool deactiveMissileDashed;
 
@@ -42,6 +44,7 @@ public class MissileBM : DamageArea
             if (!activeMissile)
             {
                 projectile.GetComponent<Animator>().SetTrigger("Jammed");
+                sign.enabled = true;
                 projectile.GetComponent<SpriteRenderer>().sortingOrder = 1;
             }
             OnExit_State();
@@ -72,6 +75,7 @@ public class MissileBM : DamageArea
 
     public void DashDeactiveMissile()
     {
+        sign.enabled = false;
         deactiveMissileDashed = true;
     }
 
@@ -91,6 +95,7 @@ public class MissileBM : DamageArea
 
     public bool DeactiveMissileDashed()
     {
+        sign.enabled = false;
         return !activeMissile && deactiveMissileDashed;
     }
 }
