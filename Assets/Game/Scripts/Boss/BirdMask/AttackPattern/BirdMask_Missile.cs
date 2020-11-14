@@ -94,7 +94,7 @@ public class BirdMask_Missile : AttackEvent
         if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileBM>();
 
         GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
-        spawnChoicePosition.GetComponent<MissileBM>().Launch(missile, 2f, activeMissile);
+        spawnChoicePosition.GetComponent<MissileBM>().Launch(missile, 1f, activeMissile);
 
         if (!activeMissile) deactiveMissileProjectile = missile;
     }
