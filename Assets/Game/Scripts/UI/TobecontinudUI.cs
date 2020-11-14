@@ -7,6 +7,7 @@ public class TobecontinudUI : MonoBehaviour
     void Start()
     {
         TWTransition.FadeOut();
+        Time.timeScale = 1f;
     }
 
     void Update()
