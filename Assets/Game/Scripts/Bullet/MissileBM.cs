@@ -66,7 +66,7 @@ public class MissileBM : DamageArea
             particle.Play();
 
             TWAudioController.PlaySFX("rocket_impact");
-            CameraShake.instance.Shake(1, 3, 10);
+            CameraShake.instance.Shake(1, 3, 5);
             DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => { 
                 Destroy(projectile);
             });
