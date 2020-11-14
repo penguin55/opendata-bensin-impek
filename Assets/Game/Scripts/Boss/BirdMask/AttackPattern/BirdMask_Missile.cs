@@ -79,7 +79,7 @@ public class BirdMask_Missile : AttackEvent
 
         if (!deactiveMissileWasLaunch)
         {
-            if (queueSpawn.Count == 0)
+            if (queueSpawn.Count == 0 && !GameVariables.GAME_OVER)
             {
                 deactiveMissileWasLaunch = true;
                 activeMissile = false;

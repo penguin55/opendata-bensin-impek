@@ -13,8 +13,8 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private GameObject shields;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
     [SerializeField] [TextArea(0, 30)] private string[] charname;
-    [SerializeField] private Sprite newsprite;
-    [SerializeField] private Sprite oldsprite;
+    [SerializeField] private Sprite newsprite, newboss;
+    [SerializeField] private Sprite oldsprite, oldboss;
     [SerializeField] private GameObject x, commander, heli, mysterious;
     [SerializeField] private int index = 0;
     [SerializeField] private Text dialog, chara;
@@ -208,11 +208,11 @@ public class InGameUI : MonoBehaviour
             heartsBos[i].SetActive(true);
             if (i < health)
             {
-                heartsBos[i].GetComponent<Image>().overrideSprite = oldsprite;
+                heartsBos[i].GetComponent<Image>().overrideSprite = oldboss;
             }
             else
             {
-                heartsBos[i].GetComponent<Image>().overrideSprite = newsprite;
+                heartsBos[i].GetComponent<Image>().overrideSprite = newboss;
             }
             i++;
         }
