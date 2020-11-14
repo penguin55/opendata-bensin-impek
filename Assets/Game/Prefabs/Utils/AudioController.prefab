@@ -62,6 +62,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ea23bc9957534eb498b1b65251f051fd, type: 3}
   - name: VsBoss
     clip: {fileID: 8300000, guid: 45236595c3a7b0641874bf76f0c80357, type: 3}
+  - name: helicopter_blades
+    clip: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
   sfxClips:
   - name: click
     clip: {fileID: 8300000, guid: f3c8ce25895e8684fb7d4dc21c35ad48, type: 3}
