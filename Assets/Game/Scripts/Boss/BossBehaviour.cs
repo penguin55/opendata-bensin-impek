@@ -11,13 +11,15 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private ParticleSystem explosion;
 
     [SerializeField] public int health;
+
+    protected SpriteRenderer sprite;
+    protected Material defaultMaterial;
+    [SerializeField] protected Material whiteFlash;
+    [SerializeField] protected float flashDelay;
+
     [SerializeField] protected AttackPattern[] patterns;
 
     protected AttackEvent currentAttackEvent;
-
-    protected SpriteRenderer sprite;
-    protected Material matDefault;
-    protected Material matWhite;
 
     protected virtual void Preparation()
     {
@@ -49,6 +51,9 @@ public class BossBehaviour : MonoBehaviour
         if (health >= 1)
         {
             health -= 1;
+
+            sprite.material = whiteFlash;
+            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
             InGameUI.instance.UpdateHpBos(health);
 
             if (health < 1)

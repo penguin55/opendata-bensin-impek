@@ -22135,6 +22135,16 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 1494745212}
+    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: whiteFlash
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
+    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: flashDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9072407222503941432, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_IsActive

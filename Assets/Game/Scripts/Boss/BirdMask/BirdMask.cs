@@ -29,6 +29,7 @@ public class BirdMask : BossBehaviour
         currentState = State_BirdMask.MISSILE;
 
         sprite = GetComponent<SpriteRenderer>();
+        defaultMaterial = sprite.material;
 
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
