@@ -44,6 +44,7 @@ public class BirdMask_Missile : AttackEvent
     {
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
+            .AppendCallback(SpawnProjectile)
             .AppendInterval(fireRate)
             .OnComplete(() =>
             {

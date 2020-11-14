@@ -27856,6 +27856,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3173911551655549518, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173911551655549518, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173911551655549518, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3563455911933900647, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -27897,6 +27912,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2934458759618909545, guid: 090c7cab278a4304aaf7a9204e8c2c49,
         type: 3}
+    - target: {fileID: 5336493436871342537, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6293562874108390668, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -27995,6 +28015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356534251674237044, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222056511488, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
