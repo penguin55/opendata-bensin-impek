@@ -12,14 +12,19 @@ public class BossBehaviour : MonoBehaviour
 
     [SerializeField] public int health;
 
-    protected SpriteRenderer sprite;
-    protected Material defaultMaterial;
-    [SerializeField] protected Material whiteFlash;
-    [SerializeField] protected float flashDelay;
+    private SpriteRenderer sprite;
+    private Material defaultMaterial;
+    [SerializeField] private Material whiteFlash;
+    [SerializeField] private float flashDelay;
 
     [SerializeField] protected AttackPattern[] patterns;
 
     protected AttackEvent currentAttackEvent;
+
+    public Material DefaultMaterial { get => defaultMaterial; set => defaultMaterial = value; }
+    public Material WhiteFlash { get => whiteFlash; set => whiteFlash = value; }
+    public float FlashDelay { get => flashDelay; set => flashDelay = value; }
+    public SpriteRenderer Sprite { get => sprite; set => sprite = value; }
 
     protected virtual void Preparation()
     {
@@ -52,8 +57,8 @@ public class BossBehaviour : MonoBehaviour
         {
             health -= 1;
 
-            sprite.material = whiteFlash;
-            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+            //sprite.material = WhiteFlash;
+            //DOVirtual.DelayedCall(FlashDelay, () => { sprite.material = DefaultMaterial; });
             InGameUI.instance.UpdateHpBos(health);
 
             if (health < 1)
