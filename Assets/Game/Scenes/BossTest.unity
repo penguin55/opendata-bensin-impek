@@ -20696,6 +20696,7 @@ MonoBehaviour:
   dead: 0
   dashDelay: 1
   rb: {fileID: 1683682980}
+  whiteflash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
   timeMoveElapsed: 0
   isAccelerating: 0
   timeToStop: 0.2

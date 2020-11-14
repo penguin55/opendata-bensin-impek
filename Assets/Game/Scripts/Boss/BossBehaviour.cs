@@ -15,6 +15,10 @@ public class BossBehaviour : MonoBehaviour
 
     protected AttackEvent currentAttackEvent;
 
+    protected SpriteRenderer sprite;
+    protected Material matDefault;
+    protected Material matWhite;
+
     protected virtual void Preparation()
     {
 

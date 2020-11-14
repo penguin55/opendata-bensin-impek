@@ -17,6 +17,11 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb;
 
+    protected SpriteRenderer sprite;
+    protected Material defaultMaterial;
+    [SerializeField] protected Material whiteflash;
+    [SerializeField] protected float flashDelay;
+
     [SerializeField] protected float timeMoveElapsed;
     [SerializeField] protected bool isAccelerating;
     [SerializeField] protected float timeToStop;
@@ -40,6 +45,8 @@ public class CharaBehaviour : MonoBehaviour
         data.Hp = 3;
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        defaultMaterial = sprite.material;
         anim = GetComponent<Animator>();
         minX = kiriatas.transform.position.x;
         maxX = kananbawah.transform.position.x;
@@ -138,6 +145,9 @@ public class CharaBehaviour : MonoBehaviour
         if (!immune)
         {
             TWAudioController.PlaySFX("player_damaged");
+            sprite.material = whiteflash;
+            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+
             if (data.Hp >= 1)
             {
                 immune = true;
