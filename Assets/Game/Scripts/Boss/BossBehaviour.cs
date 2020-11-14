@@ -48,6 +48,7 @@ public class BossBehaviour : MonoBehaviour
             .AppendInterval(explosion.main.duration / 2)
             .AppendCallback(() => { gameObject.SetActive(false); })
             .AppendInterval(explosion.main.duration / 2)
+            .AppendCallback(() => Time.timeScale = 0f)
             .AppendCallback(() => InGameUI.instance.GameWin());
     }
 
