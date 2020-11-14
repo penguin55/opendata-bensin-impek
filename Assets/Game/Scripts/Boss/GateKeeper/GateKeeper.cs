@@ -82,7 +82,7 @@ public class GateKeeper : BossBehaviour
     #region IDLE
     private void OnEnterIdle()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Missile").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "Cannon").attackEvent;
     }
 
     private void Idle()
@@ -100,7 +100,7 @@ public class GateKeeper : BossBehaviour
     #region CANNON
     private void OnEnterCannon()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Missile").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "Cannon").attackEvent;
     }
 
     private void Cannon()
@@ -119,7 +119,7 @@ public class GateKeeper : BossBehaviour
     #region ROUND_FLAME
     private void OnEnterRoundFlame()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Machinegun").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "Round_Flame").attackEvent;
     }
 
     private void RoundFlame()
@@ -137,7 +137,7 @@ public class GateKeeper : BossBehaviour
     #region FLAMETHOWER
     private void OnEnterFlameThower()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Swipe").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "FlameThower").attackEvent;
     }
 
     private void FlameThower(bool clockwise)
