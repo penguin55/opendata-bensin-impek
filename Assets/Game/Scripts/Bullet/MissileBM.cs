@@ -29,18 +29,19 @@ public class MissileBM : DamageArea
         else projectile.GetComponent<Collider2D>().enabled = true;
 
         alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
-        TWAudioController.PlaySFX("rocket_launch");
+        TWAudioController.PlaySFX("SFX_BOSS", "rocket_launch");
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
 
     protected override void OnEnter_State()
     {
         base.OnEnter_State();
-        DOVirtual.DelayedCall(projectileTimeToMove / 2f, () => collider.enabled = activeMissile);
         projectile.transform.DOMove(transform.position, projectileTimeToMove).SetEase(Ease.InSine).OnComplete(() =>
         {
             DOTween.Kill("Alert" + transform.GetInstanceID());
             alertProjectileSprite.DOFade(1f, 0f);
+            collider.enabled = activeMissile;
+
             if (!activeMissile)
             {
                 projectile.GetComponent<Animator>().SetTrigger("Jammed");
@@ -65,7 +66,7 @@ public class MissileBM : DamageArea
             ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
             particle.Play();
 
-            TWAudioController.PlaySFX("rocket_impact");
+            TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
             CameraShake.instance.Shake(1, 3, 5);
             DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => { 
                 Destroy(projectile);
@@ -85,7 +86,7 @@ public class MissileBM : DamageArea
         ParticleSystem particle = projectile.transform.GetChild(1).GetComponent<ParticleSystem>();
         particle.Play();
 
-        TWAudioController.PlaySFX("helicopter_damage");
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
         CameraShake.instance.Shake(1, 3, 10);
         BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash;
 

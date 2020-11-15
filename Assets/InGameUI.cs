@@ -32,7 +32,7 @@ public class InGameUI : MonoBehaviour
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();
         });
-        TWAudioController.PlayBGM("VsBoss", TWAudioController.PlayType.AUTO);
+        TWAudioController.PlayBGM("BGM", "VsBoss", TWAudioController.PlayType.TRANSITION);
     }
 
   
@@ -43,8 +43,8 @@ public class InGameUI : MonoBehaviour
         OpenPauseMenu();
         if (Input.GetKeyDown(KeyCode.Space) && dialogUI.activeSelf)
         {
-            TWAudioController.PlaySFX("click");
-            TWAudioController.PlaySFX("transition");
+            TWAudioController.PlaySFX("UI", "click");
+            TWAudioController.PlaySFX("UI", "transition");
             dialogUI.SetActive(false);
             TWTransition.FadeIn( ()=> SceneManager.LoadScene("ToBeContinued"));
         }
@@ -91,8 +91,8 @@ public class InGameUI : MonoBehaviour
         }
         else
         {
-            TWAudioController.PlaySFX("click");
-            TWAudioController.PlaySFX("transition");
+            TWAudioController.PlaySFX("UI", "click");
+            TWAudioController.PlaySFX("UI", "transition");
             dialogUI.SetActive(false);
             TWTransition.FadeIn(() => SceneManager.LoadScene("ToBeContinued"));
         }
@@ -101,7 +101,7 @@ public class InGameUI : MonoBehaviour
 
     public void next()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
         if (index == 2)
         {
@@ -148,7 +148,7 @@ public class InGameUI : MonoBehaviour
 
     public void Resume()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -164,17 +164,17 @@ public class InGameUI : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
-        TWAudioController.PlaySFX("transition");
+        TWAudioController.PlaySFX("UI", "transition");
     }
 
     public void BackToMenu()
     {
         Time.timeScale = 1;
-        TWAudioController.PlaySFX("click");
-        TWAudioController.PlaySFX("transition");
+        TWAudioController.PlaySFX("UI", "click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
+        TWAudioController.PlaySFX("UI", "transition");
     }
 
     public void UpdateLive()

@@ -39,8 +39,8 @@ public class BossBehaviour : MonoBehaviour
     protected virtual void Die()
     {
         GameVariables.GAME_OVER = true;
-        TWAudioController.PlaySFX("helicopter_destroyed");
-        TWAudioController.PlaySFX("helicopter_destroyed_2");
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
 
         DOTween.Sequence()
             .AppendCallback(() => { explosion.Play(); })

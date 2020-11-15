@@ -125,7 +125,6 @@ public class CharaBehaviour : MonoBehaviour
                 anim.SetBool("dash", true);
                 if (walkDustParticle.isPlaying) walkDustParticle.Stop();
                 dashDustParticle.Play();
-                TWAudioController.PlaySFX("dash");
                 timeMoveElapsed = 0f;
                 dashTime -= Time.deltaTime;
                 rb.velocity = lastDirection * data.DashSpeed;
@@ -145,7 +144,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (!immune)
         {
-            TWAudioController.PlaySFX("player_damaged");
+            TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;
             DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
 
@@ -203,7 +202,7 @@ public class CharaBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("projectiles") && PlayerDashing())
+        if(collision.CompareTag("projectiles"))
         {
             projectileDetect = collision.gameObject;
         }

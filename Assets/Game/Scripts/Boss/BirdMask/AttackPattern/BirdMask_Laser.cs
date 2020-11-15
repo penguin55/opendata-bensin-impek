@@ -28,7 +28,7 @@ public class BirdMask_Laser : AttackEvent
 
     protected override void Attack()
     {
-        TWAudioController.PlaySFX("laser");
+        TWAudioController.PlaySFX("SFX_BOSS", "laser");
 
         DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
 

@@ -11,6 +11,8 @@ namespace TomWill
     {
         [SerializeField] private TWAudioController audioController;
         [SerializeField] private TWAudioLibrary audioLibrary;
+        [SerializeField] private TWAudioSourceLibrary audioSources;
+        [SerializeField] private GameObject audioParent;
 
         void Awake()
         {
@@ -20,7 +22,7 @@ namespace TomWill
                 audioLibrary = GetComponent<TWAudioLibrary>();
 
                 audioController.CreateInstance();
-                TWAudioController.SetUpController(audioLibrary);
+                TWAudioController.SetupAudioLibrary(audioLibrary, audioSources, audioParent);
             }
 
             else

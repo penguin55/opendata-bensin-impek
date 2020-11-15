@@ -23,7 +23,7 @@ public class dialogFungusUI : MonoBehaviour
         });
         bossIndex = 4;
         itemIndex = 5;
-        TWAudioController.PlayBGM("MainMenu", TWAudioController.PlayType.AUTO);
+        TWAudioController.PlayBGM("BGM", "MainMenu", TWAudioController.PlayType.TRANSITION);
     }
 
 
@@ -31,13 +31,13 @@ public class dialogFungusUI : MonoBehaviour
 
     public void SelectBoss()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
     }
 
     public void SelectItem()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
     }
 
@@ -57,7 +57,7 @@ public class dialogFungusUI : MonoBehaviour
         {
             Debug.Log("Hi");
             TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
-            TWAudioController.PlaySFX("transition");
+            TWAudioController.PlaySFX("UI", "transition");
         }
     }
 }

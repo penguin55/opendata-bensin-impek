@@ -61,7 +61,7 @@ public class BirdMask_Swipe : AttackEvent
 
         Sound("machine_gun");
         birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear);
-        swipeObject.DOMove(swipeAreaPosition[indexToMove], timeToMove).SetEase(Ease.Linear).OnComplete(() =>
+        swipeObject.DOLocalMove(swipeAreaPosition[indexToMove], timeToMove).SetEase(Ease.Linear).OnComplete(() =>
         {
             DOTween.Kill("MachineGun_Sound");
             base.Attack();
@@ -72,7 +72,7 @@ public class BirdMask_Swipe : AttackEvent
     {
         float audioLength = TWAudioController.AudioLength(name, "SFX");
         DOTween.Sequence()
-            .AppendCallback(() => TWAudioController.PlaySFX(name))
+            .AppendCallback(() => TWAudioController.PlaySFX("SFX_BOSS", name))
             .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
             .PrependInterval(audioLength)
             .SetLoops(-1)

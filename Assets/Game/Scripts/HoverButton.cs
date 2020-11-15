@@ -12,7 +12,7 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(Vector3.one * scaleValue, 0.1f).SetEase(Ease.InBounce);
-        TWAudioController.PlaySFX("hover");
+        TWAudioController.PlaySFX("UI", "hover");
 
         onEnterEvent?.Invoke();
     }

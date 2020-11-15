@@ -49,7 +49,7 @@ public class DialogUI : MonoBehaviour
 
     public void button1()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         if (index ==12) bossIndex = 0;
         if (index == 15) itemIndex = 0;
         BossDesc();
@@ -58,7 +58,7 @@ public class DialogUI : MonoBehaviour
 
     public void button2()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         if (index == 12) bossIndex = 1;
         if (index == 15) itemIndex = 1;
         BossDesc();
@@ -66,7 +66,7 @@ public class DialogUI : MonoBehaviour
     }
     public void button3()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         if (index == 12) bossIndex = 2;
         if (index == 15) itemIndex = 2;
         BossDesc();
@@ -74,7 +74,7 @@ public class DialogUI : MonoBehaviour
     }
     public void button4()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         if (index == 12) bossIndex = 3;
         if (index == 15) itemIndex = 3;
         BossDesc();
@@ -83,7 +83,7 @@ public class DialogUI : MonoBehaviour
 
     public void button5()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         if (index == 12) bossIndex = 4;
         if (index == 15) itemIndex = 4;
         ItemDesc();
@@ -99,14 +99,14 @@ public class DialogUI : MonoBehaviour
     }
     public void next()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
         Dialog();
     }
 
     public void SelectBoss()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
         selectBoss.SetActive(false);
         dialogUI.SetActive(true);
@@ -114,7 +114,7 @@ public class DialogUI : MonoBehaviour
 
     public void SelectItem()
     {
-        TWAudioController.PlaySFX("click");
+        TWAudioController.PlaySFX("UI", "click");
         index++;
         selectItem.SetActive(false);
         dialogUI.SetActive(true);
@@ -165,9 +165,8 @@ public class DialogUI : MonoBehaviour
     {
         if (TimelineManager.instance.Director.state != UnityEngine.Playables.PlayState.Playing)
         {
-            Debug.Log("Hi");
             TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
-            TWAudioController.PlaySFX("transition");
+            TWAudioController.PlaySFX("UI", "transition");
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7595583283060605468}
   - component: {fileID: 5058161449474547030}
   - component: {fileID: 5958740494214816576}
+  - component: {fileID: 9134551001082559871}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -29,7 +30,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8519120902725736527}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,67 +61,98 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmClips:
   - name: MainMenu
+    localVolume: 1
     clip: {fileID: 8300000, guid: ea23bc9957534eb498b1b65251f051fd, type: 3}
   - name: VsBoss
+    localVolume: 1
     clip: {fileID: 8300000, guid: 45236595c3a7b0641874bf76f0c80357, type: 3}
   - name: helicopter_blades
+    localVolume: 1
     clip: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
   sfxClips:
   - name: click
+    localVolume: 1
     clip: {fileID: 8300000, guid: f3c8ce25895e8684fb7d4dc21c35ad48, type: 3}
   - name: helicopter_blades
+    localVolume: 1
     clip: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
   - name: helicopter_damage
+    localVolume: 1
     clip: {fileID: 8300000, guid: 60cdf0b188c029646b97c9dcb9ce0a02, type: 3}
   - name: helicopter_destroyed_2
+    localVolume: 1
     clip: {fileID: 8300000, guid: c6c61b3ca4741d641955f9d8f4b82980, type: 3}
   - name: helicopter_destroyed
+    localVolume: 1
     clip: {fileID: 8300000, guid: 7a36878cc82ac1c47b0a55c1f049358d, type: 3}
   - name: hover
+    localVolume: 1
     clip: {fileID: 8300000, guid: 4d74d7d7d4f4f2546951b9187131d451, type: 3}
   - name: item_selected
+    localVolume: 1
     clip: {fileID: 8300000, guid: 75b7589fa58c38345a2927003048776f, type: 3}
   - name: item_used
+    localVolume: 1
     clip: {fileID: 8300000, guid: 0cace5ab23aa49d4bb8c829866c54d29, type: 3}
   - name: machine_gun
+    localVolume: 1
     clip: {fileID: 8300000, guid: 6dfbe41482655314dba7b4ec10d31cc6, type: 3}
   - name: player_damaged
+    localVolume: 1
     clip: {fileID: 8300000, guid: 737c4cb2e778dad499d12582be5951bf, type: 3}
   - name: rocket_impact
+    localVolume: 1
     clip: {fileID: 8300000, guid: d88a27069642190488dc67f11559255d, type: 3}
   - name: rocket_launch
+    localVolume: 1
     clip: {fileID: 8300000, guid: 302af92bc5b67f744aebca9cdec07138, type: 3}
   - name: transition
+    localVolume: 1
     clip: {fileID: 8300000, guid: c0261b3bf803e574c9b813cdc9ca2501, type: 3}
   - name: laser
+    localVolume: 1
     clip: {fileID: 8300000, guid: ec5e9c1f35bd7b644a24840b50201e0d, type: 3}
   - name: boss_attack_telegraph
+    localVolume: 1
     clip: {fileID: 8300000, guid: 295c047a50d848a47b6d95b7d409cb37, type: 3}
   - name: clockwise_flamethrower_firing
+    localVolume: 1
     clip: {fileID: 8300000, guid: 5f321a54bbb09d547b314c3436d7d24a, type: 3}
   - name: clockwise_flamethrower_gettingready
+    localVolume: 1
     clip: {fileID: 8300000, guid: 6c3fb2be987841d4b96ac215b3d92f06, type: 3}
   - name: dash
+    localVolume: 1
     clip: {fileID: 8300000, guid: ade8a22f26745d14397238a677f6ce3a, type: 3}
   - name: laserbeam_firing
+    localVolume: 1
     clip: {fileID: 8300000, guid: bda197322cb590947ad985fcb7e48fe0, type: 3}
   - name: laserbeam_gettingready
+    localVolume: 1
     clip: {fileID: 8300000, guid: 09a766615de22794f9abed9ba1e5ff1d, type: 3}
   - name: laserbeam_ready
+    localVolume: 1
     clip: {fileID: 8300000, guid: 52e6bebb48a39fe41bc361a8824a9668, type: 3}
   - name: ledakanBoxAppear
+    localVolume: 1
     clip: {fileID: 8300000, guid: 2075211e576e2f94ca9eea7d11ef1bc9, type: 3}
   - name: player_move
+    localVolume: 1
     clip: {fileID: 8300000, guid: b929da4d37b351147b6cbd689a24297f, type: 3}
   - name: rotatinglaser_gettingready
+    localVolume: 1
     clip: {fileID: 8300000, guid: 83a45f61e62ebc740bee0d943f8936cf, type: 3}
   - name: round_flame
+    localVolume: 1
     clip: {fileID: 8300000, guid: 03dbdda7e4e9db44c94d3ab58c9937f3, type: 3}
   - name: tank_firing
+    localVolume: 1
     clip: {fileID: 8300000, guid: 488c5090d2b49e44f9e9f8fbcf684db7, type: 3}
   - name: tank_move
+    localVolume: 1
     clip: {fileID: 8300000, guid: 17cdcc2d5e8dce543a87665ab9809487, type: 3}
   - name: tank_projectiles
+    localVolume: 1
     clip: {fileID: 8300000, guid: fa0b342f879a925469b7101112b3225c, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
@@ -135,3 +168,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioController: {fileID: 7595583283060605468}
   audioLibrary: {fileID: 5058161449474547030}
+  audioSources: {fileID: 9134551001082559871}
+  audioParent: {fileID: 7764406693451072504}
+--- !u!114 &9134551001082559871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059652787528974241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40812e20d47c2724e98032ea0ad83366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7764406693451072504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8519120902725736527}
+  m_Layer: 0
+  m_Name: AudioSources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8519120902725736527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764406693451072504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7059652787528974245}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

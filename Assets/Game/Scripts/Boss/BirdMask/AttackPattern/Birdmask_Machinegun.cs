@@ -1,6 +1,4 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,7 +41,7 @@ public class Birdmask_Machinegun : AttackEvent
     {
         float audioLength = TWAudioController.AudioLength(name, "SFX");
         DOTween.Sequence()
-            .AppendCallback(() => TWAudioController.PlaySFX(name))
+            .AppendCallback(() => TWAudioController.PlaySFX("SFX_BOSS", name))
             .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
             .PrependInterval(audioLength)
             .SetLoops(-1)
