@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4515125483084963257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4515125483084963259}
+  - component: {fileID: 4515125483084963258}
+  m_Layer: 0
+  m_Name: DialogUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4515125483084963259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515125483084963257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7345496, y: -0.7167311, z: 269.31628}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4515125483084963258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515125483084963257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605dd98c7868ab743b9eba9ecb8ae440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogUI: {fileID: 0}
+  selectBoss: {fileID: 0}
+  selectItem: {fileID: 0}
+  chat:
+  - Its been a long time
+  - I've retired. You're not my commander anymore, and i don't have to take orders
+    from you or anyone else.
+  - You will take these orders. I know it.
+  - What do you mean ?
+  - "X listen up. One week ago. \r\nHeavy armed men have taken some of the most valuable
+    artifacts,"
+  - 'These artefacts belong to Indonesians.
+
+    Now they are wrecking havoc across
+    the country.'
+  - What soldiers ?
+  - Some terrorist, they have figured the secret power of those artefact and turn
+    it into weapons
+  - Terrorist using an artefact as a weapon ?
+  - "Now you understand how serious the situation is. You'll have two \rmission objectives."
+  - First destroy the weapon and second collect these artifact so we can secure it.
+  - Alright I'm in, but first i need to know what these weaponized artefact can do.
+  - Okay i will explain to you as you prepare for the mission. we don't have much
+    time.
+  - "Wait, you will need this on your journey. \rBe careful you only can use one
+    artefact at the time,"
+  - and once it has been used you cannot use it again, so be wise.
+  - 'Goodluck X, we are counting on you. Return to base after you destroy one weapon.
+
+'
+  - 'Goodluck X, we are counting on you. Return to base after you destroy one weapon.
+
+'
+  charname:
+  - 'Colonel : '
+  - 'X :'
+  - 'Colonel :'
+  - 'X :'
+  - 'Colonel : '
+  - 'Colonel : '
+  - 'X :'
+  - 'Colonel : '
+  - 'X :'
+  - 'Colonel : '
+  - 'Colonel : '
+  - 'X :'
+  - 'Colonel : '
+  - 'Colonel : '
+  - 'Colonel : '
+  - 'Colonel : '
+  - 'Colonel : '
+  bossDesc:
+  - "Armored Gatekeeper\r\nThis artifact gave rise to its power if anyone used it,
+    \rit seemed they attached it to a tank to make it more powerfull. \rThese artifacts
+    are usually used for puppet dramas, \racting as forest guard creatures and having
+    a character that likes to pounce on people \r\nwho disturb his forest."
+  - "Terrorcopter\r\nThis weapon is using BIRD MASK as their weapon. BIRD MASK is
+    usually used for rituals to \rward off pests and disasters. But in this case
+    terrorists are using it to the contrary, \rit seems like they understand how
+    to reverse the effect of the artifact. As a result, \rmany rice barns failed
+    to harvest and many minor disasters occurred in the vicinity of these artifacts."
+  - "Unholy Chariot\r\nTerrorists have hijacked our train and installed artefacts.
+    \rThese train are used to carry supply between their base if we want to stop
+    them \rwe must stop their supply carrier.\rThese artifacts don't seem too dangerous
+    but it does provide them with \rprotection from our attacks. Because these artifacts
+    are used to \r\naccompany the bride and groom as a symbol of protection.\r\n"
+  - "Headhunter\r\nWe don't know much about this artifact, but in recent days many
+    people in Kalimantan have \r\nbeen attacked by terrorists who are using this
+    artifact. \rBeware X looks like this artifact has magical power."
+  - '
+
+'
+  itemDesc:
+  - 'Ceremonial Axe Candrasa
+
+    This Candrasa bronze ax is usually used in ancient
+    Javanese rituals, its function as a symbol of sacrifice. Sacrifice one health
+    for better mobility'
+  - "Deer Sculpture\nThe deer statue in the life of the Keraton nobility is symbolized
+    as a \r\nsymbol of vigilance against enemy threats. Slow Down time for 5 seconds
+    (Can only be used once).\r\n"
+  - 'Mangkunegaran Legion Helmet
+
+    The Mangkunegaran Legion is a modern troop
+    formed by Pura Mangkunegaran which has high ability and is tough in its era.
+    Extra Armor
+
+'
+  - "Pair of Loro Bonyo\nA pair of loro blonyo statues comes from a village in Ponorogo
+    \r\nwhich is believed to be the embodiment of a pair of ancestors \r who are
+    believed to protect, help and heal various diseases, \r which is said to be according
+    to the story if someone is sick, \rby taking a little of the face of the statue
+    and giving a prayer a ritual \rthen the disease will be cured. Replenish health
+    during battle."
+  - "Pustaha Laklak\nAn ancient holy book called Pustaha which comes from Batak.
+    \r\nContains writings on traditional medical treatment methods, magic, \r\non
+    how to ward off evil (poda), incantations and prayers for \r\ngood things in
+    order to achieve certain goals. Invicibility for 3 Seconds"
+  - 
+  dialog: {fileID: 0}
+  chara: {fileID: 0}
+  boss: {fileID: 0}
+  item: {fileID: 0}
+  index: 0
+  bossIndex: 0
+  itemIndex: 0
+  x: {fileID: 0}
+  commander: {fileID: 0}
+  heli: {fileID: 0}
+  mysterious: {fileID: 0}
