@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 
 public class CharaController : CharaBehaviour
@@ -38,7 +39,7 @@ public class CharaController : CharaBehaviour
         /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
         if (Input.GetKey(InputManager.instance.moveUp))
         {
-            
+            TWAudioController.PlaySFX("player_move");
             isAccelerating = true;
             direction += Vector2.up;
             lastDirection = Vector2.up;
@@ -54,7 +55,7 @@ public class CharaController : CharaBehaviour
 
         if (Input.GetKey(InputManager.instance.moveDown))
         {
-            
+            TWAudioController.PlaySFX("player_move");
             isAccelerating = true;
             direction += Vector2.down;
             lastDirection = Vector2.down;
@@ -70,7 +71,7 @@ public class CharaController : CharaBehaviour
 
         if (Input.GetKey(InputManager.instance.moveLeft))
         {
-       
+            TWAudioController.PlaySFX("player_move");
             isAccelerating = true;
             direction += Vector2.left;
             lastDirection = Vector2.left; ;
@@ -79,6 +80,7 @@ public class CharaController : CharaBehaviour
         {
             if (isAccelerating && lastDirection == Vector2.left)
             {
+
                 isAccelerating = false;
                 timeMoveElapsed = timeToStop;
             }
@@ -86,7 +88,7 @@ public class CharaController : CharaBehaviour
 
         if (Input.GetKey(InputManager.instance.moveRight))
         {
-            
+            TWAudioController.PlaySFX("player_move");
             isAccelerating = true;
             direction += Vector2.right;
             lastDirection = Vector2.right;

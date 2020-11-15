@@ -93,6 +93,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c0261b3bf803e574c9b813cdc9ca2501, type: 3}
   - name: laser
     clip: {fileID: 8300000, guid: ec5e9c1f35bd7b644a24840b50201e0d, type: 3}
+  - name: boss_attack_telegraph
+    clip: {fileID: 8300000, guid: 295c047a50d848a47b6d95b7d409cb37, type: 3}
+  - name: clockwise_flamethrower_firing
+    clip: {fileID: 8300000, guid: 5f321a54bbb09d547b314c3436d7d24a, type: 3}
+  - name: clockwise_flamethrower_gettingready
+    clip: {fileID: 8300000, guid: 6c3fb2be987841d4b96ac215b3d92f06, type: 3}
+  - name: dash
+    clip: {fileID: 8300000, guid: ade8a22f26745d14397238a677f6ce3a, type: 3}
+  - name: laserbeam_firing
+    clip: {fileID: 8300000, guid: bda197322cb590947ad985fcb7e48fe0, type: 3}
+  - name: laserbeam_gettingready
+    clip: {fileID: 8300000, guid: 09a766615de22794f9abed9ba1e5ff1d, type: 3}
+  - name: laserbeam_ready
+    clip: {fileID: 8300000, guid: 52e6bebb48a39fe41bc361a8824a9668, type: 3}
+  - name: ledakanBoxAppear
+    clip: {fileID: 8300000, guid: 2075211e576e2f94ca9eea7d11ef1bc9, type: 3}
+  - name: player_move
+    clip: {fileID: 8300000, guid: b929da4d37b351147b6cbd689a24297f, type: 3}
+  - name: rotatinglaser_gettingready
+    clip: {fileID: 8300000, guid: 83a45f61e62ebc740bee0d943f8936cf, type: 3}
+  - name: round_flame
+    clip: {fileID: 8300000, guid: 03dbdda7e4e9db44c94d3ab58c9937f3, type: 3}
+  - name: tank_firing
+    clip: {fileID: 8300000, guid: 488c5090d2b49e44f9e9f8fbcf684db7, type: 3}
+  - name: tank_move
+    clip: {fileID: 8300000, guid: 17cdcc2d5e8dce543a87665ab9809487, type: 3}
+  - name: tank_projectiles
+    clip: {fileID: 8300000, guid: fa0b342f879a925469b7101112b3225c, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
   m_ObjectHideFlags: 0

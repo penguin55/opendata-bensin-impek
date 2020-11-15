@@ -125,6 +125,7 @@ public class CharaBehaviour : MonoBehaviour
                 anim.SetBool("dash", true);
                 if (walkDustParticle.isPlaying) walkDustParticle.Stop();
                 dashDustParticle.Play();
+                TWAudioController.PlaySFX("dash");
                 timeMoveElapsed = 0f;
                 dashTime -= Time.deltaTime;
                 rb.velocity = lastDirection * data.DashSpeed;
