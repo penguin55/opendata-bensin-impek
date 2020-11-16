@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TomWill;
 using UnityEngine;
 
 public class BirdMask : BossBehaviour
@@ -30,7 +31,7 @@ public class BirdMask : BossBehaviour
 
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
-
+        TWAudioController.PlayBGM("BGM_BOSS", "helicopter_blades", TWAudioController.PlayType.TRANSITION);
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
     }
