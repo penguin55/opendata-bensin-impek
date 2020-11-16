@@ -19001,12 +19001,12 @@ PrefabInstance:
     - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: offset.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: offset.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222113779540, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}

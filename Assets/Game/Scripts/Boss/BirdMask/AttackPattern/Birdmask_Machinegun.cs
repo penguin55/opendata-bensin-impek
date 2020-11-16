@@ -43,7 +43,7 @@ public class Birdmask_Machinegun : AttackEvent
         DOTween.Sequence()
             .AppendCallback(() => TWAudioController.PlaySFX("SFX_BOSS", name))
             .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
-            .PrependInterval(audioLength)
+            .PrependInterval(audioLength/2)
             .SetLoops(-1)
             .SetId("MachineGun_Sound");
     }
