@@ -1994,6 +1994,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28afaf147693b6541beb43624acd5d17, type: 2}
   - {fileID: 11400000, guid: 8dcf3fecb821de1418c88aa15386e7e9, type: 2}
   - {fileID: 11400000, guid: f6e630136fd948c4c926d2b2cca74aab, type: 2}
+  item: 
   activateItemImage: {fileID: 1169302560}
 --- !u!114 &263795228
 MonoBehaviour:
@@ -15480,6 +15481,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insight: 0
   player: {fileID: 0}
+--- !u!1 &1058324808
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058324810}
+  - component: {fileID: 1058324809}
+  m_Layer: 0
+  m_Name: _FungusState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1058324809
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058324808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
+--- !u!4 &1058324810
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058324808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1063640716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15963,8 +16008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -165, y: 61}
-  m_SizeDelta: {x: 280, y: 72}
+  m_AnchoredPosition: {x: -100, y: 82}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169302560
 MonoBehaviour:
@@ -15985,7 +16030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 98d6a2e5a2381474783ef5be05577bae, type: 3}
+  m_Sprite: {fileID: 632306320610373343, guid: 727ce95d17df7134789271d7916c0202, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27455,6 +27500,16 @@ MonoBehaviour:
   index: 0
   dialog: {fileID: 245292398}
   chara: {fileID: 989620618}
+  aPair: {fileID: 21300000, guid: 0ef1db3c3543220449e42a7e846866b8, type: 3}
+  axe: {fileID: 21300000, guid: bcef8bd9111cc70448d2714277a3c061, type: 3}
+  deer: {fileID: 21300000, guid: 0e16bcf1acdebe14c81d8d46ec6e3fa1, type: 3}
+  helmet: {fileID: 21300000, guid: 8a9531f5c15328d44b18f55d7fb17a66, type: 3}
+  laklak: {fileID: 21300000, guid: a24eafad6d415ea4ba2d45bfe5201da3, type: 3}
+  terrorcopter: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
+  gatekeeper: {fileID: 21300000, guid: 7c918ca808b93644da96dd8d1829474f, type: 3}
+  chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
+  headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
+  activateItemImage: {fileID: 1169302560}
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0

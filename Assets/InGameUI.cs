@@ -19,6 +19,8 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private int index = 0;
     [SerializeField] private Text dialog, chara;
 
+    [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, headhunter;
+    [SerializeField] private Image activateItemImage;
 
     public static InGameUI instance;
 
@@ -33,6 +35,7 @@ public class InGameUI : MonoBehaviour
             TWTransition.FadeOut();
         });
         TWAudioController.PlayBGM("BGM", "VsBoss", TWAudioController.PlayType.TRANSITION);
+        ItemImage();
     }
 
   
@@ -50,6 +53,29 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    public void ItemImage()
+    {
+        if (ItemManager.manager.item.Contains("Deer"))
+        {
+            activateItemImage.overrideSprite = deer;
+        }
+        if (ItemManager.manager.item.Contains("Helmet"))
+        {
+            activateItemImage.overrideSprite = helmet;
+        }
+        if (ItemManager.manager.item.Contains("Lak"))
+        {
+            activateItemImage.overrideSprite = laklak;
+        }
+        if (ItemManager.manager.item.Contains("Axe"))
+        {
+            activateItemImage.overrideSprite = axe;
+        }
+        if (ItemManager.manager.item.Contains("Pair"))
+        {
+            activateItemImage.overrideSprite = aPair;
+        }
+    }
     public void GameWin()
     {
         dialogUI.SetActive(true);

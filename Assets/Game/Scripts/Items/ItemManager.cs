@@ -6,7 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager manager;
     [SerializeField] private ItemData[] items;
-
+    public string item;
     private static ItemData activeItem;
     [SerializeField] private Image activateItemImage;
 
@@ -19,6 +19,7 @@ public class ItemManager : MonoBehaviour
     public void ChooseItem(string itemName)
     {
         activeItem = items.First(e => e.itemName == itemName);
+        item = itemName;
     }
 
     public void ActivateItem()
