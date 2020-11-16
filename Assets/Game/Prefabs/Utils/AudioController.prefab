@@ -154,6 +154,9 @@ MonoBehaviour:
   - name: tank_projectiles
     localVolume: 1
     clip: {fileID: 8300000, guid: fa0b342f879a925469b7101112b3225c, type: 3}
+  - name: helicopter_strafing
+    localVolume: 1
+    clip: {fileID: 8300000, guid: 9bd4d6aca6f36cf4598de1afeabfc954, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
   m_ObjectHideFlags: 0

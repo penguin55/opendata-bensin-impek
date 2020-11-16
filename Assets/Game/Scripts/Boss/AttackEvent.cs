@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,6 +21,7 @@ public class AttackEvent : MonoBehaviour
         //anim.gameObject.SetActive(true);
         DOTween.Sequence()
             .AppendCallback(() => { anim.gameObject.SetActive(true); })
+            .AppendCallback(() => { TWAudioController.PlaySFX("BOSS_SFX", "boss_attack_telegraph"); })
             .AppendInterval(delay_animation)
             .AppendCallback(() => anim.gameObject.SetActive(false))
             .AppendInterval(delay_prepare)
