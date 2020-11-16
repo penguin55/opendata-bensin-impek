@@ -50,11 +50,13 @@ public class BirdMask_Swipe : AttackEvent
         Vector2 helicopterOffset;
         if (moveToRight)
         {
+            TWAudioController.PlaySFX("BOSS_SFX", "helicopter_strafing");
             helicopterOffset = new Vector2(swipeAreaPosition[1].x, birdMask.transform.position.y);
             birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
         }
         else
         {
+            TWAudioController.PlaySFX("BOSS_SFX", "helicopter_strafing");
             helicopterOffset = new Vector2(swipeAreaPosition[0].x, birdMask.transform.position.y);
             birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
         }
