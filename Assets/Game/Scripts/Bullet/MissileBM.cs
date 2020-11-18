@@ -88,11 +88,18 @@ public class MissileBM : DamageArea
 
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
         CameraShake.instance.Shake(1, 3, 10);
-        BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash;
 
-        DOVirtual.DelayedCall(BossBehaviour.Instance.FlashDelay, () =>{
-            BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.DefaultMaterial;
-        });
+        DOTween.Sequence()
+            .AppendCallback(() => { BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash; })
+            .AppendInterval(BossBehaviour.Instance.FlashDelay)
+            .AppendCallback(() => { BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.DefaultMaterial; }
+            );
+
+        //BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash;
+
+        //DOVirtual.DelayedCall(BossBehaviour.Instance.FlashDelay, () =>{
+        //    BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.DefaultMaterial;
+        //});
 
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
             BossBehaviour.Instance.TakeDamage();
