@@ -1165,6 +1165,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664407667}
   m_CullTransparentMesh: 0
+--- !u!1 &669755282
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669755284}
+  - component: {fileID: 669755283}
+  m_Layer: 0
+  m_Name: _FungusState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &669755283
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669755282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
+--- !u!4 &669755284
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669755282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831677180
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,7 +6909,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1745447892}
+        - m_Target: {fileID: 0}
           m_MethodName: Shake
           m_Mode: 1
           m_Arguments:
@@ -7117,7 +7161,7 @@ GameObject:
   - component: {fileID: 1745447891}
   - component: {fileID: 1745447890}
   - component: {fileID: 1745447889}
-  - component: {fileID: 1745447892}
+  - component: {fileID: 1745447893}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7191,7 +7235,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1745447892
+--- !u!114 &1745447893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7200,7 +7244,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1745447888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97b1260de7360846894477fbbfa922d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c634db5d99ca3e4eb2ce502994d68b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1745447890}
@@ -7530,8 +7574,8 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1745447892}
-          m_MethodName: Shake
+        - m_Target: {fileID: 1745447893}
+          m_MethodName: Shaked
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

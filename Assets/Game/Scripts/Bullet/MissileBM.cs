@@ -95,12 +95,6 @@ public class MissileBM : DamageArea
             .AppendCallback(() => { BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.DefaultMaterial; }
             );
 
-        //BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash;
-
-        //DOVirtual.DelayedCall(BossBehaviour.Instance.FlashDelay, () =>{
-        //    BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.DefaultMaterial;
-        //});
-
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
             BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
