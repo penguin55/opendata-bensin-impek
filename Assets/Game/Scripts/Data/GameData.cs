@@ -2,7 +2,7 @@
 
 public static class GameData
 {
-    public static bool FirstPlay;
+    public static bool FirstPlay = true;
     public static ItemData ActiveItem;
     public static List<ItemData> ItemHolds;
     public static List<ItemData> ItemUsed;

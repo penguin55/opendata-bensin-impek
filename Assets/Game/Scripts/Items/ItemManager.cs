@@ -12,6 +12,7 @@ public class ItemManager : MonoBehaviour
         {
             GameData.FirstPlay = false;
             GameData.ItemHolds = new List<ItemData>();
+            GameData.ItemUsed = new List<ItemData>();
             GameData.ItemHolds.AddRange(baseItems);
         }
     }

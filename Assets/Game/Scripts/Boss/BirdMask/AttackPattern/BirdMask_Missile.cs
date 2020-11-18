@@ -50,7 +50,8 @@ public class BirdMask_Missile : AttackEvent
             {
                 if (queueSpawn.Count > 0) Attack();
                 else base.Attack();
-            });
+            })
+            .SetId("BM_Missile");
     }
 
     protected override void OnExit_Attack()

@@ -61,6 +61,7 @@ public class BossBehaviour : MonoBehaviour
 
             if (health < 1)
             {
+                DOTween.Kill("BM_Missile");
                 Die();
             }
         }
