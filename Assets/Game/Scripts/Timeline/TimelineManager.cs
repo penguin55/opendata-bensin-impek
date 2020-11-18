@@ -10,18 +10,40 @@ public class TimelineManager : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController runtime;
     [SerializeField] private PlayableDirector director;
 
+    [SerializeField] private PlayableAsset terracopter;
+    [SerializeField] private PlayableAsset gatekeeper;
+    [SerializeField] private PlayableAsset headhunter;
+    [SerializeField] private PlayableAsset unholychariot;
+
 
     public PlayableDirector Director { get => director; set => director = value; }
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayDirector()
     {
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.TERRORCOPTER:
+                director.Play(terracopter);
+                break;
+            case GameData.BossType.GATEKEEPER:
+                director.Play(terracopter);
+                break;
+            case GameData.BossType.UNHOLYCHARIOT:
+                director.Play(terracopter);
+                break;
+            case GameData.BossType.HEADHUNTER:
+                director.Play(terracopter);
+                break;
+        }   
+    }
 
+    public void StopDirector()
+    {
+        director.Stop();
     }
 }

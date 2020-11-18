@@ -1942,6 +1942,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Narasi Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 2898784727631702786, guid: feab2c982bffe974c8df0fd8db8f1e00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2898784727631702799, guid: feab2c982bffe974c8df0fd8db8f1e00,
         type: 3}
       propertyPath: m_LocalPosition.x

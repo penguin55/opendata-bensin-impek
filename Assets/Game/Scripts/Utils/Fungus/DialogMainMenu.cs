@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TomWill;
 public class DialogMainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel;
     [SerializeField] private FungusController fungusController;
     [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
     [SerializeField] [TextArea(0, 30)] private string[] itemDesc;
@@ -14,7 +14,7 @@ public class DialogMainMenu : MonoBehaviour
     private string activeBoss;
     private void Start()
     {
-        fungusController.Init();
+        TWTransition.FadeOut(() => fungusController.Init());
     }
     public void ItemDesc()
     {
@@ -31,15 +31,19 @@ public class DialogMainMenu : MonoBehaviour
         switch (activeBoss)
         {
             case "Terrorcopter":
+                GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 fungusController.NextBlock("WeaknessTerrorcopter");
                 break;
             case "GateKeeper":
+                GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 fungusController.NextBlock("WeaknessGateKeeper");
                 break;
             case "Chariot":
+                GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 fungusController.NextBlock("WeaknessChariot");
                 break;
             case "HeadHunter":
+                GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
                 fungusController.NextBlock("WeaknessHeadHunter");
                 break;
         }
@@ -112,6 +116,12 @@ public class DialogMainMenu : MonoBehaviour
                 break;
         }
     }
+
+    public void GoToScene(string nameScene)
+    {
+        TWTransition.FadeIn(() => TWLoading.LoadScene(nameScene));
+    }
+
     public void OpenBossPanel(bool active)
     {
         bossChoicePanel.SetActive(active);
