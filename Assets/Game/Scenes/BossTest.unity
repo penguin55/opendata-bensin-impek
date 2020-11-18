@@ -7981,9 +7981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 519420031}
-  duration: 1
-  strength: 3
-  vibrato: 10
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
