@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
+
 public class CameraShake : MonoBehaviour
 {
     public Camera main;
@@ -21,12 +23,18 @@ public class CameraShake : MonoBehaviour
         this.duration = duration;
         this.strength = strength;
         this.vibrato = vibrato;
-        main.DOShakeRotation(this.duration, this.strength, this.vibrato);
+        main.DOShakeRotation(this.duration, this.strength, this.vibrato).OnComplete(() => GoBackRotate());
+        //main.DOShakeRotation(this.duration, Vector3.zero, this.vibrato);
     }
 
     public void Shaked()
     {
         main.DOShakeRotation(this.duration, this.strength, this.vibrato);
+    }
+
+    public void GoBackRotate()
+    {
+        main.transform.localEulerAngles = Vector3.zero;
     }
 
 }
