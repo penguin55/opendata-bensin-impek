@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TMPro;
 using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,8 @@ public class BirdMask_Laser : AttackEvent
     [SerializeField] private Transform target;
     [SerializeField] private Vector2 offset;
     [SerializeField] private float timeToMove;
+
+    [SerializeField] private ParticleSystem[] fires;
 
     [SerializeField] private Animator attack;
 
@@ -28,6 +31,7 @@ public class BirdMask_Laser : AttackEvent
 
     protected override void Attack()
     {
+        ActivateDamageEffect();
         TWAudioController.PlaySFX("SFX_BOSS", "laser");
 
         DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
@@ -57,10 +61,20 @@ public class BirdMask_Laser : AttackEvent
         for (int i = 0; i < damageArea.Length; i++)
         {
             damageArea[i].gameObject.SetActive(active);
+            damageArea[i].GetComponent<Collider2D>().enabled = false;
             if (active)
             {
                 damageArea[i].position = originalPosition[i];
             }
+        }
+    }
+
+    private void ActivateDamageEffect()
+    {
+        for(int i = 0; i<damageArea.Length; i++)
+        {
+            fires[i].Play();
+            damageArea[i].GetComponent<Collider2D>().enabled = true;
         }
     }
 }

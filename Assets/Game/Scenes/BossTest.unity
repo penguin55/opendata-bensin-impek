@@ -18496,6 +18496,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1424955822806462855, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1942425476124374815, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_SortingOrder
@@ -18525,6 +18530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005070167342920612, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2168362800313969920, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
@@ -18677,6 +18687,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4922158023742375191, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5326175690936993515, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_SortingOrder
@@ -18768,6 +18783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727704398699871096, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6733008740510742093, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
@@ -18955,6 +18975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
+      propertyPath: fires.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 3494481357032429281}
@@ -19013,6 +19038,26 @@ PrefabInstance:
       propertyPath: delay_enter
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: fires.Array.data[0]
+      value: 
+      objectReference: {fileID: 1878537491}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: fires.Array.data[1]
+      value: 
+      objectReference: {fileID: 1878537490}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: fires.Array.data[2]
+      value: 
+      objectReference: {fileID: 1878537489}
+    - target: {fileID: 9072407222085300146, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: fires.Array.data[3]
+      value: 
+      objectReference: {fileID: 1878537488}
     - target: {fileID: 9072407222113779540, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: m_IsActive
@@ -19806,6 +19851,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.888891, y: 0.31339335}
   m_EdgeRadius: 0
+--- !u!198 &1878537488 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2005070167342920612, guid: fc74bd448fa8474499d3df5505d89bc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878537485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1878537489 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4922158023742375191, guid: fc74bd448fa8474499d3df5505d89bc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878537485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1878537490 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6727704398699871096, guid: fc74bd448fa8474499d3df5505d89bc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878537485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1878537491 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1424955822806462855, guid: fc74bd448fa8474499d3df5505d89bc5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1878537485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905382863
 GameObject:
   m_ObjectHideFlags: 0
