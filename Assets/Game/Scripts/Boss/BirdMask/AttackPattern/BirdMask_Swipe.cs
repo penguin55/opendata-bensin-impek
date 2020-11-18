@@ -9,6 +9,7 @@ public class BirdMask_Swipe : AttackEvent
     [SerializeField] private Transform swipeObject;
     [SerializeField] private bool moveToRight;
     [SerializeField] private float timeToMove;
+    [SerializeField] private float timeGoBack;
     [SerializeField] private GameObject birdMask;
 
     [SerializeField] private Animator attack;
@@ -40,7 +41,7 @@ public class BirdMask_Swipe : AttackEvent
             swipeObject.localPosition = swipeAreaPosition[1];
             birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
         }
-        birdMask.transform.DOMove(helicopterOffset, 1).OnComplete(() => { base.OnEnter_Attack(); });
+        birdMask.transform.DOMove(helicopterOffset, timeGoBack).OnComplete(() => { base.OnEnter_Attack(); });
     }
 
     protected override void Attack()
@@ -89,7 +90,7 @@ public class BirdMask_Swipe : AttackEvent
         if (moveToRight) birdMask.transform.DORotate(Vector3.forward * 25, 0.5f);
         else birdMask.transform.DORotate(Vector3.forward * -25, 0.5f);
 
-        birdMask.transform.DOMove(helicopterOffset, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
+        birdMask.transform.DOMove(helicopterOffset, timeGoBack).SetEase(Ease.Linear).OnComplete(() => {
             birdMask.transform.DORotate(Vector3.zero, 0.5f);
             base.OnExit_Attack();
         });
