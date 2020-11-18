@@ -87,7 +87,7 @@ public class MissileBM : DamageArea
         particle.Play();
 
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
-        CameraShake.instance.Shake(1, 3, 10);
+        CameraShake.instance.Shake(1, 3, 5);
 
         DOTween.Sequence()
             .AppendCallback(() => { BossBehaviour.Instance.Sprite.material = BossBehaviour.Instance.WhiteFlash; })

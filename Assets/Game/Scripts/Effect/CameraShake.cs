@@ -23,7 +23,8 @@ public class CameraShake : MonoBehaviour
         this.duration = duration;
         this.strength = strength;
         this.vibrato = vibrato;
-        main.DOShakeRotation(this.duration, this.strength, this.vibrato).OnComplete(() => GoBackRotate());
+        DOTween.Complete("Shake");
+        main.DOShakeRotation(this.duration, this.strength, this.vibrato).SetId("Shake");
         //main.DOShakeRotation(this.duration, Vector3.zero, this.vibrato);
     }
 
