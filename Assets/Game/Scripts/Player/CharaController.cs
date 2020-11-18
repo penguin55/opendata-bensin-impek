@@ -126,7 +126,7 @@ public class CharaController : CharaBehaviour
     {
         if (Input.GetKeyDown(InputManager.instance.activateItem))
         {
-            ItemManager.manager.ActivateItem();
+            UseItem();
         }
     }
 }

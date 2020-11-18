@@ -14,6 +14,7 @@ public class ItemData : ScriptableObject
     }
 
     public string itemName;
+    public bool wasUsed;
     [SerializeField] private ItemEffect effect;
     [SerializeField] private float timeEffect;
     [SerializeField] private float amountEffect;
@@ -51,6 +52,7 @@ public class ItemData : ScriptableObject
 
     private bool Immune_Effect()
     {
+        wasUsed = true;
         GameVariables.PLAYER_IMMUNE = true;
         DOVirtual.DelayedCall(timeEffect, () => { 
             GameVariables.PLAYER_IMMUNE = false; 
@@ -60,6 +62,7 @@ public class ItemData : ScriptableObject
 
     private bool Shield_Effect()
     {
+        wasUsed = true;
         CharaData.shield = 1;
         InGameUI.instance.UpdateShield();
         return true;
@@ -69,6 +72,7 @@ public class ItemData : ScriptableObject
     {
         if (!onDelay)
         {
+            wasUsed = true;
             onDelay = true;
             GameVariables.SLOW_MO = true;
             Time.timeScale = Mathf.Clamp(amountEffect, 0, 1);
@@ -87,6 +91,7 @@ public class ItemData : ScriptableObject
 
     private bool Heal_Effect()
     {
+        wasUsed = true;
         CharaData.hp = CharaData.maxhp;
         InGameUI.instance.UpdateLive();
 
@@ -95,6 +100,7 @@ public class ItemData : ScriptableObject
 
     private bool Sacrifice_Effect()
     {
+        wasUsed = true;
         CharaData.hp-=cost;
 
         if (CharaData.hp < 0) CharaData.hp = 0;

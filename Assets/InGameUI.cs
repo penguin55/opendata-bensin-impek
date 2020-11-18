@@ -53,25 +53,33 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    public void UpdateItemImage()
+    {
+        if (GameData.ActiveItem.CheckIsOneTimeUse())
+        {
+            activateItemImage.color = Color.red;
+        }
+    }
+
     public void ItemImage()
     {
-        if (ItemManager.manager.item.Contains("Deer"))
+        if (GameData.ActiveItem.itemName.Contains("Deer"))
         {
             activateItemImage.overrideSprite = deer;
         }
-        if (ItemManager.manager.item.Contains("Helmet"))
+        if (GameData.ActiveItem.itemName.Contains("Helmet"))
         {
             activateItemImage.overrideSprite = helmet;
         }
-        if (ItemManager.manager.item.Contains("Lak"))
+        if (GameData.ActiveItem.itemName.Contains("Lak"))
         {
             activateItemImage.overrideSprite = laklak;
         }
-        if (ItemManager.manager.item.Contains("Axe"))
+        if (GameData.ActiveItem.itemName.Contains("Axe"))
         {
             activateItemImage.overrideSprite = axe;
         }
-        if (ItemManager.manager.item.Contains("Pair"))
+        if (GameData.ActiveItem.itemName.Contains("Pair"))
         {
             activateItemImage.overrideSprite = aPair;
         }

@@ -54,9 +54,9 @@ public class CharaBehaviour : MonoBehaviour
         maxY = kiriatas.transform.position.y;
         minY = kananbawah.transform.position.y;
 
-        if (ItemManager.manager.GetActiveItem() && ItemManager.manager.GetActiveItem().ActivateOnStart)
+        if (GameData.ActiveItem && GameData.ActiveItem.ActivateOnStart)
         {
-            ItemManager.manager.ActivateItem();
+            UseItem();
         }
 
         InGameUI.instance.UpdateLive();
@@ -228,6 +228,16 @@ public class CharaBehaviour : MonoBehaviour
         anim.SetFloat("speed", speed);
     }
 
-    
+    protected void UseItem()
+    {
+        if (!GameData.ActiveItem.wasUsed)
+        {
+            GameData.ActiveItem.TakeEffect();
+            InGameUI.instance.UpdateItemImage();
+
+            GameData.ItemHolds.Remove(GameData.ActiveItem);
+            GameData.ItemUsed.Add(GameData.ActiveItem);
+        } 
+    }
 }
    

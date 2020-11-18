@@ -1,54 +1,23 @@
 ﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ItemManager : MonoBehaviour
 {
-    public static ItemManager manager;
-    [SerializeField] private ItemData[] items;
-    public string item;
-    private static ItemData activeItem;
-    [SerializeField] private Image activateItemImage;
+    [SerializeField] private ItemData[] baseItems;
 
     private void Start()
     {
-        manager = this;
-        if (activateItemImage) activateItemImage.color = activeItem ? Color.white : Color.red;
+        if (GameData.FirstPlay)
+        {
+            GameData.FirstPlay = false;
+            GameData.ItemHolds = new List<ItemData>();
+            GameData.ItemHolds.AddRange(baseItems);
+        }
     }
 
     public void ChooseItem(string itemName)
     {
-        activeItem = items.First(e => e.itemName == itemName);
-        item = itemName;
-    }
-
-    public void ActivateItem()
-    {
-        if (activeItem)
-        {
-            if (activateItemImage.color != Color.red)
-            {
-                bool status = activeItem.TakeEffect();
-
-                if (status)
-                {
-
-                }
-                else
-                {
-
-                }
-
-                if (activeItem.CheckIsOneTimeUse())
-                {
-                    activateItemImage.color = Color.red;
-                }
-            }
-        }
-    }
-
-    public ItemData GetActiveItem()
-    {
-        return activeItem;
+        GameData.ActiveItem = baseItems.First(e => e.itemName == itemName);
     }
 }
