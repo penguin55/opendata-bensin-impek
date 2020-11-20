@@ -13,12 +13,50 @@ public class ItemManager : MonoBehaviour
             GameData.FirstPlay = false;
             GameData.ItemHolds = new List<ItemData>();
             GameData.ItemUsed = new List<ItemData>();
-            GameData.ItemHolds.AddRange(baseItems);
+
+            LoadItem(baseItems);
         }
+
+        ValidateItem();
     }
 
     public void ChooseItem(string itemName)
     {
         GameData.ActiveItem = baseItems.First(e => e.itemName == itemName);
+    }
+
+    private void LoadItem(ItemData[] items)
+    {
+        foreach (ItemData data in items)
+        {
+            LoadItem(data);
+        }
+    }
+
+    private void LoadItem(ItemData data)
+    {
+        if (data.wasUsed) GameData.ItemUsed.Add(data);
+        else GameData.ItemHolds.Add(data);
+    }
+
+    private void ValidateItem()
+    {
+        if (GameData.ItemHolds.Count == 0)
+        {
+            GameData.ItemHolds.Clear();
+            GameData.ItemUsed.Clear();
+
+            ResetBaseItem();
+
+            LoadItem(baseItems);
+        }
+    }
+
+    private void ResetBaseItem()
+    {
+        foreach (ItemData data in baseItems)
+        {
+            data.wasUsed = false;
+        }
     }
 }

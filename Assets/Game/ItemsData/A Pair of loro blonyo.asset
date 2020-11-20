@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac9a203749cfdb448a0739607080334, type: 3}
   m_Name: A Pair of loro blonyo
   m_EditorClassIdentifier: 
-  itemName: A Pair of loro blonyo
+  image: {fileID: 21300000, guid: f3657b642c9a33d4990f256cefe9c344, type: 3}
+  itemName: A Pair of Loro Blonyo
+  itemDesc: "A Pair of loro blonyo\r\nA pair of loro blonyo statues comes from a
+    village in Ponorogo \rwhich is believed to be the embodiment of a pair of ancestors
+    \rwho are believed to protect, help and heal various diseases, \rwhich is said
+    to be according to the story if someone is sick, \rby taking a little of the
+    face of the statue and giving a prayer a ritual \r then the disease will be cured.
+    Replenish health during battle."
+  itemId: 0
+  wasUsed: 1
   effect: 3
   timeEffect: 0
   amountEffect: 0
   cost: 0
   oneTimeUse: 1
+  activateOnStart: 0

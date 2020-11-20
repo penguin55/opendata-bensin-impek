@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac9a203749cfdb448a0739607080334, type: 3}
   m_Name: Mangkunegaran Legion Helmet
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 82dad98c0a86da148bc9894cdf6e68c2, type: 3}
   itemName: Mangkunegaran Legion Helmet
+  itemDesc: 'Mangkunegaran Legion Helmet
+
+    The Mangkunegaran Legion is a modern
+    troop formed by Pura Mangkunegaran which has high ability and is tough in its
+    era. Extra Armor'
+  itemId: 3
+  wasUsed: 0
   effect: 1
   timeEffect: 0
   amountEffect: 1

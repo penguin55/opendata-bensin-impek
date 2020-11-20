@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac9a203749cfdb448a0739607080334, type: 3}
   m_Name: Deer sculpture
   m_EditorClassIdentifier: 
-  itemName: Deer sculpture
+  image: {fileID: 21300000, guid: c92e6033272a46e4b89dd4d6c8320df9, type: 3}
+  itemName: Deer Sculpture
+  itemDesc: "Deer sculpture  \r\nThe deer statue in the life of the Keraton nobility
+    is symbolized as a \rsymbol of vigilance against enemy threats. \rSlow Down time
+    for 5 seconds (Can only be used once)."
+  itemId: 2
+  wasUsed: 0
   effect: 2
   timeEffect: 5
   amountEffect: 0.5
   cost: 0
   oneTimeUse: 1
+  activateOnStart: 0

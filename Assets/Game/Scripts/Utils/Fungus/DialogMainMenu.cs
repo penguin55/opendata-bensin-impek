@@ -5,8 +5,11 @@ using UnityEngine.UI;
 using TomWill;
 public class DialogMainMenu : MonoBehaviour
 {
+    public static DialogMainMenu instance;
+
     [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel;
     [SerializeField] private FungusController fungusController;
+    [SerializeField] private ListItemUIManager listUIManager;
     [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
     [SerializeField] [TextArea(0, 30)] private string[] itemDesc;
     [SerializeField] private Text boss, item;
@@ -15,10 +18,11 @@ public class DialogMainMenu : MonoBehaviour
     private void Start()
     {
         TWTransition.FadeOut(() => fungusController.Init());
+        instance = this;
     }
-    public void ItemDesc()
+    public void ItemDesc(string desc)
     {
-        item.text = itemDesc[itemIndex];
+        item.text = desc;
     }
     public void BossDesc()
     {
@@ -74,47 +78,11 @@ public class DialogMainMenu : MonoBehaviour
         }
     }
 
-    public void SelectItem(string itemName)
+    public void SelectItem(ItemData data)
     {
-        switch (itemName)
-        {
-            case "deer":
-                itemIndex = 0;
-                ItemDesc();
-                break;
-            case "pair":
-                itemIndex = 1;
-                ItemDesc();
-                break;
-            case "laklak":
-                itemIndex = 2;
-                ItemDesc();
-                break;
-            case "axe":
-                itemIndex = 3;
-                ItemDesc();
-                break;
-            case "helmet":
-                itemIndex = 4;
-                ItemDesc();
-                break;
-            case "bird":
-                itemIndex = 5;
-                ItemDesc();
-                break;
-            case "tiger":
-                itemIndex = 6;
-                ItemDesc();
-                break;
-            case "kalimantan":
-                itemIndex = 7;
-                ItemDesc();
-                break;
-            case "barong":
-                itemIndex = 8;
-                ItemDesc();
-                break;
-        }
+        itemIndex = data.itemId;
+        ItemDesc(data.itemDesc);
+        GameData.ActiveItem = data;
     }
 
     public void GoToScene(string nameScene)
@@ -129,6 +97,7 @@ public class DialogMainMenu : MonoBehaviour
 
     public void OpenItemPanel(bool active)
     {
+        listUIManager.Render();
         itemChoicePanel.SetActive(active);
     }
 

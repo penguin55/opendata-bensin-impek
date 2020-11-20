@@ -13,7 +13,10 @@ public class ItemData : ScriptableObject
         SACRIFICE
     }
 
+    public Sprite image;
     public string itemName;
+    [TextArea(2,20)] public string itemDesc;
+    public int itemId;
     public bool wasUsed;
     [SerializeField] private ItemEffect effect;
     [SerializeField] private float timeEffect;

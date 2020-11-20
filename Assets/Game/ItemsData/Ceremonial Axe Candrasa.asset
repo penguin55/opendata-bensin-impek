@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac9a203749cfdb448a0739607080334, type: 3}
   m_Name: Ceremonial Axe Candrasa
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 4322bd3e93b0782438f3c91c9b6b0a9e, type: 3}
   itemName: Ceremonial Axe Candrasa
+  itemDesc: 'Ceremonial Axe Candrasa
+
+    This Candrasa bronze ax is usually used
+    in ancient Javanese rituals, its function as a symbol of sacrifice. Sacrifice
+    one health for better mobility'
+  itemId: 1
+  wasUsed: 0
   effect: 4
   timeEffect: 0
   amountEffect: 0

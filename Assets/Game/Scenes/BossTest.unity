@@ -6757,14 +6757,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0712e06e6b3855340b1456f809259a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
+  baseItems:
   - {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c, type: 2}
   - {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe, type: 2}
   - {fileID: 11400000, guid: 28afaf147693b6541beb43624acd5d17, type: 2}
   - {fileID: 11400000, guid: 8dcf3fecb821de1418c88aa15386e7e9, type: 2}
   - {fileID: 11400000, guid: f6e630136fd948c4c926d2b2cca74aab, type: 2}
-  item: 
-  activateItemImage: {fileID: 1169302560}
 --- !u!114 &263795228
 MonoBehaviour:
   m_ObjectHideFlags: 0
