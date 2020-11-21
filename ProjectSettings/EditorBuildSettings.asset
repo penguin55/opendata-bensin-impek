@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/MainMenu.unity
     guid: 5bc4d633a0df5e94c9cad29f83c61dc8
   - enabled: 1
-    path: Assets/Game/Scenes/dialog.unity
-    guid: 964569fa55559f149b7c3b13aea64a93
+    path: Assets/Game/Scenes/dummyfungusdialog.unity
+    guid: 8f0cd490118793e429bf683a92947cdf
   - enabled: 1
-    path: Assets/Game/Scenes/BossTest.unity
+    path: Assets/Game/Scenes/Terrorcopter.unity
     guid: 4e7c33cdeeb08fd43ae81be37925a902
+  - enabled: 1
+    path: Assets/Game/Scenes/Gatekeeper.unity
+    guid: 3a3976c215d83924cba83b6c54d53830
   - enabled: 1
     path: Assets/Game/Scenes/ToBeContinued.unity
     guid: 36ac2a9cb3081194ab1d8d5052af531c

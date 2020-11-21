@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayGame()
     {
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.FadeIn(() => TWLoading.LoadScene("dialog"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene("dummyfungusdialog"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 

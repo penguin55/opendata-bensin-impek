@@ -158,14 +158,14 @@ public class DialogUI : MonoBehaviour
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
         Debug.Log((float)TimelineManager.instance.Director.duration);
         Debug.Log(TimelineManager.instance.Director.state);
-        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene("Terrorcopter"));
     }
 
     public void EndTimeline()
     {
         if (TimelineManager.instance.Director.state != UnityEngine.Playables.PlayState.Playing)
         {
-            TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+            TWTransition.FadeIn(() => TWLoading.LoadScene("Terrorcopter"));
             TWAudioController.PlaySFX("UI", "transition");
         }
     }
