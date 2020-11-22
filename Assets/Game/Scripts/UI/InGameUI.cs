@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, obtainCoin;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, obtainItemBoss;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
@@ -21,6 +21,11 @@ public class InGameUI : MonoBehaviour
 
     [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, headhunter;
     [SerializeField] private Image activateItemImage;
+
+    [Header("Obtain Drop UI")]
+    [SerializeField] private Image dropImage;
+    [SerializeField] private Text dropItemNameText;
+    [SerializeField] private Text dropItemDescText;
 
     public static InGameUI instance;
 
@@ -139,17 +144,25 @@ public class InGameUI : MonoBehaviour
         index++;
         if (index == 2)
         {
-            obtainCoin.SetActive(true);
+            obtainItemBoss.SetActive(true);
             dialogUI.SetActive(false);
+
+            RenderObtainDrop(BossBehaviour.Instance.GetDrop());
         }
-        else if(obtainCoin.activeSelf)
+        else if(obtainItemBoss.activeSelf)
         {
-            obtainCoin.SetActive(false);
+            obtainItemBoss.SetActive(false);
             dialogUI.SetActive(true);
         }
         Dialog();
     }
 
+    public void RenderObtainDrop(ItemData data)
+    {
+        dropImage.sprite = data.image;
+        dropItemNameText.text = data.itemName;
+        dropItemDescText.text = data.shortDesc;
+    }
 
 
     public void OpenPauseMenu()

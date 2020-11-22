@@ -16,6 +16,7 @@ public class ItemData : ScriptableObject
     public Sprite image;
     public string itemName;
     [TextArea(2,20)] public string itemDesc;
+    [TextArea(2, 20)] public string shortDesc;
     public int itemId;
     public bool wasUsed;
     [SerializeField] private ItemEffect effect;

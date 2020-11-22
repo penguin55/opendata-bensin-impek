@@ -27,7 +27,7 @@ public class BirdMask : BossBehaviour
     {
         Instance = this;
         stateIndex = 0;
-        currentState = State_BirdMask.MISSILE;
+        currentState = State_BirdMask.PREPARATION;
 
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
@@ -81,6 +81,12 @@ public class BirdMask : BossBehaviour
             currentState = stateSequences[stateIndex];
             UpdateState();
         }
+    }
+
+    protected override void Preparation()
+    {
+        base.Preparation();
+        NextState();
     }
 
     #region IDLE
@@ -181,7 +187,7 @@ public class BirdMask : BossBehaviour
     {
         base.Final();
 
-        stateIndex = 0;
+        stateIndex = 1;
         currentState = stateSequences[stateIndex];
         UpdateState();
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Fungus;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ListItemUIManager : MonoBehaviour
@@ -18,7 +19,6 @@ public class ListItemUIManager : MonoBehaviour
     public void Render()
     {
         int itemsSize = (GameData.ItemHolds != null ? GameData.ItemHolds.Count : 0) + (GameData.ItemUsed != null ? GameData.ItemUsed.Count : 0);
-        SetStartPosition(itemsSize);
 
         if (GameData.ItemHolds != null) {
             foreach (ItemData item in GameData.ItemHolds)
@@ -34,6 +34,8 @@ public class ListItemUIManager : MonoBehaviour
                 SetPlaceholder(item);
             }
         }
+
+        SetStartPosition(itemsSize);
     }
 
     private void SetStartPosition(int itemSize)
@@ -41,9 +43,9 @@ public class ListItemUIManager : MonoBehaviour
         if (itemSize > baseSize)
         {
             float widthModify = elementAnchor.sizeDelta.x * (itemSize - baseSize);
+            startValue = -120;
+            scrollRect.content.anchoredPosition = new Vector2(startValue, scrollRect.content.anchoredPosition.y);
             scrollRect.content.sizeDelta = new Vector2(widthModify, scrollRect.content.sizeDelta.y);
-            startValue = ((elementAnchor.sizeDelta.x + 25f) / 2f) / scrollRect.content.sizeDelta.x;
-            scrollRect.horizontalScrollbar.value = startValue;
         }
     }
 

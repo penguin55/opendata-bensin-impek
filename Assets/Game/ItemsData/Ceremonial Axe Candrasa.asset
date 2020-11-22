@@ -19,6 +19,7 @@ MonoBehaviour:
     This Candrasa bronze ax is usually used
     in ancient Javanese rituals, its function as a symbol of sacrifice. Sacrifice
     one health for better mobility'
+  shortDesc: 
   itemId: 1
   wasUsed: 0
   effect: 4

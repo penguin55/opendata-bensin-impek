@@ -20,8 +20,9 @@ MonoBehaviour:
     is believed to be a blessing for farmers, at the start of the harvest season,
     which is usually held a ritual event to ward off pests and disasters. <color=red>Shorter
     dash delay</color>.'
+  shortDesc: Repel all enemy attack (Can only be used once)
   itemId: 5
-  wasUsed: 1
+  wasUsed: 0
   effect: 0
   timeEffect: 3
   amountEffect: 0

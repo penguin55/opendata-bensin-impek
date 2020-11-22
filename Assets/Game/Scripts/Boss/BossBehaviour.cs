@@ -8,6 +8,7 @@ public class BossBehaviour : MonoBehaviour
 {
     public static BossBehaviour Instance;
 
+    [SerializeField] private ItemData dropItem;
     [SerializeField] private ParticleSystem explosion;
 
     [SerializeField] public int health;
@@ -65,6 +66,13 @@ public class BossBehaviour : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    public ItemData GetDrop()
+    {
+        if (dropItem) GameData.ItemHolds.Add(dropItem);
+
+        return dropItem;
     }
 }
 

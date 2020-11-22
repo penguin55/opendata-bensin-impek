@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/MainMenu.unity
     guid: 5bc4d633a0df5e94c9cad29f83c61dc8
   - enabled: 1
-    path: Assets/Game/Scenes/dummyfungusdialog.unity
+    path: Assets/Game/Scenes/dialogFungus.unity
     guid: 8f0cd490118793e429bf683a92947cdf
   - enabled: 1
     path: Assets/Game/Scenes/Terrorcopter.unity
