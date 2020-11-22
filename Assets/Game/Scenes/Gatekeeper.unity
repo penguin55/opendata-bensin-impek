@@ -22678,7 +22678,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 685950666}
   gameOverUI: {fileID: 848541510}
   dialogUI: {fileID: 2033551655}
-  obtainCoin: {fileID: 1312102894}
+  obtainItemBoss: {fileID: 0}
   hearts:
   - {fileID: 1860103013}
   - {fileID: 920753612}
@@ -22721,6 +22721,9 @@ MonoBehaviour:
   chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
   headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   activateItemImage: {fileID: 1169302560}
+  dropImage: {fileID: 0}
+  dropItemNameText: {fileID: 0}
+  dropItemDescText: {fileID: 0}
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -79094,32 +79097,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9072407224048406391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072407224048406395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510e3ec2d54c0b34593c69ba6701e42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 1494745212}
-  health: 3
-  whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
-  flashDelay: 0.5
-  patterns:
-  - attackName: Missile
-    attackEvent: {fileID: 9072407223697624652}
-  - attackName: Swipe
-    attackEvent: {fileID: 9072407222962520098}
-  - attackName: Laser
-    attackEvent: {fileID: 0}
-  - attackName: Machinegun
-    attackEvent: {fileID: 9072407222481301218}
-  stateSequences: 0500000004000000070000000600000001000000
 --- !u!4 &9072407224048406394
 Transform:
   m_ObjectHideFlags: 0
@@ -79143,9 +79120,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9072407224048406394}
-  - component: {fileID: 9072407224048406391}
   - component: {fileID: 9072407224048406388}
   - component: {fileID: 9072407224048406389}
+  - component: {fileID: 9072407224048406396}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -79153,6 +79130,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9072407224048406396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072407224048406395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1157cec37a57e48bd84a572800bb69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItem: {fileID: 0}
+  explosion: {fileID: 1494745212}
+  health: 3
+  whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
+  flashDelay: 0.5
+  patterns:
+  - attackName: Cannon
+    attackEvent: {fileID: 0}
+  - attackName: RoundFlame
+    attackEvent: {fileID: 9072407223894612670}
+  - attackName: Flamethrower_clock
+    attackEvent: {fileID: 0}
+  - attackName: Flamethrower_anticlock
+    attackEvent: {fileID: 0}
+  stateSequences: 06000000070000000400000007000000050000000700000001000000
 --- !u!1001 &9079938215941457196
 PrefabInstance:
   m_ObjectHideFlags: 0
