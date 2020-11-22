@@ -77378,7 +77378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9072407222296241503
 Transform:
   m_ObjectHideFlags: 0
@@ -78775,7 +78775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072407223894612669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -7.8, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9072407222296241503}
@@ -78823,7 +78823,7 @@ MonoBehaviour:
   offset: {x: 2, y: 2}
   timeToMove: 2
   beginning: {x: 1, y: 1}
-  end: {x: 7, y: 7}
+  end: {x: 10, y: 10}
   fires: {fileID: 1424955821228868746}
   attack: {fileID: 9072407224048406389}
 --- !u!212 &9072407223923498249
@@ -79128,7 +79128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072407224048406395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -8.07, z: 0}
+  m_LocalPosition: {x: 0, y: -7.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9072407222221417255}
