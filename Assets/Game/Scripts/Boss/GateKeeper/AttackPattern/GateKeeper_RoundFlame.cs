@@ -9,8 +9,8 @@ public class GateKeeper_RoundFlame : AttackEvent
     [SerializeField] private Transform damageArea;
     [SerializeField] private Transform target;
     [SerializeField] private Vector2 offset;
-    [SerializeField] private float timeToMove;
-    [SerializeField] private Vector2 beginning, end;
+    [SerializeField] private float timeToScale, attackTime;
+    [SerializeField] private float beginning, end;
 
     [SerializeField] private ParticleSystem fires;
 
@@ -24,34 +24,33 @@ public class GateKeeper_RoundFlame : AttackEvent
     protected override void OnEnter_Attack()
     {
         laserParent.SetActive(true);
-        laserParent.transform.localScale = Vector2.Lerp(laserParent.transform.localScale, end, timeToMove * Time.deltaTime);
+
+        laserParent.transform.DOScale(Vector2.one * end, timeToScale);
         ActivateDamageArea(true);
         base.OnEnter_Attack();
     }
 
     protected override void Attack()
     {
-        ActivateDamageEffect();
+        ActivateDamageEffect(true);
         TWAudioController.PlaySFX("SFX_BOSS", "laser");
 
         DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
-
-        DOTween.Sequence()
-            .Append(damageArea.DOMove(target.position + Vector3.up * offset.y, timeToMove))
-            .OnComplete(() =>
-            {
-                DOTween.Kill("ShakeLaser");
-                base.Attack();
-            });
+        DOVirtual.DelayedCall(attackTime, () => {
+            DOTween.Kill("ShakeLaser", true);
+            ActivateDamageEffect(false);
+            base.Attack();
+        } );
     }
 
     protected override void OnExit_Attack()
     {
-
-        ActivateDamageArea(false);
-        laserParent.transform.localScale = Vector2.Lerp(laserParent.transform.localScale,beginning, timeToMove * Time.deltaTime);
-        laserParent.SetActive(false);
-        base.OnExit_Attack();
+        laserParent.transform.DOScale(Vector2.one * beginning, timeToScale).OnComplete(()=> {
+            ActivateDamageArea(false);
+            laserParent.SetActive(false);
+            base.OnExit_Attack();
+        });
+        
     }
 
     private void ActivateDamageArea(bool active)
@@ -61,11 +60,18 @@ public class GateKeeper_RoundFlame : AttackEvent
      }
     
 
-    private void ActivateDamageEffect()
+    private void ActivateDamageEffect(bool active)
     {
-
-        fires.Play();
-        damageArea.GetComponent<Collider2D>().enabled = true;
+        if (active)
+        {
+            fires.Play();
+            damageArea.GetComponent<Collider2D>().enabled = true;
+        }
+        else
+        {
+            fires.Stop();
+            damageArea.GetComponent<Collider2D>().enabled = false;
+        }
         
     }
 }

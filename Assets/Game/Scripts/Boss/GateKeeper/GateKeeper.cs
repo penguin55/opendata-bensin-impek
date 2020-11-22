@@ -25,7 +25,7 @@ public class GateKeeper : BossBehaviour
     {
         Instance = this;
         stateIndex = 0;
-        currentState = State_Gatekeeper.CANNON;
+        currentState = State_Gatekeeper.ROUND_FLAME;
 
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
