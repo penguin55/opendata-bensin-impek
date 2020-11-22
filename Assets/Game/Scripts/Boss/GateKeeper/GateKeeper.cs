@@ -5,28 +5,27 @@ using UnityEngine;
 
 public class GateKeeper : BossBehaviour
 {
-    enum State_BirdMask
+    enum State_Gatekeeper
     {
         PREPARATION,
         FINAL,
         DIE,
         IDLE,
-        FLAMETHOWER,
+        FLAMETHROWER_CLOCK,
+        FLAMETHROWER_ANTICLOCK,
         CANNON,
         ROUND_FLAME,
-        CLOCKWISE,
-        COUNTER_CLOCKWISE
     }
 
-    private State_BirdMask currentState;
-    [SerializeField] private State_BirdMask[] stateSequences;
+    private State_Gatekeeper currentState;
+    [SerializeField] private State_Gatekeeper[] stateSequences;
     private int stateIndex;
 
     private void Start()
     {
         Instance = this;
         stateIndex = 0;
-        currentState = State_BirdMask.CANNON;
+        currentState = State_Gatekeeper.CANNON;
 
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
@@ -40,28 +39,22 @@ public class GateKeeper : BossBehaviour
     {
         switch (currentState)
         {
-            case State_BirdMask.PREPARATION:
+            case State_Gatekeeper.PREPARATION:
                 Preparation();
                 break;
-            case State_BirdMask.IDLE:
+            case State_Gatekeeper.IDLE:
                 Idle();
                 break;
-            case State_BirdMask.CANNON:
+            case State_Gatekeeper.CANNON:
                 Cannon();
                 break;
-            case State_BirdMask.ROUND_FLAME:
+            case State_Gatekeeper.ROUND_FLAME:
                 RoundFlame();
                 break;
-            case State_BirdMask.CLOCKWISE:
-                FlameThower(true);
-                break;
-            case State_BirdMask.COUNTER_CLOCKWISE:
-                FlameThower(false);
-                break;
-            case State_BirdMask.FINAL:
+            case State_Gatekeeper.FINAL:
                 Final();
                 break;
-            case State_BirdMask.DIE:
+            case State_Gatekeeper.DIE:
                 Die();
                 break;
         }
@@ -153,6 +146,7 @@ public class GateKeeper : BossBehaviour
         NextState();
     }
     #endregion
+
 
 
     protected override void Final()
