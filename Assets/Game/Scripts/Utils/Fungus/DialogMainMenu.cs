@@ -7,7 +7,7 @@ public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
 
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
     [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
@@ -15,7 +15,6 @@ public class DialogMainMenu : MonoBehaviour
     [SerializeField] private Text boss, item;
     [SerializeField] private int index = 0, bossIndex, itemIndex;
     private string activeBoss;
-    [SerializeField] private Sprite[] environments, grasses;
     private void Start()
     {
         TWTransition.FadeOut(() => fungusController.Init());
@@ -33,19 +32,13 @@ public class DialogMainMenu : MonoBehaviour
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
-        TWTransition.FadeOut();
         switch (activeBoss)
         {
-
             case "Terrorcopter":
-                environment.gameObject.GetComponent<SpriteRenderer>().sprite = environments[0];
-                grass.gameObject.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 fungusController.NextBlock("WeaknessTerrorcopter");
                 break;
             case "GateKeeper":
-                environment.gameObject.GetComponent<SpriteRenderer>().sprite = environments[1];
-                grass.gameObject.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 fungusController.NextBlock("WeaknessGateKeeper");
                 break;
