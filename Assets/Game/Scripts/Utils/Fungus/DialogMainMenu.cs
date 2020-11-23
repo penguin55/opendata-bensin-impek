@@ -7,13 +7,14 @@ public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
 
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass, gun;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
     [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
     [SerializeField] [TextArea(0, 30)] private string[] itemDesc;
     [SerializeField] private Text boss, item;
     [SerializeField] private int index = 0, bossIndex, itemIndex;
+    [SerializeField] private Sprite[] environments, grasses;
     private string activeBoss;
     private void Start()
     {
@@ -32,21 +33,32 @@ public class DialogMainMenu : MonoBehaviour
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
+        gun.SetActive(false);
+       
         switch (activeBoss)
         {
             case "Terrorcopter":
+                environment.GetComponent<SpriteRenderer>().sprite = environments[0];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 fungusController.NextBlock("WeaknessTerrorcopter");
                 break;
             case "GateKeeper":
+                environment.GetComponent<SpriteRenderer>().sprite = environments[1];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
+                gun.SetActive(true);
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 fungusController.NextBlock("WeaknessGateKeeper");
                 break;
             case "Chariot":
+                environment.GetComponent<SpriteRenderer>().sprite = environments[2];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 fungusController.NextBlock("WeaknessChariot");
                 break;
             case "HeadHunter":
+                environment.GetComponent<SpriteRenderer>().sprite = environments[3];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
                 fungusController.NextBlock("WeaknessHeadHunter");
                 break;
