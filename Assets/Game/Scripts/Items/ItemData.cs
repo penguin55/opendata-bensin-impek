@@ -10,7 +10,8 @@ public class ItemData : ScriptableObject
         SHIELD,
         SLOW_MOTION,
         HEAL,
-        SACRIFICE
+        SACRIFICE,
+        LOWERDASHDELAY
     }
 
     public Sprite image;
@@ -44,9 +45,18 @@ public class ItemData : ScriptableObject
                 return Heal_Effect();
             case ItemEffect.SACRIFICE:
                 return Sacrifice_Effect();
+            case ItemEffect.LOWERDASHDELAY:
+                return LowerDashDelay();
             default:
                 return false;
         }
+    }
+
+    public bool LowerDashDelay()
+    {
+        wasUsed = true;
+        CharaController.instance.SetDashDelay(CharaController.instance.GetDashDelay() / amountEffect);
+        return true;
     }
 
     public bool CheckIsOneTimeUse()

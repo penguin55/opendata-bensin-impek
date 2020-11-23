@@ -239,5 +239,15 @@ public class CharaBehaviour : MonoBehaviour
             GameData.ItemUsed.Add(GameData.ActiveItem);
         } 
     }
+
+    public void SetDashDelay(float time)
+    {
+        dashDelay = time;
+    }
+
+    public float GetDashDelay()
+    {
+        return dashDelay;
+    }
 }
    
