@@ -43,14 +43,10 @@ public class DialogMainMenu : MonoBehaviour
                 fungusController.NextBlock("WeaknessGateKeeper");
                 break;
             case "Chariot":
-                environment.gameObject.GetComponent<SpriteRenderer>().sprite = environments[2];
-                grass.gameObject.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 fungusController.NextBlock("WeaknessChariot");
                 break;
             case "HeadHunter":
-                environment.gameObject.GetComponent<SpriteRenderer>().sprite = environments[3];
-                grass.gameObject.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
                 fungusController.NextBlock("WeaknessHeadHunter");
                 break;
