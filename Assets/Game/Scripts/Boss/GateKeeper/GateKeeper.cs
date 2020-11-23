@@ -25,7 +25,7 @@ public class GateKeeper : BossBehaviour
     {
         Instance = this;
         stateIndex = 0;
-        currentState = State_Gatekeeper.ROUND_FLAME;
+        currentState = State_Gatekeeper.PREPARATION;
 
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
@@ -51,6 +51,12 @@ public class GateKeeper : BossBehaviour
             case State_Gatekeeper.ROUND_FLAME:
                 RoundFlame();
                 break;
+            case State_Gatekeeper.FLAMETHROWER_CLOCK:
+                FlameThower(true);
+                break;
+            case State_Gatekeeper.FLAMETHROWER_ANTICLOCK:
+                FlameThower(false);
+                break;
             case State_Gatekeeper.FINAL:
                 Final();
                 break;
@@ -70,6 +76,12 @@ public class GateKeeper : BossBehaviour
             currentState = stateSequences[stateIndex];
             UpdateState();
         }
+    }
+
+    protected override void Preparation()
+    {
+        base.Preparation();
+        NextState();
     }
 
     #region IDLE
@@ -136,7 +148,8 @@ public class GateKeeper : BossBehaviour
     private void FlameThower(bool clockwise)
     {
         OnEnterFlameThower();
-        if (!clockwise) ((BirdMask_Swipe)currentAttackEvent).MoveToLeft();
+        if (!clockwise) ((GateKeeper_FlameThower)currentAttackEvent).Clockwise(false);
+        if (clockwise) ((GateKeeper_FlameThower)currentAttackEvent).Clockwise(true);
 
         currentAttackEvent.ExecutePattern(OnExitFlameThower);
     }

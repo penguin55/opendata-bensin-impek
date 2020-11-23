@@ -15989,7 +15989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1061961133
 Transform:
   m_ObjectHideFlags: 0
@@ -78596,7 +78596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072407222637574854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.72, y: -8.95, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9072407223463461394}
@@ -78616,7 +78616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9072407222637574849}
   m_Layer: 0
-  m_Name: SwipeParent
+  m_Name: Flame Thower Parent
   m_TagString: damage area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78662,15 +78662,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9072407222962520099}
-  - component: {fileID: 9072407222962520098}
+  - component: {fileID: 9072407222962520097}
   m_Layer: 0
-  m_Name: Swipe
+  m_Name: Flame Thower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9072407222962520098
+--- !u!114 &9072407222962520097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78679,24 +78679,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 9072407222962520096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cdbe44efe2b96848ae21d4ff434c270, type: 3}
+  m_Script: {fileID: 11500000, guid: 0af8c9bcc8c3dc945a163da12126e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay_enter: 2
   delay_prepare: 1
   delay_animation: 0.4
-  delay_active: 0
-  delay_exit: 3
+  delay_active: 1
+  delay_exit: 2
   anim: {fileID: 3494481357032429281}
-  swipeAreaPosition:
-  - {x: -17, y: -8.95}
-  - {x: 17, y: -8.95}
-  swipeObject: {fileID: 9072407222637574849}
-  moveToRight: 1
-  timeToMove: 5
-  timeGoBack: 1
-  birdMask: {fileID: 9072407224048406395}
-  attack: {fileID: 9072407224048406389}
+  flameThowerParent: {fileID: 9072407222637574854}
+  damageArea: {fileID: 9072407223702572800}
+  clockwise: 0
+  timeToRotate: 5
+  attackTime: 5.1
+  fires: {fileID: 5643630156776043201}
+  attack: {fileID: 0}
 --- !u!4 &9072407222962520099
 Transform:
   m_ObjectHideFlags: 0
@@ -79120,7 +79118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &9072407223463461868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79280,7 +79278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &9072407223629637450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79441,14 +79439,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072407223702572801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4400005, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 4.93, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 7, z: 1}
   m_Children:
   - {fileID: 3194149068688580326}
   m_Father: {fileID: 9072407222637574849}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &9072407223702572801
 GameObject:
   m_ObjectHideFlags: 0
@@ -80255,8 +80253,6 @@ MonoBehaviour:
     attackEvent: {fileID: 0}
   - attackName: Round_Flame
     attackEvent: {fileID: 9072407223894612670}
-  - attackName: Flamethrower_clock
-    attackEvent: {fileID: 0}
-  - attackName: Flamethrower_anticlock
-    attackEvent: {fileID: 0}
-  stateSequences: 07000000
+  - attackName: FlameThower
+    attackEvent: {fileID: 9072407222962520097}
+  stateSequences: 0000000004000000
