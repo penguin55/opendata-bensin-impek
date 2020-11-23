@@ -29,14 +29,13 @@ public class GateKeeper_FlameThower : AttackEvent
     protected override void OnEnter_Attack()
     {
         flameThowerParent.SetActive(true);
-        //ActivateDamageArea(true);
+        ActivateDamageEffect(true);
         base.OnEnter_Attack();
     }
 
     protected override void Attack()
     {
         ActivateDamageArea(true);
-        ActivateDamageEffect(true);
         TWAudioController.PlaySFX("SFX_BOSS", "laser");
 
         //DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
