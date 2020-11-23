@@ -1688,8 +1688,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1079525667}
-  selectedCommands: []
+  - {fileID: 1079525648}
+  selectedCommands:
+  - {fileID: 1079525651}
   variables: []
   description: 
   stepPause: 0
@@ -1743,9 +1744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 210
-    y: -54
-    width: 123.40425
+    x: 220.6383
+    y: -74.21277
+    width: 83.40425
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2323,7 +2324,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 72
     y: 3.5
-    width: 185.10637
+    width: 145.10637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2528,7 +2529,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 274.1277
     y: 1.5
-    width: 180.85106
+    width: 140.85106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2796,7 +2797,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 271
     y: 75.5
-    width: 180.85106
+    width: 140.85106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2990,7 +2991,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 88
     y: 68.5
-    width: 153.19148
+    width: 113.19148
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3064,7 +3065,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 198
     y: 131.5
-    width: 138.29787
+    width: 98.29787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3377,7 +3378,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 213
     y: 180.6978
-    width: 110.63829
+    width: 70.63829
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3766,7 +3767,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 155.06752
     y: 242.98085
-    width: 179.78723
+    width: 139.78723
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5329,41 +5330,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c,
-        type: 2}
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe,
-        type: 2}
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 28afaf147693b6541beb43624acd5d17,
-        type: 2}
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8dcf3fecb821de1418c88aa15386e7e9,
-        type: 2}
-    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
-        type: 3}
-      propertyPath: baseItems.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: f6e630136fd948c4c926d2b2cca74aab,
-        type: 2}
     - target: {fileID: 7474957988376242867, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_Enabled
@@ -5434,6 +5400,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c,
+        type: 2}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe,
+        type: 2}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 28afaf147693b6541beb43624acd5d17,
+        type: 2}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dcf3fecb821de1418c88aa15386e7e9,
+        type: 2}
+    - target: {fileID: 3969061725357470277, guid: 0a65917ec3f3ce8408fc01a721380ba2,
+        type: 3}
+      propertyPath: baseItems.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f6e630136fd948c4c926d2b2cca74aab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac637af8ac64c245b0c6cf79f1324f2, type: 3}
 --- !u!95 &1950813167 stripped
@@ -5662,6 +5663,8 @@ MonoBehaviour:
   itemChoicePanel: {fileID: 1558947598}
   dialogPanel: {fileID: 779102810}
   narasiPanel: {fileID: 288593282}
+  environment: {fileID: 1956216631}
+  grass: {fileID: 1168731864}
   fungusController: {fileID: 4515125482283010051}
   listUIManager: {fileID: 727498899}
   bossDesc:
@@ -5697,6 +5700,16 @@ MonoBehaviour:
   index: 0
   bossIndex: 0
   itemIndex: 0
+  environments:
+  - {fileID: 21300000, guid: 8677b6e5be503a244ae1994a496c6df6, type: 3}
+  - {fileID: 21300000, guid: e1d96e628f56d12409cd18b9e1e71fd0, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  grasses:
+  - {fileID: 21300000, guid: c8da2baa4e495ff40ba0e9fd63c3c383, type: 3}
+  - {fileID: 21300000, guid: ae4116236d85d4c42a04449f19920dbf, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &2030743732
 Transform:
   m_ObjectHideFlags: 0
