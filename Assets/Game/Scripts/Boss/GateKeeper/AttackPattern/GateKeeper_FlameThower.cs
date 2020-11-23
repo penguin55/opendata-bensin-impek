@@ -29,25 +29,13 @@ public class GateKeeper_FlameThower : AttackEvent
     protected override void OnEnter_Attack()
     {
         flameThowerParent.SetActive(true);
-        ActivateDamageEffect(true);
+        ActivateDamageAreaEffect(true);
         base.OnEnter_Attack();
     }
 
     protected override void Attack()
     {
-        ActivateDamageArea(true);
         TWAudioController.PlaySFX("SFX_BOSS", "laser");
-
-        //DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
-
-        //if (clockwise)
-        //{
-        //    flameThowerParent.transform.DORotate(new Vector3(0, 0, -360), timeToRotate, RotateMode.FastBeyond360);
-        //}
-        //else
-        //{
-        //    flameThowerParent.transform.DORotate(new Vector3(0, 0, 360), timeToRotate, RotateMode.FastBeyond360);
-        //}
 
         DOTween.Sequence()
             .AppendCallback(() => { if (clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, -360), timeToRotate, RotateMode.FastBeyond360).SetRelative(); })
@@ -57,7 +45,7 @@ public class GateKeeper_FlameThower : AttackEvent
             .AppendCallback(() =>
             {
                 DOTween.Kill("ShakeLaser", true);
-                ActivateDamageArea(false);
+                ActivateDamageAreaEffect(false);
                 base.Attack();
             });
     }
@@ -68,22 +56,9 @@ public class GateKeeper_FlameThower : AttackEvent
         base.OnExit_Attack();
     }
 
-    private void ActivateDamageArea(bool active)
+    private void ActivateDamageAreaEffect(bool active)
     {
+        damageArea.GetComponent<Collider2D>().enabled = active;
         damageArea.gameObject.SetActive(active);
-        damageArea.GetComponent<Collider2D>().enabled = false;
-    }
-
-
-    private void ActivateDamageEffect(bool active)
-    {
-        if (active)
-        {
-            damageArea.GetComponent<Collider2D>().enabled = true;
-        }
-        else
-        {
-            damageArea.GetComponent<Collider2D>().enabled = false;
-        }
     }
 }
