@@ -35,7 +35,7 @@ public class GateKeeper_FlameThower : AttackEvent
 
     protected override void Attack()
     {
-        TWAudioController.PlaySFX("SFX_BOSS", "laser");
+        TWAudioController.PlaySFX("SFX_BOSS", "clockwise_flamethrower_firing");
 
         DOTween.Sequence()
             .AppendCallback(() => { if (clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, -360), timeToRotate, RotateMode.FastBeyond360).SetRelative(); })

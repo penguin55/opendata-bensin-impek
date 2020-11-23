@@ -13668,7 +13668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647493645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.25, y: 0.91, z: 0}
+  m_LocalPosition: {x: -8.43, y: 4.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786209263}
@@ -15927,7 +15927,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -15984,6 +15984,21 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[8].localVolume
       value: 0.39
       objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].name
+      value: gatekeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 41c658e29b9cec24795c97af167eafc8, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -23314,6 +23329,7 @@ MonoBehaviour:
   dropImage: {fileID: 0}
   dropItemNameText: {fileID: 0}
   dropItemDescText: {fileID: 0}
+  bgm: gatekeeper
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -48671,7 +48687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7356534250296921465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.8, z: 0}
+  m_LocalPosition: {x: -0.09, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 9072407222221417255}
@@ -78404,7 +78420,7 @@ MonoBehaviour:
   flameThowerParent: {fileID: 9072407222637574854}
   damageArea: {fileID: 9072407223702572800}
   clockwise: 0
-  timeToRotate: 5
+  timeToRotate: 4
   attackTime: 5.1
   fires: {fileID: 5643630156776043201}
   attack: {fileID: 0}

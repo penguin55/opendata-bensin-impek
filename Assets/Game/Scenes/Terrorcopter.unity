@@ -15731,18 +15731,18 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].name
-      value: helicopter_blades
+      value: gatekeeper
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
+      objectReference: {fileID: 8300000, guid: 41c658e29b9cec24795c97af167eafc8, type: 3}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].localVolume
@@ -15788,6 +15788,21 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[8].localVolume
       value: 0.39
       objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].name
+      value: helicopter_blades
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].localVolume
+      value: 0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -22803,6 +22818,7 @@ MonoBehaviour:
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
+  bgm: terrorcopter
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -24316,7 +24332,7 @@ PrefabInstance:
     - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: stateSequences.Array.size
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
@@ -24341,22 +24357,22 @@ PrefabInstance:
     - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
       propertyPath: stateSequences.Array.data[2]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
-        type: 3}
-      propertyPath: stateSequences.Array.data[3]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
-        type: 3}
-      propertyPath: stateSequences.Array.data[4]
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}
-      propertyPath: stateSequences.Array.data[5]
+      propertyPath: stateSequences.Array.data[3]
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: stateSequences.Array.data[4]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
+        type: 3}
+      propertyPath: stateSequences.Array.data[5]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9072407222468737658, guid: fc74bd448fa8474499d3df5505d89bc5,
         type: 3}

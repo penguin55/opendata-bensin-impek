@@ -33,7 +33,7 @@ public class GateKeeper_RoundFlame : AttackEvent
     protected override void Attack()
     {
         ActivateDamageEffect(true);
-        TWAudioController.PlaySFX("SFX_BOSS", "laser");
+        TWAudioController.PlaySFX("SFX_BOSS", "round_flame");
 
         DOVirtual.DelayedCall(1, () => CameraShake.instance.Shake(1, 1, 2)).SetLoops(-1).SetId("ShakeLaser");
         DOVirtual.DelayedCall(attackTime, () => {

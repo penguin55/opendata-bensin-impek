@@ -26,7 +26,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private Image dropImage;
     [SerializeField] private Text dropItemNameText;
     [SerializeField] private Text dropItemDescText;
-
+    [SerializeField] private string bgm;
     public static InGameUI instance;
 
     // Start is called before the first frame update
@@ -39,10 +39,15 @@ public class InGameUI : MonoBehaviour
         TWLoading.OnSuccessLoad(() => {
             TWTransition.FadeOut();
         });
-        TWAudioController.PlayBGM("BGM", "VsBoss", TWAudioController.PlayType.TRANSITION);
+        PlayBGM(bgm);
         ItemImage();
     }
 
+
+    public void PlayBGM(string name)
+    {
+        TWAudioController.PlayBGM("BGM", name, TWAudioController.PlayType.TRANSITION);
+    }
   
 
     // Update is called once per frame
