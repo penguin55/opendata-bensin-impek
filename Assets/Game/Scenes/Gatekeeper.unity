@@ -80255,4 +80255,4 @@ MonoBehaviour:
     attackEvent: {fileID: 9072407223894612670}
   - attackName: FlameThower
     attackEvent: {fileID: 9072407222962520097}
-  stateSequences: 000000000500000007000000040000000700000001000000
+  stateSequences: 0000000005000000
