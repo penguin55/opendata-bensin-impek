@@ -213,11 +213,11 @@ public class InGameUI : MonoBehaviour
         isPaused = true;
     }
 
-    public void Restart()
+    public void Restart(string name)
     {
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+        TWTransition.FadeIn(() => TWLoading.LoadScene(name));
         TWAudioController.PlaySFX("UI", "transition");
     }
 
