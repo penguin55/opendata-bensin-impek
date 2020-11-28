@@ -17,6 +17,7 @@ MonoBehaviour:
   itemDesc: "Deer sculpture  \r\nThe deer statue in the life of the Keraton nobility
     is symbolized as a \rsymbol of vigilance against enemy threats. \rSlow Down time
     for 5 seconds (Can only be used once)."
+  shortDesc: 
   itemId: 2
   wasUsed: 0
   effect: 2

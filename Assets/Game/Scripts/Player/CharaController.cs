@@ -17,7 +17,7 @@ public class CharaController : CharaBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+        GameTime.PlayerTimeScale = 1f;
         Init();
         instance = this;
     }

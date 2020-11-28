@@ -11118,6 +11118,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 596109394026390824, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596109394026390824, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: m_MinParticleSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 752907017914071892, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -11309,7 +11319,7 @@ PrefabInstance:
     - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
@@ -11526,7 +11536,7 @@ PrefabInstance:
     - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 1500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
@@ -11557,6 +11567,26 @@ PrefabInstance:
         type: 3}
       propertyPath: moveWithTransform
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25951ab053a3dbb4993e74786dfbf66c, type: 3}

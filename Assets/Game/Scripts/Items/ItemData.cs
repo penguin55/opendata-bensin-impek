@@ -89,10 +89,10 @@ public class ItemData : ScriptableObject
             wasUsed = true;
             onDelay = true;
             GameVariables.SLOW_MO = true;
-            Time.timeScale = Mathf.Clamp(amountEffect, 0, 1);
+            GameTime.LocalTimeScale = Mathf.Clamp(amountEffect, 0, 1);
             DOVirtual.DelayedCall(timeEffect, () =>
             {
-                Time.timeScale = 1;
+                GameTime.LocalTimeScale = 1;
                 GameVariables.SLOW_MO = false;
                 onDelay = false;
             });

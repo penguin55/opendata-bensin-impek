@@ -7,7 +7,7 @@ public class TobecontinudUI : MonoBehaviour
     void Start()
     {
         TWTransition.FadeOut();
-        Time.timeScale = 1f;
+        GameTime.GlobalTimeScale = 1f;
     }
 
     void Update()

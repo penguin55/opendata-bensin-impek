@@ -43,7 +43,7 @@ public class CharaBehaviour : MonoBehaviour
         canDash = true;
         dead = false;
         data.Hp = 3;
-        Time.timeScale = 1f;
+        GameTime.PlayerTimeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         defaultMaterial = sprite.material;
@@ -95,13 +95,13 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (direction == Vector2.zero) walkDustParticle.Stop();
         float newSpeed = data.Speed * (GameVariables.SPEED_BUFF > 0 ? GameVariables.SPEED_BUFF : 1);
-        transform.Translate(direction * newSpeed * Time.deltaTime * accelerate);
+        transform.Translate(direction * newSpeed * GameTime.PlayerTime * accelerate);
     }
 
 
     private void Stop()
     {
-        timeMoveElapsed -= Time.deltaTime;
+        timeMoveElapsed -= GameTime.PlayerTime;
 
         if (timeMoveElapsed <= 0) timeMoveElapsed = 0;
     }
@@ -118,7 +118,7 @@ public class CharaBehaviour : MonoBehaviour
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
                 immune = false;
-                DOVirtual.DelayedCall(dashDelay, () => canDash = true); 
+                DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale; 
             }
             else
             {
@@ -126,7 +126,7 @@ public class CharaBehaviour : MonoBehaviour
                 if (walkDustParticle.isPlaying) walkDustParticle.Stop();
                 dashDustParticle.Play();
                 timeMoveElapsed = 0f;
-                dashTime -= Time.deltaTime;
+                dashTime -= GameTime.PlayerTime;
                 rb.velocity = lastDirection * data.DashSpeed;
 
                 DashingProjectile();
@@ -146,13 +146,13 @@ public class CharaBehaviour : MonoBehaviour
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;
-            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; }).timeScale = GameTime.PlayerTimeScale;
 
             if (data.Hp >= 1)
             {
                 immune = true;
                 DOTween.Kill("ImmuneDamage");
-                DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage");
+                DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage").timeScale = GameTime.PlayerTimeScale;
 
                 if (data.Shield > 0)
                 {
@@ -189,12 +189,12 @@ public class CharaBehaviour : MonoBehaviour
                 temp.transform.DOMove(BossBehaviour.Instance.transform.position, distance/20f).SetEase(Ease.Linear).OnComplete(() =>
                 {
                     temp.transform.parent.GetComponent<MissileBM>().Explode();
-                });
+                }).timeScale = GameTime.PlayerTimeScale;
             }
             else
             {
                 temp.GetComponent<Rigidbody2D>().velocity = lastDirection * data.DashSpeed;
-                DOVirtual.DelayedCall(2f, () => Destroy(temp));
+                DOVirtual.DelayedCall(2f, () => Destroy(temp)).timeScale = GameTime.PlayerTimeScale;
             }
             projectileDetect = null;
         }

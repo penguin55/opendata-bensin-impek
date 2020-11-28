@@ -154,10 +154,7 @@ public class DialogUI : MonoBehaviour
     IEnumerator End()
     {
         TimelineManager.instance.Director.Play();
-        Debug.Log((float)TimelineManager.instance.Director.duration);
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
-        Debug.Log((float)TimelineManager.instance.Director.duration);
-        Debug.Log(TimelineManager.instance.Director.state);
         TWTransition.FadeIn(() => TWLoading.LoadScene("Terrorcopter"));
     }
 

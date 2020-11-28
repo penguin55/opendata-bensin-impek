@@ -32,7 +32,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
+        GameTime.GlobalTimeScale = 1;
         GameVariables.GAME_OVER = false;
         index = 0;
         instance = this;
@@ -190,7 +190,7 @@ public class InGameUI : MonoBehaviour
         if (CharaController.instance.dead)
         {
             gameOverUI.SetActive(true);
-            Time.timeScale = 0f;
+            GameTime.GlobalTimeScale = 0f;
         }
         else
         {
@@ -202,20 +202,20 @@ public class InGameUI : MonoBehaviour
     {
         TWAudioController.PlaySFX("UI", "click");
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        GameTime.GlobalTimeScale = 0f;
         isPaused = false;
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        GameTime.GlobalTimeScale = 0f;
         isPaused = true;
     }
 
     public void Restart()
     {
-        Time.timeScale = 1;
+        GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
         TWAudioController.PlaySFX("UI", "transition");
@@ -223,7 +223,7 @@ public class InGameUI : MonoBehaviour
 
     public void BackToMenu()
     {
-        Time.timeScale = 1;
+        GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
         TWAudioController.PlaySFX("UI", "transition");
