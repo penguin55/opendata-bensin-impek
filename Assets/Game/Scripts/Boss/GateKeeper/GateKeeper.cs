@@ -160,8 +160,6 @@ public class GateKeeper : BossBehaviour
     }
     #endregion
 
-
-
     protected override void Final()
     {
         base.Final();
@@ -169,5 +167,15 @@ public class GateKeeper : BossBehaviour
         stateIndex = 0;
         currentState = stateSequences[stateIndex];
         UpdateState();
+    }
+
+    public void RotateTank(float angle)
+    {
+
+    }
+
+    private int GetAngleSection(float angle)
+    {
+        return 0;
     }
 }
