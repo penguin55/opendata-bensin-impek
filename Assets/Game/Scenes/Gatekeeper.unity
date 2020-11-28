@@ -11242,7 +11242,7 @@ PrefabInstance:
     - target: {fileID: 6613134849000516302, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
       propertyPath: spriteStates.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6613134849000516302, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
@@ -11296,6 +11296,12 @@ PrefabInstance:
       propertyPath: renderSpriteBody
       value: 
       objectReference: {fileID: 809934968}
+    - target: {fileID: 6613134849000516302, guid: 25951ab053a3dbb4993e74786dfbf66c,
+        type: 3}
+      propertyPath: spriteStates.Array.data[7]
+      value: 
+      objectReference: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4,
+        type: 3}
     - target: {fileID: 7526371427959183219, guid: 25951ab053a3dbb4993e74786dfbf66c,
         type: 3}
       propertyPath: UVModule.sprites.Array.size
