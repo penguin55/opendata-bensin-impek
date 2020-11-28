@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 
 public class GunBehaviour : MonoBehaviour
@@ -33,6 +34,7 @@ public class GunBehaviour : MonoBehaviour
              .OnComplete(() =>
              {
                   guns[index].GetComponent<SpriteRenderer>().sortingLayerName = "Game";
+                 TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
                   CameraShake.instance.Shake(1, 2, 10);
              });
     }
