@@ -17,9 +17,12 @@ public class GateKeeper : BossBehaviour
         ROUND_FLAME,
     }
 
+    [SerializeField] private GateKeeperRotateStates[] gateKeeperRotateStates;
+    [SerializeField] private Transform centerTransformRotate;
     [SerializeField] private Sprite[] spriteStates;
     [SerializeField] private SpriteRenderer renderSpriteBody;
     private State_Gatekeeper currentState;
+    private GateKeeperRotateStates activeRotateStates;
     [SerializeField] private State_Gatekeeper[] stateSequences;
     private int stateIndex;
 
@@ -174,8 +177,18 @@ public class GateKeeper : BossBehaviour
 
     public void RotateTank(float angle)
     {
-        int index = GetAngleSection((int) angle);
-        renderSpriteBody.sprite = spriteStates[index];
+        activeRotateStates = gateKeeperRotateStates[GetAngleSection((int)angle)];
+        renderSpriteBody.sprite = activeRotateStates.sprite;
+    }
+
+    public Vector3 GetActiveSpawnPosition()
+    {
+        return activeRotateStates.spawnPosition.position;
+    }
+
+    public Vector3 GetCenterRotatePosition()
+    {
+        return centerTransformRotate.position;
     }
 
     private int GetAngleSection(float angle)
@@ -186,4 +199,11 @@ public class GateKeeper : BossBehaviour
         angleDiff = angleDiff >= 8 ? 0 : angleDiff;
         return (int) Mathf.Floor(angleDiff);
     }
+}
+
+[System.Serializable]
+public class GateKeeperRotateStates
+{
+    public Sprite sprite;
+    public Transform spawnPosition;
 }
