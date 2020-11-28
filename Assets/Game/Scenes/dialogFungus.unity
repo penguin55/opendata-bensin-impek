@@ -776,6 +776,11 @@ PrefabInstance:
       propertyPath: bgmClips.Array.data[2].localVolume
       value: 0.57
       objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[10].localVolume
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -1253,6 +1258,8 @@ PlayableDirector:
     value: {fileID: 126915997}
   - key: {fileID: -4465869804084735553, guid: 27ee5923d95a01a4587c68d98e16d8de, type: 2}
     value: {fileID: 625366582}
+  - key: {fileID: 1561298722272106509, guid: 27ee5923d95a01a4587c68d98e16d8de, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &405627862
@@ -2952,6 +2959,102 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!82 &1069446984
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069446978}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1069446985
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6201,7 +6304,7 @@ SpriteRenderer:
   m_SortingLayerID: 1282694843
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b9134b98c40b2584abc213bc0fc358e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8da2baa4e495ff40ba0e9fd63c3c383, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7925,6 +8028,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 47f65118f2fc1804694d95e6a6eaae16, type: 2}
     - {fileID: 11400000, guid: f5946ec0449218e4bb2e7cffe56a61f5, type: 2}
     - {fileID: 11400000, guid: 40d33d45fcdf11f4d8350070d8a228fd, type: 2}
+    - {fileID: 11400000, guid: f6a3df2f26b40b14d84e7827517a7369, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -7976,6 +8080,19 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Gatekeeper
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1950813168}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1956216631
@@ -8034,7 +8151,7 @@ SpriteRenderer:
   m_SortingLayerID: 452787531
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e1d96e628f56d12409cd18b9e1e71fd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8677b6e5be503a244ae1994a496c6df6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
