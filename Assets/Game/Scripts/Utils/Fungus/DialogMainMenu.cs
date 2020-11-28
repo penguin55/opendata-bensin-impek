@@ -7,7 +7,7 @@ public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
 
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass, gun;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
     [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
@@ -33,7 +33,6 @@ public class DialogMainMenu : MonoBehaviour
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
-        gun.SetActive(false);
        
         switch (activeBoss)
         {
@@ -46,7 +45,6 @@ public class DialogMainMenu : MonoBehaviour
             case "GateKeeper":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
-                gun.SetActive(true);
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 fungusController.NextBlock("WeaknessGateKeeper");
                 break;

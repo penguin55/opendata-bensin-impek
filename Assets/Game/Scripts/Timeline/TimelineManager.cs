@@ -25,19 +25,20 @@ public class TimelineManager : MonoBehaviour
 
     public void PlayDirector()
     {
+        Debug.Log(GameData.ActiveBoss);
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:
-                director.Play(terracopter);
+                director.Play(gatekeeper);
                 break;
             case GameData.BossType.GATEKEEPER:
-                director.Play(terracopter);
+                director.Play(gatekeeper);
                 break;
             case GameData.BossType.UNHOLYCHARIOT:
-                director.Play(terracopter);
+                director.Play(unholychariot);
                 break;
             case GameData.BossType.HEADHUNTER:
-                director.Play(terracopter);
+                director.Play(headhunter);
                 break;
         }   
     }
