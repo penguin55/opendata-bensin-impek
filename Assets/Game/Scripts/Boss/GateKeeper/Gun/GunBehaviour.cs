@@ -21,24 +21,30 @@ public class GunBehaviour : MonoBehaviour
         {
             guns[i].transform.position = starts[i].position;
             guns[i].transform.localScale = starts[i].localScale;
+            guns[i].GetComponent<SpriteRenderer>().sortingLayerName = "Fore";
         }
+    }
+
+    private void SequenceEach(int index)
+    {
+        DOTween.Sequence()
+             .Append(guns[index].transform.DOMove(finals[index].position, fallDuration).SetEase(Ease.InExpo))
+             .Join(guns[index].transform.DOScale(finals[index].localScale, fallDuration).SetEase(Ease.InExpo))
+             .OnComplete(() =>
+             {
+                  guns[index].GetComponent<SpriteRenderer>().sortingLayerName = "Game";
+                  CameraShake.instance.Shake(1, 2, 10);
+             });
     }
 
     private void SequenceEach()
     {
+        // Terjadi race condition, maka dari itu diubah sequence manual
+
         int index = 0;
         DOVirtual.DelayedCall(nextGunDuration, () =>
         {
-            if (index < guns.Length)
-            {
-                DOTween.Sequence()
-                .Append(guns[index].transform.DOMove(finals[index].position, fallDuration).SetEase(Ease.InExpo))
-                .Join(guns[index].transform.DOScale(finals[index].localScale, fallDuration).SetEase(Ease.InExpo))
-                .OnComplete(() =>
-                {
-                    CameraShake.instance.Shake(1, 2, 10);
-                });
-            }
+            SequenceEach(index);
             index++;
         }).SetLoops(guns.Length);
     }
@@ -51,7 +57,8 @@ public class GunBehaviour : MonoBehaviour
         for (int i = 0; i < guns.Length; i++)
         {
             sequence.Join(guns[i].transform.DOMove(finals[i].position, fallDuration).SetEase(Ease.InExpo));
-            sequence.Join(guns[i].transform.DOScale(finals[i].localScale, fallDuration).SetEase(Ease.InExpo));
+            sequence.Join(guns[i].transform.DOScale(finals[i].localScale, fallDuration).SetEase(Ease.InExpo)
+                .OnComplete(()=> guns[i].GetComponent<SpriteRenderer>().sortingLayerName = "Game"));
         }
         sequence.OnComplete(() => CameraShake.instance.Shake(1, 2, 10));
 

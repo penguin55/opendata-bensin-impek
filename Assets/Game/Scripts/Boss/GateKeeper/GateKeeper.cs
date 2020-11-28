@@ -17,6 +17,8 @@ public class GateKeeper : BossBehaviour
         ROUND_FLAME,
     }
 
+    [SerializeField] private Sprite[] spriteStates;
+    [SerializeField] private SpriteRenderer renderSpriteBody;
     private State_Gatekeeper currentState;
     [SerializeField] private State_Gatekeeper[] stateSequences;
     private int stateIndex;
@@ -80,6 +82,7 @@ public class GateKeeper : BossBehaviour
 
     protected override void Preparation()
     {
+        ((GateKeeper_FlameThower) patterns.First(e => e.attackName == "FlameThower").attackEvent).SetBossBehaviour(this);
         base.Preparation();
         NextState();
     }
@@ -171,11 +174,16 @@ public class GateKeeper : BossBehaviour
 
     public void RotateTank(float angle)
     {
-
+        int index = GetAngleSection((int) angle);
+        renderSpriteBody.sprite = spriteStates[index];
     }
 
     private int GetAngleSection(float angle)
     {
-        return 0;
+        angle = angle < 0 ? 180 + Mathf.Abs(angle) : angle;
+        int offset = 360 / 8;
+        float angleDiff = (angle + 11.25f) / offset;
+        angleDiff = angleDiff >= 8 ? 0 : angleDiff;
+        return (int) Mathf.Floor(angleDiff);
     }
 }

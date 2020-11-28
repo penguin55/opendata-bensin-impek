@@ -15,6 +15,12 @@ public class GateKeeper_FlameThower : AttackEvent
 
     [SerializeField] private Animator attack;
 
+    private GateKeeper bossBehaviour;
+
+    public void SetBossBehaviour(GateKeeper bossBehaviour)
+    {
+        this.bossBehaviour = bossBehaviour;
+    }
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -28,6 +34,7 @@ public class GateKeeper_FlameThower : AttackEvent
 
     protected override void OnEnter_Attack()
     {
+        bossBehaviour.RotateTank(flameThowerParent.transform.localEulerAngles.z);
         flameThowerParent.SetActive(true);
         ActivateDamageAreaEffect(true);
         base.OnEnter_Attack();
@@ -38,8 +45,18 @@ public class GateKeeper_FlameThower : AttackEvent
         TWAudioController.PlaySFX("SFX_BOSS", "clockwise_flamethrower_firing");
 
         DOTween.Sequence()
-            .AppendCallback(() => { if (clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, -360), timeToRotate, RotateMode.FastBeyond360).SetRelative(); })
-            .AppendCallback(() => { if (!clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, 360), timeToRotate, RotateMode.FastBeyond360).SetRelative(); })
+            .AppendCallback(() =>
+            {
+                if (clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, -360), timeToRotate, RotateMode.FastBeyond360)
+                    .SetRelative().SetEase(Ease.Linear)
+                    .OnUpdate(() => bossBehaviour.RotateTank(flameThowerParent.transform.localEulerAngles.z));
+            })
+            .AppendCallback(() =>
+            {
+                if (!clockwise) flameThowerParent.transform.DORotate(new Vector3(0, 0, 360), timeToRotate, RotateMode.FastBeyond360)
+                    .SetRelative().SetEase(Ease.Linear)
+                    .OnUpdate(() => bossBehaviour.RotateTank(flameThowerParent.transform.localEulerAngles.z));
+            })
             .AppendCallback(() => { CameraShake.instance.Shake(1, 1, 2); }).SetLoops(-1).SetId("ShakeLaser")
             .AppendInterval(attackTime)
             .AppendCallback(() =>
