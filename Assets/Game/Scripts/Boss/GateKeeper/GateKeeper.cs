@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TomWill;
 
 public class GateKeeper : BossBehaviour
 {
@@ -179,6 +180,7 @@ public class GateKeeper : BossBehaviour
     {
         activeRotateStates = gateKeeperRotateStates[GetAngleSection((int)angle)];
         renderSpriteBody.sprite = activeRotateStates.sprite;
+        TWAudioController.PlaySFX("SFX_BOSS", "clockwise_flamethrower_firing");
     }
 
     public Vector3 GetActiveSpawnPosition()
