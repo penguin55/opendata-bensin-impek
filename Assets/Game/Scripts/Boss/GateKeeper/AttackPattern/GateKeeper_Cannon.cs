@@ -8,8 +8,10 @@ public class GateKeeper_Cannon : AttackEvent
     [SerializeField] private GateKeeper bossbehaviour;
     [SerializeField] private GameObject[] lasers;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private float speed;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float timeToFullRotate;
     [SerializeField] private int attackRate;
+    private int randomIndex;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -18,9 +20,7 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void OnEnter_Attack()
     {
-        int random = Random.Range(0, lasers.Length);
-
-        
+        randomIndex = Random.Range(0, lasers.Length);
 
         base.OnEnter_Attack();
     }
@@ -30,11 +30,20 @@ public class GateKeeper_Cannon : AttackEvent
         DOVirtual.DelayedCall((delay_active / attackRate), () => {
             CannonAttack();
         }).SetLoops(attackRate)
-        .OnComplete(()=> base.Attack());
+        .OnComplete(()=>
+        {
+            lasers[randomIndex].SetActive(true);
+            base.Attack();
+        }).OnUpdate(()=>
+        {
+            float angle = GetAngleFromDirection(bossbehaviour.transform.position, CharaController.instance.gameObject.transform.position, true);
+            bossbehaviour.RotateTank(angle);
+        });
     }
 
     protected override void OnExit_Attack()
     {
+        lasers[randomIndex].SetActive(false);
         base.OnExit_Attack();
     }
 
@@ -42,6 +51,16 @@ public class GateKeeper_Cannon : AttackEvent
     {
         CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
         Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
-        cannon.Launch(direction, speed);
+        cannon.Launch(direction, bulletSpeed);
+    }
+
+    private float GetAngleFromDirection(Vector3 from, Vector3 to, bool clockwise)
+    {
+        Vector3 diff = to - from;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+        return rot_z;
     }
 }

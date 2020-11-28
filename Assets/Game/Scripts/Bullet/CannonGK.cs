@@ -11,13 +11,20 @@ public class CannonGK : DamageArea
     {
         this.direction = direction;
         this.speed = speed;
+        transform.localEulerAngles = new Vector3(0f, 0f, GetAngle(direction));
         DOVirtual.DelayedCall(3, () => { OnExit_State(); }).SetId("Cannon"+transform.GetInstanceID());
         OnEnter_State();
     }
 
     private void Update()
     {
-        if (launch) transform.Translate(direction * speed * GameTime.LocalTime);
+        if (launch) transform.Translate(direction * speed * GameTime.LocalTime, Space.World);
+    }
+
+    private float GetAngle(Vector3 difference)
+    {
+        difference.Normalize();
+        return (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg) + 90;
     }
 
     protected override void OnEnter_State()

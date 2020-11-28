@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Fungus;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class GateKeeper : BossBehaviour
     private GateKeeperRotateStates activeRotateStates;
     [SerializeField] private State_Gatekeeper[] stateSequences;
     private int stateIndex;
+    private float currentRotation;
 
     private void Start()
     {
@@ -37,6 +39,7 @@ public class GateKeeper : BossBehaviour
 
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
+        RotateTank(270f);
     }
 
 
@@ -175,9 +178,15 @@ public class GateKeeper : BossBehaviour
         UpdateState();
     }
 
+    public float GetCurrentRotation()
+    {
+        return currentRotation;
+    }
+
     public void RotateTank(float angle)
     {
-        activeRotateStates = gateKeeperRotateStates[GetAngleSection((int)angle)];
+        currentRotation = angle >= 360 ? (angle - 360) : angle <= 0 ? (360 + angle) : angle;
+        activeRotateStates = gateKeeperRotateStates[GetAngleSection((int)currentRotation)];
         renderSpriteBody.sprite = activeRotateStates.sprite;
     }
 
