@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class GateKeeper_Cannon : AttackEvent
 {
+    [SerializeField] private float delay_attack;
     [SerializeField] private GateKeeper bossbehaviour;
     [SerializeField] private GameObject[] lasers;
     [SerializeField] private GameObject prefab;
@@ -27,7 +28,7 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void Attack()
     {
-        DOVirtual.DelayedCall((delay_active / attackRate), () => {
+        DOVirtual.DelayedCall((delay_attack / attackRate), () => {
             CannonAttack();
         }).SetLoops(attackRate)
         .OnComplete(()=>

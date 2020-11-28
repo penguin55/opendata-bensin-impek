@@ -14,6 +14,8 @@ public class ItemManager : MonoBehaviour
             GameData.ItemHolds = new List<ItemData>();
             GameData.ItemUsed = new List<ItemData>();
 
+            ResetBaseItem();
+
             LoadItem(baseItems);
         }
 
