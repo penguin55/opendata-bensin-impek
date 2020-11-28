@@ -14,7 +14,7 @@ public class CharaBehaviour : MonoBehaviour
 
     protected bool isDashed,immune, canDash, insight = false;
     public bool dead;
-    [SerializeField] protected float dashDelay;
+    protected float dashDelay;
     [SerializeField] protected Rigidbody2D rb;
 
     protected SpriteRenderer sprite;
@@ -39,6 +39,7 @@ public class CharaBehaviour : MonoBehaviour
 
     public void Init()
     {
+        dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;
         canDash = true;
         dead = false;
