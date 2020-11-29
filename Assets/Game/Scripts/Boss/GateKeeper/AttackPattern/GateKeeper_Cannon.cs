@@ -78,6 +78,10 @@ public class GateKeeper_Cannon : AttackEvent
     {
         if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
         {
+            gun.transform.DOPunchScale(Vector3.one * 0.25f, 0.2f, 1, 0);
+
+            DOVirtual.DelayedCall(3f, () => gun.transform.DOPunchScale(Vector3.one * 0.3f, 0.5f, 1, 0)).SetLoops(3);
+
             canActiveLaser = false;
             active_attack = true;
         }

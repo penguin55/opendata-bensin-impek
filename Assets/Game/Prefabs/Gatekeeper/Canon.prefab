@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3557739631639159181}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: damage area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

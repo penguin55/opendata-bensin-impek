@@ -10,7 +10,6 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected CharaData data;
     [SerializeField] protected Vector2 direction, lastDirection;
     [SerializeField] protected float startDashTime, dashTime;
-    [SerializeField] protected float kickProjectilesTime, kickTime;
 
     protected bool isDashed,immune, canDash, insight = false;
     public bool dead;
@@ -34,7 +33,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
 
-    private GameObject projectileDetect;
+    [SerializeField] private CharaInteract interact;
 
 
     public void Init()
@@ -130,7 +129,8 @@ public class CharaBehaviour : MonoBehaviour
                 dashTime -= GameTime.PlayerTime;
                 rb.velocity = lastDirection * data.DashSpeed;
 
-                DashingProjectile();
+                interact.DashingProjectile(lastDirection, data.DashSpeed);
+                interact.DashingGun();
             }
         }
     }
@@ -175,31 +175,7 @@ public class CharaBehaviour : MonoBehaviour
         }
     }
 
-    private void DashingProjectile()
-    {
-        if (projectileDetect)
-        {
-            GameObject temp = projectileDetect;
-            temp.transform.parent.GetComponent<MissileBM>().DashDeactiveMissile();
-            temp.GetComponent<Animator>().SetTrigger("Dash");
-            temp.GetComponent<SpriteRenderer>().sortingOrder = 5;
-            if (lastDirection.y > 0)
-            {
-                temp.transform.up = temp.transform.position - BossBehaviour.Instance.transform.position;
-                float distance = Mathf.Sqrt((BossBehaviour.Instance.transform.position - temp.transform.position).sqrMagnitude);
-                temp.transform.DOMove(BossBehaviour.Instance.transform.position, distance/20f).SetEase(Ease.Linear).OnComplete(() =>
-                {
-                    temp.transform.parent.GetComponent<MissileBM>().Explode();
-                }).timeScale = GameTime.PlayerTimeScale;
-            }
-            else
-            {
-                temp.GetComponent<Rigidbody2D>().velocity = lastDirection * data.DashSpeed;
-                DOVirtual.DelayedCall(2f, () => Destroy(temp)).timeScale = GameTime.PlayerTimeScale;
-            }
-            projectileDetect = null;
-        }
-    }
+    
 
     public void UpdateAnimationWalk(float x, float y, float speed)
     {
@@ -234,7 +210,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("projectiles"))
         {
-            projectileDetect = collision.gameObject;
+            interact.projectileDetect = collision.gameObject;
         }
 
         if (collision.CompareTag("damage area") && !immune)
@@ -245,15 +221,26 @@ public class CharaBehaviour : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (projectileDetect != null && collision.CompareTag("projectiles"))
+        if (interact.projectileDetect && collision.CompareTag("projectiles"))
         {
-            projectileDetect = null;
+            interact.projectileDetect = null;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.name);
+        if (collision.gameObject.CompareTag("gun"))
+        {
+            interact.gunDetect = collision.gameObject;
+        } 
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (interact.gunDetect && collision.gameObject.CompareTag("gun"))
+        {
+            interact.gunDetect = null;
+        }
     }
 }
    

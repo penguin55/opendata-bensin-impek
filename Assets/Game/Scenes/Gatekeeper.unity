@@ -6356,8 +6356,8 @@ GameObject:
   - component: {fileID: 196825782}
   - component: {fileID: 196825783}
   m_Layer: 0
-  m_Name: LaserDown
-  m_TagString: Untagged
+  m_Name: LaserBottom
+  m_TagString: laser_cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6831,7 +6831,7 @@ GameObject:
   - component: {fileID: 287993995}
   m_Layer: 0
   m_Name: LaserRight
-  m_TagString: Untagged
+  m_TagString: laser_cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7967,6 +7967,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7111620722656096365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &499540655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499540653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateKeeper_Cannon: {fileID: 1868384616}
 --- !u!60 &499540656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9367,7 +9380,7 @@ GameObject:
   - component: {fileID: 893859361}
   m_Layer: 0
   m_Name: LaserLeft
-  m_TagString: Untagged
+  m_TagString: laser_cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9519,6 +9532,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920753612}
   m_CullTransparentMesh: 0
+--- !u!1 &927003201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7474957988376242870, guid: eac637af8ac64c245b0c6cf79f1324f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7474957988985871382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &927003202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927003201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0374ce9266d6848a123d7384a92c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileDetect: {fileID: 0}
+  gunDetect: {fileID: 0}
 --- !u!1001 &934369561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11423,6 +11456,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7111620722656096365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388769784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388769783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateKeeper_Cannon: {fileID: 1868384616}
 --- !u!60 &1388769786
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16772,7 +16818,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7474957988985871382}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 927003201}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd5f350ceac9a2b4b96b1ab219bf55b8, type: 3}
@@ -17123,8 +17169,8 @@ GameObject:
   - component: {fileID: 1833914573}
   - component: {fileID: 1833914574}
   m_Layer: 0
-  m_Name: LaserUp
-  m_TagString: Untagged
+  m_Name: LaserUpper
+  m_TagString: laser_cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17305,16 +17351,16 @@ MonoBehaviour:
   delay_attack: 10
   bossbehaviour: {fileID: 9072407224048406396}
   lasersGateKeeper:
-  - gun: {fileID: 0}
+  - gun: {fileID: 1897096764}
     laser: {fileID: 893859359}
     sign: {fileID: 1373205151}
-  - gun: {fileID: 0}
+  - gun: {fileID: 1388769784}
     laser: {fileID: 1833914572}
     sign: {fileID: 53313208}
-  - gun: {fileID: 0}
+  - gun: {fileID: 1980397482}
     laser: {fileID: 287993993}
     sign: {fileID: 15991126}
-  - gun: {fileID: 0}
+  - gun: {fileID: 499540655}
     laser: {fileID: 196825781}
     sign: {fileID: 1870819908}
   prefab: {fileID: 7294200537008970750, guid: ee1a425a125dff847af8c977862af07f, type: 3}
@@ -17838,6 +17884,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7111620722656096365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897096764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897096763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateKeeper_Cannon: {fileID: 1868384616}
 --- !u!60 &1897096766
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18219,6 +18278,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7111620722656096365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1980397482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980397481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateKeeper_Cannon: {fileID: 1868384616}
 --- !u!60 &1980397484
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38004,25 +38076,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7111620721876087177, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: gun
+      objectReference: {fileID: 0}
     - target: {fileID: 7111620721876087179, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620722144038786, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: gun
       objectReference: {fileID: 0}
     - target: {fileID: 7111620722144038812, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7111620722683172613, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: gun
+      objectReference: {fileID: 0}
     - target: {fileID: 7111620722683172615, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620723511506777, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620723511506779, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7111620723511506779, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620723511506779, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620723511506779, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111620723511506779, guid: 840df9a6d3057c04a949e8ebd655c9b5,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840df9a6d3057c04a949e8ebd655c9b5, type: 3}
@@ -38086,6 +38198,11 @@ PrefabInstance:
       propertyPath: kananbawah
       value: 
       objectReference: {fileID: 993335475}
+    - target: {fileID: 7474957988376242867, guid: eac637af8ac64c245b0c6cf79f1324f2,
+        type: 3}
+      propertyPath: interact
+      value: 
+      objectReference: {fileID: 927003202}
     - target: {fileID: 7474957988376242868, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_SortingOrder
@@ -38880,7 +38997,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -38985,7 +39102,8 @@ SpriteRenderer:
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
   m_SortingOrder: 4
-  m_Sprite: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+  m_Sprite: {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -39081,32 +39199,40 @@ MonoBehaviour:
   - attackName: FlameThower
     attackEvent: {fileID: 9072407222962520097}
   gateKeeperRotateStates:
-  - sprite: {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4,
+  - direction: right
+    sprite: {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 305986745}
     collider: {fileID: 9072407224048406404}
-  - sprite: {fileID: -2414862981331372680, guid: 82758e321e2f28e4f831a08737ab77a4,
+  - direction: upper-right
+    sprite: {fileID: -2414862981331372680, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 1325310674}
     collider: {fileID: 9072407224048406403}
-  - sprite: {fileID: -5842756031680100665, guid: 82758e321e2f28e4f831a08737ab77a4,
+  - direction: upper
+    sprite: {fileID: -5842756031680100665, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 1601985898}
     collider: {fileID: 9072407224048406402}
-  - sprite: {fileID: 2478818775298463482, guid: 82758e321e2f28e4f831a08737ab77a4,
+  - direction: upper-left
+    sprite: {fileID: 2478818775298463482, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 937514775}
     collider: {fileID: 9072407224048406401}
-  - sprite: {fileID: 877834233810060504, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+  - direction: left
+    sprite: {fileID: 877834233810060504, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 2042725798}
     collider: {fileID: 9072407224048406400}
-  - sprite: {fileID: 418256959753846905, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+  - direction: bottom-left
+    sprite: {fileID: 418256959753846905, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 1554806131}
     collider: {fileID: 9072407224048406399}
-  - sprite: {fileID: 536336944102774711, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+  - direction: bottom
+    sprite: {fileID: 536336944102774711, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 901253521}
     collider: {fileID: 9072407224048406398}
-  - sprite: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+  - direction: bottom-right
+    sprite: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 768773569}
     collider: {fileID: 9072407224048406397}
   centerTransformRotate: {fileID: 1794800379}

@@ -220,19 +220,45 @@ public class GateKeeper : BossBehaviour
         return centerTransformRotate.position;
     }
 
+    public void TakingDamage(string name)
+    {
+        if (name.Contains(GetAdjacentSide(activeRotateStates.direction.ToLower())))
+        {
+            TakeDamage();
+        }
+    }
+
+    private string GetAdjacentSide(string side)
+    {
+        if (side.Equals("right")) return "left";
+        else if (side.Equals("left")) return "right";
+        else if (side.Equals("upper")) return "bottom";
+        else if (side.Equals("bottom")) return "upper";
+        else return "unknown";
+    }
+
     private int GetAngleSection(float angle)
     {
         angle = angle < 0 ? 180 + Mathf.Abs(angle) : angle;
         int offset = 360 / 8;
-        float angleDiff = (angle + 11.25f) / offset;
+        float angleDiff = (angle + 22.5f) / offset;
         angleDiff = angleDiff >= 8 ? 0 : angleDiff;
         return (int) Mathf.Floor(angleDiff);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("laser_cannon"))
+        {
+            TakingDamage(collision.gameObject.name.ToLower());
+        }
     }
 }
 
 [System.Serializable]
 public class GateKeeperRotateStates
 {
+    public string direction;
     public Sprite sprite;
     public Transform spawnPosition;
     public Collider2D collider;
