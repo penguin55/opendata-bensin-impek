@@ -10,8 +10,8 @@ public class DialogMainMenu : MonoBehaviour
     [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
-    [SerializeField] [TextArea(0, 30)] private string[] bossDesc;
-    [SerializeField] [TextArea(0, 30)] private string[] itemDesc;
+    [SerializeField] [TextArea(0, 60)] private string[] bossDesc;
+    [SerializeField] [TextArea(0, 60)] private string[] itemDesc;
     [SerializeField] private Text boss, item;
     [SerializeField] private int index = 0, bossIndex, itemIndex;
     [SerializeField] private Sprite[] environments, grasses;
