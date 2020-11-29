@@ -126,13 +126,13 @@ public class InGameUI : MonoBehaviour
             chara.text = charname[index];
             ChangeImage();
         }
-        else
-        {
-            TWAudioController.PlaySFX("UI", "click");
-            TWAudioController.PlaySFX("UI", "transition");
-            dialogUI.SetActive(false);
-            TWTransition.FadeIn(() => SceneManager.LoadScene("ToBeContinued"));
-        }
+        //else
+        //{
+        //    TWAudioController.PlaySFX("UI", "click");
+        //    TWAudioController.PlaySFX("UI", "transition");
+        //    dialogUI.SetActive(false);
+        //    TWTransition.FadeIn(() => SceneManager.LoadScene("ToBeContinued"));
+        //}
     }
 
 

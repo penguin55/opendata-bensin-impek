@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TomWill;
+using DG.Tweening;
 public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
@@ -116,5 +117,12 @@ public class DialogMainMenu : MonoBehaviour
         dialogPanel.SetActive(active);
     }
 
-    
+    public void PlaySFX(string name)
+    {
+        float audioLength = TWAudioController.AudioLength(name, "SFX");
+        DOTween.Sequence()
+            .AppendCallback(() => TWAudioController.PlaySFX("SFX_Boss", name))
+            .PrependInterval(audioLength)
+            .SetLoops(-1);
+    }
 }
