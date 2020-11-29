@@ -40,7 +40,11 @@ public class GateKeeper_Cannon : AttackEvent
         .OnComplete(()=>
         {
             lasersGateKeeper[randomIndex].sign.SetActive(false);
-            if (active_attack) lasersGateKeeper[randomIndex].laser.SetActive(true);
+            if (active_attack)
+            {
+                TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_firing");
+                lasersGateKeeper[randomIndex].laser.SetActive(true);
+            }
             canActiveLaser = false;
             base.Attack();
         }).OnUpdate(()=>
@@ -62,6 +66,7 @@ public class GateKeeper_Cannon : AttackEvent
         CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
         Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
         cannon.Launch(direction, bulletSpeed);
+        TWAudioController.PlaySFX("BOSS_SFX", "tank_firing");
     }
 
     private float GetAngleFromDirection(Vector3 from, Vector3 to, bool clockwise)
@@ -78,6 +83,7 @@ public class GateKeeper_Cannon : AttackEvent
     {
         if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
         {
+            TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_gettingready");
             gun.transform.DOPunchScale(Vector3.one * 0.25f, 0.2f, 1, 0);
 
             DOVirtual.DelayedCall(3f, () => gun.transform.DOPunchScale(Vector3.one * 0.3f, 0.5f, 1, 0)).SetLoops(3);
