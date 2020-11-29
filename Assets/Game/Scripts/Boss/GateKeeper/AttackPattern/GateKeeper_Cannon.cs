@@ -14,6 +14,7 @@ public class GateKeeper_Cannon : AttackEvent
     [SerializeField] private int attackRate;
     private int randomIndex;
 
+    private bool canActiveLaser;
     private bool active_attack;
 
     public override void ExecutePattern(UnityAction onComplete)
@@ -25,6 +26,7 @@ public class GateKeeper_Cannon : AttackEvent
     {
         randomIndex = Random.Range(0, lasersGateKeeper.Length);
 
+        canActiveLaser = true;
         lasersGateKeeper[randomIndex].sign.SetActive(true);
 
         base.OnEnter_Attack();
@@ -39,6 +41,7 @@ public class GateKeeper_Cannon : AttackEvent
         {
             lasersGateKeeper[randomIndex].sign.SetActive(false);
             if (active_attack) lasersGateKeeper[randomIndex].laser.SetActive(true);
+            canActiveLaser = false;
             base.Attack();
         }).OnUpdate(()=>
         {
@@ -70,11 +73,21 @@ public class GateKeeper_Cannon : AttackEvent
 
         return rot_z;
     }
+
+    public void ActivateLaser(GunInteractDetect gun)
+    {
+        if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
+        {
+            canActiveLaser = false;
+            active_attack = true;
+        }
+    }
 }
 
 [System.Serializable]
 public class LasersGateKeeper
 {
+    public GunInteractDetect gun;
     public GameObject laser;
     public GameObject sign;
 }

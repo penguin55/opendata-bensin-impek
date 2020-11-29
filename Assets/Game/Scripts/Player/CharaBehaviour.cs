@@ -201,27 +201,6 @@ public class CharaBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("projectiles"))
-        {
-            projectileDetect = collision.gameObject;
-        }
-
-        if (collision.CompareTag("damage area")&& !immune)
-        {
-            TakeDamage();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (projectileDetect != null && collision.CompareTag("projectiles"))
-        {
-            projectileDetect = null;
-        }
-    }
-
     public void UpdateAnimationWalk(float x, float y, float speed)
     {
         anim.SetFloat("x", x);
@@ -249,6 +228,32 @@ public class CharaBehaviour : MonoBehaviour
     public float GetDashDelay()
     {
         return dashDelay;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("projectiles"))
+        {
+            projectileDetect = collision.gameObject;
+        }
+
+        if (collision.CompareTag("damage area") && !immune)
+        {
+            TakeDamage();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (projectileDetect != null && collision.CompareTag("projectiles"))
+        {
+            projectileDetect = null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.collider.name);
     }
 }
    
