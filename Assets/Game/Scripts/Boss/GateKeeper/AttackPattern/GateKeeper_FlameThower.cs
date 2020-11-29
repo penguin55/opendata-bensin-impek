@@ -62,11 +62,13 @@ public class GateKeeper_FlameThower : AttackEvent
             .AppendCallback(() =>
             {
                 DOTween.Kill("ShakeLaser", true);
+                DOTween.Kill("tank_move", true);
                 ActivateDamageAreaEffect(false);
                 base.Attack();
             });
     }
 
+ 
     protected override void OnExit_Attack()
     {
         flameThowerParent.SetActive(false);

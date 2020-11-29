@@ -1,7 +1,9 @@
-﻿using Fungus;
+﻿using DG.Tweening;
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TomWill;
 using UnityEngine;
 
 public class GateKeeper : BossBehaviour
@@ -30,10 +32,10 @@ public class GateKeeper : BossBehaviour
 
     private void Start()
     {
+        Sound("helicopter_blades");
         Instance = this;
         stateIndex = 0;
         currentState = State_Gatekeeper.PREPARATION;
-
         Sprite = GetComponent<SpriteRenderer>();
         DefaultMaterial = Sprite.material;
 
@@ -191,11 +193,21 @@ public class GateKeeper : BossBehaviour
         if (activeRotateStates != newRotateStates)
         {
             if (activeRotateStates != null) activeRotateStates.collider.enabled = false;
-
+            TWAudioController.PlaySFX("BOSS_SFX", "tank_move");
             activeRotateStates = newRotateStates;
             renderSpriteBody.sprite = activeRotateStates.sprite;
             activeRotateStates.collider.enabled = true;
         }
+    }
+
+    private void Sound(string name)
+    {
+        float audioLength = TWAudioController.AudioLength(name, "SFX");
+        DOTween.Sequence()
+            .AppendCallback(() => TWAudioController.PlaySFX("SFX_BOSS", name))
+            .PrependInterval(audioLength)
+            .SetLoops(-1)
+            .SetId("tank_idle");
     }
 
     public Vector3 GetActiveSpawnPosition()
