@@ -54,13 +54,6 @@ public class InGameUI : MonoBehaviour
     void Update()
     {
         OpenPauseMenu();
-        if (Input.GetKeyDown(KeyCode.Space) && dialogUI.activeSelf)
-        {
-            TWAudioController.PlaySFX("UI", "click");
-            TWAudioController.PlaySFX("UI", "transition");
-            dialogUI.SetActive(false);
-            TWTransition.FadeIn( ()=> SceneManager.LoadScene("ToBeContinued"));
-        }
     }
 
     public void UpdateItemImage()
@@ -202,7 +195,7 @@ public class InGameUI : MonoBehaviour
     {
         TWAudioController.PlaySFX("UI", "click");
         pauseMenuUI.SetActive(false);
-        GameTime.GlobalTimeScale = 0f;
+        GameTime.GlobalTimeScale = 1f;
         isPaused = false;
     }
 

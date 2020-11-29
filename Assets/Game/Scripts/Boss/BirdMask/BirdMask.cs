@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TomWill;
 using UnityEngine;
+using DG.Tweening;
 
 public class BirdMask : BossBehaviour
 {
@@ -87,6 +88,11 @@ public class BirdMask : BossBehaviour
     {
         base.Preparation();
         NextState();
+    }
+
+    protected override void Die()
+    {
+        base.Die();
     }
 
     #region IDLE

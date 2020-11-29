@@ -180,6 +180,12 @@ public class GateKeeper : BossBehaviour
         UpdateState();
     }
 
+    protected override void Die()
+    {
+        Debug.Log(GameData.ActiveBoss);
+        base.Die();
+    }
+
     public float GetCurrentRotation()
     {
         return currentRotation;

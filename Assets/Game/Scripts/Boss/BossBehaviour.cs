@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class BossBehaviour : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class BossBehaviour : MonoBehaviour
     private Material defaultMaterial;
     [SerializeField] private Material whiteFlash;
     [SerializeField] private float flashDelay;
+    [SerializeField] private PlayableDirector director;
 
     [SerializeField] protected AttackPattern[] patterns;
+    
 
     protected AttackEvent currentAttackEvent;
 
@@ -43,14 +46,30 @@ public class BossBehaviour : MonoBehaviour
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
 
-        DOTween.Sequence()
-            .AppendCallback(() => { explosion.Play(); })
-            .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
-            .AppendInterval(explosion.main.duration / 2)
-            .AppendCallback(() => { gameObject.SetActive(false); })
-            .AppendInterval(explosion.main.duration / 2)
-            .AppendCallback(() => Time.timeScale = 0f)
-            .AppendCallback(() => InGameUI.instance.GameWin());
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.TERRORCOPTER:
+                DOTween.Sequence()
+                    .AppendCallback(() => { explosion.Play(); })
+                    .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
+                    .AppendInterval(explosion.main.duration / 2)
+                    .AppendCallback(() => { gameObject.SetActive(false); })
+                    .AppendInterval(explosion.main.duration / 2)
+                    .AppendCallback(() => Time.timeScale = 0f)
+                    .AppendCallback(() => InGameUI.instance.GameWin());
+                break;
+            case GameData.BossType.GATEKEEPER:
+                DOTween.Sequence()
+                    .AppendCallback(() => { explosion.Play(); })
+                    .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
+                    .AppendInterval(explosion.main.duration)
+                    .AppendCallback(() => director.Play());
+                break;
+            case GameData.BossType.UNHOLYCHARIOT:
+                break;
+            case GameData.BossType.HEADHUNTER:
+                break;
+        }
     }
 
     public void TakeDamage()
@@ -73,6 +92,12 @@ public class BossBehaviour : MonoBehaviour
         if (dropItem) GameData.ItemHolds.Add(dropItem);
 
         return dropItem;
+    }
+
+    public void DropItems()
+    {
+        Debug.Log("MASOK PAK EKO! " + dropItem.itemName );
+        if (dropItem) GameData.ItemHolds.Add(dropItem);
     }
 }
 
