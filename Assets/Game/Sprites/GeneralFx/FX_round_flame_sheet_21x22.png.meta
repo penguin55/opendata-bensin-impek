@@ -1,217 +1,148 @@
 fileFormatVersion: 2
-guid: a5099a1e8d364eb4497d6d3ad791ed8b
+guid: 543adebf4dabe9140b07c78a509293d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 467374567195733025
-    second: FX_flamethrower_0
+      213: -6156302025640174193
+    second: FX_round_flame_sheet_21x22_0
   - first:
-      213: -1279322813291842483
-    second: FX_flamethrower_1
+      213: 3045987361317338759
+    second: FX_round_flame_sheet_21x22_1
   - first:
-      213: 213895027695924755
-    second: FX_flamethrower_2
+      213: 6013614882479048766
+    second: FX_round_flame_sheet_21x22_2
   - first:
-      213: 5880287466757562537
-    second: FX_flamethrower_3
+      213: -6719099226231855822
+    second: FX_round_flame_sheet_21x22_3
   - first:
-      213: 7465173122219831280
-    second: FX_flamethrower_4
+      213: 285207814303675104
+    second: FX_round_flame_sheet_21x22_4
   - first:
-      213: 462875309121348211
-    second: FX_flamethrower_5
+      213: -5324110282607425400
+    second: FX_round_flame_sheet_21x22_5
   - first:
-      213: 940408192837254517
-    second: FX_flamethrower_6
+      213: 5667639019479516883
+    second: FX_round_flame_sheet_21x22_6
   - first:
-      213: -7322944253577971791
-    second: FX_flamethrower_7
+      213: -2111403317172274544
+    second: FX_round_flame_sheet_21x22_7
   - first:
-      213: 836985916356787953
-    second: FX_flamethrower_8
+      213: 7462199217775033555
+    second: FX_round_flame_sheet_21x22_8
   - first:
-      213: 1382373180426288807
-    second: FX_flamethrower_9
+      213: 3566547493986923867
+    second: FX_round_flame_sheet_21x22_9
   - first:
-      213: 5786260742529763888
-    second: FX_flamethrower_10
+      213: 4117021096015682741
+    second: FX_round_flame_sheet_21x22_10
   - first:
-      213: -4855631036152292674
-    second: FX_flamethrower_11
+      213: 9114111736458670195
+    second: FX_round_flame_sheet_21x22_11
   - first:
-      213: 6895595338081318853
-    second: FX_flamethrower_12
+      213: -7343920330852770146
+    second: FX_round_flame_sheet_21x22_12
   - first:
-      213: 3377460130732516450
-    second: FX_flamethrower_13
+      213: 4808757942193745225
+    second: FX_round_flame_sheet_21x22_13
   - first:
-      213: 2443137589098126148
-    second: FX_flamethrower_14
+      213: -5918769480796438019
+    second: FX_round_flame_sheet_21x22_14
   - first:
-      213: -4446503153110885521
-    second: FX_flamethrower_15
+      213: -6290135004695710083
+    second: FX_round_flame_sheet_21x22_15
   - first:
-      213: 5446472757757469828
-    second: FX_flamethrower_16
+      213: 9163387707472581092
+    second: FX_round_flame_sheet_21x22_16
   - first:
-      213: -8910272550813514296
-    second: FX_flamethrower_17
+      213: -4689974509639711835
+    second: FX_round_flame_sheet_21x22_17
   - first:
-      213: -5676105767935318729
-    second: FX_flamethrower_18
+      213: 5536448313871337088
+    second: FX_round_flame_sheet_21x22_18
   - first:
-      213: 2878369635190988005
-    second: FX_flamethrower_19
+      213: 5002886273284614252
+    second: FX_round_flame_sheet_21x22_19
   - first:
-      213: 8190695532591059378
-    second: FX_flamethrower_20
+      213: 8683213778501103632
+    second: FX_round_flame_sheet_21x22_20
   - first:
-      213: -2756160953706392602
-    second: FX_flamethrower_21
+      213: 3858607768906095042
+    second: FX_round_flame_sheet_21x22_21
   - first:
-      213: 7851722235050942926
-    second: FX_flamethrower_22
+      213: -8586367122545171093
+    second: FX_round_flame_sheet_21x22_22
   - first:
-      213: 6658457518497844093
-    second: FX_flamethrower_23
+      213: -4003163349824598078
+    second: FX_round_flame_sheet_21x22_23
   - first:
-      213: 2207669157035873175
-    second: FX_flamethrower_24
+      213: -8777500212543734131
+    second: FX_round_flame_sheet_21x22_24
   - first:
-      213: 5247892679206758788
-    second: FX_flamethrower_25
+      213: -4635426550175234569
+    second: FX_round_flame_sheet_21x22_25
   - first:
-      213: 691935067969069982
-    second: FX_flamethrower_26
+      213: 206735523238632422
+    second: FX_round_flame_sheet_21x22_26
   - first:
-      213: -1602385192177767333
-    second: FX_flamethrower_27
+      213: 5667940828647276100
+    second: FX_round_flame_sheet_21x22_27
   - first:
-      213: 6957227696858550604
-    second: FX_flamethrower_28
+      213: -975276494760624396
+    second: FX_round_flame_sheet_21x22_28
   - first:
-      213: 5957697959371673717
-    second: FX_flamethrower_29
+      213: 855421420197703461
+    second: FX_round_flame_sheet_21x22_29
   - first:
-      213: 3348910176302484944
-    second: FX_flamethrower_30
+      213: 4714842021343098751
+    second: FX_round_flame_sheet_21x22_30
   - first:
-      213: 6965748437097405126
-    second: FX_flamethrower_31
+      213: 479731333884408052
+    second: FX_round_flame_sheet_21x22_31
   - first:
-      213: 4633160135279619393
-    second: FX_flamethrower_32
+      213: 9074899343523730732
+    second: FX_round_flame_sheet_21x22_32
   - first:
-      213: -8467905735218342527
-    second: FX_flamethrower_33
+      213: 5074318191229763101
+    second: FX_round_flame_sheet_21x22_33
   - first:
-      213: 1557186502531428635
-    second: FX_flamethrower_34
+      213: -8742102065203501193
+    second: FX_round_flame_sheet_21x22_34
   - first:
-      213: 5773736484911592642
-    second: FX_flamethrower_35
+      213: -4032192200596046006
+    second: FX_round_flame_sheet_21x22_35
   - first:
-      213: 2468555045889603480
-    second: FX_flamethrower_36
+      213: -1838774743493911280
+    second: FX_round_flame_sheet_21x22_36
   - first:
-      213: 1673066018591135082
-    second: FX_flamethrower_37
+      213: 1444528988063674327
+    second: FX_round_flame_sheet_21x22_37
   - first:
-      213: -5291204561288275016
-    second: FX_flamethrower_38
+      213: 4152680704973620488
+    second: FX_round_flame_sheet_21x22_38
   - first:
-      213: -1391509187754300779
-    second: FX_flamethrower_39
+      213: -3178526094395787946
+    second: FX_round_flame_sheet_21x22_39
   - first:
-      213: -5990557390506955114
-    second: FX_flamethrower_40
+      213: -1999352485569213210
+    second: FX_round_flame_sheet_21x22_40
   - first:
-      213: 6909129956974288418
-    second: FX_flamethrower_41
+      213: -5145203310342035513
+    second: FX_round_flame_sheet_21x22_41
   - first:
-      213: -3343446559775829556
-    second: FX_flamethrower_42
+      213: -2171247908213630490
+    second: FX_round_flame_sheet_21x22_42
   - first:
-      213: -1817506129299841171
-    second: FX_flamethrower_43
+      213: -2224054463399419174
+    second: FX_round_flame_sheet_21x22_43
   - first:
-      213: 3394694425943837054
-    second: FX_flamethrower_44
+      213: 1509088777966372318
+    second: FX_round_flame_sheet_21x22_44
   - first:
-      213: -8965585368873512861
-    second: FX_flamethrower_45
+      213: 5512425040697279606
+    second: FX_round_flame_sheet_21x22_45
   - first:
-      213: 8634129907198974787
-    second: FX_flamethrower_46
-  - first:
-      213: 1537524537926473461
-    second: FX_flamethrower_47
-  - first:
-      213: -254265440745096985
-    second: FX_flamethrower_48
-  - first:
-      213: -7637857805427770579
-    second: FX_flamethrower_49
-  - first:
-      213: -4345726065870991595
-    second: FX_flamethrower_50
-  - first:
-      213: 2115695912615768692
-    second: FX_flamethrower_51
-  - first:
-      213: -7682963527521703480
-    second: FX_flamethrower_52
-  - first:
-      213: 3818799551290000997
-    second: FX_flamethrower_53
-  - first:
-      213: 2401542747311952052
-    second: FX_flamethrower_54
-  - first:
-      213: -7412684321017397213
-    second: FX_flamethrower_55
-  - first:
-      213: 1965783699823690435
-    second: FX_flamethrower_56
-  - first:
-      213: 9035433282658773315
-    second: FX_flamethrower_57
-  - first:
-      213: -7120400574282026787
-    second: FX_flamethrower_58
-  - first:
-      213: -9000135020467917867
-    second: FX_flamethrower_59
-  - first:
-      213: 6256431187297285252
-    second: FX_flamethrower_60
-  - first:
-      213: -9174552287216755533
-    second: FX_flamethrower_61
-  - first:
-      213: -3404800097626792593
-    second: FX_flamethrower_62
-  - first:
-      213: 2704450366660499116
-    second: FX_flamethrower_63
-  - first:
-      213: -3553181040034896384
-    second: FX_flamethrower_64
-  - first:
-      213: 2972422918853764347
-    second: FX_flamethrower_65
-  - first:
-      213: -9024801537796959414
-    second: FX_flamethrower_66
-  - first:
-      213: 1184748592584195364
-    second: FX_flamethrower_67
-  - first:
-      213: -2204145330593676171
-    second: FX_flamethrower_68
-  - first:
-      213: 7156451178534310277
-    second: FX_flamethrower_69
+      213: -838571267027297862
+    second: FX_round_flame_sheet_21x22_46
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -309,13 +240,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FX_flamethrower_0
+      name: FX_round_flame_sheet_21x22_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +254,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ce0ce41b27c7600800000000000000
-      internalID: 467374567195733025
+      spriteID: f8d13b7dceb609aa0800000000000000
+      internalID: -6156302025640174193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_1
+      name: FX_round_flame_sheet_21x22_1
       rect:
         serializedVersion: 2
-        x: 26
+        x: 21
         y: 0
-        width: 28
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +275,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d44bfa0fdaeee3ee0800000000000000
-      internalID: -1279322813291842483
+      spriteID: 78e36a5ed55854a20800000000000000
+      internalID: 3045987361317338759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_2
+      name: FX_round_flame_sheet_21x22_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 43
         y: 0
-        width: 31
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,20 +296,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 316b909f468e7f200800000000000000
-      internalID: 213895027695924755
+      spriteID: e388a26cfd6a47350800000000000000
+      internalID: 6013614882479048766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_3
+      name: FX_round_flame_sheet_21x22_3
       rect:
         serializedVersion: 2
-        x: 85
+        x: 64
         y: 0
-        width: 31
-        height: 24
+        width: 19
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +317,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a02441cb4afa9150800000000000000
-      internalID: 5880287466757562537
+      spriteID: 23529d16ad6f0c2a0800000000000000
+      internalID: -6719099226231855822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_4
+      name: FX_round_flame_sheet_21x22_4
       rect:
         serializedVersion: 2
-        x: 116
+        x: 83
         y: 0
-        width: 27
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,20 +338,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ffe4b8076f999760800000000000000
-      internalID: 7465173122219831280
+      spriteID: 0e27cbafef245f300800000000000000
+      internalID: 285207814303675104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_5
+      name: FX_round_flame_sheet_21x22_5
       rect:
         serializedVersion: 2
-        x: 143
+        x: 104
         y: 0
-        width: 30
-        height: 24
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,20 +359,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3722a7724a67c6600800000000000000
-      internalID: 462875309121348211
+      spriteID: 8880e2408e5fc16b0800000000000000
+      internalID: -5324110282607425400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_6
+      name: FX_round_flame_sheet_21x22_6
       rect:
         serializedVersion: 2
-        x: 174
+        x: 124
         y: 0
-        width: 28
-        height: 24
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,20 +380,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d7ee5d4400d0d00800000000000000
-      internalID: 940408192837254517
+      spriteID: 3d64837e8af77ae40800000000000000
+      internalID: 5667639019479516883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_7
+      name: FX_round_flame_sheet_21x22_7
       rect:
         serializedVersion: 2
-        x: 202
+        x: 144
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,20 +401,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b73f7ffffcaf5a90800000000000000
-      internalID: -7322944253577971791
+      spriteID: 09a7d56aed9c2b2e0800000000000000
+      internalID: -2111403317172274544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_8
+      name: FX_round_flame_sheet_21x22_8
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcbda2f6ae0f8760800000000000000
+      internalID: 7462199217775033555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5576a5ac0cee7130800000000000000
+      internalID: 3566547493986923867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcddc8bfd8922930800000000000000
+      internalID: 4117021096015682741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_11
       rect:
         serializedVersion: 2
         x: 231
         y: 0
-        width: 30
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,20 +485,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe7372a1429d9b00800000000000000
-      internalID: 836985916356787953
+      spriteID: 37076dee554db7e70800000000000000
+      internalID: 9114111736458670195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_9
+      name: FX_round_flame_sheet_21x22_12
       rect:
         serializedVersion: 2
-        x: 261
+        x: 252
         y: 0
-        width: 30
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,20 +506,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aef55e551d2f2310800000000000000
-      internalID: 1382373180426288807
+      spriteID: e9e50cc6e57251a90800000000000000
+      internalID: -7343920330852770146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_10
+      name: FX_round_flame_sheet_21x22_13
       rect:
         serializedVersion: 2
-        x: 290
+        x: 273
         y: 0
-        width: 31
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,20 +527,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03a46480d7dec4050800000000000000
-      internalID: 5786260742529763888
+      spriteID: 94deb4bded32cb240800000000000000
+      internalID: 4808757942193745225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_11
+      name: FX_round_flame_sheet_21x22_14
       rect:
         serializedVersion: 2
-        x: 320
+        x: 294
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,20 +548,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebad7c18c455d9cb0800000000000000
-      internalID: -4855631036152292674
+      spriteID: df184b5248e4cdda0800000000000000
+      internalID: -5918769480796438019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_12
+      name: FX_round_flame_sheet_21x22_15
       rect:
         serializedVersion: 2
-        x: 348
+        x: 315
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,20 +569,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c73d21fc6312bf50800000000000000
-      internalID: 6895595338081318853
+      spriteID: d76bcdf2a83f4b8a0800000000000000
+      internalID: -6290135004695710083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_13
+      name: FX_round_flame_sheet_21x22_16
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1951bf194ea2f70800000000000000
+      internalID: 9163387707472581092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_17
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3c943380dd9eeb0800000000000000
+      internalID: -4689974509639711835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_18
       rect:
         serializedVersion: 2
         x: 377
         y: 0
-        width: 31
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,20 +632,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2642b5728162fde20800000000000000
-      internalID: 3377460130732516450
+      spriteID: 0868c99786a65dc40800000000000000
+      internalID: 5536448313871337088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_14
+      name: FX_round_flame_sheet_21x22_19
       rect:
         serializedVersion: 2
-        x: 409
+        x: 398
         y: 0
-        width: 26
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,20 +653,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44b199761b4c7e120800000000000000
-      internalID: 2443137589098126148
+      spriteID: c68aec22f82dd6540800000000000000
+      internalID: 5002886273284614252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_15
+      name: FX_round_flame_sheet_21x22_20
       rect:
         serializedVersion: 2
-        x: 435
+        x: 419
         y: 0
-        width: 29
-        height: 24
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -638,20 +674,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6bdb2ad0f8da42c0800000000000000
-      internalID: -4446503153110885521
+      spriteID: 010f5580de8f08870800000000000000
+      internalID: 8683213778501103632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_16
+      name: FX_round_flame_sheet_21x22_21
       rect:
         serializedVersion: 2
-        x: 463
+        x: 439
         y: 0
-        width: 31
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -659,20 +695,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 484e9f4dd12c59b40800000000000000
-      internalID: 5446472757757469828
+      spriteID: 2c9d53172578c8530800000000000000
+      internalID: 3858607768906095042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_17
+      name: FX_round_flame_sheet_21x22_22
       rect:
         serializedVersion: 2
-        x: 494
+        x: 461
         y: 0
-        width: 27
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -680,20 +716,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c5c8dcd25a585480800000000000000
-      internalID: -8910272550813514296
+      spriteID: b652a95389817d880800000000000000
+      internalID: -8586367122545171093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_18
+      name: FX_round_flame_sheet_21x22_23
       rect:
         serializedVersion: 2
-        x: 522
+        x: 482
         y: 0
-        width: 30
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -701,20 +737,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7356baa90eb6a31b0800000000000000
-      internalID: -5676105767935318729
+      spriteID: 2cf87db9428e178c0800000000000000
+      internalID: -4003163349824598078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_19
+      name: FX_round_flame_sheet_21x22_24
       rect:
         serializedVersion: 2
-        x: 552
+        x: 503
         y: 0
-        width: 28
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -722,20 +758,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ec54d5dee502f720800000000000000
-      internalID: 2878369635190988005
+      spriteID: d8e3a67df0e003680800000000000000
+      internalID: -8777500212543734131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_20
+      name: FX_round_flame_sheet_21x22_25
       rect:
         serializedVersion: 2
-        x: 581
+        x: 524
         y: 0
-        width: 28
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -743,20 +779,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b11873d0323ba170800000000000000
-      internalID: 8190695532591059378
+      spriteID: 7f50466bc18abafb0800000000000000
+      internalID: -4635426550175234569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_21
+      name: FX_round_flame_sheet_21x22_26
       rect:
         serializedVersion: 2
-        x: 609
+        x: 545
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -764,20 +800,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e35782273620c9d0800000000000000
-      internalID: -2756160953706392602
+      spriteID: 6ebd711fcd87ed200800000000000000
+      internalID: 206735523238632422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_22
+      name: FX_round_flame_sheet_21x22_27
       rect:
         serializedVersion: 2
-        x: 638
+        x: 566
         y: 0
-        width: 30
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -785,20 +821,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec16f37c5cbe6fc60800000000000000
-      internalID: 7851722235050942926
+      spriteID: 44e3473572298ae40800000000000000
+      internalID: 5667940828647276100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_23
+      name: FX_round_flame_sheet_21x22_28
       rect:
         serializedVersion: 2
-        x: 668
+        x: 587
         y: 0
-        width: 28
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -806,20 +842,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7bc716c5d7976c50800000000000000
-      internalID: 6658457518497844093
+      spriteID: 4fe310cf13f1772f0800000000000000
+      internalID: -975276494760624396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_24
+      name: FX_round_flame_sheet_21x22_29
       rect:
         serializedVersion: 2
-        x: 697
+        x: 608
         y: 0
-        width: 28
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -827,20 +863,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79395bec66733ae10800000000000000
-      internalID: 2207669157035873175
+      spriteID: 52fe42cdf311fdb00800000000000000
+      internalID: 855421420197703461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_25
+      name: FX_round_flame_sheet_21x22_30
       rect:
         serializedVersion: 2
-        x: 725
+        x: 630
         y: 0
-        width: 28
-        height: 24
+        width: 19
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -848,20 +884,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 489ed73569244d840800000000000000
-      internalID: 5247892679206758788
+      spriteID: f777d3e86db7e6140800000000000000
+      internalID: 4714842021343098751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_26
+      name: FX_round_flame_sheet_21x22_31
       rect:
         serializedVersion: 2
-        x: 753
+        x: 649
         y: 0
-        width: 30
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -869,20 +905,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e93aeed374f3a9900800000000000000
-      internalID: 691935067969069982
+      spriteID: 4f0fdcf3b1958a600800000000000000
+      internalID: 479731333884408052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_27
+      name: FX_round_flame_sheet_21x22_32
       rect:
         serializedVersion: 2
-        x: 783
+        x: 670
         y: 0
-        width: 28
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -890,20 +926,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ce5e2582f23c9e0800000000000000
-      internalID: -1602385192177767333
+      spriteID: c25582f3fd480fd70800000000000000
+      internalID: 9074899343523730732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_28
+      name: FX_round_flame_sheet_21x22_33
       rect:
         serializedVersion: 2
-        x: 811
+        x: 692
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -911,20 +947,146 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4153c4bab90d8060800000000000000
-      internalID: 6957227696858550604
+      spriteID: d1e7d8192899b6640800000000000000
+      internalID: 5074318191229763101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_29
+      name: FX_round_flame_sheet_21x22_34
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77726554d70dda680800000000000000
+      internalID: -8742102065203501193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_35
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 0
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f3f599e86ca08c0800000000000000
+      internalID: -4032192200596046006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_36
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01dd510fc1c5b76e0800000000000000
+      internalID: -1838774743493911280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_37
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df2a41167ffb0410800000000000000
+      internalID: 1444528988063674327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_38
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805429d691941a930800000000000000
+      internalID: 4152680704973620488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_39
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655ba329b5b93e3d0800000000000000
+      internalID: -3178526094395787946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_round_flame_sheet_21x22_40
       rect:
         serializedVersion: 2
         x: 840
         y: 0
-        width: 29
-        height: 24
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -932,20 +1094,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5701b639abefda250800000000000000
-      internalID: 5957697959371673717
+      spriteID: 6ec4ad4e18fd044e0800000000000000
+      internalID: -1999352485569213210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_30
+      name: FX_round_flame_sheet_21x22_41
       rect:
         serializedVersion: 2
-        x: 869
+        x: 861
         y: 0
-        width: 30
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -953,20 +1115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dd4333ef08b97e20800000000000000
-      internalID: 3348910176302484944
+      spriteID: 7c726e589d09898b0800000000000000
+      internalID: -5145203310342035513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_31
+      name: FX_round_flame_sheet_21x22_42
       rect:
         serializedVersion: 2
-        x: 900
+        x: 883
         y: 0
-        width: 28
-        height: 24
+        width: 19
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -974,20 +1136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ca5ce32c4f4ba060800000000000000
-      internalID: 6965748437097405126
+      spriteID: 6e9dd9ff78d2ed1e0800000000000000
+      internalID: -2171247908213630490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_32
+      name: FX_round_flame_sheet_21x22_43
       rect:
         serializedVersion: 2
-        x: 929
+        x: 902
         y: 0
-        width: 27
-        height: 24
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -995,20 +1157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14da7d2789a4c4040800000000000000
-      internalID: 4633160135279619393
+      spriteID: ad2a4f3cf329221e0800000000000000
+      internalID: -2224054463399419174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_33
+      name: FX_round_flame_sheet_21x22_44
       rect:
         serializedVersion: 2
-        x: 956
+        x: 922
         y: 0
-        width: 30
-        height: 24
+        width: 23
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1016,20 +1178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18551d44994fb7a80800000000000000
-      internalID: -8467905735218342527
+      spriteID: ed5c6318f3c51f410800000000000000
+      internalID: 1509088777966372318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_34
+      name: FX_round_flame_sheet_21x22_45
       rect:
         serializedVersion: 2
-        x: 987
+        x: 945
         y: 0
-        width: 30
-        height: 24
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1037,20 +1199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b113b6cafdc3c9510800000000000000
-      internalID: 1557186502531428635
+      spriteID: 674cab15e51108c40800000000000000
+      internalID: 5512425040697279606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FX_flamethrower_35
+      name: FX_round_flame_sheet_21x22_46
       rect:
         serializedVersion: 2
-        x: 1017
+        x: 967
         y: 0
-        width: 28
-        height: 24
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1058,239 +1220,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c43ed11ebe602050800000000000000
-      internalID: 5773736484911592642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_36
-      rect:
-        serializedVersion: 2
-        x: 1046
-        y: 0
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8977fba3cb1124220800000000000000
-      internalID: 2468555045889603480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_37
-      rect:
-        serializedVersion: 2
-        x: 1074
-        y: 0
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a65d6ebfdace73710800000000000000
-      internalID: 1673066018591135082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_38
-      rect:
-        serializedVersion: 2
-        x: 1102
-        y: 0
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bb5c7a4c7dd196b0800000000000000
-      internalID: -5291204561288275016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_39
-      rect:
-        serializedVersion: 2
-        x: 1130
-        y: 0
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59a663a24cd50bce0800000000000000
-      internalID: -1391509187754300779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_40
-      rect:
-        serializedVersion: 2
-        x: 1158
-        y: 0
-        width: 31
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69eed3ceac34ddca0800000000000000
-      internalID: -5990557390506955114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_41
-      rect:
-        serializedVersion: 2
-        x: 1190
-        y: 0
-        width: 27
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22e5678f61922ef50800000000000000
-      internalID: 6909129956974288418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_42
-      rect:
-        serializedVersion: 2
-        x: 1217
-        y: 0
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc15f077111b991d0800000000000000
-      internalID: -3343446559775829556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_43
-      rect:
-        serializedVersion: 2
-        x: 1242
-        y: 0
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6fdcf11ecbe6c6e0800000000000000
-      internalID: -1817506129299841171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_44
-      rect:
-        serializedVersion: 2
-        x: 1267
-        y: 0
-        width: 26
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e79816338906c1f20800000000000000
-      internalID: 3394694425943837054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_45
-      rect:
-        serializedVersion: 2
-        x: 1293
-        y: 0
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 360dad4db97d39380800000000000000
-      internalID: -8965585368873512861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FX_flamethrower_46
-      rect:
-        serializedVersion: 2
-        x: 1319
-        y: 0
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34bdb2fa76792d770800000000000000
-      internalID: 8634129907198974787
+      spriteID: ab91df520ebcc54f0800000000000000
+      internalID: -838571267027297862
       vertices: []
       indices: 
       edges: []

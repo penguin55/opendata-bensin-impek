@@ -81992,23 +81992,31 @@ MonoBehaviour:
   - sprite: {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 305986745}
+    collider: {fileID: 0}
   - sprite: {fileID: -2414862981331372680, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 1325310674}
+    collider: {fileID: 0}
   - sprite: {fileID: -5842756031680100665, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 1601985898}
+    collider: {fileID: 0}
   - sprite: {fileID: 2478818775298463482, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
     spawnPosition: {fileID: 937514775}
+    collider: {fileID: 0}
   - sprite: {fileID: 877834233810060504, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 2042725798}
+    collider: {fileID: 0}
   - sprite: {fileID: 418256959753846905, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 1554806131}
+    collider: {fileID: 0}
   - sprite: {fileID: 536336944102774711, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 901253521}
+    collider: {fileID: 0}
   - sprite: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
     spawnPosition: {fileID: 768773569}
+    collider: {fileID: 0}
   centerTransformRotate: {fileID: 1794800379}
   spriteStates:
   - {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
@@ -82020,4 +82028,4 @@ MonoBehaviour:
   - {fileID: 536336944102774711, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
   - {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
   renderSpriteBody: {fileID: 9072407224048406388}
-  stateSequences: 000000000600000007000000050000000700000001000000
+  stateSequences: 0000000006000000070000000400000007000000050000000700000001000000
