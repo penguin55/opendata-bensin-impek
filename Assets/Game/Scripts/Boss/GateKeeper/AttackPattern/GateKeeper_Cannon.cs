@@ -62,6 +62,7 @@ public class GateKeeper_Cannon : AttackEvent
         CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
         Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
         cannon.Launch(direction, bulletSpeed);
+        TWAudioController.PlaySFX("BOSS_SFX", "tank_firing");
     }
 
     private float GetAngleFromDirection(Vector3 from, Vector3 to, bool clockwise)
