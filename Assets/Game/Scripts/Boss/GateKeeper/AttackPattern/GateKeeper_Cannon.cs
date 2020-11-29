@@ -7,12 +7,14 @@ public class GateKeeper_Cannon : AttackEvent
 {
     [SerializeField] private float delay_attack;
     [SerializeField] private GateKeeper bossbehaviour;
-    [SerializeField] private GameObject[] lasers;
+    [SerializeField] private LasersGateKeeper[] lasersGateKeeper;
     [SerializeField] private GameObject prefab;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float timeToFullRotate;
     [SerializeField] private int attackRate;
     private int randomIndex;
+
+    private bool active_attack;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -21,7 +23,9 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void OnEnter_Attack()
     {
-        randomIndex = Random.Range(0, lasers.Length);
+        randomIndex = Random.Range(0, lasersGateKeeper.Length);
+
+        lasersGateKeeper[randomIndex].sign.SetActive(true);
 
         base.OnEnter_Attack();
     }
@@ -33,7 +37,8 @@ public class GateKeeper_Cannon : AttackEvent
         }).SetLoops(attackRate)
         .OnComplete(()=>
         {
-            lasers[randomIndex].SetActive(true);
+            lasersGateKeeper[randomIndex].sign.SetActive(false);
+            if (active_attack) lasersGateKeeper[randomIndex].laser.SetActive(true);
             base.Attack();
         }).OnUpdate(()=>
         {
@@ -44,7 +49,8 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void OnExit_Attack()
     {
-        lasers[randomIndex].SetActive(false);
+        lasersGateKeeper[randomIndex].laser.SetActive(false);
+        active_attack = false;
         base.OnExit_Attack();
     }
 
@@ -64,4 +70,11 @@ public class GateKeeper_Cannon : AttackEvent
 
         return rot_z;
     }
+}
+
+[System.Serializable]
+public class LasersGateKeeper
+{
+    public GameObject laser;
+    public GameObject sign;
 }

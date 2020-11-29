@@ -186,8 +186,16 @@ public class GateKeeper : BossBehaviour
     public void RotateTank(float angle)
     {
         currentRotation = angle >= 360 ? (angle - 360) : angle <= 0 ? (360 + angle) : angle;
-        activeRotateStates = gateKeeperRotateStates[GetAngleSection((int)currentRotation)];
-        renderSpriteBody.sprite = activeRotateStates.sprite;
+        GateKeeperRotateStates newRotateStates = gateKeeperRotateStates[GetAngleSection((int)currentRotation)];
+
+        if (activeRotateStates != newRotateStates)
+        {
+            if (activeRotateStates != null) activeRotateStates.collider.enabled = false;
+
+            activeRotateStates = newRotateStates;
+            renderSpriteBody.sprite = activeRotateStates.sprite;
+            activeRotateStates.collider.enabled = true;
+        }
     }
 
     public Vector3 GetActiveSpawnPosition()
@@ -215,4 +223,5 @@ public class GateKeeperRotateStates
 {
     public Sprite sprite;
     public Transform spawnPosition;
+    public Collider2D collider;
 }
