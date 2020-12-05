@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TomWill;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
@@ -105,7 +107,7 @@ public class DialogMainMenu : MonoBehaviour
 
     public void GoToScene(string nameScene)
     {
-        TWTransition.FadeIn(() => TWLoading.LoadScene(nameScene));
+        TWTransition.FadeIn(() => SceneManager.LoadScene(nameScene));
     }
 
     public void OpenBossPanel(bool active)
