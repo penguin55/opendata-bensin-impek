@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class GateKeeper_Cannon : AttackEvent
 {
+    [SerializeField] private ObjectRotator rotator;
     [SerializeField] private float delay_attack;
     [SerializeField] private GateKeeper bossbehaviour;
     [SerializeField] private LasersGateKeeper[] lasersGateKeeper;
@@ -24,6 +25,7 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void OnEnter_Attack()
     {
+        rotator.ActiveFollow(false);
         randomIndex = Random.Range(0, lasersGateKeeper.Length);
 
         canActiveLaser = true;
@@ -34,6 +36,7 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void Attack()
     {
+        rotator.ActiveFollow(true);
         DOVirtual.DelayedCall((delay_attack / attackRate), () => {
             CannonAttack();
         }).SetLoops(attackRate)
@@ -49,7 +52,7 @@ public class GateKeeper_Cannon : AttackEvent
             base.Attack();
         }).OnUpdate(()=>
         {
-            float angle = GetAngleFromDirection(bossbehaviour.transform.position, CharaController.instance.gameObject.transform.position, true);
+            float angle = GetAngleFromDirection(bossbehaviour.transform.position, rotator.gameObject.transform.position, true);
             bossbehaviour.RotateTank(angle);
         });
     }
@@ -58,6 +61,7 @@ public class GateKeeper_Cannon : AttackEvent
     {
         lasersGateKeeper[randomIndex].laser.SetActive(false);
         active_attack = false;
+        rotator.ActiveFollow(false);
         base.OnExit_Attack();
     }
 
