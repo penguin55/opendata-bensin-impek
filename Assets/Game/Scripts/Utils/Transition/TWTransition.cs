@@ -6,9 +6,10 @@ namespace TomWill
     [RequireComponent(typeof(SpriteRenderer))]
     public class TWTransition : MonoBehaviour
     {      
-        [SerializeField] private float timeToFade;
+        [SerializeField] private float baseTimeToFade = 1;
         [SerializeField] private Color baseColor;
 
+        private float timeToFade;
         private SpriteRenderer rendererSprite;
         private float timeElapsed;
         private bool inFading;
@@ -56,14 +57,14 @@ namespace TomWill
         #endregion
 
         #region TWTransition
-        public static void FadeIn(UnityAction action = null)
+        public static void FadeIn(UnityAction action = null, float duration = -1f)
         {
-            Instance?.transitionFadeIn(action);
+            Instance?.transitionFadeIn(action, duration);
         }
 
-        public static void FadeOut(UnityAction action = null)
+        public static void FadeOut(UnityAction action = null, float duration = -1f)
         {
-            Instance?.transitionFadeOut(action);
+            Instance?.transitionFadeOut(action, duration);
         }
         #endregion
 
@@ -97,10 +98,11 @@ namespace TomWill
             transform.localScale = new Vector3(worldScreenWidth / width, worldScreenHeight / height, 1);
         }
 
-        private void transitionFadeIn(UnityAction action)
+        private void transitionFadeIn(UnityAction action, float duration)
         {
             if (!inFading)
             {
+                timeToFade = duration < 0 ? baseTimeToFade : duration; 
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
                 timeElapsed = 0;
                 fadeIn = true;
@@ -110,10 +112,11 @@ namespace TomWill
             }
         }
 
-        private void transitionFadeOut(UnityAction action)
+        private void transitionFadeOut(UnityAction action, float duration)
         {
             if (!inFading)
             {
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 timeElapsed = timeToFade;
                 fadeIn = false;
