@@ -194,7 +194,7 @@ public class GateKeeper : BossBehaviour
     public void RotateTank(float angle)
     {
         currentRotation = angle >= 360 ? (angle - 360) : angle <= 0 ? (360 + angle) : angle;
-        GateKeeperRotateStates newRotateStates = gateKeeperRotateStates[GetAngleSection((int)currentRotation)];
+        GateKeeperRotateStates newRotateStates = gateKeeperRotateStates[GetAngleSection((int) currentRotation)];
 
         if (activeRotateStates != newRotateStates)
         {
@@ -224,6 +224,18 @@ public class GateKeeper : BossBehaviour
     public Vector3 GetCenterRotatePosition()
     {
         return centerTransformRotate.position;
+    }
+
+    public bool IsSameDirection(float angle)
+    {
+        float newAngle = angle >= 360 ? (angle - 360f) : angle <= 0 ? (360 + angle) : angle;
+        float ceil = currentRotation + 22.5f;
+        float floor = currentRotation - 22.5f;
+
+        ceil = ceil >= 360 ? (ceil - 360) : ceil;
+        floor = floor <= 0 ? (360 + floor) : floor;
+
+        return newAngle <= ceil || newAngle >= floor;
     }
 
     public void TakingDamage(string name)
