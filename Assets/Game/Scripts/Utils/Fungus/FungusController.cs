@@ -7,15 +7,20 @@ public class FungusController : MonoBehaviour
 {
     [SerializeField] private Flowchart flowchart;
     [SerializeField] DialogInput dialogInput;
+    private string lastActiveBlock;
 
     public void Init()
     {
-        flowchart.ExecuteBlock("MissionStart");
+        lastActiveBlock = "MissionStart";
+        flowchart.ExecuteBlock(lastActiveBlock);
     }
 
     public void NextBlock(string blockname)
     {
+        flowchart.StopBlock(blockname);
         flowchart.ExecuteBlock(blockname);
+
+        lastActiveBlock = blockname;
     }
 
     public void NextDialog()

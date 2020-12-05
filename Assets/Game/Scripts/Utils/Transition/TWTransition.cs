@@ -104,8 +104,9 @@ namespace TomWill
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
                 timeElapsed = 0;
                 fadeIn = true;
-                inFading = true;
+                onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
+                inFading = true;
             }
         }
 
@@ -116,8 +117,9 @@ namespace TomWill
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 timeElapsed = timeToFade;
                 fadeIn = false;
-                inFading = true;
+                onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
+                inFading = true;
             }
         }
 
@@ -158,6 +160,7 @@ namespace TomWill
                     colorFading.a = timeElapsed / timeToFade;
                 }
             }
+
 
             rendererSprite.color = colorFading;
         }

@@ -34,35 +34,42 @@ public class DialogMainMenu : MonoBehaviour
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
-       
+
+        TWTransition.FadeIn(()=>
+        {
+            BossListTransition();
+            TWTransition.FadeOut( ()=>
+            {
+                fungusController.NextBlock("Weakness"+activeBoss);
+            });
+        });
+    }
+
+    private void BossListTransition()
+    {
         switch (activeBoss)
         {
             case "Terrorcopter":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
-                fungusController.NextBlock("WeaknessTerrorcopter");
                 break;
             case "GateKeeper":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
-                fungusController.NextBlock("WeaknessGateKeeper");
                 break;
             case "Chariot":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[2];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
-                fungusController.NextBlock("WeaknessChariot");
                 break;
             case "HeadHunter":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
-                fungusController.NextBlock("WeaknessHeadHunter");
                 break;
         }
-        
     }
 
     public void SelectBoss(string bossname)
