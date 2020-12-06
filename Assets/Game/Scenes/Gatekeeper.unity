@@ -19830,6 +19830,7 @@ GameObject:
   - component: {fileID: 1914658744}
   - component: {fileID: 1914658743}
   - component: {fileID: 1914658755}
+  - component: {fileID: 1914658756}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -19918,6 +19919,7 @@ MonoBehaviour:
   - {fileID: 1914658748}
   - {fileID: 1914658747}
   - {fileID: 1914658746}
+  - {fileID: 1914658756}
   - {fileID: 1914658745}
   - {fileID: 1914658744}
   - {fileID: 1914658743}
@@ -19948,7 +19950,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1914658740}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1914658756}
   variables: []
   description: 
   stepPause: 0
@@ -20191,7 +20194,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -20218,7 +20221,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -20246,7 +20249,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -20273,7 +20276,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -20368,6 +20371,24 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1914658756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914658738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 0.5
+  durationOLD: 0
 --- !u!1 &1933482101
 GameObject:
   m_ObjectHideFlags: 0
