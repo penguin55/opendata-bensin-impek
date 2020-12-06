@@ -187,7 +187,7 @@ public class InGameUI : MonoBehaviour
 
     public void OpenItemPanel(bool active)
     {
-        obtainItemBoss.SetActive(true);
+        obtainItemBoss.SetActive(active);
     }
 
     public void PlaySFX(string name)
