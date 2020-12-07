@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace TomWill
@@ -40,11 +41,11 @@ namespace TomWill
             rendererSprite = GetComponent<SpriteRenderer>();
             timeElapsed = 0;
             instance = this;
-            rendererSprite.color = new Color(baseColor.r, baseColor.g, baseColor.b, baseColor.a);
             onComplete = new UnityEvent();
 
             initializeSpriteConstruct();
             adjustingScreen();
+            ChangeToBaseColor();
         }
 
         private void Update()
@@ -66,6 +67,11 @@ namespace TomWill
         {
             Instance?.transitionFadeOut(action, duration);
         }
+
+        public static void ScreenFlash(int flashCount = 1, float duration = 0.1f, UnityAction action = null)
+        {
+            Instance?.screenFlash(flashCount, duration, action);
+        }
         #endregion
 
         #region Internal Function
@@ -76,12 +82,22 @@ namespace TomWill
             {
                 for (int x = 0; x < 2; x++)
                 {
-                    tex.SetPixel(x, y, baseColor);
+                    tex.SetPixel(x, y, Color.white);
                 }
             }
             tex.Apply();
             Sprite overlay = Sprite.Create(tex, new Rect(Vector2.one, Vector2.one), Vector2.one/2, 1);
             rendererSprite.sprite = overlay;
+        }
+
+        private void screenFlash(int flashCount, float duration, UnityAction action)
+        {
+            ChangeColor(Color.white);
+            DOTween.Sequence()
+                .Append(rendererSprite.DOFade(1,duration/2f))
+                .Append(rendererSprite.DOFade(0, duration/2f))
+                .SetLoops(flashCount)
+                .OnComplete(()=> { if (action != null) action.Invoke(); });
         }
 
         private void adjustingScreen()
@@ -102,6 +118,7 @@ namespace TomWill
         {
             if (!inFading)
             {
+                ChangeToBaseColor();
                 timeToFade = duration < 0 ? baseTimeToFade : duration; 
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
                 timeElapsed = 0;
@@ -116,6 +133,7 @@ namespace TomWill
         {
             if (!inFading)
             {
+                ChangeToBaseColor();
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 timeElapsed = timeToFade;
@@ -171,6 +189,16 @@ namespace TomWill
         private void NullHandler()
         {
 
+        }
+
+        private void ChangeColor(Color color)
+        {
+            rendererSprite.color = color;
+        }
+
+        private void ChangeToBaseColor()
+        {
+            rendererSprite.color = baseColor;
         }
         #endregion
     }
