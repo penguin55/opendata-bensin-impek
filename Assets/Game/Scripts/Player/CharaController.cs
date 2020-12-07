@@ -19,7 +19,6 @@ public class CharaController : CharaBehaviour
     {
         GameTime.PlayerTimeScale = 1f;
         Init();
-        anim.SetBool("dead", false);
         instance = this;
     }
 

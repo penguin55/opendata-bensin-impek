@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class GateKeeper : BossBehaviour
 {
-   
     enum State_Gatekeeper
     {
         PREPARATION,
@@ -33,13 +32,12 @@ public class GateKeeper : BossBehaviour
 
     private void Start()
     {
-       
         Sound("helicopter_blades");
         Instance = this;
         stateIndex = 0;
         currentState = State_Gatekeeper.PREPARATION;
         Sprite = GetComponent<SpriteRenderer>();
-        Init();
+        DefaultMaterial = Sprite.material;
 
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
