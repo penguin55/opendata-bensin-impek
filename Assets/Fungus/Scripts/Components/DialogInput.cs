@@ -183,6 +183,11 @@ namespace Fungus
             }
         }
 
+        public virtual void ChangeClickMode(ClickMode click)
+        {
+            clickMode = click;
+        }
+
         #endregion
     }
 }
