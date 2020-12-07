@@ -30,6 +30,11 @@ public class BossBehaviour : MonoBehaviour
     public float FlashDelay { get => flashDelay; set => flashDelay = value; }
     public SpriteRenderer Sprite { get => sprite; set => sprite = value; }
 
+    protected virtual void Init()
+    {
+        defaultMaterial = sprite.material;
+    }
+
     protected virtual void Preparation()
     {
 
@@ -76,6 +81,11 @@ public class BossBehaviour : MonoBehaviour
     {
         if (health >= 1)
         {
+            DOTween.Sequence()
+           .AppendCallback(() => { Sprite.material = WhiteFlash; })
+           .AppendInterval(FlashDelay)
+           .AppendCallback(() => { Sprite.material = DefaultMaterial; }
+           );
             health -= 1;
             InGameUI.instance.UpdateHpBos(health);
 
