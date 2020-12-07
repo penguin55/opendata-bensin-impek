@@ -27,4 +27,9 @@ public class FungusController : MonoBehaviour
     {
         dialogInput.SetButtonClickedFlag();
     }
+
+    public void ChangeClickMode(ClickMode clicked)
+    {
+        dialogInput.ChangeClickMode(clicked);
+    }
 }
