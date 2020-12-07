@@ -38,6 +38,7 @@ public class CharaBehaviour : MonoBehaviour
 
     public void Init()
     {
+        Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;
         canDash = true;
