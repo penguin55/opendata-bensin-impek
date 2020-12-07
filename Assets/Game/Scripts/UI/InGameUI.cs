@@ -4,11 +4,12 @@ using UnityEngine;
 using TomWill;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, obtainItemBoss;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, obtainItemBoss;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
@@ -87,6 +88,7 @@ public class InGameUI : MonoBehaviour
             activateItemImage.overrideSprite = aPair;
         }
     }
+
     public void GameWin()
     {
         dialogUI.SetActive(true);
@@ -178,12 +180,37 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    public void OpenDialogPanel(bool active)
+    {
+        dialogFungus.SetActive(active);
+    }
+
+    public void OpenItemPanel(bool active)
+    {
+        obtainItemBoss.SetActive(active);
+    }
+
+    public void PlaySFX(string name)
+    {
+        float audioLength = TWAudioController.AudioLength(name, "SFX");
+        DOTween.Sequence()
+            .AppendCallback(() => TWAudioController.PlaySFX("SFX_Boss", name))
+            .PrependInterval(audioLength)
+            .SetLoops(-1)
+            .SetId(name);
+    }
+
+    public void StopSFX(string name)
+    {
+        DOTween.Kill(name, true);
+    }
+
     public void GameOver()
     {
         if (CharaController.instance.dead)
         {
             gameOverUI.SetActive(true);
-            GameTime.GlobalTimeScale = 0f;
+            GameTime.DefaultTimeScale = 0f;
         }
         else
         {
