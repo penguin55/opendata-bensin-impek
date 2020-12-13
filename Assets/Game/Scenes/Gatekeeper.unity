@@ -20047,7 +20047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 18.20346, y: 24.629532}
+  scrollPos: {x: 13.561798, y: 95.59279}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 407
@@ -20061,7 +20061,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1914658740}
   selectedCommands:
-  - {fileID: 1914658754}
+  - {fileID: 1914658751}
   variables: []
   description: 
   stepPause: 0
@@ -20408,7 +20408,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 871491129}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: cba316e08625e2f418e635a24fab8a73, type: 3}
+  portrait: {fileID: 21300000, guid: 6dab9c750cc4c9544a574339c7f78f34, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1835449789}
