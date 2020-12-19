@@ -171,7 +171,7 @@ public class CharaBehaviour : MonoBehaviour
                     anim.SetBool("dead", true);
                     GameVariables.STILL_ALIVE = false;
                     GameVariables.GAME_OVER = true;
-                    TWTransition.ScreenFlash(2, 0.5f);
+                    TWTransition.ScreenFlash(1, 0.1f);
                     DOTween.Sequence()
                         .AppendInterval(1f)
                         .AppendCallback(() =>
