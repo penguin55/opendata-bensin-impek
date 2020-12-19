@@ -6376,8 +6376,8 @@ Transform:
   - {fileID: 372605991}
   - {fileID: 80086733}
   - {fileID: 336258159}
-  m_Father: {fileID: 1868384615}
-  m_RootOrder: 3
+  m_Father: {fileID: 1756149945}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &196825783
 BoxCollider2D:
@@ -6974,8 +6974,8 @@ Transform:
   - {fileID: 1145126707}
   - {fileID: 128136028}
   - {fileID: 323081227}
-  m_Father: {fileID: 1868384615}
-  m_RootOrder: 2
+  m_Father: {fileID: 1756149945}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &287993995
 BoxCollider2D:
@@ -8343,7 +8343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateKeeper_Cannon: {fileID: 1868384616}
+  laserDamage: {fileID: 1756149946}
 --- !u!60 &499540656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10102,8 +10102,8 @@ Transform:
   - {fileID: 1438063096}
   - {fileID: 383799943}
   - {fileID: 1151427200}
-  m_Father: {fileID: 1868384615}
-  m_RootOrder: 0
+  m_Father: {fileID: 1756149945}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &893859361
 BoxCollider2D:
@@ -12531,7 +12531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338294921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12539,8 +12539,8 @@ Transform:
   - {fileID: 53313209}
   - {fileID: 15991127}
   - {fileID: 1870819909}
-  m_Father: {fileID: 1868384615}
-  m_RootOrder: 6
+  m_Father: {fileID: 1756149945}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362909645
 GameObject:
@@ -12741,7 +12741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateKeeper_Cannon: {fileID: 1868384616}
+  laserDamage: {fileID: 1756149946}
 --- !u!60 &1388769786
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18614,6 +18614,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1756149944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756149945}
+  - component: {fileID: 1756149946}
+  m_Layer: 0
+  m_Name: LaserDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1756149945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756149944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1338294922}
+  - {fileID: 1429284671}
+  - {fileID: 893859360}
+  - {fileID: 1833914573}
+  - {fileID: 287993994}
+  - {fileID: 196825782}
+  m_Father: {fileID: 9072407222221417255}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756149946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756149944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc070aee2a3d3024d8ce367d0ca3d22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lasersGateKeeper:
+  - gun: {fileID: 1897096764}
+    laser: {fileID: 893859359}
+    sign: {fileID: 1373205151}
+  - gun: {fileID: 1388769784}
+    laser: {fileID: 1833914572}
+    sign: {fileID: 53313208}
+  - gun: {fileID: 1980397482}
+    laser: {fileID: 287993993}
+    sign: {fileID: 15991126}
+  - gun: {fileID: 499540655}
+    laser: {fileID: 196825781}
+    sign: {fileID: 1870819908}
+  timeSegment3: 3
+  timeSegment2: 2
+  timeSegment1: 1
 --- !u!1 &1786209262
 GameObject:
   m_ObjectHideFlags: 0
@@ -18682,7 +18747,7 @@ Transform:
   - {fileID: 1601985898}
   - {fileID: 1325310674}
   m_Father: {fileID: 1868384615}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807305069
 GameObject:
@@ -18883,8 +18948,8 @@ Transform:
   - {fileID: 1113700852}
   - {fileID: 228837135}
   - {fileID: 503130183}
-  m_Father: {fileID: 1868384615}
-  m_RootOrder: 1
+  m_Father: {fileID: 1756149945}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1833914574
 BoxCollider2D:
@@ -19166,13 +19231,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 893859360}
-  - {fileID: 1833914573}
-  - {fileID: 287993994}
-  - {fileID: 196825782}
   - {fileID: 1794800379}
-  - {fileID: 1429284671}
-  - {fileID: 1338294922}
   m_Father: {fileID: 9072407222221417255}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19197,19 +19256,7 @@ MonoBehaviour:
   rotator: {fileID: 266848880}
   delay_attack: 10
   bossbehaviour: {fileID: 9072407224048406396}
-  lasersGateKeeper:
-  - gun: {fileID: 1897096764}
-    laser: {fileID: 893859359}
-    sign: {fileID: 1373205151}
-  - gun: {fileID: 1388769784}
-    laser: {fileID: 1833914572}
-    sign: {fileID: 53313208}
-  - gun: {fileID: 1980397482}
-    laser: {fileID: 287993993}
-    sign: {fileID: 15991126}
-  - gun: {fileID: 499540655}
-    laser: {fileID: 196825781}
-    sign: {fileID: 1870819908}
+  laserDamage: {fileID: 1756149946}
   prefab: {fileID: 7294200537008970750, guid: ee1a425a125dff847af8c977862af07f, type: 3}
   bulletSpeed: 10
   timeToFullRotate: 3
@@ -19773,7 +19820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateKeeper_Cannon: {fileID: 1868384616}
+  laserDamage: {fileID: 1756149946}
 --- !u!60 &1897096766
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21165,7 +21212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4971fc642b557dd4198a20a682222348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateKeeper_Cannon: {fileID: 1868384616}
+  laserDamage: {fileID: 1756149946}
 --- !u!60 &1980397484
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -41035,7 +41082,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1868384615}
+    m_TransformParent: {fileID: 1756149945}
     m_Modifications:
     - target: {fileID: 7111620721763686226, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
@@ -41075,7 +41122,7 @@ PrefabInstance:
     - target: {fileID: 7111620721763686226, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7111620721763686226, guid: 840df9a6d3057c04a949e8ebd655c9b5,
         type: 3}
@@ -41417,6 +41464,7 @@ Transform:
   - {fileID: 580468977}
   - {fileID: 1868384615}
   - {fileID: 266848878}
+  - {fileID: 1756149945}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
