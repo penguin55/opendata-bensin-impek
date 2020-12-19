@@ -1,5 +1,6 @@
 ﻿public static class GameVariables
 {
+    public static string DIALOG_START_MESSAGE;
     public static bool FREEZE_INPUT;
     public static bool PLAYER_IMMUNE;
     public static bool SLOW_MO;
