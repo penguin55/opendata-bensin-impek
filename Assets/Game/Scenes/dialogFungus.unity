@@ -109373,6 +109373,8 @@ GameObject:
   - component: {fileID: 1079525751}
   - component: {fileID: 1079525750}
   - component: {fileID: 1079525743}
+  - component: {fileID: 1079525752}
+  - component: {fileID: 1079525744}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -109393,11 +109395,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -104.5025, y: 2.1664762}
+  scrollPos: {x: 5.332103, y: 182.73088}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 323
-  zoom: 0.9999995
+  zoom: 0.64000034
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -109405,7 +109407,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1079525718}
+  - {fileID: 1079525752}
   selectedCommands: []
   variables: []
   description: 
@@ -109460,9 +109462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 210
-    y: -54
-    width: 120.40003
+    x: 208.4375
+    y: -85.25
+    width: 119.99996
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -109552,22 +109554,22 @@ MonoBehaviour:
   itemId: 32
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2030743730}
-  targetComponentAssemblyName: DialogMainMenu, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 4515125482283010050}
+  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: DialogMainMenu
-  targetMethod: OpenBossPanel
-  targetMethodText: 'OpenBossPanel (Boolean): Void'
+  targetComponentText: FungusController
+  targetMethod: NextBlock
+  targetMethodText: 'NextBlock (String): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
+      typeFullname: System.String
       intValue: 0
-      boolValue: 1
+      boolValue: 0
       floatValue: 0
-      stringValue: 
+      stringValue: pick Boss
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -110038,9 +110040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 72
-    y: 3.5
-    width: 179.60007
+    x: 61.0625
+    y: 8.187497
+    width: 182.49992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -110243,9 +110245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 274.1277
-    y: 1.5
-    width: 176.40005
+    x: 280.3777
+    y: 9.312495
+    width: 179.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -110511,9 +110513,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 271
-    y: 75.5
-    width: 177.20006
+    x: 296
+    y: 70.8125
+    width: 181.24992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -110705,9 +110707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 88
+    x: 83.3125
     y: 68.5
-    width: 150.00005
+    width: 152.49994
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -110781,7 +110783,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 198
     y: 131.5
-    width: 136.40004
+    width: 134.99995
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -111094,7 +111096,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 213
     y: 180.6978
-    width: 109.20003
+    width: 111.24997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -111483,7 +111485,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 93.18085
     y: 246.04271
-    width: 174.80005
+    width: 173.74994
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -111649,7 +111651,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 304.33197
     y: 245.48889
-    width: 170.80005
+    width: 171.24994
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -112421,6 +112423,51 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 2
   durationOLD: 0
+--- !u!114 &1079525744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079525645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 122
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 2030743730}
+  targetComponentAssemblyName: DialogMainMenu, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DialogMainMenu
+  targetMethod: OpenBossPanel
+  targetMethodText: 'OpenBossPanel (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &1079525745
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -112595,6 +112642,33 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 2
   durationOLD: 0
+--- !u!114 &1079525752
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079525645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 210.29271
+    y: -38.980957
+    width: 104.99997
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 121
+  blockName: pick Boss
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1079525744}
+  suppressAllAutoSelections: 0
 --- !u!1001 &1086381315
 PrefabInstance:
   m_ObjectHideFlags: 0
