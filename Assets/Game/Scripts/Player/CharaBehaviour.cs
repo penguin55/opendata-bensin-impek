@@ -60,8 +60,8 @@ public class CharaBehaviour : MonoBehaviour
             UseItem();
         }
 
-        InGameUI.instance.UpdateLive();
-        InGameUI.instance.UpdateShield();
+        InGameUI.instance?.UpdateLive();
+        InGameUI.instance?.UpdateShield();
     }
 
     protected void Clamp()
@@ -132,6 +132,7 @@ public class CharaBehaviour : MonoBehaviour
 
                 interact.DashingProjectile(lastDirection, data.DashSpeed);
                 interact.DashingGun();
+                interact.DashingButtonInteract();
             }
         }
     }
@@ -224,6 +225,11 @@ public class CharaBehaviour : MonoBehaviour
             TakeDamage();
             collision.GetComponent<CannonGK>().Explode();
         }
+
+        if (collision.CompareTag("button_interact"))
+        {
+            interact.buttonInteract = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -231,6 +237,11 @@ public class CharaBehaviour : MonoBehaviour
         if (interact.projectileDetect && collision.CompareTag("projectiles"))
         {
             interact.projectileDetect = null;
+        }
+
+        if (interact.buttonInteract && collision.CompareTag("button_interact"))
+        {
+            interact.buttonInteract = null;
         }
     }
 

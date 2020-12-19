@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TrainingListenerEvent : MonoBehaviour
 {
+    [SerializeField] protected BasicTrainingManager manager;
     protected bool activeEventListener;
 
-    public void ActivateEventListener(bool flag)
+    public virtual void ActivateEventListener(bool flag)
     {
         activeEventListener = flag;
     }

@@ -7,6 +7,7 @@ public class CharaInteract : MonoBehaviour
 {
     [HideInInspector] public GameObject projectileDetect;
     [HideInInspector] public GameObject gunDetect;
+    [HideInInspector] public GameObject buttonInteract;
 
     public void DashingProjectile(Vector3 lastDirection, float dashSpeed)
     {
@@ -39,6 +40,14 @@ public class CharaInteract : MonoBehaviour
         if (gunDetect)
         {
             gunDetect.GetComponent<GunInteractDetect>().Interact();
+        }
+    }
+
+    public void DashingButtonInteract()
+    {
+        if (buttonInteract)
+        {
+            buttonInteract.GetComponent<TLEO_Button>().Interact();
         }
     }
 }

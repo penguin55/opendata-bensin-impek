@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Fungus;
+using System.Collections;
 using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
@@ -37,69 +38,73 @@ public class CharaController : CharaBehaviour
     public void KeyboardMovement()
     {
         direction = Vector2.zero;
-        /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
-        if (Input.GetKey(InputManager.instance.moveUp))
+
+        if (!GameVariables.FREEZE_INPUT)
         {
-            //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
-            isAccelerating = true;
-            direction += Vector2.up;
-            lastDirection = Vector2.up;
-        }
-        if (Input.GetKeyUp(InputManager.instance.moveUp))
-        {
-            if (isAccelerating && lastDirection == Vector2.up)
+            /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
+            if (Input.GetKey(InputManager.instance.moveUp))
             {
-                isAccelerating = false;
-                timeMoveElapsed = timeToStop;
+                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                isAccelerating = true;
+                direction += Vector2.up;
+                lastDirection = Vector2.up;
             }
-        }
-
-        if (Input.GetKey(InputManager.instance.moveDown))
-        {
-            //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
-            isAccelerating = true;
-            direction += Vector2.down;
-            lastDirection = Vector2.down;
-        }
-        if (Input.GetKeyUp(InputManager.instance.moveDown))
-        {
-            if (isAccelerating && lastDirection == Vector2.down)
+            if (Input.GetKeyUp(InputManager.instance.moveUp))
             {
-                isAccelerating = false;
-                timeMoveElapsed = timeToStop;
+                if (isAccelerating && lastDirection == Vector2.up)
+                {
+                    isAccelerating = false;
+                    timeMoveElapsed = timeToStop;
+                }
             }
-        }
 
-        if (Input.GetKey(InputManager.instance.moveLeft))
-        {
-            //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
-            isAccelerating = true;
-            direction += Vector2.left;
-            lastDirection = Vector2.left; ;
-        }
-        if (Input.GetKeyUp(InputManager.instance.moveLeft))
-        {
-            if (isAccelerating && lastDirection == Vector2.left)
+            if (Input.GetKey(InputManager.instance.moveDown))
             {
-
-                isAccelerating = false;
-                timeMoveElapsed = timeToStop;
+                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                isAccelerating = true;
+                direction += Vector2.down;
+                lastDirection = Vector2.down;
             }
-        }
-
-        if (Input.GetKey(InputManager.instance.moveRight))
-        {
-            //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
-            isAccelerating = true;
-            direction += Vector2.right;
-            lastDirection = Vector2.right;
-        }
-        if (Input.GetKeyUp(InputManager.instance.moveRight))
-        {
-            if (isAccelerating && lastDirection == Vector2.right)
+            if (Input.GetKeyUp(InputManager.instance.moveDown))
             {
-                isAccelerating = false;
-                timeMoveElapsed = timeToStop;
+                if (isAccelerating && lastDirection == Vector2.down)
+                {
+                    isAccelerating = false;
+                    timeMoveElapsed = timeToStop;
+                }
+            }
+
+            if (Input.GetKey(InputManager.instance.moveLeft))
+            {
+                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                isAccelerating = true;
+                direction += Vector2.left;
+                lastDirection = Vector2.left; ;
+            }
+            if (Input.GetKeyUp(InputManager.instance.moveLeft))
+            {
+                if (isAccelerating && lastDirection == Vector2.left)
+                {
+
+                    isAccelerating = false;
+                    timeMoveElapsed = timeToStop;
+                }
+            }
+
+            if (Input.GetKey(InputManager.instance.moveRight))
+            {
+                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                isAccelerating = true;
+                direction += Vector2.right;
+                lastDirection = Vector2.right;
+            }
+            if (Input.GetKeyUp(InputManager.instance.moveRight))
+            {
+                if (isAccelerating && lastDirection == Vector2.right)
+                {
+                    isAccelerating = false;
+                    timeMoveElapsed = timeToStop;
+                }
             }
         }
 
@@ -108,7 +113,7 @@ public class CharaController : CharaBehaviour
 
     public void Action()
     {
-        if (Input.GetKeyDown(InputManager.instance.dash))
+        if (Input.GetKeyDown(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT)
         {
             if (canDash)
             {
@@ -125,7 +130,7 @@ public class CharaController : CharaBehaviour
 
     private void ActivateItem()
     {
-        if (Input.GetKeyDown(InputManager.instance.activateItem))
+        if (Input.GetKeyDown(InputManager.instance.activateItem) && !GameVariables.FREEZE_INPUT)
         {
             UseItem();
         }

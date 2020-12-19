@@ -15,8 +15,9 @@ public class BasicTrainingManager : MonoBehaviour
     {
         currentIndex = 0;
         activeTrainingData = trainingDatas[currentIndex];
+        GameVariables.FREEZE_INPUT = true;
 
-        LaunchTraining();
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () => LaunchTraining() );
     }
 
     private void NextTraining()
@@ -37,11 +38,17 @@ public class BasicTrainingManager : MonoBehaviour
 
     public void CompleteTrainingSection()
     {
-
+        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, 1f, () => 
+        {
+            GameVariables.FREEZE_INPUT = true;
+            NextTraining();
+            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, 1f);
+        });
     }
 
     private void LaunchTraining()
     {
+        GameVariables.FREEZE_INPUT = false;
         activeTrainingData.eventTraining.ActivateEventListener(true);
     }
 }

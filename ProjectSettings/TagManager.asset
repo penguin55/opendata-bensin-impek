@@ -9,6 +9,7 @@ TagManager:
   - damage area
   - gun
   - laser_cannon
+  - button_interact
   layers:
   - Default
   - TransparentFX
