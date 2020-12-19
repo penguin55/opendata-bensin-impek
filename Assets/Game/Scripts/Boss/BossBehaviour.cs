@@ -51,7 +51,7 @@ public class BossBehaviour : MonoBehaviour
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
-
+        TWTransition.ScreenFlash(2, 0.5f);
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:
