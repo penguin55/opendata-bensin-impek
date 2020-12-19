@@ -54,6 +54,7 @@ public class GateKeeper_Cannon : AttackEvent
     {
         CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
         Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
+        CameraShake.instance.Shake(1, 3, 5);
 
         float angleDir = GetAngleFromDirection(bossbehaviour.GetCenterRotatePosition(), CharaController.instance.gameObject.transform.position, true);
 

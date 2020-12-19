@@ -59,6 +59,7 @@ public class GateKeeper_LaserDamage : MonoBehaviour
         lasersGateKeeper[randomIndex].sign.SetActive(false);
         if (active_attack)
         {
+            CameraShake.instance.Shake(1, 3, 5);
             TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_firing");
             lasersGateKeeper[randomIndex].laser.SetActive(true);
         }
