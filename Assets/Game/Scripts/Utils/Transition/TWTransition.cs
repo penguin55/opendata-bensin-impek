@@ -134,7 +134,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.up * -offsetMove;
+                transform.localPosition = new Vector3( 0f, -offsetMove, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 rendererSprite.color = colorFading;
@@ -155,7 +155,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0f, 0f, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 rendererSprite.color = colorFading;
@@ -177,7 +177,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.up * offsetMove;
+                transform.localPosition = new Vector3(0f, offsetMove, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 rendererSprite.color = colorFading;
@@ -198,7 +198,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0f, 0f, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 rendererSprite.color = colorFading;
@@ -220,7 +220,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0f, 0f, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
                 rendererSprite.color = colorFading;
@@ -241,7 +241,7 @@ namespace TomWill
                 onComplete.RemoveAllListeners();
                 onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
-                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0f, 0f, 11f);
                 ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
                 rendererSprite.color = colorFading;

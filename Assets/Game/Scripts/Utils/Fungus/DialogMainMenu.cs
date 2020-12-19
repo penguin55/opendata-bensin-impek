@@ -109,14 +109,9 @@ public class DialogMainMenu : MonoBehaviour
         GameData.ActiveItem = data;
     }
 
-    public void GoToScene(string nameScene)
-    {
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => SceneManager.LoadScene(nameScene));
-    }
-
     public void GoToScene(string nameScene, TWTransition.TransitionType type)
     {
-        TWTransition.ScreenTransition(type, 1f, () => SceneManager.LoadScene(nameScene)); 
+        TWTransition.ScreenTransition(type, 1f, () => DOVirtual.DelayedCall(0.5f, ()=> SceneManager.LoadScene(nameScene))); 
     }
 
     public void OpenBossPanel(bool active)
