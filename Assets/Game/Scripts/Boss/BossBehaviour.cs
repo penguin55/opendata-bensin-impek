@@ -21,6 +21,7 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private PlayableDirector director;
 
     [SerializeField] protected AttackPattern[] patterns;
+    [SerializeField]private FungusController fungus;
     
 
     protected AttackEvent currentAttackEvent;
@@ -59,9 +60,8 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
                     .AppendInterval(explosion.main.duration / 2)
                     .AppendCallback(() => { gameObject.SetActive(false); })
-                    .AppendInterval(explosion.main.duration / 2)
-                    .AppendCallback(() => Time.timeScale = 0f)
-                    .AppendCallback(() => InGameUI.instance.GameWin());
+                    .AppendInterval(explosion.main.duration)
+                    .AppendCallback(() => fungus.NextBlock("Dialog_1"));
                 break;
             case GameData.BossType.GATEKEEPER:
                 DOTween.Sequence()
