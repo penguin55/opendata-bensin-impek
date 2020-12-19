@@ -11,6 +11,7 @@ public class DialogMainMenu : MonoBehaviour
     public static DialogMainMenu instance;
 
     [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
+    [SerializeField] private GameObject tv, tv1, tv2;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
     [SerializeField] [TextArea(0, 60)] private string[] bossDesc;
@@ -49,6 +50,9 @@ public class DialogMainMenu : MonoBehaviour
 
     private void BossListTransition()
     {
+        tv.SetActive(false);
+        tv1.SetActive(false);
+        tv2.SetActive(false);
         switch (activeBoss)
         {
             case "Terrorcopter":
