@@ -13,10 +13,14 @@ public class BasicTrainingManager : MonoBehaviour
     {
         currentIndex = 0;
         activeTrainingData = trainingDatas[currentIndex];
+
+        LaunchTraining();
     }
 
     private void NextTraining()
     {
+        activeTrainingData.eventTraining.ActivateEventListener(false);
+
         currentIndex++;
         if (currentIndex >= trainingDatas.Length)
         {
@@ -36,7 +40,7 @@ public class BasicTrainingManager : MonoBehaviour
 
     private void LaunchTraining()
     {
-
+        activeTrainingData.eventTraining.ActivateEventListener(true);
     }
 }
 
@@ -46,4 +50,5 @@ public class BasicTrainingData
     public string training_name;
     public Sprite training_button;
     public Sprite training_button_desc;
+    public TrainingListenerEvent eventTraining;
 }

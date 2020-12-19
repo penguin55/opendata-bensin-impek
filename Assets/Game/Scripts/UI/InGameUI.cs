@@ -37,9 +37,9 @@ public class InGameUI : MonoBehaviour
         GameVariables.GAME_OVER = false;
         index = 0;
         instance = this;
-        TWLoading.OnSuccessLoad(() => {
-            TWTransition.FadeOut();
-        });
+        //TWLoading.OnSuccessLoad(() => {
+        //    TWTransition.FadeOut(null, 0);
+        //});
         PlayBGM(bgm);
         ItemImage();
     }
