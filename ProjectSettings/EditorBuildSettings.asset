@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/dialogFungus.unity
     guid: 8f0cd490118793e429bf683a92947cdf
   - enabled: 1
-    path: Assets/Game/Scenes/Terrorcopter.unity
+    path: Assets/Game/Scenes/Training_pustaha.unity
     guid: 4e7c33cdeeb08fd43ae81be37925a902
   - enabled: 1
     path: Assets/Game/Scenes/Gatekeeper.unity

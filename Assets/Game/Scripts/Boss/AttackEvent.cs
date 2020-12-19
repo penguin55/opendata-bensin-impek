@@ -19,13 +19,23 @@ public class AttackEvent : MonoBehaviour
     protected virtual void OnPrepare_Attack()
     {
         //anim.gameObject.SetActive(true);
-        DOTween.Sequence()
-            .AppendCallback(() => { anim.gameObject.SetActive(true); })
-            .AppendCallback(() => { TWAudioController.PlaySFX("BOSS_SFX", "boss_attack_telegraph"); })
-            .AppendInterval(delay_animation)
-            .AppendCallback(() => anim.gameObject.SetActive(false))
-            .AppendInterval(delay_prepare)
-            .AppendCallback(() => OnEnter_Attack());
+        if (anim != null)
+        {
+            DOTween.Sequence()
+           .AppendCallback(() => { anim.gameObject.SetActive(true); })
+           .AppendCallback(() => { TWAudioController.PlaySFX("BOSS_SFX", "boss_attack_telegraph"); })
+           .AppendInterval(delay_animation)
+           .AppendCallback(() => anim.gameObject.SetActive(false))
+           .AppendInterval(delay_prepare)
+           .AppendCallback(() => OnEnter_Attack());
+        }
+        else
+        {
+            DOTween.Sequence()
+           .AppendInterval(delay_prepare)
+           .AppendCallback(() => OnEnter_Attack());
+        }
+       
 
         //DOVirtual.DelayedCall(delay_prepare, () =>
         //{
