@@ -7,6 +7,7 @@ public class ListItemUIManager : MonoBehaviour
     [SerializeField] private GameObject placeholderItem;
     [SerializeField] private Transform contentViewList;
     [SerializeField] private Button confirmChooseItem;
+    [SerializeField] private Button tryItem;
     [SerializeField] private ScrollRect scrollRect;
     private RectTransform elementAnchor;
     private float baseSize = 5;
@@ -59,6 +60,7 @@ public class ListItemUIManager : MonoBehaviour
         instanceImage.color = data.wasUsed ? unavailableItemColor : availableItemColor;
         instanceButton.onClick.AddListener(() => DialogMainMenu.instance.SelectItem(data));
         instanceButton.onClick.AddListener(() => confirmChooseItem.gameObject.SetActive(!data.wasUsed));
+        instanceButton.onClick.AddListener(() => tryItem.gameObject.SetActive(true));
 
         if (!elementAnchor) elementAnchor = instanceObject.GetComponent<RectTransform>();
     }
