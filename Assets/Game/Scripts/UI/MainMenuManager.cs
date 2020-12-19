@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        GameVariables.DIALOG_START_MESSAGE = "MISSION_START";
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.FadeIn(() => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");
