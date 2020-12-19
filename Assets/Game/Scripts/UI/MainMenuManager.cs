@@ -4,14 +4,14 @@ public class MainMenuManager : MonoBehaviour
 {
     private void Start()
     {
-        TWTransition.FadeOut();
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT);
         TWAudioController.PlayBGM("BGM", "MainMenu", TWAudioController.PlayType.TRANSITION);
     }
     public void PlayGame()
     {
         GameVariables.DIALOG_START_MESSAGE = "MISSION_START";
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.FadeIn(() => TWLoading.LoadScene("dialogFungus"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 

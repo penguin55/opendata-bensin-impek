@@ -6,7 +6,7 @@ public class TobecontinudUI : MonoBehaviour
 {
     void Start()
     {
-        TWTransition.FadeOut();
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT);
         GameTime.GlobalTimeScale = 1f;
     }
 
@@ -26,10 +26,10 @@ public class TobecontinudUI : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
+                TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("MainMenu"));
             }
         }
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
-        TWTransition.FadeIn(() => TWLoading.LoadScene("MainMenu"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("MainMenu"));
     }
 }

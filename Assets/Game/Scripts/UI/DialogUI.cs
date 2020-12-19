@@ -21,7 +21,7 @@ public class DialogUI : MonoBehaviour
     void Start()
     {
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.FadeOut();
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT);
         });
         bossIndex = 4;
         itemIndex = 5;
@@ -155,14 +155,14 @@ public class DialogUI : MonoBehaviour
     {
         TimelineManager.instance.Director.Play();
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
-        TWTransition.FadeIn(() => TWLoading.LoadScene("Terrorcopter"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("Terrorcopter"));
     }
 
     public void EndTimeline()
     {
         if (TimelineManager.instance.Director.state != UnityEngine.Playables.PlayState.Playing)
         {
-            TWTransition.FadeIn(() => TWLoading.LoadScene("Terrorcopter"));
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("Terrorcopter"));
             TWAudioController.PlaySFX("UI", "transition");
         }
     }

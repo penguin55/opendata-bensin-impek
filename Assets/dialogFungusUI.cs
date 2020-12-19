@@ -19,7 +19,7 @@ public class dialogFungusUI : MonoBehaviour
     void Start()
     {
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.FadeOut();
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT);
         });
         bossIndex = 4;
         itemIndex = 5;
@@ -48,7 +48,7 @@ public class dialogFungusUI : MonoBehaviour
         yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
         Debug.Log((float)TimelineManager.instance.Director.duration);
         Debug.Log(TimelineManager.instance.Director.state);
-        TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("BossTest"));
     }
 
     public void EndTimeline()
@@ -56,7 +56,7 @@ public class dialogFungusUI : MonoBehaviour
         if (TimelineManager.instance.Director.state != UnityEngine.Playables.PlayState.Playing)
         {
             Debug.Log("Hi");
-            TWTransition.FadeIn(() => TWLoading.LoadScene("BossTest"));
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("BossTest"));
             TWAudioController.PlaySFX("UI", "transition");
         }
     }

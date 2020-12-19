@@ -7,14 +7,14 @@ namespace TomWill
     [RequireComponent(typeof(SpriteRenderer))]
     public class TWTransition : MonoBehaviour
     {      
+        public enum TransitionType { DEFAULT_IN, DEFAULT_OUT, UP_IN, UP_OUT, DOWN_IN, DOWN_OUT}
         [SerializeField] private float baseTimeToFade = 1;
         [SerializeField] private Color baseColor;
 
+        private float offsetMove = 10f;
         private float timeToFade;
         private SpriteRenderer rendererSprite;
-        private float timeElapsed;
         private bool inFading;
-        private bool fadeIn;
         private Color colorFading;
         private UnityEvent onComplete;
 
@@ -39,7 +39,6 @@ namespace TomWill
         private void Awake()
         {
             rendererSprite = GetComponent<SpriteRenderer>();
-            timeElapsed = 0;
             instance = this;
             onComplete = new UnityEvent();
 
@@ -47,25 +46,13 @@ namespace TomWill
             adjustingScreen();
             ChangeToBaseColor();
         }
-
-        private void Update()
-        {
-            if (inFading)
-            {
-                Transition();
-            }
-        }
         #endregion
 
         #region TWTransition
-        public static void FadeIn(UnityAction action = null, float duration = -1f)
-        {
-            Instance?.transitionFadeIn(action, duration);
-        }
 
-        public static void FadeOut(UnityAction action = null, float duration = -1f)
+        public static void ScreenTransition(TransitionType type, float duration = -1f, UnityAction action = null)
         {
-            Instance?.transitionFadeOut(action, duration);
+            Instance?.screenTransition(type, duration, action);
         }
 
         public static void ScreenFlash(int flashCount = 1, float duration = 0.1f, UnityAction action = null)
@@ -114,76 +101,158 @@ namespace TomWill
             transform.localScale = new Vector3(worldScreenWidth / width, worldScreenHeight / height, 1);
         }
 
-        private void transitionFadeIn(UnityAction action, float duration)
+        private void screenTransition(TransitionType type, float duration, UnityAction action)
         {
-            if (!inFading)
+            switch (type)
             {
-                ChangeToBaseColor();
-                timeToFade = duration < 0 ? baseTimeToFade : duration; 
-                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
-                timeElapsed = 0;
-                fadeIn = true;
-                onComplete.RemoveAllListeners();
-                onComplete.AddListener(action == null ? NullHandler : action);
-                inFading = true;
+                case TransitionType.DEFAULT_IN:
+                    Instance?.screenTransitionFadeIn(duration, action);
+                    break;
+                case TransitionType.DEFAULT_OUT:
+                    Instance?.screenTransitionFadeOut(duration, action);
+                    break;
+                case TransitionType.UP_IN:
+                    Instance?.screenTransitionUpIn(duration, action);
+                    break;
+                case TransitionType.UP_OUT:
+                    Instance?.screenTransitionUpOut(duration, action);
+                    break;
+                case TransitionType.DOWN_IN:
+                    Instance?.screenTransitionDownIn(duration, action);
+                    break;
+                case TransitionType.DOWN_OUT:
+                    Instance?.screenTransitionDownOut(duration, action);
+                    break;
             }
         }
 
-        private void transitionFadeOut(UnityAction action, float duration)
+        private void screenTransitionUpIn(float duration, UnityAction action)
         {
             if (!inFading)
             {
-                ChangeToBaseColor();
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
                 timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.up * -offsetMove;
+                ChangeToBaseColor();
                 colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
-                timeElapsed = timeToFade;
-                fadeIn = false;
-                onComplete.RemoveAllListeners();
-                onComplete.AddListener(action == null ? NullHandler : action);
-                inFading = true;
+                rendererSprite.color = colorFading;
+
+                transform.DOLocalMoveY(0, timeToFade).OnComplete(()=>
+                {
+                    inFading = false;
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
             }
         }
 
-        private void Transition()
+        private void screenTransitionUpOut(float duration, UnityAction action)
         {
-            if (fadeIn)
+            if (!inFading)
             {
-                timeElapsed += Time.timeScale == 0 ? Time.unscaledDeltaTime : Time.deltaTime;
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.zero;
+                ChangeToBaseColor();
+                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
+                rendererSprite.color = colorFading;
 
-                if (timeElapsed >= timeToFade)
+                transform.DOLocalMoveY(offsetMove, timeToFade).OnComplete(() =>
                 {
-                    timeElapsed = timeToFade;
                     inFading = false;
-                    colorFading.a = timeElapsed / timeToFade;
-
-                    if (onComplete != null) onComplete.Invoke();
-                }
-                else
-                {
-                    colorFading.a = timeElapsed / timeToFade;
-                }
+                    rendererSprite.DOFade(0f, 0f);
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
             }
-            else
+        }
+
+        private void screenTransitionDownIn(float duration, UnityAction action)
+        {
+            if (!inFading)
             {
-                timeElapsed -= Time.timeScale == 0 ? Time.unscaledDeltaTime : Time.deltaTime;
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.up * offsetMove;
+                ChangeToBaseColor();
+                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
+                rendererSprite.color = colorFading;
 
-                if (timeElapsed <= 0)
+                transform.DOLocalMoveY(0, timeToFade).OnComplete(() =>
                 {
-                    timeElapsed = 0;
                     inFading = false;
-                    colorFading.a = timeElapsed / timeToFade;
-
-                    if (onComplete != null) onComplete.Invoke();
-
-                }
-                else
-                {
-                    colorFading.a = timeElapsed / timeToFade;
-                }
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
             }
+        }
 
+        private void screenTransitionDownOut(float duration, UnityAction action)
+        {
+            if (!inFading)
+            {
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.zero;
+                ChangeToBaseColor();
+                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
+                rendererSprite.color = colorFading;
 
-            rendererSprite.color = colorFading;
+                transform.DOLocalMoveY(-offsetMove, timeToFade).OnComplete(() =>
+                {
+                    inFading = false;
+                    rendererSprite.DOFade(0f, 0f);
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
+            }
+        }
+
+        private void screenTransitionFadeIn(float duration, UnityAction action)
+        {
+            if (!inFading)
+            {
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.zero;
+                ChangeToBaseColor();
+                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 0);
+                rendererSprite.color = colorFading;
+
+                rendererSprite.DOFade(1f, timeToFade).OnComplete(() =>
+                {
+                    inFading = false;
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
+            }
+        }
+
+        private void screenTransitionFadeOut(float duration, UnityAction action)
+        {
+            if (!inFading)
+            {
+                inFading = true;
+                onComplete.RemoveAllListeners();
+                onComplete.AddListener(action == null ? NullHandler : action);
+                timeToFade = duration < 0 ? baseTimeToFade : duration;
+                transform.position = Vector3.zero;
+                ChangeToBaseColor();
+                colorFading = new Color(baseColor.r, baseColor.g, baseColor.b, 1);
+                rendererSprite.color = colorFading;
+
+                rendererSprite.DOFade(0f, timeToFade).OnComplete(() =>
+                {
+                    inFading = false;
+                    rendererSprite.DOFade(0f, 0f);
+                    onComplete.Invoke();
+                }).SetEase(Ease.Linear);
+            }
         }
 
         private void NullHandler()

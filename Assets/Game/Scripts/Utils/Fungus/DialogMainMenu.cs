@@ -22,7 +22,7 @@ public class DialogMainMenu : MonoBehaviour
     private string activeBoss;
     private void Start()
     {
-        TWTransition.FadeOut(() => fungusController.Init());
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () => fungusController.Init());
         instance = this;
     }
     public void ItemDesc(string desc)
@@ -38,10 +38,10 @@ public class DialogMainMenu : MonoBehaviour
     {
         OpenBossPanel(false);
 
-        TWTransition.FadeIn(()=>
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () =>
         {
             BossListTransition();
-            TWTransition.FadeOut( ()=>
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, ()=>
             {
                 fungusController.NextBlock("Weakness"+activeBoss);
             });
@@ -111,12 +111,12 @@ public class DialogMainMenu : MonoBehaviour
 
     public void GoToScene(string nameScene)
     {
-        TWTransition.FadeIn(() => SceneManager.LoadScene(nameScene));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => SceneManager.LoadScene(nameScene));
     }
 
-    public void GoToRawScene(string nameScene)
+    public void GoToScene(string nameScene, TWTransition.TransitionType type)
     {
-        SceneManager.LoadScene(nameScene);
+        TWTransition.ScreenTransition(type, 1f, () => SceneManager.LoadScene(nameScene)); 
     }
 
     public void OpenBossPanel(bool active)
