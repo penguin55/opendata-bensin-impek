@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 
 public class CannonGK : DamageArea
@@ -35,6 +36,21 @@ public class CannonGK : DamageArea
 
     protected override void OnExit_State()
     {
+        
         base.OnExit_State();
+    }
+
+    public void Explode()
+    {
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        ParticleSystem particle = this.GetComponent<ParticleSystem>();
+        particle.Play();
+
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
+        CameraShake.instance.Shake(1, 3, 5);
+
+        DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
+            Destroy(this);
+        });
     }
 }

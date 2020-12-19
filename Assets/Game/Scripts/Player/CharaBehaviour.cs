@@ -222,6 +222,7 @@ public class CharaBehaviour : MonoBehaviour
         if (collision.CompareTag("damage area") && !immune)
         {
             TakeDamage();
+            collision.GetComponent<CannonGK>().Explode();
         }
     }
 
