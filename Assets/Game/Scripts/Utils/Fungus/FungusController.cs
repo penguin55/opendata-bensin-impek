@@ -11,8 +11,15 @@ public class FungusController : MonoBehaviour
 
     public void Init()
     {
+        if (GameVariables.DIALOG_START_MESSAGE == null)
+        {
+            GameVariables.DIALOG_START_MESSAGE = "MISSION_START";
+            lastActiveBlock = "MissionStart";
+        }
+
         if (GameVariables.DIALOG_START_MESSAGE.Equals("MISSION_START")) lastActiveBlock = "MissionStart";
         else if (GameVariables.DIALOG_START_MESSAGE.Equals("BOSS_PANEL")) lastActiveBlock = "pick Boss";
+
         flowchart.ExecuteBlock(lastActiveBlock);
     }
 

@@ -252,7 +252,9 @@ public class InGameUI : MonoBehaviour
     public void BackToPanelBoss()
     {
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
-        BackToMenu();
+        TWAudioController.PlaySFX("UI", "click");
+        TWTransition.FadeIn(() => TWLoading.LoadScene("dialogFungus"));
+        TWAudioController.PlaySFX("UI", "transition");
     }
 
     public void UpdateLive()
