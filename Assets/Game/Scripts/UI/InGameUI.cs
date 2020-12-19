@@ -210,7 +210,7 @@ public class InGameUI : MonoBehaviour
         if (CharaController.instance.dead)
         {
             gameOverUI.SetActive(true);
-            GameTime.DefaultTimeScale = 0f;
+            GameTime.GlobalTimeScale = 0f;
         }
         else
         {
