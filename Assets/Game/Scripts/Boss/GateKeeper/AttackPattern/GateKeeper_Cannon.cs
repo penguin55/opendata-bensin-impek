@@ -8,15 +8,11 @@ public class GateKeeper_Cannon : AttackEvent
     [SerializeField] private ObjectRotator rotator;
     [SerializeField] private float delay_attack;
     [SerializeField] private GateKeeper bossbehaviour;
-    [SerializeField] private LasersGateKeeper[] lasersGateKeeper;
+    [SerializeField] private GateKeeper_LaserDamage laserDamage;
     [SerializeField] private GameObject prefab;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float timeToFullRotate;
     [SerializeField] private int attackRate;
-    private int randomIndex;
-
-    private bool canActiveLaser;
-    private bool active_attack;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -26,10 +22,7 @@ public class GateKeeper_Cannon : AttackEvent
     protected override void OnEnter_Attack()
     {
         rotator.ActiveFollow(false);
-        randomIndex = Random.Range(0, lasersGateKeeper.Length);
-
-        canActiveLaser = true;
-        lasersGateKeeper[randomIndex].sign.SetActive(true);
+        laserDamage.ActivateInteractLaser(true);
 
         base.OnEnter_Attack();
     }
@@ -42,13 +35,6 @@ public class GateKeeper_Cannon : AttackEvent
         }).SetLoops(attackRate)
         .OnComplete(()=>
         {
-            lasersGateKeeper[randomIndex].sign.SetActive(false);
-            if (active_attack)
-            {
-                TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_firing");
-                lasersGateKeeper[randomIndex].laser.SetActive(true);
-            }
-            canActiveLaser = false;
             base.Attack();
         }).OnUpdate(()=>
         {
@@ -59,8 +45,7 @@ public class GateKeeper_Cannon : AttackEvent
 
     protected override void OnExit_Attack()
     {
-        lasersGateKeeper[randomIndex].laser.SetActive(false);
-        active_attack = false;
+        laserDamage.ActivateInteractLaser(false);
         rotator.ActiveFollow(false);
         base.OnExit_Attack();
     }
@@ -89,20 +74,6 @@ public class GateKeeper_Cannon : AttackEvent
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
         return rot_z;
-    }
-
-    public void ActivateLaser(GunInteractDetect gun)
-    {
-        if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
-        {
-            TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_gettingready");
-            gun.transform.DOPunchScale(Vector3.one * 0.25f, 0.2f, 1, 0);
-
-            DOVirtual.DelayedCall(3f, () => gun.transform.DOPunchScale(Vector3.one * 0.3f, 0.5f, 1, 0)).SetLoops(3);
-
-            canActiveLaser = false;
-            active_attack = true;
-        }
     }
 }
 

@@ -30,6 +30,7 @@ public class GateKeeper : BossBehaviour
     [SerializeField] private State_Gatekeeper[] stateSequences;
     private int stateIndex;
     private float currentRotation;
+    private bool immuneState;
 
     private void Start()
     {
@@ -123,6 +124,7 @@ public class GateKeeper : BossBehaviour
 
     private void Cannon()
     {
+        immuneState = false;
         OnEnterCannon();
 
         currentAttackEvent.ExecutePattern(OnExitCannon);
@@ -239,8 +241,9 @@ public class GateKeeper : BossBehaviour
 
     public void TakingDamage(string name)
     {
-        if (name.Contains(GetAdjacentSide(activeRotateStates.direction.ToLower())))
+        if (!immuneState && name.Contains(GetAdjacentSide(activeRotateStates.direction.ToLower())))
         {
+            immuneState = true;
             TakeDamage();
         }
     }

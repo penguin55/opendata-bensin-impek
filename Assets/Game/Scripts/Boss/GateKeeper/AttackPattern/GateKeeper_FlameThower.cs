@@ -34,6 +34,7 @@ public class GateKeeper_FlameThower : AttackEvent
 
     protected override void OnEnter_Attack()
     {
+        flameThowerParent.transform.localEulerAngles = new Vector3(0, 0, bossBehaviour.GetCurrentRotation());
         bossBehaviour.RotateTank(flameThowerParent.transform.localEulerAngles.z);
         flameThowerParent.SetActive(true);
         ActivateDamageAreaEffect(true);

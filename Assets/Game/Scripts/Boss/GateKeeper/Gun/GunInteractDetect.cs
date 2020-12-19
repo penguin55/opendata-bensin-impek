@@ -2,10 +2,10 @@
 
 public class GunInteractDetect : MonoBehaviour
 {
-    [SerializeField] private GateKeeper_Cannon gateKeeper_Cannon;
+    [SerializeField] private GateKeeper_LaserDamage laserDamage;
 
     public void Interact()
     {
-        gateKeeper_Cannon.ActivateLaser(this);
+        laserDamage.ActivateLaser(this);
     }
 }
