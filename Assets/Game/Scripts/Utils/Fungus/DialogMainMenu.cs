@@ -114,6 +114,11 @@ public class DialogMainMenu : MonoBehaviour
         TWTransition.FadeIn(() => SceneManager.LoadScene(nameScene));
     }
 
+    public void GoToRawScene(string nameScene)
+    {
+        SceneManager.LoadScene(nameScene);
+    }
+
     public void OpenBossPanel(bool active)
     {
         bossChoicePanel.SetActive(active);
