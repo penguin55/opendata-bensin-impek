@@ -1,12 +1,10 @@
-﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using TomWill;
+﻿using TomWill;
 using UnityEngine;
 
 public class BasicTrainingManager : MonoBehaviour
 {
     [SerializeField] private BasicTrainingData[] trainingDatas;
+    [SerializeField] private SpriteRenderer display_button_desc, display_body, display_button;
     private BasicTrainingData activeTrainingData;
     private int currentIndex;
 
@@ -17,7 +15,11 @@ public class BasicTrainingManager : MonoBehaviour
         activeTrainingData = trainingDatas[currentIndex];
         GameVariables.FREEZE_INPUT = true;
 
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () => LaunchTraining() );
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () =>
+        {
+            SetDisplay();
+            LaunchTraining();
+        });
     }
 
     private void NextTraining()
@@ -31,6 +33,7 @@ public class BasicTrainingManager : MonoBehaviour
         } else
         {
             activeTrainingData = trainingDatas[currentIndex];
+            SetDisplay();
 
             LaunchTraining();
         }
@@ -50,6 +53,12 @@ public class BasicTrainingManager : MonoBehaviour
     {
         GameVariables.FREEZE_INPUT = false;
         activeTrainingData.eventTraining.ActivateEventListener(true);
+    }
+
+    private void SetDisplay()
+    {
+        display_button_desc.sprite = activeTrainingData.training_button_desc;
+        display_button.sprite = activeTrainingData.training_button;
     }
 }
 

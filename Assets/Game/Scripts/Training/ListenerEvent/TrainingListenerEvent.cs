@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TrainingListenerEvent : MonoBehaviour
 {
@@ -10,6 +8,11 @@ public class TrainingListenerEvent : MonoBehaviour
     public virtual void ActivateEventListener(bool flag)
     {
         activeEventListener = flag;
+    }
+
+    public virtual void InitEventListener<E>(E eventListener)
+    {
+
     }
 
     protected virtual bool ValidateEventListener<E>(E eventListener)
