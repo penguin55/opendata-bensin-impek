@@ -114,6 +114,11 @@ public class DialogMainMenu : MonoBehaviour
         TWTransition.ScreenTransition(type, 1f, () => DOVirtual.DelayedCall(0.5f, ()=> SceneManager.LoadScene(nameScene))); 
     }
 
+    public void GoToScene(string nameScene)
+    {
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1f, () => DOVirtual.DelayedCall(0.5f, () => SceneManager.LoadScene(nameScene)));
+    }
+
     public void OpenBossPanel(bool active)
     {
         bossChoicePanel.SetActive(active);

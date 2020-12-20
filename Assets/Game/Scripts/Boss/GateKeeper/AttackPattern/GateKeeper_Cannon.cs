@@ -13,6 +13,7 @@ public class GateKeeper_Cannon : AttackEvent
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float timeToFullRotate;
     [SerializeField] private int attackRate;
+    [SerializeField] private ParticleSystem smoke;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -62,7 +63,8 @@ public class GateKeeper_Cannon : AttackEvent
         {
             direction = (CharaController.instance.gameObject.transform.position - bossbehaviour.GetCenterRotatePosition()).normalized;
         }
-
+        smoke.transform.position = bossbehaviour.GetActiveSpawnPosition();
+        smoke.Play();
         cannon.Launch(direction, bulletSpeed);
         TWAudioController.PlaySFX("BOSS_SFX", "tank_firing");
     }
@@ -78,10 +80,3 @@ public class GateKeeper_Cannon : AttackEvent
     }
 }
 
-[System.Serializable]
-public class LasersGateKeeper
-{
-    public GunInteractDetect gun;
-    public GameObject laser;
-    public GameObject sign;
-}

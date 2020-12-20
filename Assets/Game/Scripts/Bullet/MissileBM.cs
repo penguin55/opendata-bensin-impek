@@ -86,11 +86,10 @@ public class MissileBM : DamageArea
         ParticleSystem particle = projectile.transform.GetChild(1).GetComponent<ParticleSystem>();
         particle.Play();
 
-        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
+        BossBehaviour.Instance.TakeDamage();
         CameraShake.instance.Shake(1, 3, 5);
 
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
-            BossBehaviour.Instance.TakeDamage();
             Destroy(projectile);
         });
     }

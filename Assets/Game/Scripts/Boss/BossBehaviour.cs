@@ -79,6 +79,7 @@ public class BossBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
         if (health >= 1)
         {
             DOTween.Sequence()
