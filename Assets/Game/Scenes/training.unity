@@ -12495,10 +12495,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328629}
-  selectedCommands:
-  - {fileID: 4806305509244328685}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -14772,7 +14770,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328685
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14817,7 +14815,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328686
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14862,7 +14860,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328687
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14907,7 +14905,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328688
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14952,7 +14950,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328689
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

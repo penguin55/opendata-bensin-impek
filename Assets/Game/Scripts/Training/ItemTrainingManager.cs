@@ -21,6 +21,20 @@ public class ItemTrainingManager : TrainingManager
     // Panggil method dibawah ini kalau mau aktifin training
     public void ActivateTraining()
     {
+        switch (GameData.ActiveItem.itemName)
+        {
+            case "A Pair of Loro Blonyo":
+                
+                break;
+            case "Ceremonial Axe Candrasa":
+                break;
+            case "Deer Sculpture":
+                break;
+            case "Mangkunegaran Legion Helmet":
+                break;
+            case "Pustaha Lak Lak":
+                break;
+        }
         trainingItem.ActivateEventListener(true);
     }
 
