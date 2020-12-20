@@ -6,6 +6,7 @@ public class ItemTrainingManager : TrainingManager
 {
 
     [SerializeField] private TLE_Item trainingItem;
+    [SerializeField] private ItemData data; // Debugging purpose
 
     private string obstacleType;
 
@@ -13,6 +14,7 @@ public class ItemTrainingManager : TrainingManager
     // Start is called before the first frame update
     void Start()
     {
+        GameData.ActiveItem = data;//Debugging purpose
         activeTLE = trainingItem;
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
