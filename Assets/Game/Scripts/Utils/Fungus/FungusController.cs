@@ -31,6 +31,11 @@ public class FungusController : MonoBehaviour
         lastActiveBlock = blockname;
     }
 
+    public void StopBlock(string blockname)
+    {
+        flowchart.StopBlock(blockname);
+    }
+
     public void NextDialog()
     {
         dialogInput.SetButtonClickedFlag();
