@@ -7,6 +7,7 @@ public class ItemTrainingManager : TrainingManager
 
     [SerializeField] private TLE_Item trainingItem;
     [SerializeField] private ItemData data; // Debugging purpose
+    [SerializeField] private FungusController fungusController;
 
     private string obstacleType;
 
@@ -14,29 +15,35 @@ public class ItemTrainingManager : TrainingManager
     // Start is called before the first frame update
     void Start()
     {
-        GameData.ActiveItem = data;//Debugging purpose
+        /*GameData.ActiveItem = data;*///Debugging purpose
         activeTLE = trainingItem;
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
+
+        switch (GameData.ActiveItem.itemName)
+        {
+            case "A Pair of Loro Blonyo":
+                fungusController.NextBlock("S_Loro");
+                break;
+            case "Ceremonial Axe Candrasa":
+                fungusController.NextBlock("S_Candrasa");
+                break;
+            case "Deer Sculpture":
+                fungusController.NextBlock("S_Deer");
+                break;
+            case "Mangkunegaran Legion Helmet":
+                fungusController.NextBlock("S_LegionHelmet");
+                break;
+            case "Pustaha Lak Lak":
+                fungusController.NextBlock("S_Pustaha");
+                break;
+        }
+
     }
 
     // Panggil method dibawah ini kalau mau aktifin training
     public void ActivateTraining()
     {
-        switch (GameData.ActiveItem.itemName)
-        {
-            case "A Pair of Loro Blonyo":
-                
-                break;
-            case "Ceremonial Axe Candrasa":
-                break;
-            case "Deer Sculpture":
-                break;
-            case "Mangkunegaran Legion Helmet":
-                break;
-            case "Pustaha Lak Lak":
-                break;
-        }
         trainingItem.ActivateEventListener(true);
     }
 

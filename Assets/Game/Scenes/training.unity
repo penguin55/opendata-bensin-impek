@@ -8579,6 +8579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainingItem: {fileID: 1518837422}
   data: {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c, type: 2}
+  fungusController: {fileID: 2425233952247457736}
 --- !u!4 &1022299206
 Transform:
   m_ObjectHideFlags: 0
@@ -22301,7 +22302,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 4806305509244328629}
   selectedCommands: []
   variables: []
   description: 
@@ -24066,7 +24068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 149.90251
+    x: 150.93344
     y: 144.21796
     width: 70.82474
     height: 40
@@ -24589,31 +24591,14 @@ MonoBehaviour:
   itemId: 122
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 1022299204}
+  targetComponentAssemblyName: ItemTrainingManager, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: FungusController
-  targetMethod: StopBlock
-  targetMethodText: 'StopBlock (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: S_Deer
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: ItemTrainingManager
+  targetMethod: ActivateTraining
+  targetMethodText: 'ActivateTraining (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -24634,31 +24619,14 @@ MonoBehaviour:
   itemId: 121
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 1022299204}
+  targetComponentAssemblyName: ItemTrainingManager, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: FungusController
-  targetMethod: StopBlock
-  targetMethodText: 'StopBlock (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: S_Loro
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: ItemTrainingManager
+  targetMethod: ActivateTraining
+  targetMethodText: 'ActivateTraining (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -24679,31 +24647,14 @@ MonoBehaviour:
   itemId: 120
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 1022299204}
+  targetComponentAssemblyName: ItemTrainingManager, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: FungusController
-  targetMethod: StopBlock
-  targetMethodText: 'StopBlock (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: S_Candrasa
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: ItemTrainingManager
+  targetMethod: ActivateTraining
+  targetMethodText: 'ActivateTraining (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -24724,31 +24675,14 @@ MonoBehaviour:
   itemId: 119
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 1022299204}
+  targetComponentAssemblyName: ItemTrainingManager, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: FungusController
-  targetMethod: StopBlock
-  targetMethodText: 'StopBlock (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: S_Pustaha
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: ItemTrainingManager
+  targetMethod: ActivateTraining
+  targetMethodText: 'ActivateTraining (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -24769,31 +24703,14 @@ MonoBehaviour:
   itemId: 118
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: FungusController, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 1022299204}
+  targetComponentAssemblyName: ItemTrainingManager, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: FungusController
-  targetMethod: StopBlock
-  targetMethodText: 'StopBlock (String): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.String
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: S_LegionHelmet
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: ItemTrainingManager
+  targetMethod: ActivateTraining
+  targetMethodText: 'ActivateTraining (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
