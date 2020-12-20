@@ -57,11 +57,13 @@ public class GateKeeper_LaserDamage : MonoBehaviour
     private void Attack()
     {
         lasersGateKeeper[randomIndex].sign.SetActive(false);
+        
         if (active_attack)
         {
             CameraShake.instance.Shake(1, 3, 5);
             TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_firing");
             lasersGateKeeper[randomIndex].laser.SetActive(true);
+            lasersGateKeeper[randomIndex].explode.Play();
         }
         canActiveLaser = false;
         DOVirtual.DelayedCall( 2f, ()=>OnExit_Attack());
@@ -88,4 +90,13 @@ public class GateKeeper_LaserDamage : MonoBehaviour
         timeSegment2 = Mathf.Max(multiplierSegment2 * 0.5f, timeSegment2);
         timeSegment3 = Mathf.Max(multiplierSegment3 * 0.5f, timeSegment3);
     }
+}
+
+[System.Serializable]
+public class LasersGateKeeper
+{
+    public GunInteractDetect gun;
+    public GameObject laser;
+    public GameObject sign;
+    public ParticleSystem explode;
 }
