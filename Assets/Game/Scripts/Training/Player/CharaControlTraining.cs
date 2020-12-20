@@ -1,16 +1,9 @@
 ﻿using TomWill;
 using UnityEngine;
 
-public class CharaController : CharaBehaviour
+public class CharaControlTraining : CharaBehaviourTraining
 {
-    public static CharaController instance;
-    //[Header ("Input Controller")]
-    //[SerializeField] private KeyCode moveUp;
-    //[SerializeField] private KeyCode moveDown;
-    //[SerializeField] private KeyCode moveRight;
-    //[SerializeField] private KeyCode moveLeft;
-    //[SerializeField] private KeyCode dash;
-
+    public static CharaControlTraining instance;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +34,7 @@ public class CharaController : CharaBehaviour
             /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
             if (Input.GetKey(InputManager.instance.moveUp))
             {
-                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                trainingManager.CompleteActiveTLE("move_up");
                 isAccelerating = true;
                 direction += Vector2.up;
                 lastDirection = Vector2.up;
@@ -57,7 +50,7 @@ public class CharaController : CharaBehaviour
 
             if (Input.GetKey(InputManager.instance.moveDown))
             {
-                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                trainingManager.CompleteActiveTLE("move_down");
                 isAccelerating = true;
                 direction += Vector2.down;
                 lastDirection = Vector2.down;
@@ -73,7 +66,7 @@ public class CharaController : CharaBehaviour
 
             if (Input.GetKey(InputManager.instance.moveLeft))
             {
-                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                trainingManager.CompleteActiveTLE("move_left");
                 isAccelerating = true;
                 direction += Vector2.left;
                 lastDirection = Vector2.left; ;
@@ -90,7 +83,7 @@ public class CharaController : CharaBehaviour
 
             if (Input.GetKey(InputManager.instance.moveRight))
             {
-                //TWAudioController.PlaySFX("SFX_PLAYER", "player_move");
+                trainingManager.CompleteActiveTLE("move_right");
                 isAccelerating = true;
                 direction += Vector2.right;
                 lastDirection = Vector2.right;
@@ -114,6 +107,7 @@ public class CharaController : CharaBehaviour
         {
             if (canDash)
             {
+                trainingManager.CompleteActiveTLE("dash");
                 TWAudioController.PlaySFX("SFX_PLAYER", "dash");
                 dashTime = startDashTime;
                 isDashed = true;

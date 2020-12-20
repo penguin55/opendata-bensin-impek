@@ -1,7 +1,7 @@
 ﻿using TomWill;
 using UnityEngine;
 
-public class BasicTrainingManager : MonoBehaviour
+public class BasicTrainingManager : TrainingManager
 {
     [SerializeField] private BasicTrainingData[] trainingDatas;
     [SerializeField] private SpriteRenderer display_button_desc, display_body, display_button;
@@ -13,12 +13,14 @@ public class BasicTrainingManager : MonoBehaviour
     {
         currentIndex = 0;
         activeTrainingData = trainingDatas[currentIndex];
+        activeTLE = activeTrainingData.eventTraining;
         GameVariables.FREEZE_INPUT = true;
+        SetDisplay();
 
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () =>
         {
-            SetDisplay();
-            LaunchTraining();
+            GameVariables.FREEZE_INPUT = false;
+            //LaunchTraining();
         });
     }
 
@@ -33,20 +35,26 @@ public class BasicTrainingManager : MonoBehaviour
         } else
         {
             activeTrainingData = trainingDatas[currentIndex];
+            activeTLE = activeTrainingData.eventTraining;
             SetDisplay();
-
             LaunchTraining();
         }
     }
 
-    public void CompleteTrainingSection()
+    public override void CompleteTrainingSection()
     {
+        base.CompleteTrainingSection();
         TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, 1f, () => 
         {
             GameVariables.FREEZE_INPUT = true;
             NextTraining();
             TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, 1f);
         });
+    }
+
+    public override void InteruptTrainingSection()
+    {
+        base.InteruptTrainingSection();
     }
 
     private void LaunchTraining()

@@ -26,13 +26,13 @@ public class TLE_Dash : TrainingListenerEvent
             {
                 start = positionsMove[0];
                 target = positionsMove[positionsMove.Length - 1];
-                CharaController.instance.transform.position = playerPositions[positionsMove.Length - 1].position;
+                CharaControlTraining.instance.transform.position = playerPositions[positionsMove.Length - 1].position;
             }
             else
             {
                 start = positionsMove[positionsMove.Length - 1];
                 target = positionsMove[0];
-                CharaController.instance.transform.position = playerPositions[0].position;
+                CharaControlTraining.instance.transform.position = playerPositions[0].position;
             }
 
             damageArea.transform.DOMove(start.position, 0f);
@@ -41,25 +41,32 @@ public class TLE_Dash : TrainingListenerEvent
         }
     }
 
-    public override void InitEventListener<E>(E param)
+    public override void InitEventListener(string param, bool value)
     {
-        if (typeof(bool).Equals(typeof(E)))
+        if (param.ToLower().Equals("move_right"))
         {
-            moveRight = ((bool)(object)param);
+            moveRight = value;
         }
     }
 
-    protected override bool ValidateEventListener<E>(E eventListener)
+    protected override bool ValidateEventListener(string param)
     {
-        return base.ValidateEventListener(eventListener);
+        if (param.ToLower().Equals("dash"))
+        {
+            return dash;
+        }
+        else return base.ValidateEventListener(param);
     }
 
-    protected override void CompleteEventListener<E>(ref E eventListener)
+    public override void CompleteEventListener(string param, bool value = true)
     {
-        base.CompleteEventListener(ref eventListener);
-        eventListener = (E)System.Convert.ChangeType(true, typeof(E));
-
-        manager.CompleteTrainingSection();
+        if (activeEventListener)
+        {
+            if (param.ToLower().Equals("dash"))
+            {
+                dash = value;
+            }
+        }
     }
 
     private void MoveDamage()
@@ -67,7 +74,7 @@ public class TLE_Dash : TrainingListenerEvent
         damageArea.transform.DOMove(target.position, moveTime).SetEase(Ease.Linear)
             .OnComplete(()=>
             {
-                CompleteEventListener(ref dash);
+                manager.CompleteTrainingSection();
             });
     }
 }

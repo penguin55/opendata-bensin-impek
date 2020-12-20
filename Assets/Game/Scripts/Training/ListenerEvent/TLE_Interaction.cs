@@ -11,7 +11,7 @@ public class TLE_Interaction : TrainingListenerEvent
     [SerializeField] private SpriteRenderer buttonRender;
     [SerializeField] private Sprite buttonNormal, buttonPressed;
 
-    private bool interactionButtonTask;
+    private bool interact_button;
     private bool buttonActive;
 
     public override void ActivateEventListener(bool flag)
@@ -36,30 +36,33 @@ public class TLE_Interaction : TrainingListenerEvent
 
             gatePhysic.enabled = false;
 
-            CompleteEventListener(ref interactionButtonTask);
+            CompleteEventListener("interact_button");
         }
     }
 
-    protected override bool ValidateEventListener<E>(E eventListener)
+    protected override bool ValidateEventListener(string param)
     {
         return false;
     }
 
-    protected override void CompleteEventListener<E>(ref E eventListener)
+    public override void CompleteEventListener(string param, bool value = true)
     {
-        if (typeof(E) == typeof(bool))
+        if (activeEventListener)
         {
-            eventListener = (E)System.Convert.ChangeType(true, typeof(E));
+            if (param.ToLower().Equals("interact_button"))
+            {
+                interact_button = value;
 
-            buttonActive = true;
-            activeEventListener = !buttonActive;
-            if (buttonActive) manager.CompleteTrainingSection();
+                buttonActive = value;
+                activeEventListener = !buttonActive;
+                if (buttonActive) manager.CompleteTrainingSection();
+            }
         }
     }
 
     private void InitPreparation()
     {
-        CharaController.instance.transform.position = playerPosition.position;
+        CharaControlTraining.instance.transform.position = playerPosition.position;
 
         gateRender.sprite = gateClose;
         buttonRender.sprite = buttonNormal;

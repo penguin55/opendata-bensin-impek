@@ -2,7 +2,7 @@
 
 public class TrainingListenerEvent : MonoBehaviour
 {
-    [SerializeField] protected BasicTrainingManager manager;
+    [SerializeField] protected TrainingManager manager;
     protected bool activeEventListener;
 
     public virtual void ActivateEventListener(bool flag)
@@ -10,17 +10,17 @@ public class TrainingListenerEvent : MonoBehaviour
         activeEventListener = flag;
     }
 
-    public virtual void InitEventListener<E>(E eventListener)
+    public virtual void InitEventListener(string param, bool value)
     {
 
     }
 
-    protected virtual bool ValidateEventListener<E>(E eventListener)
+    protected virtual bool ValidateEventListener(string param)
     {
         return false;
     }
 
-    protected virtual void CompleteEventListener<E>(ref E eventListener)
+    public virtual void CompleteEventListener(string param, bool value = true)
     {
 
     }

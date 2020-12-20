@@ -8,22 +8,45 @@ public class TLE_Move : TrainingListenerEvent
     public override void ActivateEventListener(bool flag)
     {
         base.ActivateEventListener(flag);
-        CharaController.instance.transform.position = playerPosition.position;
+        CharaControlTraining.instance.transform.position = playerPosition.position;
     }
 
-    protected override bool ValidateEventListener<E>(E eventListener)
+    protected override bool ValidateEventListener(string param)
     {
-        if (typeof(E) == typeof(bool))
+        switch (param.ToLower())
         {
-            return ((bool)(object)eventListener);
-        } else return false;
+            case "move_right":
+                return move_right;
+            case "move_down":
+                return move_down;
+            case "move_left":
+                return move_left;
+            case "move_up":
+                return move_up;
+            default:
+                return false;
+        }
     }
 
-    protected override void CompleteEventListener<E>(ref E eventListener)
+    public override void CompleteEventListener(string param, bool value = true)
     {
-        if (typeof(E) == typeof(bool))
+        if (activeEventListener)
         {
-            eventListener = (E) System.Convert.ChangeType(true, typeof(E));
+            switch (param.ToLower())
+            {
+                case "move_right":
+                    move_right = value;
+                    break;
+                case "move_down":
+                    move_down = value;
+                    break;
+                case "move_left":
+                    move_left = value;
+                    break;
+                case "move_up":
+                    move_up = value;
+                    break;
+            }
 
             activeEventListener = !AllEventClear();
             if (AllEventClear()) manager.CompleteTrainingSection();
@@ -33,32 +56,5 @@ public class TLE_Move : TrainingListenerEvent
     private bool AllEventClear()
     {
         return move_right && move_up && move_left && move_down;
-    }
-
-    private void Update()
-    {
-        if (activeEventListener)
-        {
-
-            if (Input.GetKey(InputManager.instance.moveUp))
-            {
-                CompleteEventListener(ref move_up);
-            }
-
-            if (Input.GetKey(InputManager.instance.moveLeft))
-            {
-                CompleteEventListener(ref move_left);
-            }
-
-            if (Input.GetKey(InputManager.instance.moveDown))
-            {
-                CompleteEventListener(ref move_down);
-            }
-
-            if (Input.GetKey(InputManager.instance.moveRight))
-            {
-                CompleteEventListener(ref move_right);
-            }
-        }
     }
 }

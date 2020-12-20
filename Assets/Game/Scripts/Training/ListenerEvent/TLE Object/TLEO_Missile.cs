@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class Tutorialmissile : AttackEvent
+public class TLEO_Missile : AttackEvent
 {
     [SerializeField] private GameObject missileParent;
     [SerializeField] private Transform[] spawnProjectilePosition;
