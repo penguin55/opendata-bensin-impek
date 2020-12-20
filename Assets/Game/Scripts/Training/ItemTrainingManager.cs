@@ -53,6 +53,24 @@ public class ItemTrainingManager : TrainingManager
         trainingItem.ActivateEventListener(false);
 
         // Pemanggilan dialog setelah selesai training bisa taruh disini
+        switch (GameData.ActiveItem.itemName)
+        {
+            case "A Pair of Loro Blonyo":
+                fungusController.NextBlock("F_Loro");
+                break;
+            case "Ceremonial Axe Candrasa":
+                fungusController.NextBlock("F_Candrasa");
+                break;
+            case "Deer Sculpture":
+                fungusController.NextBlock("F_Deer");
+                break;
+            case "Mangkunegaran Legion Helmet":
+                fungusController.NextBlock("F_LegionHelmet");
+                break;
+            case "Pustaha Lak Lak":
+                fungusController.NextBlock("F_Pustaha");
+                break;
+        }
     }
 
     public override void InteruptTrainingSection()
