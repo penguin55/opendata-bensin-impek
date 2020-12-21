@@ -19,7 +19,11 @@ public class ItemTrainingManager : TrainingManager
         activeTLE = trainingItem;
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
+        StartDialog();
+    }
 
+    public void StartDialog()
+    {
         switch (GameData.ActiveItem.itemName)
         {
             case "A Pair of Loro Blonyo":
@@ -38,7 +42,6 @@ public class ItemTrainingManager : TrainingManager
                 fungusController.NextBlock("S_Pustaha");
                 break;
         }
-
     }
 
     // Panggil method dibawah ini kalau mau aktifin training
@@ -51,7 +54,7 @@ public class ItemTrainingManager : TrainingManager
     {
         base.CompleteTrainingSection();
         trainingItem.ActivateEventListener(false);
-
+        Debug.Log(GameData.ActiveItem.itemName);
         // Pemanggilan dialog setelah selesai training bisa taruh disini
         switch (GameData.ActiveItem.itemName)
         {
