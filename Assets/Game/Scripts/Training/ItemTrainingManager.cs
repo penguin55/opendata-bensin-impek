@@ -52,6 +52,7 @@ public class ItemTrainingManager : TrainingManager
     public void BacktoPickItem()
     {
         GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
+        GameData.ActiveItem.wasUsed = false;
         TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1, () => SceneManager.LoadScene("dialogFungus"));
     }
 
@@ -97,6 +98,8 @@ public class ItemTrainingManager : TrainingManager
     {
         base.RestartActiveTrainingSection();
         GameData.ActiveItem.wasUsed = false;
+        CharaData.hp = CharaData.maxhp;
+        TrainingUI.instance.UpdateLive();
         TrainingUI.instance.UpdateItemImage();
         StartDialog();
     }

@@ -192,9 +192,6 @@ public class CharaBehaviourTraining : MonoBehaviour
         {
             GameData.ActiveItem.TakeEffect();
             TrainingUI.instance.UpdateItemImage();
-
-            GameData.ItemHolds.Remove(GameData.ActiveItem);
-            GameData.ItemUsed.Add(GameData.ActiveItem);
         }
     }
 
