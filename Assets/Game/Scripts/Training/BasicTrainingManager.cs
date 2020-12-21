@@ -12,6 +12,7 @@ public class BasicTrainingManager : TrainingManager
     // Start is called before the first frame update
     void Start()
     {
+        GameData.ActiveItem = null;
         currentIndex = 0;
         activeTrainingData = trainingDatas[currentIndex];
         activeTLE = activeTrainingData.eventTraining;

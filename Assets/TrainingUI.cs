@@ -34,7 +34,7 @@ public class TrainingUI : MonoBehaviour
             TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT);
         });
         PlayBGM(bgm);
-        ItemImage();
+        if (GameData.ActiveItem) ItemImage();
     }
 
     private void OnDisable()
