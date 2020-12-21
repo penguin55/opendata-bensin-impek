@@ -9,7 +9,7 @@ using DG.Tweening;
 public class TrainingUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, yesnobutton,nextbutton, obtainItemBoss;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, dialogtry, obtainItemBoss;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] private Sprite newsprite, newboss;
@@ -56,9 +56,13 @@ public class TrainingUI : MonoBehaviour
 
     public void UpdateItemImage()
     {
-        if (GameData.ActiveItem.CheckIsOneTimeUse())
+        if (GameData.ActiveItem.wasUsed)
         {
             activateItemImage.color = Color.red;
+        }
+        else
+        {
+            activateItemImage.color = Color.white;
         }
     }
 
@@ -116,8 +120,7 @@ public class TrainingUI : MonoBehaviour
 
     public void TryAgain(bool active)
     {
-        yesnobutton.SetActive(active);
-        nextbutton.SetActive(!active);
+        dialogtry.SetActive(active);
     }
 
     public void OpenItemPanel(bool active)

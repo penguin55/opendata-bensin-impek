@@ -96,6 +96,8 @@ public class ItemTrainingManager : TrainingManager
     public override void RestartActiveTrainingSection()
     {
         base.RestartActiveTrainingSection();
+        GameData.ActiveItem.wasUsed = false;
+        TrainingUI.instance.UpdateItemImage();
         StartDialog();
     }
 
