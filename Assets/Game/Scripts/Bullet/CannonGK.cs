@@ -46,7 +46,7 @@ public class CannonGK : DamageArea
         ParticleSystem particle = this.GetComponent<ParticleSystem>();
         particle.Play();
 
-        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
+        TWAudioController.PlaySFX("SFX_BOSS", "tank_projectiles");
         CameraShake.instance.Shake(1, 3, 5);
 
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
