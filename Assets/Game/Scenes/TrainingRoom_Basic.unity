@@ -20531,6 +20531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810792072}
+  - component: {fileID: 1810792071}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -20538,6 +20539,52 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1810792071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810792070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9251632733dc3bd42adae7fb32ce9a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 685950666}
+  gameOverUI: {fileID: 848541510}
+  dialogUI: {fileID: 2033551655}
+  dialogFungus: {fileID: 8016754017655020273}
+  obtainItemBoss: {fileID: 1312102894}
+  hearts:
+  - {fileID: 1860103013}
+  - {fileID: 920753612}
+  - {fileID: 358743988}
+  heartsBos:
+  - {fileID: 551061661}
+  - {fileID: 354839371}
+  - {fileID: 1335544070}
+  - {fileID: 1807305069}
+  - {fileID: 1432146427}
+  shields: {fileID: 1177599872}
+  newsprite: {fileID: 21300000, guid: 7be92341b1436344aa0b6bd1c143bf23, type: 3}
+  newboss: {fileID: 21300000, guid: a47bc3fcbc07f1b44a7a640075aa3105, type: 3}
+  oldsprite: {fileID: 21300000, guid: 5b4531c8e277cc04ab7ee775abeacaa3, type: 3}
+  oldboss: {fileID: 21300000, guid: 01ea104933ee68340b8faf78796109c7, type: 3}
+  aPair: {fileID: 21300000, guid: 0ef1db3c3543220449e42a7e846866b8, type: 3}
+  axe: {fileID: 21300000, guid: bcef8bd9111cc70448d2714277a3c061, type: 3}
+  deer: {fileID: 21300000, guid: 0e16bcf1acdebe14c81d8d46ec6e3fa1, type: 3}
+  helmet: {fileID: 21300000, guid: 8a9531f5c15328d44b18f55d7fb17a66, type: 3}
+  laklak: {fileID: 21300000, guid: a24eafad6d415ea4ba2d45bfe5201da3, type: 3}
+  terrorcopter: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
+  gatekeeper: {fileID: 21300000, guid: 7c918ca808b93644da96dd8d1829474f, type: 3}
+  chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
+  headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
+  activateItemImage: {fileID: 1169302560}
+  dropImage: {fileID: 645948505}
+  dropItemNameText: {fileID: 53130545}
+  dropItemDescText: {fileID: 1208065035}
+  bgm: terrorcopter
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -36640,7 +36687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 65.0618, y: 169.09279}
+  scrollPos: {x: 5985.0615, y: 711.0928}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 407
@@ -36698,7 +36745,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 186.4382
     y: 28.407211
-    width: 104
+    width: 105.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
