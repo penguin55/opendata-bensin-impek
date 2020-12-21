@@ -28850,13 +28850,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1810792071}
         m_MethodName: Restart
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gatekeeper
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &801476424
@@ -43904,7 +43904,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 127.9382
     y: 103.90721
-    width: 97
+    width: 98
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
