@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemTrainingManager : TrainingManager
 {
@@ -47,6 +49,12 @@ public class ItemTrainingManager : TrainingManager
         }
     }
 
+    public void BacktoPickItem()
+    {
+        GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1, () => SceneManager.LoadScene("dialogFungus"));
+    }
+
     // Panggil method dibawah ini kalau mau aktifin training
     public void ActivateTraining()
     {
@@ -88,6 +96,7 @@ public class ItemTrainingManager : TrainingManager
     public override void RestartActiveTrainingSection()
     {
         base.RestartActiveTrainingSection();
+        StartDialog();
     }
 
     private void CheckActiveItem()

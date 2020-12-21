@@ -9,7 +9,7 @@ using DG.Tweening;
 public class TrainingUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, obtainItemBoss;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, yesnobutton,nextbutton, obtainItemBoss;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] private Sprite newsprite, newboss;
@@ -112,6 +112,12 @@ public class TrainingUI : MonoBehaviour
     public void OpenDialogPanel(bool active)
     {
         dialogFungus.SetActive(active);
+    }
+
+    public void TryAgain(bool active)
+    {
+        yesnobutton.SetActive(active);
+        nextbutton.SetActive(!active);
     }
 
     public void OpenItemPanel(bool active)

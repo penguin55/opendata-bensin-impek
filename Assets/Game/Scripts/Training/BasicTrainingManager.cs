@@ -1,5 +1,6 @@
 ﻿using TomWill;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BasicTrainingManager : TrainingManager
 {
@@ -43,6 +44,12 @@ public class BasicTrainingManager : TrainingManager
     public override void RestartActiveTrainingSection()
     {
         base.RestartActiveTrainingSection();
+    }
+
+    public void BacktoPickItem()
+    {
+        GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1, ()=> SceneManager.LoadScene("dialogFungus"));
     }
 
     public void NextTraining()
