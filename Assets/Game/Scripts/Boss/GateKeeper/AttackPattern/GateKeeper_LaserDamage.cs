@@ -50,6 +50,7 @@ public class GateKeeper_LaserDamage : MonoBehaviour
             .AppendCallback(() => ScaleGun((timeSegment2 - (multiplierSegment2 * 0.5f)) / 2, multiplierSegment2))
             .AppendInterval(timeSegment2)
             .AppendCallback(() => ScaleGun(0, multiplierSegment3))
+            .AppendCallback(()=> TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_ready"))
             .AppendInterval(timeSegment3)
             .OnComplete(()=>Attack());
     }
