@@ -9,7 +9,7 @@ using DG.Tweening;
 public class TrainingUI : MonoBehaviour
 {
     private bool isPaused;
-    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, yesnobutton,nextbutton, obtainItemBoss;
+    [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, yesnobutton,nextbutton, obtainItemBoss, heartContainer;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] private Sprite newsprite, newboss;
@@ -231,5 +231,10 @@ public class TrainingUI : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void ActivateHeart(bool active)
+    {
+        heartContainer.SetActive(active);
     }
 }
