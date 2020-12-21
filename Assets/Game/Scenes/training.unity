@@ -20370,6 +20370,7 @@ MonoBehaviour:
   dialogFungus: {fileID: 2957492687004742173}
   dialogtry: {fileID: 1167570413}
   obtainItemBoss: {fileID: 1312102894}
+  heartContainer: {fileID: 2101746900}
   hearts:
   - {fileID: 1860103013}
   - {fileID: 920753612}
@@ -23421,8 +23422,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328750}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -23526,7 +23526,6 @@ GameObject:
   - component: {fileID: 4806305509244328763}
   - component: {fileID: 4806305509244328761}
   - component: {fileID: 4806305509244328760}
-  - component: {fileID: 4806305509244328753}
   - component: {fileID: 4806305509244328752}
   - component: {fileID: 4806305509244328750}
   - component: {fileID: 4806305509244328749}
@@ -23545,7 +23544,6 @@ GameObject:
   - component: {fileID: 4806305509244328700}
   - component: {fileID: 4806305509244328697}
   - component: {fileID: 4806305509244328696}
-  - component: {fileID: 4806305509244328690}
   - component: {fileID: 4806305509244328695}
   - component: {fileID: 4806305509244328694}
   - component: {fileID: 4806305509244328693}
@@ -23558,9 +23556,7 @@ GameObject:
   - component: {fileID: 4806305509244328731}
   - component: {fileID: 4806305509244328730}
   - component: {fileID: 4806305509244328729}
-  - component: {fileID: 4806305509244328728}
   - component: {fileID: 4806305509244328723}
-  - component: {fileID: 4806305509244328722}
   - component: {fileID: 4806305509244328721}
   - component: {fileID: 4806305509244328719}
   - component: {fileID: 4806305509244328718}
@@ -23569,11 +23565,8 @@ GameObject:
   - component: {fileID: 4806305509244328715}
   - component: {fileID: 4806305509244328710}
   - component: {fileID: 4806305509244328709}
-  - component: {fileID: 4806305509244328708}
   - component: {fileID: 4806305509244328706}
-  - component: {fileID: 4806305509244328705}
   - component: {fileID: 4806305509244328704}
-  - component: {fileID: 4806305509244328692}
   - component: {fileID: 4806305509244328703}
   - component: {fileID: 4806305509244328707}
   - component: {fileID: 4806305509244328711}
@@ -23581,6 +23574,14 @@ GameObject:
   - component: {fileID: 4806305509244328713}
   - component: {fileID: 4806305509244328720}
   - component: {fileID: 4806305509244328714}
+  - component: {fileID: 4806305509244328692}
+  - component: {fileID: 4806305509244328725}
+  - component: {fileID: 4806305509244328722}
+  - component: {fileID: 4806305509244328724}
+  - component: {fileID: 4806305509244328705}
+  - component: {fileID: 4806305509244328708}
+  - component: {fileID: 4806305509244328690}
+  - component: {fileID: 4806305509244328726}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -25904,24 +25905,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 187
+  itemId: 246
   indentLevel: 0
-  storyText: Alright, that should do it. Wanna try again ?
+  targetTextObject: {fileID: 1185142329}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Colonel
   description: 
-  character: {fileID: 7074999582420497172}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328691
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -25936,7 +25930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -229.27277
+    x: -230.64262
     y: 118.44475
     width: 88.35617
     height: 40
@@ -25956,6 +25950,7 @@ MonoBehaviour:
   - {fileID: 4806305509244328696}
   - {fileID: 4806305509244328712}
   - {fileID: 4806305509244328690}
+  - {fileID: 4806305509244328726}
   - {fileID: 4806305509244328695}
   - {fileID: 4806305509244328694}
   - {fileID: 4806305509244328693}
@@ -25969,24 +25964,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 232
+  itemId: 240
   indentLevel: 0
-  storyText: You want to test it again ?
+  targetTextObject: {fileID: 1185142329}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Colonel
   description: 
-  character: {fileID: 7074999582420497172}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328693
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -26393,27 +26381,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 224
+  itemId: 244
   indentLevel: 0
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 7074999582420497172}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
+  targetTextObject: {fileID: 612213215}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Alright, that concludes the training. You want to try it again ?
+  description: 
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328706
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -26498,24 +26476,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 221
+  itemId: 245
   indentLevel: 0
-  storyText: Alright, that concludes the training. You want to try it again ?
+  targetTextObject: {fileID: 1185142329}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Colonel
   description: 
-  character: {fileID: 7074999582420497172}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328709
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -26710,7 +26681,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328714
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -26878,13 +26849,13 @@ MonoBehaviour:
   - {fileID: 4806305509244328709}
   - {fileID: 4806305509244328711}
   - {fileID: 4806305509244328708}
-  - {fileID: 4806305509244328706}
   - {fileID: 4806305509244328705}
+  - {fileID: 4806305509244328706}
   - {fileID: 4806305509244328704}
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328720
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -26956,27 +26927,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 207
+  itemId: 242
   indentLevel: 0
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 7074999582420497172}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
+  targetTextObject: {fileID: 1185142329}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Colonel
+  description: 
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328723
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27007,7 +26968,7 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
---- !u!114 &4806305509244328728
+--- !u!114 &4806305509244328724
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27016,24 +26977,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 4806305509244328613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 201
+  itemId: 243
   indentLevel: 0
-  storyText: So you want to try again ?
+  targetTextObject: {fileID: 612213215}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: So you want to try again ?
   description: 
-  character: {fileID: 7074999582420497172}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  _textObjectObsolete: {fileID: 0}
+--- !u!114 &4806305509244328725
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 241
+  indentLevel: 0
+  targetTextObject: {fileID: 612213215}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: You want to test it again ?
+  description: 
+  _textObjectObsolete: {fileID: 0}
+--- !u!114 &4806305509244328726
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 247
+  indentLevel: 0
+  targetTextObject: {fileID: 612213215}
+  text:
+    stringRef: {fileID: 0}
+    stringVal: Alright, that should do it. Wanna try again ?
+  description: 
+  _textObjectObsolete: {fileID: 0}
 --- !u!114 &4806305509244328729
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27296,9 +27290,9 @@ MonoBehaviour:
   - {fileID: 4806305509244328730}
   - {fileID: 4806305509244328729}
   - {fileID: 4806305509244328713}
-  - {fileID: 4806305509244328728}
-  - {fileID: 4806305509244328723}
   - {fileID: 4806305509244328722}
+  - {fileID: 4806305509244328724}
+  - {fileID: 4806305509244328723}
   - {fileID: 4806305509244328721}
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328739
@@ -27565,7 +27559,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -181.64392
-    y: 237.69345
+    y: 236.3236
     width: 105.89043
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -27632,36 +27626,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &4806305509244328753
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806305509244328613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 150
-  indentLevel: 0
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 7074999582420497172}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
 --- !u!114 &4806305509244328760
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27793,7 +27757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -138.4776
+    x: -134.36801
     y: 176.1767
     width: 137.67126
     height: 40
@@ -27810,7 +27774,7 @@ MonoBehaviour:
   - {fileID: 4806305509244328761}
   - {fileID: 4806305509244328707}
   - {fileID: 4806305509244328692}
-  - {fileID: 4806305509244328753}
+  - {fileID: 4806305509244328725}
   - {fileID: 4806305509244328752}
   suppressAllAutoSelections: 0
 --- !u!4 &5232633739823404493
