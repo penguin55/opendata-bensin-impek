@@ -60,6 +60,13 @@ public class TLE_Interaction : TrainingListenerEvent
         }
     }
 
+    public override void RestartStateListener()
+    {
+        base.RestartStateListener();
+        interact_button = false;
+        buttonActive = false;
+    }
+
     private void InitPreparation()
     {
         CharaControlTraining.instance.transform.position = playerPosition.position;

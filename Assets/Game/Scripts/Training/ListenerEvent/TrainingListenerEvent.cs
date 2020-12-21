@@ -15,6 +15,11 @@ public class TrainingListenerEvent : MonoBehaviour
 
     }
 
+    public virtual void RestartStateListener()
+    {
+
+    }
+
     protected virtual bool ValidateEventListener(string param)
     {
         return false;

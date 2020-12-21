@@ -55,6 +55,12 @@ public class TLE_Item : TrainingListenerEvent
         }
     }
 
+    public override void RestartStateListener()
+    {
+        base.RestartStateListener();
+        item_used = false;
+    }
+
     private void OnCompleteSection()
     {
         if (item_used)

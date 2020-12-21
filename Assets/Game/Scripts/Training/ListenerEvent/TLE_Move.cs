@@ -53,6 +53,15 @@ public class TLE_Move : TrainingListenerEvent
         }
     }
 
+    public override void RestartStateListener()
+    {
+        base.RestartStateListener();
+        move_right = false;
+        move_left = false;
+        move_up = false;
+        move_down = false;
+    }
+
     private bool AllEventClear()
     {
         return move_right && move_up && move_left && move_down;
