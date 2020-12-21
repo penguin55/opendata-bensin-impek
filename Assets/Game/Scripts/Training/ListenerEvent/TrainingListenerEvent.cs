@@ -25,7 +25,7 @@ public class TrainingListenerEvent : MonoBehaviour
         return false;
     }
 
-    public virtual void CompleteEventListener(string param, bool value = true)
+    public virtual void CompleteEventListener(string param, bool value, bool forceComplete)
     {
 
     }

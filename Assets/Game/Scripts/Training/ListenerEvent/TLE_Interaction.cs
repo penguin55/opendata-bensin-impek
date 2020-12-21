@@ -45,9 +45,9 @@ public class TLE_Interaction : TrainingListenerEvent
         return false;
     }
 
-    public override void CompleteEventListener(string param, bool value = true)
+    public override void CompleteEventListener(string param, bool value = true, bool forceComplete = false)
     {
-        if (activeEventListener)
+        if (activeEventListener || forceComplete)
         {
             if (param.ToLower().Equals("interact_button"))
             {

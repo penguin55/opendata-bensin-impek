@@ -28,9 +28,9 @@ public class TLE_Move : TrainingListenerEvent
         }
     }
 
-    public override void CompleteEventListener(string param, bool value = true)
+    public override void CompleteEventListener(string param, bool value = true, bool forceComplete = false)
     {
-        if (activeEventListener)
+        if (activeEventListener || forceComplete)
         {
             switch (param.ToLower())
             {

@@ -19,8 +19,8 @@ public class TrainingManager : MonoBehaviour
         activeTLE?.RestartStateListener();
     }
 
-    public void CompleteActiveTLE(string param, bool value = true)
+    public void CompleteActiveTLE(string param, bool value = true, bool forceComplete = false)
     {
-        activeTLE?.CompleteEventListener(param, value);
+        activeTLE?.CompleteEventListener(param, value, forceComplete);
     }
 }

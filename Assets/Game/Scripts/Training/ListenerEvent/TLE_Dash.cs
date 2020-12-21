@@ -58,9 +58,9 @@ public class TLE_Dash : TrainingListenerEvent
         else return base.ValidateEventListener(param);
     }
 
-    public override void CompleteEventListener(string param, bool value = true)
+    public override void CompleteEventListener(string param, bool value = true, bool forceComplete = false)
     {
-        if (activeEventListener)
+        if (activeEventListener || forceComplete)
         {
             if (param.ToLower().Equals("dash"))
             {

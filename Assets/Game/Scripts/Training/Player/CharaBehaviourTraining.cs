@@ -55,6 +55,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
         if (GameData.ActiveItem && GameData.ActiveItem.ActivateOnStart)
         {
+            trainingManager.CompleteActiveTLE("item_used", true, true);
             UseItem();
         }
 
@@ -189,7 +190,6 @@ public class CharaBehaviourTraining : MonoBehaviour
     {
         if (!GameData.ActiveItem.wasUsed)
         {
-            trainingManager.CompleteActiveTLE("item_used");
             GameData.ActiveItem.TakeEffect();
             TrainingUI.instance.UpdateItemImage();
 

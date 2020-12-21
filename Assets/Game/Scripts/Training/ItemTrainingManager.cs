@@ -11,12 +11,15 @@ public class ItemTrainingManager : TrainingManager
 
     private string obstacleType;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         /*GameData.ActiveItem = data;*///Debugging purpose
         activeTLE = trainingItem;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {  
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
         StartDialog();

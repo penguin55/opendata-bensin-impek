@@ -123,6 +123,7 @@ public class CharaControlTraining : CharaBehaviourTraining
     {
         if (Input.GetKeyDown(InputManager.instance.activateItem) && !GameVariables.FREEZE_INPUT)
         {
+            trainingManager.CompleteActiveTLE("item_used");
             UseItem();
         }
     }
