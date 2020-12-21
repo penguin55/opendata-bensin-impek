@@ -19873,7 +19873,7 @@ MonoBehaviour:
   headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   activateItemImage: {fileID: 1169302560}
   dropImage: {fileID: 645948505}
-  dropItemNameText: {fileID: 0}
+  dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
   bgm: terrorcopter
 --- !u!1 &1860103013
@@ -22226,7 +22226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 240.61314, y: 4.235672}
+  scrollPos: {x: 2277.7263, y: 189.80267}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 367
