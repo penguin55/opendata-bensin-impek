@@ -79,6 +79,11 @@ public class ItemTrainingManager : TrainingManager
         trainingItem.ActivateEventListener(false);
     }
 
+    public override void RestartActiveTrainingSection()
+    {
+        base.RestartActiveTrainingSection();
+    }
+
     private void CheckActiveItem()
     {
         switch(GameData.ActiveItem.itemName)

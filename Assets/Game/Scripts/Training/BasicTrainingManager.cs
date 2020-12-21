@@ -20,25 +20,8 @@ public class BasicTrainingManager : TrainingManager
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () =>
         {
             GameVariables.FREEZE_INPUT = false;
-            //LaunchTraining();
-        });
-    }
-
-    private void NextTraining()
-    {
-        activeTrainingData.eventTraining.ActivateEventListener(false);
-
-        currentIndex++;
-        if (currentIndex >= trainingDatas.Length)
-        {
-
-        } else
-        {
-            activeTrainingData = trainingDatas[currentIndex];
-            activeTLE = activeTrainingData.eventTraining;
-            SetDisplay();
             LaunchTraining();
-        }
+        });
     }
 
     public override void CompleteTrainingSection()
@@ -55,6 +38,29 @@ public class BasicTrainingManager : TrainingManager
     public override void InteruptTrainingSection()
     {
         base.InteruptTrainingSection();
+    }
+
+    public override void RestartActiveTrainingSection()
+    {
+        base.RestartActiveTrainingSection();
+    }
+
+    public void NextTraining()
+    {
+        activeTrainingData.eventTraining.ActivateEventListener(false);
+
+        currentIndex++;
+        if (currentIndex >= trainingDatas.Length)
+        {
+
+        }
+        else
+        {
+            activeTrainingData = trainingDatas[currentIndex];
+            activeTLE = activeTrainingData.eventTraining;
+            SetDisplay();
+            LaunchTraining();
+        }
     }
 
     private void LaunchTraining()

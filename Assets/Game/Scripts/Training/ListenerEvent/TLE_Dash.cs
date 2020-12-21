@@ -69,6 +69,12 @@ public class TLE_Dash : TrainingListenerEvent
         }
     }
 
+    public override void RestartStateListener()
+    {
+        base.RestartStateListener();
+        dash = false;
+    }
+
     private void MoveDamage()
     {
         damageArea.transform.DOMove(target.position, moveTime).SetEase(Ease.Linear)
