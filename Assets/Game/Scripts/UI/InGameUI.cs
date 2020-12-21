@@ -44,6 +44,11 @@ public class InGameUI : MonoBehaviour
         ItemImage();
     }
 
+    private void OnDisable()
+    {
+        instance = null;
+    }
+
 
     public void PlayBGM(string name)
     {

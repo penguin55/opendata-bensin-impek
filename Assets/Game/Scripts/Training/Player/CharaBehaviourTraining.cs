@@ -58,8 +58,8 @@ public class CharaBehaviourTraining : MonoBehaviour
             UseItem();
         }
 
-        InGameUI.instance?.UpdateLive();
-        InGameUI.instance?.UpdateShield();
+        TrainingUI.instance.UpdateLive();
+        TrainingUI.instance.UpdateShield();
     }
 
     protected void Clamp()
@@ -156,11 +156,11 @@ public class CharaBehaviourTraining : MonoBehaviour
                 if (data.Shield > 0)
                 {
                     data.Shield -= 1;
-                    InGameUI.instance.UpdateShield();
+                    TrainingUI.instance.UpdateShield();
                 }
                 else data.Hp -= 1;
 
-                InGameUI.instance.UpdateLive();
+                TrainingUI.instance.UpdateLive();
 
                 if (data.Hp < 1)
                 {
@@ -172,7 +172,7 @@ public class CharaBehaviourTraining : MonoBehaviour
                     DOTween.Sequence()
                         .AppendInterval(1f)
                         .AppendCallback(() =>
-                        { InGameUI.instance.GameOver(); });
+                        { TrainingUI.instance.GameOver(); });
                 }
             }
         }
@@ -191,7 +191,7 @@ public class CharaBehaviourTraining : MonoBehaviour
         {
             trainingManager.CompleteActiveTLE("item_used");
             GameData.ActiveItem.TakeEffect();
-            InGameUI.instance.UpdateItemImage();
+            TrainingUI.instance.UpdateItemImage();
 
             GameData.ItemHolds.Remove(GameData.ActiveItem);
             GameData.ItemUsed.Add(GameData.ActiveItem);
@@ -213,7 +213,7 @@ public class CharaBehaviourTraining : MonoBehaviour
         if (collision.CompareTag("damage area") && !immune)
         {
             TakeDamage();
-            collision.GetComponent<CannonGK>().Explode();
+            collision.GetComponent<CannonGK>()?.Explode();
         }
 
         if (collision.CompareTag("button_interact"))

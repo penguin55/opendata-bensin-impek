@@ -884,7 +884,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: Restart
         m_Mode: 5
         m_Arguments:
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -1326,18 +1326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148271823}
   m_CullTransparentMesh: 0
---- !u!114 &245292398 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8891924824092284754, guid: 26466540988e048499061a7c7846038c,
-    type: 3}
-  m_PrefabInstance: {fileID: 448005960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &263795224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2112,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1810792071}
+      objectReference: {fileID: 0}
     - target: {fileID: 8891924825090152165, guid: 26466540988e048499061a7c7846038c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2549,7 +2537,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -3028,7 +3016,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: Restart
         m_Mode: 5
         m_Arguments:
@@ -8428,18 +8416,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &989620618 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5353020872435484344, guid: 26466540988e048499061a7c7846038c,
-    type: 3}
-  m_PrefabInstance: {fileID: 448005960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &993335475
 GameObject:
   m_ObjectHideFlags: 0
@@ -19832,7 +19808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810792072}
-  - component: {fileID: 1810792071}
+  - component: {fileID: 1810792073}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -19840,7 +19816,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1810792071
+--- !u!4 &1810792072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810792070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.983337, y: 6.110697, z: -2.74675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810792073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19849,7 +19839,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810792070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf1b7f6fdf6ae194ea5498f0cba2425e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9251632733dc3bd42adae7fb32ce9a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 685950666}
@@ -19868,27 +19858,10 @@ MonoBehaviour:
   - {fileID: 1807305069}
   - {fileID: 1432146427}
   shields: {fileID: 1177599872}
-  chat:
-  - C'mon, fly!!! It's not over yet !!!
-  - That takes care of the cremation.
-  - 
-  - Good work X now return to base for debriefing.
-  charname:
-  - 'Terrorcopter :'
-  - 'X :'
-  - 
-  - 'Colonel : '
   newsprite: {fileID: 21300000, guid: 7be92341b1436344aa0b6bd1c143bf23, type: 3}
   newboss: {fileID: 21300000, guid: a47bc3fcbc07f1b44a7a640075aa3105, type: 3}
   oldsprite: {fileID: 21300000, guid: 5b4531c8e277cc04ab7ee775abeacaa3, type: 3}
   oldboss: {fileID: 21300000, guid: 01ea104933ee68340b8faf78796109c7, type: 3}
-  x: {fileID: 1872815672}
-  commander: {fileID: 1872815671}
-  heli: {fileID: 1872815670}
-  mysterious: {fileID: 1872815669}
-  index: 0
-  dialog: {fileID: 245292398}
-  chara: {fileID: 989620618}
   aPair: {fileID: 21300000, guid: 0ef1db3c3543220449e42a7e846866b8, type: 3}
   axe: {fileID: 21300000, guid: bcef8bd9111cc70448d2714277a3c061, type: 3}
   deer: {fileID: 21300000, guid: 0e16bcf1acdebe14c81d8d46ec6e3fa1, type: 3}
@@ -19900,23 +19873,9 @@ MonoBehaviour:
   headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   activateItemImage: {fileID: 1169302560}
   dropImage: {fileID: 645948505}
-  dropItemNameText: {fileID: 53130545}
+  dropItemNameText: {fileID: 0}
   dropItemDescText: {fileID: 1208065035}
   bgm: terrorcopter
---- !u!4 &1810792072
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810792070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.983337, y: 6.110697, z: -2.74675}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860103013
 GameObject:
   m_ObjectHideFlags: 0
@@ -20396,30 +20355,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1872815667}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1872815669 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2640774407245018015, guid: 895361024c37df449b171855c54f9eb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872815667}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1872815670 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2640774406843199594, guid: 895361024c37df449b171855c54f9eb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872815667}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1872815671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2640774405666040127, guid: 895361024c37df449b171855c54f9eb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872815667}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1872815672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2640774406924106477, guid: 895361024c37df449b171855c54f9eb2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1872815667}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1941160378
 GameObject:
   m_ObjectHideFlags: 0
@@ -20502,7 +20437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -20983,7 +20918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810792071}
+      - m_Target: {fileID: 0}
         m_MethodName: next
         m_Mode: 1
         m_Arguments:
@@ -22291,10 +22226,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 399.37582, y: -60.71278}
+  scrollPos: {x: 240.61314, y: 4.235672}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 280
+  blockViewHeight: 367
   zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
@@ -22419,7 +22354,6 @@ GameObject:
   - component: {fileID: 4806305509244328741}
   - component: {fileID: 4806305509244328740}
   - component: {fileID: 4806305509244328739}
-  - component: {fileID: 4806305509244328738}
   - component: {fileID: 4806305509244328691}
   - component: {fileID: 4806305509244328702}
   - component: {fileID: 4806305509244328701}
@@ -22505,8 +22439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 11.964355
-    y: 127.72308
+    x: 10.933428
+    y: 143.18703
     width: 139.07216
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -22758,10 +22692,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -22803,10 +22737,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -22936,8 +22870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 272.37677
-    y: 111.22827
+    x: 99.18085
+    y: 91.64061
     width: 89.58763
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -22976,10 +22910,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -23235,10 +23169,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -23442,10 +23376,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -23703,10 +23637,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -23746,8 +23680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 190.52106
-    y: 239.06331
+    x: 159.59317
+    y: 206.07356
     width: 87.1134
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -23791,10 +23725,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -24080,10 +24014,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -24299,10 +24233,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -24560,10 +24494,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -24603,8 +24537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 71.13962
-    y: 205.0427
+    x: 23.716928
+    y: 202.98083
     width: 115.15463
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -24878,10 +24812,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25140,10 +25074,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25185,10 +25119,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25446,10 +25380,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25527,10 +25461,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25842,10 +25776,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -25885,14 +25819,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -329.68512
-    y: 184.4241
-    width: 82.989685
+    x: -237.93259
+    y: 177.2076
+    width: 85.46391
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 230
-  blockName: f_Loro
+  blockName: F_Loro
   description: 
   eventHandler: {fileID: 0}
   commandList:
@@ -25909,33 +25843,6 @@ MonoBehaviour:
   - {fileID: 4806305509244328722}
   - {fileID: 4806305509244328721}
   suppressAllAutoSelections: 0
---- !u!114 &4806305509244328738
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806305509244328613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 165
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 1022299204}
-  targetComponentAssemblyName: 
-  targetComponentFullname: 
-  targetComponentText: 
-  targetMethod: 
-  targetMethodText: 
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: 
-  showInherited: 0
-  callMode: 0
 --- !u!114 &4806305509244328739
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -25952,15 +25859,33 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: 
-  targetComponentFullname: 
-  targetComponentText: 
-  targetMethod: 
-  targetMethodText: 
-  methodParameters: []
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TrainingUI
+  targetMethod: OpenDialogPanel
+  targetMethodText: 'OpenDialogPanel (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
-  returnValueType: 
+  returnValueType: System.Void
   showInherited: 0
   callMode: 0
 --- !u!114 &4806305509244328740
@@ -26195,10 +26120,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -26259,7 +26184,6 @@ MonoBehaviour:
   - {fileID: 4806305509244328741}
   - {fileID: 4806305509244328740}
   - {fileID: 4806305509244328739}
-  - {fileID: 4806305509244328738}
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328752
 MonoBehaviour:
@@ -26277,10 +26201,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -26424,10 +26348,10 @@ MonoBehaviour:
   indentLevel: 0
   description: 
   targetObject: {fileID: 1810792070}
-  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetComponentAssemblyName: TrainingUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: InGameUI
+  targetComponentText: TrainingUI
   targetMethod: OpenDialogPanel
   targetMethodText: 'OpenDialogPanel (Boolean): Void'
   methodParameters:
@@ -26467,8 +26391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -224.73668
-    y: 177.20763
+    x: -137.10774
+    y: 176.1767
     width: 137.42267
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}

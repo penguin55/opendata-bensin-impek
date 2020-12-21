@@ -78,7 +78,8 @@ public class ItemData : ScriptableObject
     {
         wasUsed = true;
         CharaData.shield = 1;
-        InGameUI.instance.UpdateShield();
+        InGameUI.instance?.UpdateShield();
+        TrainingUI.instance?.UpdateShield();
         return true;
     }
 
@@ -107,8 +108,8 @@ public class ItemData : ScriptableObject
     {
         wasUsed = true;
         CharaData.hp = CharaData.maxhp;
-        InGameUI.instance.UpdateLive();
-
+        InGameUI.instance?.UpdateLive();
+        TrainingUI.instance?.UpdateLive();
         return true;
     }
 
@@ -119,7 +120,8 @@ public class ItemData : ScriptableObject
 
         if (CharaData.hp < 0) CharaData.hp = 0;
 
-        InGameUI.instance.UpdateLive();
+        InGameUI.instance?.UpdateLive();
+        TrainingUI.instance?.UpdateLive();
         GameVariables.SPEED_BUFF = amountEffect;
         return true;
     }
