@@ -223,7 +223,7 @@ public class CharaBehaviour : MonoBehaviour
         if (collision.CompareTag("damage area") && !immune)
         {
             TakeDamage();
-            collision.GetComponent<CannonGK>().Explode();
+            collision.GetComponent<CannonGK>()?.Explode();
         }
 
         if (collision.CompareTag("button_interact"))
