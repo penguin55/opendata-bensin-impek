@@ -20,13 +20,6 @@ public class BasicTrainingManager : TrainingManager
         //activeTLE = activeTrainingData.eventTraining;
         GameVariables.FREEZE_INPUT = true;
         LaunchStartDialog();
-        //SetDisplay();
-
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () =>
-        {
-            //GameVariables.FREEZE_INPUT = false;
-            //LaunchTraining();
-        });
     }
 
     public override void CompleteTrainingSection()
