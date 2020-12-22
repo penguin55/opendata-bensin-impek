@@ -10,14 +10,15 @@ public class TrainingListenerEvent : MonoBehaviour
         activeEventListener = flag;
     }
 
-    public virtual void InitEventListener(string param, bool value)
+    public virtual void InitEventListener(string param = "", bool value = true)
     {
 
     }
 
     public virtual void RestartStateListener()
     {
-
+        CharaData.hp = CharaData.maxhp;
+        TrainingUI.instance.UpdateLive();
     }
 
     protected virtual bool ValidateEventListener(string param)

@@ -24,19 +24,6 @@ public class TLE_Dash : TrainingListenerEvent
 
         if (flag)
         {
-            if (moveRight)
-            {
-                start = positionsMove[0];
-                target = positionsMove[positionsMove.Length - 1];
-                CharaControlTraining.instance.transform.position = playerPositions[positionsMove.Length - 1].position;
-            }
-            else
-            {
-                start = positionsMove[positionsMove.Length - 1];
-                target = positionsMove[0];
-                CharaControlTraining.instance.transform.position = playerPositions[0].position;
-            }
-
             damageArea.transform.DOMove(start.position, 0f);
 
             DOTween.Sequence()
@@ -56,6 +43,8 @@ public class TLE_Dash : TrainingListenerEvent
         {
             moveRight = value;
         }
+
+        InitPreparation();
     }
 
     protected override bool ValidateEventListener(string param)
@@ -82,7 +71,7 @@ public class TLE_Dash : TrainingListenerEvent
     {
         base.RestartStateListener();
         dash = false;
-        parent.SetActive(false);
+        InitPreparation();
     }
 
     private void MoveDamage()
@@ -91,7 +80,38 @@ public class TLE_Dash : TrainingListenerEvent
         damageArea.transform.DOMove(target.position, moveTime).SetEase(Ease.Linear)
             .OnComplete(()=>
             {
-                manager.CompleteTrainingSection();
+                OnCompleteSection();
             });
+    }
+
+    private void OnCompleteSection()
+    {
+        if (dash)
+        {
+            manager.CompleteTrainingSection();
+        }
+        else
+        {
+            manager.InteruptTrainingSection();
+        }
+    }
+
+    private void InitPreparation()
+    {
+        if (moveRight)
+        {
+            start = positionsMove[0];
+            target = positionsMove[positionsMove.Length - 1];
+            CharaControlTraining.instance.transform.position = playerPositions[positionsMove.Length - 1].position;
+        }
+        else
+        {
+            start = positionsMove[positionsMove.Length - 1];
+            target = positionsMove[0];
+            CharaControlTraining.instance.transform.position = playerPositions[0].position;
+        }
+
+        parent.SetActive(true);
+        damageArea.transform.DOMove(start.position, 0f);
     }
 }

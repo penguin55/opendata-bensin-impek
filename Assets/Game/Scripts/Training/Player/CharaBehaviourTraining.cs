@@ -165,15 +165,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
                 if (data.Hp < 1)
                 {
-                    dead = true;
-                    anim.SetBool("dead", true);
-                    GameVariables.STILL_ALIVE = false;
-                    GameVariables.GAME_OVER = true;
-                    TWTransition.ScreenFlash(1, 0.1f);
-                    DOTween.Sequence()
-                        .AppendInterval(1f)
-                        .AppendCallback(() =>
-                        { TrainingUI.instance.GameOver(); });
+                    trainingManager.RestartActiveTrainingSection();
                 }
             }
         }

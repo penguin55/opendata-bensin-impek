@@ -22,7 +22,7 @@ public class DialogMainMenu : MonoBehaviour
     private string activeBoss;
     private void Start()
     {
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, .5f, () => fungusController.Init());
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f, () => fungusController.Init());
         instance = this;
     }
     public void ItemDesc(string desc)

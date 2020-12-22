@@ -3699,6 +3699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TWLoadingManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7687275001663306303, guid: ebdd5e65279d836429312327a05aec6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7735572058463562282, guid: ebdd5e65279d836429312327a05aec6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8707,6 +8712,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1022299205}
         m_MethodName: BacktoPickItem
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2957492685744610808}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19986,6 +20002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1022299205}
+  playerPosition: {fileID: 0}
   missile: {fileID: 1712173870308042965}
 --- !u!4 &1518837423
 Transform:
@@ -21589,6 +21606,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2957492685744610808}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2147281130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22123,7 +22151,7 @@ MonoBehaviour:
   delay_prepare: 0
   delay_animation: 0
   delay_active: 0
-  delay_exit: 5
+  delay_exit: 3
   anim: {fileID: 0}
   missileParent: {fileID: 1712173871274120100}
   spawnProjectilePosition:
@@ -22147,7 +22175,6 @@ MonoBehaviour:
   - {fileID: 7648650784551809049}
   - {fileID: 7648650784931066742}
   - {fileID: 7648650783508147960}
-  - {fileID: 7648650785403441640}
   projectilePrefabs: {fileID: 2267514720433620907, guid: ac3794d9f3ac5d843988dabc5dca869b,
     type: 3}
   fireRate: 1

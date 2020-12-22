@@ -1,4 +1,5 @@
-﻿using Fungus;
+﻿using DG.Tweening;
+using Fungus;
 using UnityEngine;
 
 public class TLE_Interaction : TrainingListenerEvent
@@ -18,13 +19,18 @@ public class TLE_Interaction : TrainingListenerEvent
     {
         base.ActivateEventListener(flag);
 
-        if (flag) InitPreparation();
-        else
+        if (!flag) 
         {
             gateRender.gameObject.SetActive(false);
             buttonRender.gameObject.SetActive(false);
             gatePhysic.enabled = false;
         }
+    }
+
+    public override void InitEventListener(string param, bool value)
+    {
+        base.InitEventListener(param, value);
+        InitPreparation();
     }
 
     public void ButtonPressed()
@@ -55,7 +61,7 @@ public class TLE_Interaction : TrainingListenerEvent
 
                 buttonActive = value;
                 activeEventListener = !buttonActive;
-                if (buttonActive) manager.CompleteTrainingSection();
+                DOVirtual.DelayedCall(2f, ()=> manager.CompleteTrainingSection());
             }
         }
     }
@@ -67,6 +73,8 @@ public class TLE_Interaction : TrainingListenerEvent
         buttonActive = false;
         gateRender.gameObject.SetActive(false);
         buttonRender.gameObject.SetActive(false);
+
+        InitPreparation();
     }
 
     private void InitPreparation()

@@ -6,7 +6,7 @@ public class TrainingManager : MonoBehaviour
 
     public virtual void InteruptTrainingSection()
     {
-
+        RestartActiveTrainingSection();
     }
 
     public virtual void CompleteTrainingSection()

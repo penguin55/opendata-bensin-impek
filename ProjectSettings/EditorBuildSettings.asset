@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/ToBeContinued.unity
     guid: 36ac2a9cb3081194ab1d8d5052af531c
   - enabled: 1
-    path: Assets/Game/Scenes/training.unity
+    path: Assets/Game/Scenes/TrainingRoom_Item.unity
     guid: 558645418030ca34e8fa65e95e5d1f17
   - enabled: 1
     path: Assets/Game/Scenes/TrainingRoom_Basic.unity

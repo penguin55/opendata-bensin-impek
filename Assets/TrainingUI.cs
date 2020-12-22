@@ -33,7 +33,6 @@ public class TrainingUI : MonoBehaviour
         TWLoading.OnSuccessLoad(() => {
             TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f, ()=>
             {
-                GameVariables.FREEZE_INPUT = false;
                 GameVariables.GAME_FREEZE = false;
             });
         });
@@ -187,7 +186,7 @@ public class TrainingUI : MonoBehaviour
     {
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 
@@ -195,7 +194,7 @@ public class TrainingUI : MonoBehaviour
     {
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 

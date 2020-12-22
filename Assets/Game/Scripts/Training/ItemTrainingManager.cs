@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
@@ -21,7 +22,8 @@ public class ItemTrainingManager : TrainingManager
 
     // Start is called before the first frame update
     void Start()
-    {  
+    {
+        GameVariables.FREEZE_INPUT = false;
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
         StartDialog();
@@ -96,12 +98,27 @@ public class ItemTrainingManager : TrainingManager
 
     public override void RestartActiveTrainingSection()
     {
-        base.RestartActiveTrainingSection();
-        GameData.ActiveItem.wasUsed = false;
-        CharaData.hp = CharaData.maxhp;
-        TrainingUI.instance.UpdateLive();
-        TrainingUI.instance.UpdateItemImage();
-        StartDialog();
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () =>
+        {
+            DOTween.Complete("Shake");
+            DOTween.Complete("TLEO_Missile");
+            GameData.ActiveItem.wasUsed = false;
+            SceneManager.LoadScene("TrainingRoom_Item");
+            /*TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f, () =>
+            {
+                if (GameData.ActiveItem.ActivateOnStart)
+                {
+                    GameData.ActiveItem.TakeEffect();
+                    TrainingUI.instance.UpdateItemImage();
+                }
+                GameData.ActiveItem.wasUsed = false;
+                CharaData.hp = CharaData.maxhp;
+                TrainingUI.instance.UpdateLive();
+                TrainingUI.instance.UpdateItemImage();
+                base.RestartActiveTrainingSection();
+                StartDialog();
+            });*/
+        }); 
     }
 
     private void CheckActiveItem()

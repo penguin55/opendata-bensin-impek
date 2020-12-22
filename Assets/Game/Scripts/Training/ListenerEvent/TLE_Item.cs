@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TLE_Item : TrainingListenerEvent
 {
+    [SerializeField] private Transform playerPosition;
     [SerializeField] private TLEO_Missile missile;
     private bool item_used;
     private bool missileActive;

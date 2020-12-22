@@ -15,9 +15,6 @@ public class BasicTrainingManager : TrainingManager
     {
         GameData.ActiveItem = null;
         activeTrainingData = null;
-        //currentIndex = 0;
-        //activeTrainingData = trainingDatas[currentIndex];
-        //activeTLE = activeTrainingData.eventTraining;
         GameVariables.FREEZE_INPUT = true;
         LaunchStartDialog();
     }
@@ -25,12 +22,8 @@ public class BasicTrainingManager : TrainingManager
     public override void CompleteTrainingSection()
     {
         base.CompleteTrainingSection();
-        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () => 
-        {
-            GameVariables.FREEZE_INPUT = true;
-            LaunchFinishDialog();
-            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
-        });
+        GameVariables.FREEZE_INPUT = true;
+        LaunchFinishDialog();
     }
 
     public override void InteruptTrainingSection()
@@ -40,9 +33,10 @@ public class BasicTrainingManager : TrainingManager
 
     public override void RestartActiveTrainingSection()
     {
-        base.RestartActiveTrainingSection();
         TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () =>
         {
+            base.RestartActiveTrainingSection();
+            SetDisplay();
             GameVariables.FREEZE_INPUT = true;
             LaunchStartDialog();
             TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
@@ -100,6 +94,15 @@ public class BasicTrainingManager : TrainingManager
     public void NextTraining()
     {
 
+        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () =>
+        {
+            SetupTraining();
+            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
+        });
+    }
+
+    private void SetupTraining()
+    {
         if (activeTrainingData == null)
         {
             currentIndex = 0;
@@ -119,28 +122,12 @@ public class BasicTrainingManager : TrainingManager
             }
             else
             {
-                Debug.Log(activeTrainingData.training_name);
                 activeTrainingData = trainingDatas[currentIndex];
                 activeTLE = activeTrainingData.eventTraining;
                 SetDisplay();
                 LaunchStartDialog();
             }
         }
-
-        //activeTrainingData.eventTraining.ActivateEventListener(false);
-
-        //currentIndex++;
-        //if (currentIndex >= trainingDatas.Length)
-        //{
-
-        //}
-        //else
-        //{
-        //    activeTrainingData = trainingDatas[currentIndex];
-        //    activeTLE = activeTrainingData.eventTraining;
-        //    SetDisplay();
-        //    LaunchTraining();
-        //}
     }
 
     public void GetLaunchTraining()
@@ -156,6 +143,19 @@ public class BasicTrainingManager : TrainingManager
 
     private void SetDisplay()
     {
+        switch (activeTrainingData.training_name)
+        {
+            case "move":
+                activeTrainingData.eventTraining.InitEventListener("move_right", true);
+                break;
+            case "dash":
+                activeTrainingData.eventTraining.InitEventListener();
+                break;
+            case "interact":
+                activeTrainingData.eventTraining.InitEventListener();
+                break;
+        }
+
         display_button_desc.sprite = activeTrainingData.training_button_desc;
         display_button.sprite = activeTrainingData.training_button;
     }
