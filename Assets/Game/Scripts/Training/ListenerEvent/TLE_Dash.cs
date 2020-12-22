@@ -73,6 +73,7 @@ public class TLE_Dash : TrainingListenerEvent
     {
         base.RestartStateListener();
         dash = false;
+        parent.SetActive(false);
     }
 
     private void MoveDamage()

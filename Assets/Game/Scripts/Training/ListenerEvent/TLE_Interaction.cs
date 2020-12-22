@@ -65,6 +65,8 @@ public class TLE_Interaction : TrainingListenerEvent
         base.RestartStateListener();
         interact_button = false;
         buttonActive = false;
+        gateRender.gameObject.SetActive(false);
+        buttonRender.gameObject.SetActive(false);
     }
 
     private void InitPreparation()
