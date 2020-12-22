@@ -9604,18 +9604,18 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].name
-      value: gatekeeper
+      value: helicopter_blades
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 41c658e29b9cec24795c97af167eafc8, type: 3}
+      objectReference: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[2].localVolume
@@ -9624,7 +9624,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: sfxClips.Array.data[1].localVolume
-      value: 1
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -9664,18 +9664,163 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[3].name
-      value: helicopter_blades
+      value: gatekeeper
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[3].localVolume
-      value: 0.136
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: f89639cc7f7c35f4a961b9a7e10cf860, type: 3}
+      objectReference: {fileID: 8300000, guid: 41c658e29b9cec24795c97af167eafc8, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[4].name
+      value: training
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[4].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 138dcfec884dcc543b270b2336f099e4, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[0].localVolume
+      value: 0.541
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[6].localVolume
+      value: 0.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[7].localVolume
+      value: 0.521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[9].localVolume
+      value: 0.521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[13].localVolume
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[14].localVolume
+      value: 0.568
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[15].localVolume
+      value: 0.384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[16].localVolume
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[18].localVolume
+      value: 0.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[19].localVolume
+      value: 0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[20].localVolume
+      value: 0.568
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[21].localVolume
+      value: 0.521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[22].localVolume
+      value: 0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[23].localVolume
+      value: 0.527
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[24].localVolume
+      value: 0.272
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[25].localVolume
+      value: 0.507
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[26].localVolume
+      value: 0.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[27].localVolume
+      value: 0.473
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[5].name
+      value: training_basic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[5].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4cdc7bb2b8e0564699fc9cd05a03358, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[3].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[4].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[5].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[12].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[28].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -21271,7 +21416,7 @@ MonoBehaviour:
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
-  bgm: terrorcopter
+  bgm: training_basic
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -38018,7 +38163,6 @@ GameObject:
   - component: {fileID: 4806305509244328695}
   - component: {fileID: 4806305509244328694}
   - component: {fileID: 4806305509244328697}
-  - component: {fileID: 4806305509244328696}
   - component: {fileID: 4806305509244328707}
   - component: {fileID: 4806305509244328706}
   - component: {fileID: 4806305509244328705}
@@ -38743,7 +38887,6 @@ MonoBehaviour:
   - {fileID: 4806305509244328697}
   - {fileID: 4806305509244328638}
   - {fileID: 4806305509244328637}
-  - {fileID: 4806305509244328696}
   - {fileID: 4806305509244328636}
   suppressAllAutoSelections: 1
 --- !u!114 &4806305509244328636
@@ -39091,7 +39234,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -5930.172
-    y: -502.42963
+    y: -503.42963
     width: 92.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -40595,36 +40738,6 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
---- !u!114 &4806305509244328696
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4806305509244328613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 149
-  indentLevel: 0
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 7074999582420497172}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
 --- !u!114 &4806305509244328697
 MonoBehaviour:
   m_ObjectHideFlags: 2
