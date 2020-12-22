@@ -9,6 +9,7 @@ public class TLE_Dash : TrainingListenerEvent
     [SerializeField] private float startTime, moveTime;
     [SerializeField] private Transform[] positionsMove;
     [SerializeField] private Transform[] playerPositions;
+    [SerializeField] private Animator anim;
 
     private bool dash;
     private Transform start, target;
@@ -38,7 +39,14 @@ public class TLE_Dash : TrainingListenerEvent
 
             damageArea.transform.DOMove(start.position, 0f);
 
-            DOVirtual.DelayedCall(startTime, ()=> MoveDamage());
+            DOTween.Sequence()
+                .AppendInterval(1)
+                .AppendCallback(() => { anim.gameObject.SetActive(true); })
+                .AppendCallback(() => { TWAudioController.PlaySFX("BOSS_SFX", "boss_attack_telegraph"); })
+                .AppendInterval(1f)
+                .AppendCallback(() => anim.gameObject.SetActive(false))
+                .AppendInterval(startTime)
+                .AppendCallback(() => MoveDamage());
         }
     }
 
