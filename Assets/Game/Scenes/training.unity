@@ -23422,10 +23422,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328691}
-  selectedCommands:
-  - {fileID: 4806305509244328693}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -23547,6 +23545,7 @@ GameObject:
   - component: {fileID: 4806305509244328697}
   - component: {fileID: 4806305509244328696}
   - component: {fileID: 4806305509244328695}
+  - component: {fileID: 4806305509244328694}
   - component: {fileID: 4806305509244328693}
   - component: {fileID: 4806305509244328737}
   - component: {fileID: 4806305509244328736}
@@ -25953,6 +25952,7 @@ MonoBehaviour:
   - {fileID: 4806305509244328690}
   - {fileID: 4806305509244328726}
   - {fileID: 4806305509244328695}
+  - {fileID: 4806305509244328694}
   - {fileID: 4806305509244328693}
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328692
@@ -26020,6 +26020,36 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &4806305509244328694
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 189
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 7074999582420497172}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!114 &4806305509244328695
 MonoBehaviour:
   m_ObjectHideFlags: 2
