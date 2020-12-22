@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 
 public class TLE_Dash : TrainingListenerEvent
@@ -78,6 +79,7 @@ public class TLE_Dash : TrainingListenerEvent
 
     private void MoveDamage()
     {
+        TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_firing");
         damageArea.transform.DOMove(target.position, moveTime).SetEase(Ease.Linear)
             .OnComplete(()=>
             {
