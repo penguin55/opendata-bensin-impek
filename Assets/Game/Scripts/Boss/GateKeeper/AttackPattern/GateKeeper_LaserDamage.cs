@@ -67,7 +67,7 @@ public class GateKeeper_LaserDamage : MonoBehaviour
             lasersGateKeeper[randomIndex].explode.Play();
         }
         canActiveLaser = false;
-        DOVirtual.DelayedCall( 2f, ()=>OnExit_Attack());
+        DOVirtual.DelayedCall( 1.3f, ()=>OnExit_Attack());
     }
 
     private void OnExit_Attack()

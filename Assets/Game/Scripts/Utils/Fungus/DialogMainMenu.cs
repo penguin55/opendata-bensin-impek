@@ -22,7 +22,7 @@ public class DialogMainMenu : MonoBehaviour
     private string activeBoss;
     private void Start()
     {
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, () => fungusController.Init());
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, .5f, () => fungusController.Init());
         instance = this;
     }
     public void ItemDesc(string desc)
@@ -38,10 +38,10 @@ public class DialogMainMenu : MonoBehaviour
     {
         OpenBossPanel(false);
 
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () =>
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () =>
         {
             BossListTransition();
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, 1f, ()=>
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT, .5f, ()=>
             {
                 fungusController.NextBlock("Weakness"+activeBoss);
             });
@@ -111,12 +111,12 @@ public class DialogMainMenu : MonoBehaviour
 
     public void GoToScene(string nameScene, TWTransition.TransitionType type)
     {
-        TWTransition.ScreenTransition(type, 1f, () => DOVirtual.DelayedCall(0.5f, ()=> SceneManager.LoadScene(nameScene))); 
+        TWTransition.ScreenTransition(type, .5f, () => DOVirtual.DelayedCall(0.5f, ()=> SceneManager.LoadScene(nameScene))); 
     }
 
     public void GoToScene(string nameScene)
     {
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1f, () => DOVirtual.DelayedCall(0.5f, () => SceneManager.LoadScene(nameScene)));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => DOVirtual.DelayedCall(0.5f, () => SceneManager.LoadScene(nameScene)));
     }
 
     public void OpenBossPanel(bool active)

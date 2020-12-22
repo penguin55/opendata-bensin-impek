@@ -31,7 +31,7 @@ public class TrainingUI : MonoBehaviour
         GameVariables.GAME_OVER = false;
         instance = this;
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, 1);
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f);
         });
         PlayBGM(bgm);
         if (GameData.ActiveItem) ItemImage();
@@ -175,7 +175,7 @@ public class TrainingUI : MonoBehaviour
     {
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene(name));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene(name));
         TWAudioController.PlaySFX("UI", "transition");
     }
 
@@ -183,7 +183,7 @@ public class TrainingUI : MonoBehaviour
     {
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("MainMenu"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 
@@ -191,7 +191,7 @@ public class TrainingUI : MonoBehaviour
     {
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("dialogFungus"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 

@@ -43198,11 +43198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3025494e6ea76e744885f7208a40d71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay_enter: 2
+  delay_enter: 1
   delay_prepare: 2
   delay_animation: 2
   delay_active: 2
-  delay_exit: 2
+  delay_exit: 1
   anim: {fileID: 3494481357032429281}
   rotator: {fileID: 266848880}
   delay_attack: 10
@@ -66065,11 +66065,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af8c9bcc8c3dc945a163da12126e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay_enter: 2
+  delay_enter: 1
   delay_prepare: 1
   delay_animation: 0.4
   delay_active: 1
-  delay_exit: 2
+  delay_exit: 1
   anim: {fileID: 3494481357032429281}
   flameThowerParent: {fileID: 9072407222637574854}
   damageArea: {fileID: 9072407223702572800}
@@ -66593,11 +66593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245969499faf239438556fa9499c1a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay_enter: 2
+  delay_enter: 1
   delay_prepare: 1
   delay_animation: 0.4
   delay_active: 2
-  delay_exit: 2
+  delay_exit: 1
   anim: {fileID: 3494481357032429281}
   laserParent: {fileID: 9072407222296241500}
   damageArea: {fileID: 9072407223754935353}

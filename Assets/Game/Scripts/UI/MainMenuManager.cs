@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     {
         GameVariables.DIALOG_START_MESSAGE = "MISSION_START";
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("dialogFungus"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 

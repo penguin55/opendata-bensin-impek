@@ -216,6 +216,7 @@ public class CharaBehaviourTraining : MonoBehaviour
         if (collision.CompareTag("button_interact"))
         {
             interact.buttonInteract = collision.gameObject;
+            TWAudioController.PlaySFX("BOSS_SFX", "boss_attack_telegraph");
         }
     }
 

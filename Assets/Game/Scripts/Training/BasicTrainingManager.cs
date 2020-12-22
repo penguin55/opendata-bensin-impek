@@ -25,11 +25,11 @@ public class BasicTrainingManager : TrainingManager
     public override void CompleteTrainingSection()
     {
         base.CompleteTrainingSection();
-        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, 1f, () => 
+        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () => 
         {
             GameVariables.FREEZE_INPUT = true;
             LaunchFinishDialog();
-            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, 1f);
+            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
         });
     }
 
@@ -41,18 +41,18 @@ public class BasicTrainingManager : TrainingManager
     public override void RestartActiveTrainingSection()
     {
         base.RestartActiveTrainingSection();
-        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, 1f, () =>
+        TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () =>
         {
             GameVariables.FREEZE_INPUT = true;
             LaunchStartDialog();
-            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, 1f);
+            TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
         });
     }
 
     public void BacktoPickItem()
     {
         GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, 1, ()=> SceneManager.LoadScene("dialogFungus"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, ()=> SceneManager.LoadScene("dialogFungus"));
     }
 
     public void LaunchStartDialog()
