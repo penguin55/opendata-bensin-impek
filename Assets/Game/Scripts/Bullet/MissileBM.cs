@@ -16,6 +16,8 @@ public class MissileBM : DamageArea
 
     public void Launch(GameObject projectile, float timeToLaunch, bool activeMissile = true)
     {
+        ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
+        smoke.Play();
         deactiveMissileDashed = false;
         collider = GetComponent<Collider2D>();
         alertProjectileSprite = GetComponent<SpriteRenderer>();
@@ -44,6 +46,8 @@ public class MissileBM : DamageArea
 
             if (!activeMissile)
             {
+                ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
+                smoke.Stop();
                 projectile.GetComponent<Animator>().SetTrigger("Jammed");
                 sign.enabled = true;
                 projectile.GetComponent<SpriteRenderer>().sortingOrder = 1;
@@ -78,6 +82,8 @@ public class MissileBM : DamageArea
     {
         sign.enabled = false;
         deactiveMissileDashed = true;
+        ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
+        smoke.Play();
     }
 
     public void Explode()
