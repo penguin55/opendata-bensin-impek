@@ -37895,7 +37895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 6312.7637, y: 615.33905}
+  scrollPos: {x: 6063.7637, y: 661.33905}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 391
@@ -38046,7 +38046,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 186.4382
     y: 28.407211
-    width: 104
+    width: 105.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -38289,7 +38289,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -6089.7637
     y: -556.83905
-    width: 87
+    width: 87.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -38588,7 +38588,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5929.991
     y: -556.8388
-    width: 95
+    width: 95.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -38725,7 +38725,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5811.9453
     y: -559.1117
-    width: 94
+    width: 94.8
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39092,7 +39092,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5930.172
     y: -502.42963
-    width: 92
+    width: 92.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39546,7 +39546,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5809.9453
     y: -502.1117
-    width: 91
+    width: 91.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39830,7 +39830,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5937.172
     y: -440.42963
-    width: 106
+    width: 106.8
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39967,7 +39967,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5814.9453
     y: -442.1117
-    width: 105
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -40422,7 +40422,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5682.7637
     y: -563.83905
-    width: 83
+    width: 84.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -40506,8 +40506,8 @@ MonoBehaviour:
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: TrainingUI
-  targetMethod: BackToMenu
-  targetMethodText: 'BackToMenu (): Void'
+  targetMethod: BackToPanelBoss
+  targetMethodText: 'BackToPanelBoss (): Void'
   methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
@@ -60930,10 +60930,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

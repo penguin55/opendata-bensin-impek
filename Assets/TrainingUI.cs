@@ -31,7 +31,7 @@ public class TrainingUI : MonoBehaviour
         GameVariables.GAME_OVER = false;
         instance = this;
         TWLoading.OnSuccessLoad(() => {
-            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT);
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, 1);
         });
         PlayBGM(bgm);
         if (GameData.ActiveItem) ItemImage();
