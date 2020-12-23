@@ -65,6 +65,11 @@ public class ItemManager : MonoBehaviour
     public void ItemNull()
     {
         GameData.ActiveItem = null;
+        GameData.ItemHolds.Clear();
+        GameData.ItemUsed.Clear();
+
         ResetBaseItem();
+
+        LoadItem(baseItems);
     }
 }

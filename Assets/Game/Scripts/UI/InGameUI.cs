@@ -267,6 +267,14 @@ public class InGameUI : MonoBehaviour
         TWAudioController.PlaySFX("UI", "transition");
     }
 
+    public void BackToPanelItem()
+    {
+        GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
+        TWAudioController.PlaySFX("UI", "click");
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
+        TWAudioController.PlaySFX("UI", "transition");
+    }
+
     public void UpdateLive()
     {
         int i = 0;
