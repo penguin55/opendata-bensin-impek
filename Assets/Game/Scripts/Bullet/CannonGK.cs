@@ -51,7 +51,7 @@ public class CannonGK : DamageArea
         CameraShake.instance.Shake(1, 3, 5);
 
         DOVirtual.DelayedCall(explode.main.startLifetimeMultiplier, () => {
-            Destroy(this);
+            Destroy(gameObject);
         });
     }
 }
