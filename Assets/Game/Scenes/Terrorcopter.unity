@@ -6841,6 +6841,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 263795227}
+        m_MethodName: ResetBaseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &114215447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13945,6 +13956,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1810792071}
         m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 263795227}
+        m_MethodName: ResetBaseItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -96277,6 +96299,7 @@ MonoBehaviour:
   - attackName: Machinegun
     attackEvent: {fileID: 9072407222481301218}
   fungus: {fileID: 2425233952247457736}
+  isDead: 0
   stateSequences: 000000000500000004000000070000000600000001000000
 --- !u!4 &9072407224048406394
 Transform:
