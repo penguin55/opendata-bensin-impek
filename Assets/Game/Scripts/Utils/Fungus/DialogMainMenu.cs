@@ -48,29 +48,30 @@ public class DialogMainMenu : MonoBehaviour
         });
     }
 
-    private void BossListTransition()
+    public void BossListTransition()
     {
+        activeBoss = GameData.ActiveBoss.ToString();
         tv.SetActive(false);
         tv1.SetActive(false);
         tv2.SetActive(false);
         switch (activeBoss)
         {
-            case "Terrorcopter":
+            case "TERRORCOPTER":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 break;
-            case "GateKeeper":
+            case "GATEKEEPER":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 break;
-            case "Chariot":
+            case "UNHOLYCHARIOT":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[2];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 break;
-            case "HeadHunter":
+            case "HEADHUNTER":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
