@@ -27,7 +27,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private bool oneTimeUse;
     [SerializeField] private bool activateOnStart;
 
-    private bool onDelay;
+    public bool onDelay;
 
     public bool ActivateOnStart { get => activateOnStart;}
 

@@ -64,6 +64,7 @@ public class ItemManager : MonoBehaviour
         foreach (ItemData data in baseItems)
         {
             data.wasUsed = false;
+            data.onDelay = false;
         }
     }
 
