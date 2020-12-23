@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        GameData.FirstPlay = true;
         GameVariables.DIALOG_START_MESSAGE = "MISSION_START";
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));

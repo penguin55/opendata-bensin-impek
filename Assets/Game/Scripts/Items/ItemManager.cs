@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class ItemManager : MonoBehaviour
 {
+    public BossManager bossManager;
     public static ItemManager instance;
     [SerializeField] private ItemData[] baseItems;
 
@@ -13,6 +14,7 @@ public class ItemManager : MonoBehaviour
 
         if (GameData.FirstPlay)
         {
+            bossManager.ResetBossState();
             GameData.FirstPlay = false;
             GameData.ItemHolds = new List<ItemData>();
             GameData.ItemUsed = new List<ItemData>();
