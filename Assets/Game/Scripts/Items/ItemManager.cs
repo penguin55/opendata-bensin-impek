@@ -65,5 +65,6 @@ public class ItemManager : MonoBehaviour
     public void ItemNull()
     {
         GameData.ActiveItem = null;
+        ResetBaseItem();
     }
 }
