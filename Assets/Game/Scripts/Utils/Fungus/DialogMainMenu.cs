@@ -48,33 +48,58 @@ public class DialogMainMenu : MonoBehaviour
         });
     }
 
-    public void BossListTransition()
+    private void BossListTransition()
     {
-        activeBoss = GameData.ActiveBoss.ToString();
         tv.SetActive(false);
         tv1.SetActive(false);
         tv2.SetActive(false);
         switch (activeBoss)
         {
-            case "TERRORCOPTER":
+            case "Terrorcopter":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 break;
-            case "GATEKEEPER":
+            case "GateKeeper":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 break;
-            case "UNHOLYCHARIOT":
+            case "Chariot":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[2];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 break;
-            case "HEADHUNTER":
+            case "HeadHunter":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
+                break;
+        }
+    }
+
+    public void ChangeEnvironment()
+    {
+        tv.SetActive(false);
+        tv1.SetActive(false);
+        tv2.SetActive(false);
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.TERRORCOPTER:
+                environment.GetComponent<SpriteRenderer>().sprite = environments[0];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
+                break;
+            case GameData.BossType.GATEKEEPER:
+                environment.GetComponent<SpriteRenderer>().sprite = environments[1];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
+                break;
+            case GameData.BossType.UNHOLYCHARIOT:
+                environment.GetComponent<SpriteRenderer>().sprite = environments[2];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
+                break;
+            case GameData.BossType.HEADHUNTER:
+                environment.GetComponent<SpriteRenderer>().sprite = environments[3];
+                grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 break;
         }
     }
