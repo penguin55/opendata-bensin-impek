@@ -4,10 +4,13 @@ using System.Collections.Generic;
 
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager instance;
     [SerializeField] private ItemData[] baseItems;
 
     private void Start()
     {
+        instance = this;
+
         if (GameData.FirstPlay)
         {
             GameData.FirstPlay = false;
