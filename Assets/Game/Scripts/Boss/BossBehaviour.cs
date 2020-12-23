@@ -51,7 +51,7 @@ public class BossBehaviour : MonoBehaviour
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
-        TWTransition.ScreenFlash(1, 0.1f);
+        
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:
@@ -59,12 +59,14 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => { explosion.Play(); })
                     .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
                     .AppendInterval(explosion.main.duration / 2)
+                    .AppendCallback(()=> TWTransition.ScreenFlash(1, 0.2f))
                     .AppendCallback(() => { gameObject.SetActive(false); })
                     .AppendInterval(explosion.main.duration)
                     .AppendCallback(() => fungus.NextBlock("Dialog_1"));
                 break;
             case GameData.BossType.GATEKEEPER:
                 DOTween.Sequence()
+                    .AppendCallback(() => TWTransition.ScreenFlash(1, 0.1f))
                     .AppendCallback(() => { explosion.Play(); })
                     .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
                     .AppendInterval(explosion.main.duration)
