@@ -66668,7 +66668,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072407224048406395}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 25444ca79b687164eb26c50bcf60271e, type: 2}
   m_CullingMode: 0
@@ -66752,37 +66752,45 @@ MonoBehaviour:
   - direction: right
     sprite: {fileID: 3357023791067206587, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
+    animationID: 0
     spawnPosition: {fileID: 305986745}
     collider: {fileID: 9072407224048406404}
   - direction: upper-right
     sprite: {fileID: -2414862981331372680, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
+    animationID: 1
     spawnPosition: {fileID: 1325310674}
     collider: {fileID: 9072407224048406403}
   - direction: upper
     sprite: {fileID: -5842756031680100665, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
+    animationID: 2
     spawnPosition: {fileID: 1601985898}
     collider: {fileID: 9072407224048406402}
   - direction: upper-left
     sprite: {fileID: 2478818775298463482, guid: 82758e321e2f28e4f831a08737ab77a4,
       type: 3}
+    animationID: 3
     spawnPosition: {fileID: 937514775}
     collider: {fileID: 9072407224048406401}
   - direction: left
     sprite: {fileID: 877834233810060504, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+    animationID: 4
     spawnPosition: {fileID: 2042725798}
     collider: {fileID: 9072407224048406400}
   - direction: bottom-left
     sprite: {fileID: 418256959753846905, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+    animationID: 5
     spawnPosition: {fileID: 1554806131}
     collider: {fileID: 9072407224048406399}
   - direction: bottom
     sprite: {fileID: 536336944102774711, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+    animationID: 6
     spawnPosition: {fileID: 901253521}
     collider: {fileID: 9072407224048406398}
   - direction: bottom-right
     sprite: {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
+    animationID: 7
     spawnPosition: {fileID: 768773569}
     collider: {fileID: 9072407224048406397}
   centerTransformRotate: {fileID: 1794800379}
@@ -66797,6 +66805,7 @@ MonoBehaviour:
   - {fileID: -14010081352110626, guid: 82758e321e2f28e4f831a08737ab77a4, type: 3}
   renderSpriteBody: {fileID: 9072407224048406388}
   stateSequences: 000000000600000007000000050000000700000001000000
+  anim: {fileID: 9072407224048406389}
 --- !u!60 &9072407224048406397
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class GateKeeper : BossBehaviour
     private int stateIndex;
     private float currentRotation;
     private bool immuneState;
+    [SerializeField] private Animator anim;
 
     private void Start()
     {
@@ -206,6 +207,7 @@ public class GateKeeper : BossBehaviour
             TWAudioController.PlaySFX("BOSS_SFX", "tank_move");
             activeRotateStates = newRotateStates;
             renderSpriteBody.sprite = activeRotateStates.sprite;
+            anim.SetInteger("state", newRotateStates.animationID);
             activeRotateStates.collider.enabled = true;
         }
     }
