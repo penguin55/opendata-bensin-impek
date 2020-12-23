@@ -54,7 +54,7 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    private void ResetBaseItem()
+    public void ResetBaseItem()
     {
         foreach (ItemData data in baseItems)
         {
