@@ -186,7 +186,7 @@ public class GateKeeper : BossBehaviour
 
     protected override void Die()
     {
-        Debug.Log(GameData.ActiveBoss);
+        DOTween.Kill("CanonGKPhase");
         base.Die();
     }
 

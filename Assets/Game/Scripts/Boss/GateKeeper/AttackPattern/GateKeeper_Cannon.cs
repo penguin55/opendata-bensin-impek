@@ -41,7 +41,7 @@ public class GateKeeper_Cannon : AttackEvent
         {
             float angle = GetAngleFromDirection(bossbehaviour.transform.position, rotator.gameObject.transform.position, true);
             bossbehaviour.RotateTank(angle);
-        });
+        }).SetId("CanonGKPhase");
     }
 
     protected override void OnExit_Attack()
@@ -53,20 +53,23 @@ public class GateKeeper_Cannon : AttackEvent
 
     private void CannonAttack()
     {
-        CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
-        Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
-        CameraShake.instance.Shake(1, 3, 5);
-
-        float angleDir = GetAngleFromDirection(bossbehaviour.GetCenterRotatePosition(), CharaController.instance.gameObject.transform.position, true);
-
-        if (bossbehaviour.IsSameDirection(angleDir))
+        if (!bossbehaviour.isDead)
         {
-            direction = (CharaController.instance.gameObject.transform.position - bossbehaviour.GetCenterRotatePosition()).normalized;
+            CannonGK cannon = Instantiate(prefab, bossbehaviour.GetActiveSpawnPosition(), Quaternion.identity).GetComponent<CannonGK>();
+            Vector3 direction = (bossbehaviour.GetActiveSpawnPosition() - bossbehaviour.GetCenterRotatePosition()).normalized;
+            CameraShake.instance.Shake(1, 3, 5);
+
+            float angleDir = GetAngleFromDirection(bossbehaviour.GetCenterRotatePosition(), CharaController.instance.gameObject.transform.position, true);
+
+            if (bossbehaviour.IsSameDirection(angleDir))
+            {
+                direction = (CharaController.instance.gameObject.transform.position - bossbehaviour.GetCenterRotatePosition()).normalized;
+            }
+            smoke.transform.position = bossbehaviour.GetActiveSpawnPosition();
+            smoke.Play();
+            cannon.Launch(direction, bulletSpeed);
+            TWAudioController.PlaySFX("BOSS_SFX", "tank_firing");
         }
-        smoke.transform.position = bossbehaviour.GetActiveSpawnPosition();
-        smoke.Play();
-        cannon.Launch(direction, bulletSpeed);
-        TWAudioController.PlaySFX("BOSS_SFX", "tank_firing");
     }
 
     private float GetAngleFromDirection(Vector3 from, Vector3 to, bool clockwise)

@@ -13,7 +13,11 @@ public class CannonGK : DamageArea
         this.direction = direction;
         this.speed = speed;
         transform.localEulerAngles = new Vector3(0f, 0f, GetAngle(direction));
-        DOVirtual.DelayedCall(3, () => { OnExit_State(); }).SetId("Cannon"+transform.GetInstanceID());
+        DOVirtual.DelayedCall(4, () =>
+        {
+            OnExit_State();
+            Destroy(gameObject);
+        }).SetId("Cannon"+transform.GetInstanceID());
         smoketrail.Play();
         OnEnter_State();
     }
@@ -44,7 +48,7 @@ public class CannonGK : DamageArea
     public void Explode()
     {
         smoketrail.Stop();
-        this.GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         explode.Play();
 
         TWAudioController.PlaySFX("SFX_BOSS", "tank_projectiles");

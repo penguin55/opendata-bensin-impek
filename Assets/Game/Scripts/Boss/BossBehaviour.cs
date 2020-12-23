@@ -31,9 +31,12 @@ public class BossBehaviour : MonoBehaviour
     public float FlashDelay { get => flashDelay; set => flashDelay = value; }
     public SpriteRenderer Sprite { get => sprite; set => sprite = value; }
 
+    public bool isDead;
+
     protected virtual void Init()
     {
         defaultMaterial = sprite.material;
+        isDead = false;
     }
 
     protected virtual void Preparation()
@@ -51,6 +54,7 @@ public class BossBehaviour : MonoBehaviour
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
+        isDead = true;
         
         switch (GameData.ActiveBoss)
         {
