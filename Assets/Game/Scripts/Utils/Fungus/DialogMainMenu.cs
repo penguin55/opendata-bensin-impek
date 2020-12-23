@@ -10,6 +10,7 @@ public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
 
+    [SerializeField] private BossManager bossManager;
     [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
     [SerializeField] private GameObject tv, tv1, tv2;
     [SerializeField] private FungusController fungusController;

@@ -242,7 +242,7 @@ public class InGameUI : MonoBehaviour
         isPaused = true;
     }
 
-    public void Restart(string name)
+    public void Restart()
     {
         BackToPanelItem();
     }
@@ -259,6 +259,7 @@ public class InGameUI : MonoBehaviour
 
     public void BackToPanelBoss()
     {
+        GameTime.GlobalTimeScale = 1f;
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
@@ -267,6 +268,7 @@ public class InGameUI : MonoBehaviour
 
     public void BackToPanelItem()
     {
+        GameTime.GlobalTimeScale = 1f;
         GameVariables.DIALOG_START_MESSAGE = "ITEM_PANEL";
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
