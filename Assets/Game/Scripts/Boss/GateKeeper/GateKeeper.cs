@@ -186,7 +186,7 @@ public class GateKeeper : BossBehaviour
 
     protected override void Die()
     {
-        DOTween.Kill("CanonGKPhase");
+        Debug.Log(GameData.ActiveBoss);
         base.Die();
     }
 
@@ -280,6 +280,7 @@ public class GateKeeperRotateStates
 {
     public string direction;
     public Sprite sprite;
+    public int animationID;
     public Transform spawnPosition;
     public Collider2D collider;
 }
