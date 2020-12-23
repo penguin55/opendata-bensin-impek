@@ -61,4 +61,9 @@ public class ItemManager : MonoBehaviour
             data.wasUsed = false;
         }
     }
+
+    public void ItemNull()
+    {
+        GameData.ActiveItem = null;
+    }
 }
