@@ -244,10 +244,7 @@ public class InGameUI : MonoBehaviour
 
     public void Restart(string name)
     {
-        GameTime.GlobalTimeScale = 1f;
-        TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene(name));
-        TWAudioController.PlaySFX("UI", "transition");
+        BackToPanelItem();
     }
 
     public void BackToMenu()
