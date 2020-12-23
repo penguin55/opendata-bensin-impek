@@ -22161,7 +22161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf8bc7fdce9ce3479896c62dbfd3031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay_enter: 5
+  delay_enter: 2
   delay_prepare: 0
   delay_animation: 0.8
   delay_active: 0
