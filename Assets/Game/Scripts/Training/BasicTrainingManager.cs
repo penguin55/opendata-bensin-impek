@@ -36,7 +36,7 @@ public class BasicTrainingManager : TrainingManager
         TWTransition.ScreenTransition(TWTransition.TransitionType.UP_IN, .5f, () =>
         {
             base.RestartActiveTrainingSection();
-            SetDisplay();
+            if (activeTrainingData != null) SetDisplay();
             GameVariables.FREEZE_INPUT = true;
             LaunchStartDialog();
             TWTransition.ScreenTransition(TWTransition.TransitionType.UP_OUT, .5f);
