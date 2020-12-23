@@ -19,6 +19,7 @@ public static class GameData
     public static void ShiftItemList(bool update = true) {
         if (update)
         {
+            ActiveItem.wasUsed = true;
             if (ItemHolds.Contains(ActiveItem)) ItemHolds.Remove(ActiveItem);
             if (!ItemUsed.Contains(ActiveItem)) ItemUsed.Add(ActiveItem);
         } else
