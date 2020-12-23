@@ -22,6 +22,16 @@ namespace TomWill
             return null;
         }
 
+        public ClipDetail GetBGMClip(AudioClip clip)
+        {
+            if (bgmClips.Any(e => e.clip == clip))
+            {
+                return bgmClips.First(e => e.clip == clip);
+            }
+
+            return null;
+        }
+
         public ClipDetail GetSFXClip(string name)
         {
             if (sfxClips.Any(e => e.name == name))
