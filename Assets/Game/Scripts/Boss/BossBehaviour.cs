@@ -55,6 +55,8 @@ public class BossBehaviour : MonoBehaviour
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");
         isDead = true;
+
+        GameData.ActiveBossData.wasDie = true;
         
         switch (GameData.ActiveBoss)
         {

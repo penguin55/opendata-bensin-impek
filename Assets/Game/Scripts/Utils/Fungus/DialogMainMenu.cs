@@ -11,6 +11,7 @@ public class DialogMainMenu : MonoBehaviour
     public static DialogMainMenu instance;
 
     [SerializeField] private BossManager bossManager;
+    [SerializeField] private Button[] bosses;
     [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
     [SerializeField] private GameObject tv, tv1, tv2;
     [SerializeField] private FungusController fungusController;
@@ -25,7 +26,8 @@ public class DialogMainMenu : MonoBehaviour
     {
         TWLoading.OnSuccessLoad(()=>
         {
-            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f, () => fungusController.Init());
+            fungusController.Init();
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f);
         });
         
         instance = this;
@@ -64,21 +66,25 @@ public class DialogMainMenu : MonoBehaviour
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
+                GameData.ActiveBossData = bossManager.bossesData[0];
                 break;
             case "GateKeeper":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
+                GameData.ActiveBossData = bossManager.bossesData[1];
                 break;
             case "Chariot":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[2];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
+                GameData.ActiveBossData = bossManager.bossesData[2];
                 break;
             case "HeadHunter":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
+                GameData.ActiveBossData = bossManager.bossesData[3];
                 break;
         }
     }
@@ -153,6 +159,10 @@ public class DialogMainMenu : MonoBehaviour
     public void OpenBossPanel(bool active)
     {
         bossChoicePanel.SetActive(active);
+        for (int i = 0; i < bosses.Length; i++)
+        {
+            bosses[i].interactable = !bossManager.bossesData[i].wasDie;
+        }
     }
 
     public void OpenItemPanel(bool active)
