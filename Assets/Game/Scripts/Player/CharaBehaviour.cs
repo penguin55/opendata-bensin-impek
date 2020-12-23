@@ -168,6 +168,7 @@ public class CharaBehaviour : MonoBehaviour
 
                 if (data.Hp < 1)
                 {
+                    GameData.ShiftItemList();
                     dead = true;
                     anim.SetBool("dead", true);
                     GameVariables.STILL_ALIVE = false;
@@ -199,8 +200,7 @@ public class CharaBehaviour : MonoBehaviour
             GameData.ActiveItem.TakeEffect();
             InGameUI.instance.UpdateItemImage();
 
-            GameData.ItemHolds.Remove(GameData.ActiveItem);
-            GameData.ItemUsed.Add(GameData.ActiveItem);
+            GameData.ShiftItemList();
         } 
     }
 

@@ -15,5 +15,17 @@ public static class GameData
         UNHOLYCHARIOT
     }
 
+    public static void ShiftItemList(bool update = true) {
+        if (update)
+        {
+            ItemHolds.Remove(ActiveItem);
+            ItemUsed.Add(ActiveItem);
+        } else
+        {
+            ItemUsed.Remove(ActiveItem);
+            ItemHolds.Add(ActiveItem);
+        }
+    }
+
     public static BossType ActiveBoss;
 }
