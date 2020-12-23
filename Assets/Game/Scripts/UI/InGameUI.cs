@@ -252,6 +252,7 @@ public class InGameUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        ItemManager.instance.ItemNull();
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.StopBGMPlayed("BGM_BOSS", true);
         TWAudioController.PlaySFX("UI", "click");

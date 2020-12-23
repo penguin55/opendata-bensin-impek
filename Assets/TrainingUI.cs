@@ -184,6 +184,7 @@ public class TrainingUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        ItemManager.instance.ItemNull();
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
