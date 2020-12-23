@@ -222,9 +222,9 @@ namespace TomWill
             }
             else
             {
-                ClipDetail clipDetail = audioLibrary.GetBGMClip(audio.name);
+                ClipDetail clipDetail = audioLibrary.GetBGMClip(audio.clip);
 
-                DOVirtual.Float(1, 0, timeFade, (x) =>
+                DOVirtual.Float(1f, 0f, timeFade, (x) =>
                 {
                     audio.volume = globalBGMVolume * clipDetail.localVolume * x;
                 }).OnComplete(() =>
