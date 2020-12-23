@@ -80,6 +80,7 @@ namespace TomWill
         private void screenFlash(int flashCount, float duration, UnityAction action)
         {
             ChangeColor(Color.white);
+            transform.localPosition = new Vector3(0f, 0f, 11f);
             DOTween.Sequence()
                 .Append(rendererSprite.DOFade(1,duration/2f))
                 .Append(rendererSprite.DOFade(0, duration/2f))
