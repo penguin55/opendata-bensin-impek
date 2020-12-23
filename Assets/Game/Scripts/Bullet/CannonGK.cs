@@ -13,7 +13,7 @@ public class CannonGK : DamageArea
         this.direction = direction;
         this.speed = speed;
         transform.localEulerAngles = new Vector3(0f, 0f, GetAngle(direction));
-        DOVirtual.DelayedCall(4, () =>
+        DOVirtual.DelayedCall(3, () =>
         {
             OnExit_State();
             Destroy(gameObject);
