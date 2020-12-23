@@ -64,12 +64,13 @@ public class TLE_Item : TrainingListenerEvent
 
     private void OnCompleteSection()
     {
-        if (item_used)
-        {
-            manager.CompleteTrainingSection();
-        } else
-        {
-            manager.InteruptTrainingSection();
-        }
+        manager.CompleteTrainingSection();
+        //if (item_used)
+        //{
+        //    manager.CompleteTrainingSection();
+        //} else
+        //{
+        //    manager.InteruptTrainingSection();
+        //}
     }
 }
