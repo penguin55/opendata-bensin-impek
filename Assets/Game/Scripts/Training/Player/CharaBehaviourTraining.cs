@@ -182,6 +182,7 @@ public class CharaBehaviourTraining : MonoBehaviour
     {
         if (!GameData.ActiveItem.wasUsed)
         {
+            TWAudioController.PlaySFX("BOSS_SFX", "item_used");
             GameData.ActiveItem.TakeEffect();
             TrainingUI.instance.UpdateItemImage();
         }

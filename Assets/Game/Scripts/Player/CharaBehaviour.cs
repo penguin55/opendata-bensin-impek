@@ -195,6 +195,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (!GameData.ActiveItem.wasUsed)
         {
+            TWAudioController.PlaySFX("BOSS_SFX","item_used");
             GameData.ActiveItem.TakeEffect();
             InGameUI.instance.UpdateItemImage();
 

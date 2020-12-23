@@ -156,6 +156,11 @@ public class DialogMainMenu : MonoBehaviour
         itemChoicePanel.SetActive(active);
     }
 
+    public void StopBGM()
+    {
+        TWAudioController.StopBGMPlayed("BGM", false);
+    }
+
     public void OpenDialogPanel(bool active)
     {
         dialogPanel.SetActive(active);

@@ -43992,9 +43992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 127.9382
+    x: 126.9073
     y: 103.90721
-    width: 98
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -44046,11 +44046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 13.561798, y: 95.59279}
+  scrollPos: {x: 94.08759, y: 50.108246}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 407
-  zoom: 1
+  zoom: 0.97
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -44146,7 +44146,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 11400000, guid: bcb80e1765a3af0418e6ea4e961c5b31, type: 2}
+      objectValue: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -66733,7 +66733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1157cec37a57e48bd84a572800bb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItem: {fileID: 11400000, guid: bcb80e1765a3af0418e6ea4e961c5b31, type: 2}
+  dropItem: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
   explosion: {fileID: 1494745212}
   health: 3
   whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
