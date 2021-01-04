@@ -55767,7 +55767,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9072407222481301219}
-  - component: {fileID: 9072407222481301218}
   - component: {fileID: 9072407222481301217}
   m_Layer: 0
   m_Name: Machinegun
@@ -55786,32 +55785,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a81ffee50cc35a44ae785be5cb054ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay_enter: 2
-  delay_prepare: 1
-  delay_animation: 0.4
-  delay_active: 0.5
-  delay_exit: 2
-  anim: {fileID: 3494481357032429281}
-  movePosition:
-  - {fileID: 9072407222464980648}
-  - {fileID: 9072407222112355442}
-  machinegunParent: {fileID: 9072407224012312629}
-  machinegunDothair: {fileID: 9072407223057345285}
-  particle: {fileID: 0}
-  timeToMove: 2
-  attack: {fileID: 9072407224048406389}
---- !u!114 &9072407222481301218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072407222481301216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47caedb9aa8bd5b46960d706fd065fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay_enter: 2
@@ -56869,9 +56842,9 @@ MonoBehaviour:
   director: {fileID: 0}
   patterns:
   - attackName: Missile
-    attackEvent: {fileID: 9072407222481301218}
+    attackEvent: {fileID: 9072407223697624691}
   - attackName: Machinegun
-    attackEvent: {fileID: 9072407222481301218}
+    attackEvent: {fileID: 9072407222481301217}
   - attackName: PoisonZone
     attackEvent: {fileID: 0}
   fungus: {fileID: 2425233952247457736}
