@@ -14,9 +14,7 @@ public class Chariot : BossBehaviour
         IDLE,
         MACHINEGUN,
         MISSILE,
-        POISONZONE,
-        SWIPE_TO_RIGHT,
-        SWIPE_TO_LEFT
+        POISONZONE
     }
 
     private State_Chariot currentState;
@@ -55,12 +53,6 @@ public class Chariot : BossBehaviour
                 break;
             case State_Chariot.MACHINEGUN:
                 MachineGun();
-                break;
-            case State_Chariot.SWIPE_TO_RIGHT:
-                Swipe(true);
-                break;
-            case State_Chariot.SWIPE_TO_LEFT:
-                Swipe(false);
                 break;
             case State_Chariot.FINAL:
                 Final();
@@ -149,27 +141,7 @@ public class Chariot : BossBehaviour
     }
     #endregion
 
-    #region SWIPE
-    private void OnEnterSwipe()
-    {
-        currentAttackEvent = patterns.First(e => e.attackName == "Swipe").attackEvent;
-    }
-
-    private void Swipe(bool moveRight)
-    {
-        OnEnterSwipe();
-        if (!moveRight) ((Chariot_Machinegun)currentAttackEvent).MoveToLeft();
-
-        currentAttackEvent.ExecutePattern(OnExitSwipe);
-    }
-
-    private void OnExitSwipe()
-    {
-        NextState();
-    }
-    #endregion
-
-    #region LASER
+    #region PoisonZone
     private void OnEnterPoisonZone()
     {
         currentAttackEvent = patterns.First(e => e.attackName == "Laser").attackEvent;
