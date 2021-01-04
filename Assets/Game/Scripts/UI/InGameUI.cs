@@ -96,6 +96,10 @@ public class InGameUI : MonoBehaviour
         {
             activateItemImage.overrideSprite = aPair;
         }
+        if (GameData.ActiveItem.itemName.Contains("Tiger"))
+        {
+            activateItemImage.overrideSprite = gatekeeper;
+        }
     }
 
     public void GameWin()
