@@ -56876,7 +56876,7 @@ MonoBehaviour:
     attackEvent: {fileID: 0}
   fungus: {fileID: 2425233952247457736}
   isDead: 0
-  stateSequences: 000000000500000004000000
+  stateSequences: 00000000030000000500000004000000
 --- !u!1001 &9079938215941457196
 PrefabInstance:
   m_ObjectHideFlags: 0
