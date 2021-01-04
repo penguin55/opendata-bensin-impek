@@ -18,9 +18,10 @@ MonoBehaviour:
   shortDesc: 
   itemId: 6
   wasUsed: 0
-  effect: 0
+  effect: 6
   timeEffect: 0
-  amountEffect: 0
+  amountEffect: 5
   cost: 0
-  oneTimeUse: 0
-  activateOnStart: 0
+  oneTimeUse: 1
+  activateOnStart: 1
+  onDelay: 0

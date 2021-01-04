@@ -11,7 +11,8 @@ public class ItemData : ScriptableObject
         SLOW_MOTION,
         HEAL,
         SACRIFICE,
-        LOWERDASHDELAY
+        LOWERDASHDELAY,
+        CHARGEDASH
     }
 
     public Sprite image;
@@ -47,6 +48,8 @@ public class ItemData : ScriptableObject
                 return Sacrifice_Effect();
             case ItemEffect.LOWERDASHDELAY:
                 return LowerDashDelay();
+            case ItemEffect.CHARGEDASH:
+                return ChargeDashEffect();
             default:
                 return false;
         }
@@ -56,6 +59,15 @@ public class ItemData : ScriptableObject
     {
         wasUsed = true;
         CharaController.instance.SetDashDelay(CharaController.instance.GetDashDelay() / amountEffect);
+        return true;
+    }
+
+    public bool ChargeDashEffect()
+    {
+        CharaData.canChargeDash = true;
+        CharaData.maxChargeTimeDash = amountEffect;
+        CharaData.chargeDash = true;
+        CharaData.chargeTimeDash = 0f;
         return true;
     }
 

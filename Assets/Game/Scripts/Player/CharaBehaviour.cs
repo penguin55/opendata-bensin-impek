@@ -14,6 +14,7 @@ public class CharaBehaviour : MonoBehaviour
     protected bool isDashed,immune, canDash, insight = false;
     public bool dead;
     protected float dashDelay;
+    [SerializeField] protected bool isCharged = false;
     [SerializeField] protected Rigidbody2D rb;
 
     protected SpriteRenderer sprite;
@@ -115,11 +116,13 @@ public class CharaBehaviour : MonoBehaviour
             {
                 rb.velocity = Vector2.zero;
                 isDashed = false;
+                isCharged = false;
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
                 immune = false;
-                DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale; 
+                DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
+                DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;
             }
             else
             {
@@ -129,6 +132,8 @@ public class CharaBehaviour : MonoBehaviour
                 timeMoveElapsed = 0f;
                 dashTime -= GameTime.PlayerTime;
                 rb.velocity = lastDirection * data.DashSpeed;
+                data.ChargeTimeDash = 0f;
+                data.DashSpeed = 25f;
 
                 interact.DashingProjectile(lastDirection, data.DashSpeed);
                 interact.DashingGun();
