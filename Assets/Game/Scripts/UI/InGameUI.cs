@@ -100,6 +100,10 @@ public class InGameUI : MonoBehaviour
         {
             activateItemImage.overrideSprite = gatekeeper;
         }
+        if (GameData.ActiveItem.itemName.Contains("Bird"))
+        {
+            activateItemImage.overrideSprite = terrorcopter;
+        }
     }
 
     public void GameWin()
