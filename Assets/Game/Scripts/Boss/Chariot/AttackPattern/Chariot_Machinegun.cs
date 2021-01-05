@@ -41,7 +41,7 @@ public class Chariot_Machinegun : AttackEvent
         float audioLength = TWAudioController.AudioLength(name, "SFX");
         DOTween.Sequence()
             .AppendCallback(() => TWAudioController.PlaySFX("SFX_BOSS", name))
-            .AppendCallback(() => CameraShake.instance.Shake(audioLength, .3f, 1))
+            .AppendCallback(() => CameraShake.instance.Shake(audioLength, 1, 2))
             .PrependInterval(audioLength / 2)
             .SetLoops(-1)
             .SetId("MachineGun_Sound");
