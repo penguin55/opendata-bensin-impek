@@ -94,7 +94,6 @@ public class Chariot : BossBehaviour
 
     private void Idle()
     {
-        OnEnterIdle();
         currentAttackEvent.ExecutePattern(OnExitIdle);
     }
 
@@ -126,7 +125,7 @@ public class Chariot : BossBehaviour
     #region MACHINEGUN
     private void OnEnterMachineGun()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Machinegun").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "StrafingMachinegun").attackEvent;
     }
 
     private void MachineGun()

@@ -19225,7 +19225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858992041}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1.8000002, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2004173959}
@@ -19290,7 +19290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e462d3a89529444b8233c589ddcc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollspeed: 0.9
+  scrollspeed: 3
 --- !u!114 &1858992046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57237,16 +57237,16 @@ MonoBehaviour:
   dropItem: {fileID: 0}
   explosion: {fileID: 1494745212}
   health: 3
-  whiteFlash: {fileID: 0}
+  whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
   flashDelay: 0.5
   director: {fileID: 0}
   patterns:
   - attackName: Missile
     attackEvent: {fileID: 9072407223697624691}
-  - attackName: Machinegun
+  - attackName: StrafingMachinegun
     attackEvent: {fileID: 9072407222481301217}
   - attackName: PoisonZone
     attackEvent: {fileID: 0}
   fungus: {fileID: 2425233952247457736}
   isDead: 0
-  stateSequences: 00000000030000000500000004000000
+  stateSequences: 00000000040000000500000001000000
