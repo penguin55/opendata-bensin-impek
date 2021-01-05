@@ -35,6 +35,7 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
 
     [SerializeField] private CharaInteract interact;
+    [SerializeField]private bool clamp;
 
 
     public void Init()
