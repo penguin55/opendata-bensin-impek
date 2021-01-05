@@ -6413,6 +6413,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 349302701}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &76547553
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,6 +7297,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 2025588981}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &226481620
 GameObject:
   m_ObjectHideFlags: 0
@@ -7511,6 +7517,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 780626339}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!114 &245292398 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8891924824092284754, guid: 26466540988e048499061a7c7846038c,
@@ -8048,6 +8057,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 878015110}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &358743988
 GameObject:
   m_ObjectHideFlags: 0
@@ -14126,6 +14138,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 130612718}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &645948503
 GameObject:
   m_ObjectHideFlags: 0
@@ -14447,6 +14462,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 1093800474}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &685950666
 GameObject:
   m_ObjectHideFlags: 0
@@ -14637,6 +14655,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 406207519}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &759105554
 GameObject:
   m_ObjectHideFlags: 0
@@ -15058,6 +15079,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 117753226}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1001 &794379939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15518,6 +15542,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 774282977}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &848541510
 GameObject:
   m_ObjectHideFlags: 0
@@ -17116,6 +17143,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 279247916}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1134171005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6514813461652667809, guid: 243334a8da1b5804aaf6a2629d65cf7f,
@@ -17483,6 +17513,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 1822966068}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1231302266
 GameObject:
   m_ObjectHideFlags: 0
@@ -17937,6 +17970,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 1099902016}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1312102894
 GameObject:
   m_ObjectHideFlags: 0
@@ -18276,6 +18312,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 759105557}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1494745210
 GameObject:
   m_ObjectHideFlags: 0
@@ -23304,6 +23343,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 1231302268}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1708098237
 GameObject:
   m_ObjectHideFlags: 0
@@ -23516,6 +23558,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 226481623}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!95 &1759057246
 Animator:
   serializedVersion: 3
@@ -24455,6 +24500,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 654825749}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1941160378
 GameObject:
   m_ObjectHideFlags: 0
@@ -94868,6 +94916,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 6733356211263368194}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &9072407223422393028
 Transform:
   m_ObjectHideFlags: 0
@@ -94929,6 +94980,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 6293562873476618241}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!212 &9072407223447514355
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95642,6 +95696,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 6733008739982771008}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!212 &9072407223715914015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95916,6 +95973,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 4152310955885652951}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &9072407223894612668
 Transform:
   m_ObjectHideFlags: 0
@@ -96101,6 +96161,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7035765876440250898}
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &9072407224012312628
 Transform:
   m_ObjectHideFlags: 0

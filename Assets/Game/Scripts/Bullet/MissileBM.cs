@@ -10,6 +10,9 @@ public class MissileBM : DamageArea
     private GameObject projectile;
 
     [SerializeField] private SpriteRenderer sign;
+    [SerializeField] private float duration;
+    [SerializeField] private float strength;
+    [SerializeField] private int vibrato;
 
     private bool activeMissile;
     private bool deactiveMissileDashed;
@@ -71,7 +74,7 @@ public class MissileBM : DamageArea
             particle.Play();
 
             TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
-            CameraShake.instance.Shake(1, 3, 5);
+            CameraShake.instance.Shake(duration, strength, vibrato);
             DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => { 
                 Destroy(projectile);
             });
@@ -93,7 +96,7 @@ public class MissileBM : DamageArea
         particle.Play();
 
         BossBehaviour.Instance.TakeDamage();
-        CameraShake.instance.Shake(1, 3, 5);
+        CameraShake.instance.Shake(duration, strength, vibrato);
 
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () => {
             Destroy(projectile);
