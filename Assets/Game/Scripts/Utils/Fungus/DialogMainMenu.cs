@@ -61,6 +61,8 @@ public class DialogMainMenu : MonoBehaviour
         tv.SetActive(false);
         tv1.SetActive(false);
         tv2.SetActive(false);
+        cannon.SetActive(false);
+        railTrack.SetActive(false);
         switch (activeBoss)
         {
             case "Terrorcopter":
