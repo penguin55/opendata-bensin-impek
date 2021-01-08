@@ -9,10 +9,11 @@ using UnityEngine.SceneManagement;
 public class DialogMainMenu : MonoBehaviour
 {
     public static DialogMainMenu instance;
-
+    [SerializeField] public Color32 blue, brown;
     [SerializeField] private BossManager bossManager;
     [SerializeField] private Button[] bosses;
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass;
+    [SerializeField] Camera mainCamera;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass, railTrack, cannon;
     [SerializeField] private GameObject tv, tv1, tv2;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
@@ -63,20 +64,25 @@ public class DialogMainMenu : MonoBehaviour
         switch (activeBoss)
         {
             case "Terrorcopter":
+                mainCamera.backgroundColor = blue;
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 GameData.ActiveBoss = GameData.BossType.TERRORCOPTER;
                 GameData.ActiveBossData = bossManager.bossesData[0];
                 break;
             case "GateKeeper":
+                mainCamera.backgroundColor = blue;
+                cannon.SetActive(true);
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;
                 GameData.ActiveBossData = bossManager.bossesData[1];
                 break;
             case "Chariot":
-                environment.GetComponent<SpriteRenderer>().sprite = environments[2];
-                grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
+                mainCamera.backgroundColor = brown;
+                environment.SetActive(false);
+                grass.SetActive(false);
+                railTrack.SetActive(true);
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 GameData.ActiveBossData = bossManager.bossesData[2];
                 break;
