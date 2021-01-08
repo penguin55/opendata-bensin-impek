@@ -19395,7 +19395,7 @@ MonoBehaviour:
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
-  bgm: terrorcopter
+  bgm: chariot
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
