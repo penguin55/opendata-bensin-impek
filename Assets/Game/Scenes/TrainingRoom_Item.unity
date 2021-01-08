@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0712e06e6b3855340b1456f809259a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossManager: {fileID: 0}
   baseItems:
   - {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c, type: 2}
   - {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe, type: 2}
@@ -9083,7 +9084,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -9300,6 +9301,36 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[28].localVolume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].name
+      value: chariot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d9065e88f28834e46b23756d3b6974d5, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].name
+      value: tidemaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53905a97ca884eb47b719db9ec337750, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -22132,6 +22163,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 3987098111272281574}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!1 &1712173870308042964
 GameObject:
   m_ObjectHideFlags: 0
@@ -22239,6 +22273,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 829076386605751476}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &1712173870366079914
 Transform:
   m_ObjectHideFlags: 0
@@ -22404,6 +22441,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 6033292489350385009}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &1712173870409739518
 Transform:
   m_ObjectHideFlags: 0
@@ -22469,6 +22509,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 3987049690527959716}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &1712173870907431346
 Transform:
   m_ObjectHideFlags: 0
@@ -22668,6 +22711,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 4427686370633121447}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!1 &1712173871274120100
 GameObject:
   m_ObjectHideFlags: 0
@@ -29078,6 +29124,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785193456828}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650783486243146
 Transform:
   m_ObjectHideFlags: 0
@@ -29193,6 +29242,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784020437832}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650783508147960
 Transform:
   m_ObjectHideFlags: 0
@@ -29258,6 +29310,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784015459116}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650783614321346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29729,6 +29784,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784538876601}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650783665260826
 Transform:
   m_ObjectHideFlags: 0
@@ -29896,6 +29954,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783631833159}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650783876239730
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30215,6 +30276,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784339659019}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650784091348610
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30399,6 +30463,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783638064901}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650784163117598
 Transform:
   m_ObjectHideFlags: 0
@@ -30547,6 +30614,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785084534355}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650784211044570
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30731,6 +30801,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783794172960}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650784314152666
 Transform:
   m_ObjectHideFlags: 0
@@ -31155,6 +31228,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784182776689}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650784551809126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31236,6 +31312,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785322027226}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650784596435874
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31560,6 +31639,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783478661043}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650784931066742
 Transform:
   m_ObjectHideFlags: 0
@@ -31708,6 +31790,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784411818634}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!58 &7648650785172338348
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32096,6 +32181,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785198885606}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650785261383030
 Transform:
   m_ObjectHideFlags: 0
@@ -32192,6 +32280,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784748185490}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!4 &7648650785321245084
 Transform:
   m_ObjectHideFlags: 0
@@ -32459,6 +32550,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783650148019}
+  duration: 0
+  strength: 0
+  vibrato: 0
 --- !u!95 &7648650785527732353
 Animator:
   serializedVersion: 3

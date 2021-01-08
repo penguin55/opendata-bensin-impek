@@ -6798,6 +6798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0712e06e6b3855340b1456f809259a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossManager: {fileID: 0}
   baseItems:
   - {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c, type: 2}
   - {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe, type: 2}
@@ -30098,7 +30099,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -30315,6 +30316,36 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[12].localVolume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].name
+      value: chariot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d9065e88f28834e46b23756d3b6974d5, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].name
+      value: tidemaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].localVolume
+      value: 0.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: bgmClips.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53905a97ca884eb47b719db9ec337750, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -43994,7 +44025,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.9073
     y: 103.90721
-    width: 60
+    width: 96.18556
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
