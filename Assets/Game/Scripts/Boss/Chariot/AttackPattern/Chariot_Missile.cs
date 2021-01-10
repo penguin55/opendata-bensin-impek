@@ -95,11 +95,9 @@ public class Chariot_Missile : AttackEvent
             }
         }
 
-        if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileBM>();
-
         GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
         spawnChoicePosition.GetComponent<MissileBM>().Launch(missile, .1f, true);
 
-        if (!activeMissile) deactiveMissileProjectile = missile;
+        
     }
 }
