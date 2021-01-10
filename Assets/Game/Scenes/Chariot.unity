@@ -31553,10 +31553,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328611}
-  selectedCommands:
-  - {fileID: 4806305509244328615}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -31666,7 +31664,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &4806305509244328614
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -31684,7 +31682,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &4806305509244328615
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -58050,9 +58048,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start_position: {fileID: 832434102}
   middle_position: {fileID: 1927287585}
-  end_position: {fileID: 0}
-  outStart_position: {fileID: 0}
-  outEnd_position: {fileID: 0}
+  end_position: {fileID: 849717822}
+  outStart_position: {fileID: 1957098126}
+  outEnd_position: {fileID: 340303934}
 --- !u!212 &9072407224048406398
 SpriteRenderer:
   m_ObjectHideFlags: 0

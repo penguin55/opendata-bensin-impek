@@ -25,13 +25,13 @@ public class Chariot_Machinegun : AttackEvent
 
     protected override void Attack()
     {
-        attack.SetBool("attack", true);
+        if(attack) attack.SetBool("attack", true);
 
         Sound("machine_gun");
         machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
             machinegunParent.SetActive(false);
             base.Attack();
-            attack.SetBool("attack", false);
+            if (attack) attack.SetBool("attack", false);
             DOTween.Kill("MachineGun_Sound");
         });
     }
