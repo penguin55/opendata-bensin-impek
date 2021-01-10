@@ -17,7 +17,18 @@ public class Chariot : BossBehaviour
         POISONZONE
     }
 
+    [System.Serializable]
+    public struct DataGerbong
+    {
+        public string name;
+        public GameObject gerbong;
+        public Animator anim;
+        public bool dead;
+    }
+
     public ChariotTweening animationTweening;
+    [SerializeField] private List<DataGerbong> dataGerbong;
+    private DataGerbong activeGerbong;
 
     private State_Chariot currentState;
     [SerializeField] private State_Chariot [] stateSequences;
@@ -28,6 +39,7 @@ public class Chariot : BossBehaviour
         Instance = this;
         stateIndex = 0;
         currentState = State_Chariot.PREPARATION;
+        activeGerbong = dataGerbong[0];
 
         Sprite = GetComponent<SpriteRenderer>();
         Init();
@@ -114,7 +126,6 @@ public class Chariot : BossBehaviour
     private void Missile()
     {
         OnEnterMissile();
-
         currentAttackEvent.ExecutePattern(OnExitMissile);
     }
 
@@ -128,6 +139,7 @@ public class Chariot : BossBehaviour
     private void OnEnterMachineGun()
     {
         currentAttackEvent = patterns.First(e => e.attackName == "StrafingMachinegun").attackEvent;
+        (currentAttackEvent as Chariot_Machinegun).InitialitationPattern(activeGerbong);
     }
 
     private void MachineGun()

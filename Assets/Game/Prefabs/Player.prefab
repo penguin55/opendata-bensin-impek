@@ -4770,6 +4770,7 @@ GameObject:
   - component: {fileID: 7474957988376242869}
   - component: {fileID: 7474957988376242868}
   - component: {fileID: 7474957988376242866}
+  - component: {fileID: 3208914842311055096}
   - component: {fileID: 7474957988376242867}
   - component: {fileID: 7474957988376242871}
   - component: {fileID: 7474957988376242865}
@@ -4871,6 +4872,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3208914842311055096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474957988376242870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cffd485725e1f48b448bf30f811ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 7474957988376242868}
+  objectView: {fileID: 0}
 --- !u!114 &7474957988376242867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4888,10 +4903,8 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0}
   startDashTime: 0.1
   dashTime: 0
-  kickProjectilesTime: 0
-  kickTime: 0
   dead: 0
-  dashDelay: 1
+  isCharged: 0
   rb: {fileID: 7474957988376242866}
   whiteflash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
   flashDelay: 0.5
@@ -4903,6 +4916,8 @@ MonoBehaviour:
   anim: {fileID: 7474957988376242878}
   walkDustParticle: {fileID: 7474957989125076296}
   dashDustParticle: {fileID: 7474957987520150414}
+  interact: {fileID: 0}
+  clamp: 0
 --- !u!114 &7474957988376242871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4917,6 +4932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 25
+  baseDashDelay: 0
 --- !u!114 &7474957988376242865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4958,7 +4974,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1111112, y: 1.3333334}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
