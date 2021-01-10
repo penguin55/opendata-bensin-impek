@@ -22,6 +22,7 @@ public class Chariot : BossBehaviour
     {
         public string name;
         public GameObject gerbong;
+        public SpriteRenderer render;
         public Animator anim;
         public bool dead;
     }
@@ -53,8 +54,27 @@ public class Chariot : BossBehaviour
     public override void TakeDamage()
     {
         activeGerbong.dead = true;
-        DestroyGerbong();
-        base.TakeDamage();
+
+        explosion.transform.position = activeGerbong.gerbong.transform.position;
+        explosion.Play();
+        CameraShake.instance.Shake(explosion.main.duration, 3, 10);
+
+        TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
+        if (health >= 1)
+        {
+            DOTween.Sequence()
+           .AppendCallback(() => { TWTransition.ScreenFlash(1, 0.2f); })
+           .AppendInterval(0.1f)
+           .AppendCallback(() => DestroyGerbong());
+            health -= 1;
+            InGameUI.instance.UpdateHpBos(health);
+
+            if (health < 1)
+            {
+                DOTween.Kill("BM_Missile");
+                Die();
+            }
+        }
     }
 
     private void DestroyGerbong()

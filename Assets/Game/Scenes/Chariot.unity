@@ -13283,7 +13283,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494745210}
   serializedVersion: 6
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -13358,7 +13358,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -13989,7 +13989,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -18466,6 +18466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: end
+  damage: 0
 --- !u!4 &1573574181
 Transform:
   m_ObjectHideFlags: 0
@@ -57303,14 +57304,17 @@ MonoBehaviour:
   dataGerbong:
   - name: Tail
     gerbong: {fileID: 1523117471}
+    render: {fileID: 1523117473}
     anim: {fileID: 1523117474}
     dead: 0
   - name: Body
     gerbong: {fileID: 2133497621}
+    render: {fileID: 2133497623}
     anim: {fileID: 2133497624}
     dead: 0
   - name: Head
     gerbong: {fileID: 1561635045}
+    render: {fileID: 1561635047}
     anim: {fileID: 1561635048}
     dead: 0
   stateSequences: 00000000050000000400000001000000
