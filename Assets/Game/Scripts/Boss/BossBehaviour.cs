@@ -10,7 +10,7 @@ public class BossBehaviour : MonoBehaviour
     public static BossBehaviour Instance;
 
     [SerializeField] private ItemData dropItem;
-    [SerializeField] private ParticleSystem explosion;
+    [SerializeField] protected ParticleSystem explosion;
 
     [SerializeField] public int health;
 
@@ -85,7 +85,7 @@ public class BossBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public virtual void TakeDamage()
     {
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
         if (health >= 1)
