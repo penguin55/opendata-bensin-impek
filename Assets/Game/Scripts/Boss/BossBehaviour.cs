@@ -85,7 +85,7 @@ public class BossBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public virtual void TakeDamage()
     {
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
         if (health >= 1)

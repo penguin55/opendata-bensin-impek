@@ -29,6 +29,7 @@ public class Chariot : BossBehaviour
     public ChariotTweening animationTweening;
     [SerializeField] private List<DataGerbong> dataGerbong;
     private DataGerbong activeGerbong;
+    private int activeIndexGerbong;
 
     private State_Chariot currentState;
     [SerializeField] private State_Chariot [] stateSequences;
@@ -39,7 +40,8 @@ public class Chariot : BossBehaviour
         Instance = this;
         stateIndex = 0;
         currentState = State_Chariot.PREPARATION;
-        activeGerbong = dataGerbong[0];
+        activeIndexGerbong = 0;
+        activeGerbong = dataGerbong[activeIndexGerbong];
 
         Sprite = GetComponent<SpriteRenderer>();
         Init();
@@ -48,6 +50,35 @@ public class Chariot : BossBehaviour
         InGameUI.instance.UpdateHpBos(health);
     }
 
+    public override void TakeDamage()
+    {
+        activeGerbong.dead = true;
+        DestroyGerbong();
+        base.TakeDamage();
+    }
+
+    private void DestroyGerbong()
+    {
+        activeGerbong.gerbong.SetActive(false);
+
+        NextGerbong();
+    }
+
+    private void NextGerbong()
+    {
+        activeIndexGerbong++;
+
+        if (activeIndexGerbong < dataGerbong.Count)
+        {
+            activeGerbong = dataGerbong[activeIndexGerbong];
+            if (activeIndexGerbong < dataGerbong.Count - 1) animationTweening.MoveTrain(-6f, 2);
+            else animationTweening.MoveTrain(-8f, 2);
+        }
+        else
+        {
+
+        }
+    }
 
     private void UpdateState()
     {
@@ -78,7 +109,6 @@ public class Chariot : BossBehaviour
     }
 
 
-
     private void NextState()
     {
         if (!GameVariables.GAME_OVER)
@@ -92,13 +122,18 @@ public class Chariot : BossBehaviour
     protected override void Preparation()
     {
         base.Preparation();
+
+        animationTweening.MoveTrain("end", 4);
+
         NextState();
     }
 
     protected override void Die()
     {
-        base.Die();
+        //base.Die();
     }
+
+    
 
     #region IDLE
     private void OnEnterIdle()

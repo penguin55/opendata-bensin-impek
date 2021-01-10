@@ -40,6 +40,11 @@ public class ChariotTweening : MonoBehaviour
         transform.DOMove(position, time).SetEase(Ease.Linear);
     }
 
+    public void MoveTrain(float xPosition, float time = 1)
+    {
+        transform.DOMoveX(transform.position.x + xPosition, time).SetEase(Ease.Linear);
+    }
+
     private void Move_Start()
     {
         transform.DOMove(start_position.position, time).SetEase(Ease.Linear);
@@ -52,7 +57,7 @@ public class ChariotTweening : MonoBehaviour
 
     private void Move_End()
     {
-        transform.DOMove(end_position.position, time).SetEase(Ease.Linear);
+        transform.DOMove(end_position.position, time).SetEase(Ease.OutCubic);
     }
 
     private void Move_OutStart()
