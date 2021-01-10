@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BGScrollingManager : MonoBehaviour
+public class BGScrollingImage : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Vector2 direction;
@@ -17,7 +15,7 @@ public class BGScrollingManager : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * BGScrollingManager.instance.GlobalSpeed * Time.deltaTime);
         DeteksiBatas();
     }
 
