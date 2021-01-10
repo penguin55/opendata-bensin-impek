@@ -5,7 +5,9 @@ public class ChariotTweening : MonoBehaviour
 {
     [SerializeField] private Transform start_position;
     [SerializeField] private Transform middle_position;
-    [SerializeField] private Transform out_position;
+    [SerializeField] private Transform end_position;
+    [SerializeField] private Transform outStart_position;
+    [SerializeField] private Transform outEnd_position;
 
     private float time;
 
@@ -16,10 +18,19 @@ public class ChariotTweening : MonoBehaviour
         switch (position.ToLower())
         {
             case "start":
+                Move_Start();
                 break;
             case "middle":
+                Move_Middle();
                 break;
-            case "out":
+            case "end":
+                Move_End();
+                break;
+            case "out_start":
+                Move_OutStart();
+                break;
+            case "out_end":
+                Move_OutEnd();
                 break;
         }
     }
@@ -39,8 +50,18 @@ public class ChariotTweening : MonoBehaviour
         transform.DOMove(middle_position.position, time).SetEase(Ease.Linear);
     }
 
-    private void Move_Out()
+    private void Move_End()
     {
-        transform.DOMove(out_position.position, time).SetEase(Ease.Linear);
+        transform.DOMove(end_position.position, time).SetEase(Ease.Linear);
+    }
+
+    private void Move_OutStart()
+    {
+        transform.DOMove(outStart_position.position, time).SetEase(Ease.Linear);
+    }
+
+    private void Move_OutEnd()
+    {
+        transform.DOMove(outEnd_position.position, time).SetEase(Ease.Linear);
     }
 }

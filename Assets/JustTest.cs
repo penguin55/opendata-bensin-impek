@@ -5,24 +5,17 @@ using UnityEngine;
 
 public class JustTest : MonoBehaviour
 {
-    public Transform to, from;
-    public Transform objecta;
+    public string move;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.DOShakePosition(5, 2, 90);
+        move = "start";
     }
 
     private void Update()
     {
-        Sizing();
+        Chariot boss = BossBehaviour.Instance as Chariot;
+        boss.animationTweening.MoveTrain(move);
     }
-
-
-    void Sizing()
-    {
-        objecta.localScale = new Vector3((to.position-from.position).magnitude - 1.441f, objecta.localScale.y, objecta.localScale.z);
-    }
-    
 }
