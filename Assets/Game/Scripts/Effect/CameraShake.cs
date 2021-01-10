@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using TomWill;
 
 public class CameraShake : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class CameraShake : MonoBehaviour
     public void Shaked()
     {
         main.DOShakeRotation(this.duration, this.strength, this.vibrato);
+        TWAudioController.PlaySFX("BOSS_SFX", "rocket_impact");
     }
 
     public void GoBackRotate()
