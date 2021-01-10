@@ -4,22 +4,9 @@ using UnityEngine;
 
 public class ChariotTimeline : MonoBehaviour
 {
-    public string move;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        move = "start";
-    }
-
-    private void Update()
-    {
-        Chariot boss = BossBehaviour.Instance as Chariot;
-        boss.animationTweening.MoveTrain(move);
-    }
-
+    public ChariotTweening chariot;
     public void SetMoveName(string _move)
     {
-        move = _move;
+        chariot.MoveTrain(_move);
     }
 }
