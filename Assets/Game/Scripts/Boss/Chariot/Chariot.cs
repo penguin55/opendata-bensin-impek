@@ -17,6 +17,8 @@ public class Chariot : BossBehaviour
         POISONZONE
     }
 
+    public ChariotTweening animationTweening;
+
     private State_Chariot currentState;
     [SerializeField] private State_Chariot [] stateSequences;
     private int stateIndex;
