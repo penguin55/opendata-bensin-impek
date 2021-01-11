@@ -212,7 +212,7 @@ public class Chariot : BossBehaviour
     #region PoisonZone
     private void OnEnterPoisonZone()
     {
-        currentAttackEvent = patterns.First(e => e.attackName == "Laser").attackEvent;
+        currentAttackEvent = patterns.First(e => e.attackName == "PoisonZone").attackEvent;
     }
 
     private void PoisonZone()

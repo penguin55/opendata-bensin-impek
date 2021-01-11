@@ -8559,6 +8559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557740501}
+  - component: {fileID: 557740502}
   m_Layer: 0
   m_Name: PoisonZone
   m_TagString: Untagged
@@ -8581,6 +8582,26 @@ Transform:
   m_Father: {fileID: 9072407222221417255}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557740502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557740500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3f20a271b25df429bdafb99bbb7626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay_enter: 2
+  delay_prepare: 1
+  delay_animation: 0.4
+  delay_active: 0.2
+  delay_exit: 5
+  anim: {fileID: 3494481357032429281}
+  poisonParent: {fileID: 1978676706}
+  damageArea: {fileID: 1320688060}
 --- !u!1 &570990091
 GameObject:
   m_ObjectHideFlags: 0
@@ -20432,7 +20453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1978676707
 Transform:
   m_ObjectHideFlags: 0
@@ -57502,7 +57523,7 @@ MonoBehaviour:
   - attackName: StrafingMachinegun
     attackEvent: {fileID: 9072407222481301217}
   - attackName: PoisonZone
-    attackEvent: {fileID: 0}
+    attackEvent: {fileID: 557740502}
   fungus: {fileID: 2425233952247457736}
   isDead: 0
   animationTweening: {fileID: 9072407224048406397}
@@ -57522,7 +57543,7 @@ MonoBehaviour:
     render: {fileID: 1561635047}
     anim: {fileID: 1561635048}
     dead: 0
-  stateSequences: 00000000050000000400000001000000
+  stateSequences: 00000000060000000400000001000000
 --- !u!114 &9072407224048406397
 MonoBehaviour:
   m_ObjectHideFlags: 0

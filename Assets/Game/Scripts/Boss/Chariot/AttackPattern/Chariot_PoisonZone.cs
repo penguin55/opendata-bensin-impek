@@ -1,18 +1,42 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Chariot_PoisonZone : MonoBehaviour
+public class Chariot_PoisonZone : AttackEvent
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject poisonParent;
+    [SerializeField] private Transform damageArea;
+
+    public override void ExecutePattern(UnityAction onComplete)
     {
-        
+        base.ExecutePattern(onComplete);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnEnter_Attack()
     {
-        
+        poisonParent.SetActive(true);
+        base.OnEnter_Attack();
+    }
+
+    protected override void Attack()
+    {
+        //DOTween.Sequence()
+        //    .AppendCallback(SpawnProjectile)
+        //    .AppendCallback(SpawnProjectile)
+        //    .AppendInterval(fireRate)
+        //    .OnComplete(() =>
+        //    {
+        //        if (queueSpawn.Count > 0) Attack();
+        //        else base.Attack();
+        //    })
+        //    .SetId("BM_Missile");
+        base.Attack();
+    }
+
+    protected override void OnExit_Attack()
+    {
+        poisonParent.SetActive(false);
+        base.OnExit_Attack();
     }
 }
