@@ -57543,7 +57543,7 @@ MonoBehaviour:
     render: {fileID: 1561635047}
     anim: {fileID: 1561635048}
     dead: 0
-  stateSequences: 00000000060000000400000001000000
+  stateSequences: 00000000050000000400000001000000
 --- !u!114 &9072407224048406397
 MonoBehaviour:
   m_ObjectHideFlags: 0
