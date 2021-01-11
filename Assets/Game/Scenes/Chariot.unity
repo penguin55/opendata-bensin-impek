@@ -33229,10 +33229,10 @@ GameObject:
   - component: {fileID: 1683682983}
   - component: {fileID: 3705509519977587706}
   - component: {fileID: 1683682982}
-  - component: {fileID: 1683682984}
   - component: {fileID: 7474957988985871384}
+  - component: {fileID: 1683682984}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_bike
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33292,8 +33292,7 @@ SpriteRenderer:
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
   m_SortingOrder: 3
-  m_Sprite: {fileID: 6569441653283765607, guid: 4b45ec63abf038d4aaafbb1c53adbcdb,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a780048dfa8cd3f45a22cf2931437b01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -33368,7 +33367,7 @@ MonoBehaviour:
   timeToStop: 0.2
   kiriatas: {fileID: 647493645}
   kananbawah: {fileID: 993335475}
-  anim: {fileID: 1683682984}
+  anim: {fileID: 0}
   walkDustParticle: {fileID: 951855454}
   dashDustParticle: {fileID: 1499719576}
   interact: {fileID: 7474957988985871384}
@@ -33390,7 +33389,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.3333334}
+    oldSize: {x: 2.4444444, y: 1.7777778}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -33421,7 +33420,7 @@ Animator:
   m_GameObject: {fileID: 1683682976}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef5ecbba036415e42afdbd7677a25176, type: 2}
+  m_Controller: {fileID: 9100000, guid: e787fee9b78eaab4da1e170e0108fc01, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -35022,7 +35021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1978676707
 Transform:
   m_ObjectHideFlags: 0
