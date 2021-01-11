@@ -113,8 +113,10 @@ public class DialogMainMenu : MonoBehaviour
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 break;
             case GameData.BossType.UNHOLYCHARIOT:
-                environment.GetComponent<SpriteRenderer>().sprite = environments[2];
-                grass.GetComponent<SpriteRenderer>().sprite = grasses[2];
+                mainCamera.backgroundColor = brown;
+                environment.SetActive(false);
+                grass.SetActive(false);
+                railTrack.SetActive(true);
                 break;
             case GameData.BossType.HEADHUNTER:
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
