@@ -17,6 +17,7 @@ public static class GameData
     }
 
     public static void ShiftItemList(bool update = true) {
+        if (ItemHolds == null && ItemUsed == null) return;
         if (update)
         {
             ActiveItem.wasUsed = true;
