@@ -10,6 +10,7 @@ TagManager:
   - gun
   - laser_cannon
   - button_interact
+  - poison
   layers:
   - Default
   - TransparentFX
