@@ -237,6 +237,10 @@ public class CharaBehaviour : MonoBehaviour
         {
             interact.buttonInteract = collision.gameObject;
         }
+        if (collision.CompareTag("poison"))
+        {
+            TakeDamage();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
