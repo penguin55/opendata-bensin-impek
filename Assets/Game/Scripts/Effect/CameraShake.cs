@@ -32,7 +32,6 @@ public class CameraShake : MonoBehaviour
     public void Shaked()
     {
         main.DOShakeRotation(this.duration, this.strength, this.vibrato);
-        TWAudioController.PlaySFX("BOSS_SFX", "rocket_impact");
     }
 
     public void GoBackRotate()
