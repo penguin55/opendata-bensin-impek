@@ -17,32 +17,28 @@ namespace TomWill
             audioSources = new List<TWAudioSource>();
         }
 
-        public AudioSource GetAudio(string audioSourceName)
+        public (AudioSource audio, AudioLoopCallbacks callback) GetAudio(string audioSourceName)
         {
-            if (audioSources != null)
-            {
-                if (audioSources.Any(e => e.audioSourceName == audioSourceName))
-                {
-                    return audioSources.First(e => e.audioSourceName == audioSourceName).audio;
-                } else
-                {
-                    return null;
-                }
-            }
-            else Init();
+            if (audioSources == null) Init();
 
-            return null;
+            if (audioSources.Any(e => e.audioSourceName == audioSourceName))
+            {
+                TWAudioSource dataSource = audioSources.First(e => e.audioSourceName == audioSourceName);
+                return (dataSource.audio, dataSource.callback);
+            }
+            else
+            {
+                return (null, null);
+            }
         }
 
-        public void SetAudio(string audioSourceName, AudioSource source)
+        public void SetAudio(string audioSourceName, AudioSource source, AudioLoopCallbacks callback = null)
         {
+            if (audioSources == null) Init();
+
             if (!audioSources.Any(e => e.audioSourceName == audioSourceName) && source != null)
             {
-                if (audioSources != null)
-                {
-                    audioSources.Add(new TWAudioSource(audioSourceName, source));
-                }
-                else Init();
+                audioSources.Add(new TWAudioSource(audioSourceName, source, callback));
             }
         }
     }
@@ -51,11 +47,13 @@ namespace TomWill
     {
         public string audioSourceName;
         public AudioSource audio;
+        public AudioLoopCallbacks callback;
 
-        public TWAudioSource(string audioSourceName, AudioSource audio)
+        public TWAudioSource(string audioSourceName, AudioSource audio, AudioLoopCallbacks callback)
         {
             this.audioSourceName = audioSourceName;
             this.audio = audio;
+            this.callback = callback;
         }
     }
 }

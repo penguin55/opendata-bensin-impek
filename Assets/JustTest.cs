@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 
 public class JustTest : MonoBehaviour
@@ -19,5 +20,12 @@ public class JustTest : MonoBehaviour
             damage = false;
             BossBehaviour.Instance.TakeDamage();
         }
+    }
+
+    private void Start()
+    {
+        TWAudioController.PlayBGMAdvanced("BGM_ADVANCED", "chariot_cutscene", AudioLoop.LoopType.LOOP_WITH_INTRO, 48.8f, 361f);
+
+        TWAudioController.PlayBGM("ENGINE_TRAIN", "train_engine", TWAudioController.PlayType.DEFAULT);
     }
 }

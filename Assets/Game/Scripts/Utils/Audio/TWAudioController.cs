@@ -3,6 +3,7 @@
  * Created by TomWill
  */
 using DG.Tweening;
+using Fungus;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,9 +24,12 @@ namespace TomWill
         private TWAudioLibrary audioLibrary;
         private TWAudioSourceLibrary audioSources;
         private GameObject audioParent;
+        private GameObject prefab;
         private float timeFade;
         private float globalSFXVolume = 1;
         private float globalBGMVolume = 1;
+
+        private AudioLoop audioLoopFunction;
 
         #region Setting AudioController
         public static TWAudioController Instance
@@ -66,6 +70,11 @@ namespace TomWill
             Instance?.playBGM(audioSource, musicName, playType, loop);
         }
 
+        public static void PlayBGMAdvanced(string audioSource, string musicName, AudioLoop.LoopType loopType, float start, float end ,PlayType playType = PlayType.TRANSITION)
+        {
+            Instance?.playBGMAdvance(audioSource, musicName, loopType, start, end, playType);
+        }
+
         public static void StopBGMPlayed(string audioSource, bool immediatly = true)
         {
             Instance?.stopBGMPlayed(audioSource, immediatly);
@@ -95,6 +104,7 @@ namespace TomWill
             if (instance == null)
             {
                 instance = this;
+                prefab = Resources.Load("audiosource") as GameObject;
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -116,13 +126,27 @@ namespace TomWill
             }
         }
 
+        private void playBGMAdvance(string audioSource, string musicName, AudioLoop.LoopType loopType, float start, float end, PlayType playType)
+        {
+            switch (playType)
+            {
+                case PlayType.TRANSITION:
+                    playBGMTransitionAdvance(audioSource, musicName, loopType, start, end);
+                    break;
+                case PlayType.DEFAULT:
+                    playBGMDefaultAdvance(audioSource, musicName, loopType, start, end);
+                    break;
+            }
+        }
+
         private void playSFX(string audioSource, string musicName)
         {
-            AudioSource audio = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSources.GetAudio(audioSource).audio;
 
             if (!audio)
             {
-                audio = setNewAudioSource(audioSource);
+                var source = setNewAudioSource(audioSource, false);
+                audio = source.audio;
             }
 
             ClipDetail clipDetail = audioLibrary.GetSFXClip(musicName);
@@ -131,11 +155,15 @@ namespace TomWill
 
         private void playBGMTransition(string audioSource, string musicName, bool loop)
         {
-            AudioSource audio = audioSources.GetAudio(audioSource);
+            var audioSourceData = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSourceData.audio;
+            AudioLoopCallbacks callback = audioSourceData.callback;
 
             if (!audio)
             {
-                audio = setNewAudioSource(audioSource);
+                var source = setNewAudioSource(audioSource, false);
+                audio = source.audio;
+                callback = source.callback;
             }
 
             if (audio.isPlaying)
@@ -165,17 +193,22 @@ namespace TomWill
 
         private void playBGMDefault(string audioSource, string musicName, bool loop)
         {
-            AudioSource audio = audioSources.GetAudio(audioSource);
+            var audioSourceData = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSourceData.audio;
+            AudioLoopCallbacks callback = audioSourceData.callback;
+
             ClipDetail clipDetail = audioLibrary.GetBGMClip(musicName);
 
             if (!audio)
             {
-                audio = setNewAudioSource(audioSource);
+                var source = setNewAudioSource(audioSource, false);
+                audio = source.audio;
+                callback = source.callback;
             }
 
             if (audio.isPlaying)
             {
-                stopBGMPlayed(audio, clipDetail, true);
+                stopBGMPlayed(audio, clipDetail, callback, true);
             }
 
             audio.loop = loop;
@@ -184,7 +217,74 @@ namespace TomWill
             audio.Play();
         }
 
-        private void stopBGMPlayed(AudioSource audio, ClipDetail clipDetail, bool immediatly)
+        private void playBGMTransitionAdvance(string audioSource, string musicName, AudioLoop.LoopType loopType, float start, float end)
+        {
+            var audioSourceData = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSourceData.audio;
+            AudioLoopCallbacks callback = audioSourceData.callback;
+
+            if (!audio)
+            {
+                var source = setNewAudioSource(audioSource, true);
+                audio = source.audio;
+                callback = source.callback;
+            }
+
+            if (audio.isPlaying)
+            {
+                DOVirtual.Float(1, 0, timeFade, (x) =>
+                {
+                    audio.volume = globalBGMVolume * x;
+                }).OnComplete(() => playBGMInTransitionAdvance(audio, musicName, loopType, start, end));
+            }
+            else
+            {
+                playBGMInTransitionAdvance(audio, musicName, loopType, start, end);
+            }
+        }
+
+        private void playBGMInTransitionAdvance(AudioSource audio, string musicName, AudioLoop.LoopType loopType, float start, float end)
+        {
+            ClipDetail clipDetail = audioLibrary.GetBGMClip(musicName);
+
+            audio.loop = true;
+            audio.clip = clipDetail.clip;
+            audio.volume = 0;
+            audio.Play();
+            DOVirtual.Float(0, 1, timeFade, (x) =>
+            {
+                audio.volume = globalBGMVolume * clipDetail.localVolume * x;
+            });
+        }
+
+        private void playBGMDefaultAdvance(string audioSource, string musicName, AudioLoop.LoopType loopType, float start, float end)
+        {
+            var audioSourceData = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSourceData.audio;
+            AudioLoopCallbacks callback = audioSourceData.callback;
+
+            ClipDetail clipDetail = audioLibrary.GetBGMClip(musicName);
+
+            if (!audio)
+            {
+                var source = setNewAudioSource(audioSource, true);
+                audio = source.audio;
+                callback = source.callback;
+            }
+
+            if (audio.isPlaying)
+            {
+                stopBGMPlayed(audio, clipDetail, callback, true);
+            }
+
+            audio.loop = true;
+            audio.clip = clipDetail.clip;
+            audio.volume = globalBGMVolume * clipDetail.localVolume;
+            audioLoopFunction.SetAudioSource(ref audio, ref callback);
+            audioLoopFunction.PlayLoops(loopType, start, end); 
+        }
+
+        private void stopBGMPlayed(AudioSource audio, ClipDetail clipDetail, AudioLoopCallbacks callback, bool immediatly)
         {
             if (!audio) return;
 
@@ -193,6 +293,7 @@ namespace TomWill
                 audio.volume = 0;
                 audio.Stop();
                 audio.clip = null;
+                callback?.Unsubscribe();
             }
             else
             {
@@ -204,13 +305,16 @@ namespace TomWill
                     audio.volume = 0;
                     audio.Stop();
                     audio.clip = null;
+                    callback?.Unsubscribe();
                 });
             }
         }
 
         private void stopBGMPlayed(string audioSource, bool immediatly)
         {
-            AudioSource audio = audioSources.GetAudio(audioSource);
+            var audioSourceData = audioSources.GetAudio(audioSource);
+            AudioSource audio = audioSourceData.audio;
+            AudioLoopCallbacks callback = audioSourceData.callback;
 
             if (!audio || !audio.isPlaying) return;
                 
@@ -219,6 +323,7 @@ namespace TomWill
                 audio.volume = 0;
                 audio.Stop();
                 audio.clip = null;
+                callback?.Unsubscribe();
             }
             else
             {
@@ -232,6 +337,7 @@ namespace TomWill
                     audio.volume = 0;
                     audio.Stop();
                     audio.clip = null;
+                    callback?.Unsubscribe();
                 });
             }
         }
@@ -249,12 +355,17 @@ namespace TomWill
             this.timeFade = timeFade;
         }
 
-        private AudioSource setNewAudioSource(string audioSource)
+        private (AudioSource audio, AudioLoopCallbacks callback) setNewAudioSource(string audioSource, bool usingCallbackFunction)
         {
-            AudioSource audio = audioParent.AddComponent<AudioSource>();
-            audioSources.SetAudio(audioSource, audio);
+            GameObject audioObject = Instantiate(prefab, audioParent.transform);
+            AudioSource audio = audioObject.GetComponent<AudioSource>();
+            AudioLoopCallbacks callback = audioObject.GetComponent<AudioLoopCallbacks>();
 
-            return audio;
+            callback.enabled = usingCallbackFunction;
+
+            audioSources.SetAudio(audioSource, audio, callback);
+
+            return (audio, callback);
         }
         #endregion
     }
