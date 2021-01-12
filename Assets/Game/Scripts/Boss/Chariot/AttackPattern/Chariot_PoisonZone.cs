@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,6 +26,7 @@ public class Chariot_PoisonZone : AttackEvent
     {
 
         DOTween.Sequence()
+            .AppendCallback(()=> TWAudioController.PlaySFX("BOSS_SFX", "poison_gas"))
             .AppendCallback(() => poisonParent.SetActive(true))
             .AppendInterval(.5f)
             .AppendCallback(() => collide.enabled = true);
