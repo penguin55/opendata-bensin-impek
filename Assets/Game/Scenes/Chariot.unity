@@ -8606,6 +8606,7 @@ MonoBehaviour:
   - {fileID: 1669707288}
   - {fileID: 636880096}
   - {fileID: 734151130}
+  collide: {fileID: 1501810279}
 --- !u!1 &570990091
 GameObject:
   m_ObjectHideFlags: 0
