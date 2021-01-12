@@ -44,7 +44,7 @@ public class DialogMainMenu : MonoBehaviour
 
     public void PlayBGMChariot()
     {
-        TWAudioController.PlayBGM("BGM", "chariot_cutscene", TWAudioController.PlayType.TRANSITION);
+        TWAudioController.PlayBGMAdvanced("BGM_ADVANCED", "chariot_cutscene", AudioLoop.LoopType.LOOP_WITH_INTRO, 190.35f, 361f);
     }
 
     public void ConfirmSelectedBoss()

@@ -24,8 +24,6 @@ public class JustTest : MonoBehaviour
 
     private void Start()
     {
-        TWAudioController.PlayBGMAdvanced("BGM_ADVANCED", "chariot_cutscene", AudioLoop.LoopType.LOOP_WITH_INTRO, 48.8f, 361f);
-
-        TWAudioController.PlayBGM("ENGINE_TRAIN", "train_engine", TWAudioController.PlayType.DEFAULT);
+        
     }
 }

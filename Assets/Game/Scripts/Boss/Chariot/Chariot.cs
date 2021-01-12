@@ -46,7 +46,8 @@ public class Chariot : BossBehaviour
 
         Sprite = GetComponent<SpriteRenderer>();
         Init();
-        
+        TWAudioController.PlayBGM("ENGINE_TRAIN", "train_engine", TWAudioController.PlayType.DEFAULT);
+        TWAudioController.PlayBGM("ENGINE_BIKE", "bike_engine", TWAudioController.PlayType.DEFAULT);
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
     }
