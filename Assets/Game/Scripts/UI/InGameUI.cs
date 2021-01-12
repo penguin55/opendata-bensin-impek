@@ -44,7 +44,16 @@ public class InGameUI : MonoBehaviour
                 GameVariables.FREEZE_INPUT = false;
             });
         });
-        PlayBGM(bgm);
+
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.UNHOLYCHARIOT:
+                break;
+            default:
+                PlayBGM(bgm);
+                break;
+        }
+        
         ItemImage();
     }
 

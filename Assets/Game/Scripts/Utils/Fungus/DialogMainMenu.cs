@@ -42,6 +42,11 @@ public class DialogMainMenu : MonoBehaviour
         boss.text = bossDesc[bossIndex];
     }
 
+    public void PlayBGMChariot()
+    {
+        TWAudioController.PlayBGM("BGM", "chariot", TWAudioController.PlayType.TRANSITION);
+    }
+
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
