@@ -8602,6 +8602,10 @@ MonoBehaviour:
   anim: {fileID: 3494481357032429281}
   poisonParent: {fileID: 1978676706}
   damageArea: {fileID: 1320688060}
+  poisonSpawn:
+  - {fileID: 1669707288}
+  - {fileID: 636880096}
+  - {fileID: 734151130}
 --- !u!1 &570990091
 GameObject:
   m_ObjectHideFlags: 0
@@ -57543,7 +57547,7 @@ MonoBehaviour:
     render: {fileID: 1561635047}
     anim: {fileID: 1561635048}
     dead: 0
-  stateSequences: 00000000050000000400000001000000
+  stateSequences: 0000000005000000040000000600000001000000
 --- !u!114 &9072407224048406397
 MonoBehaviour:
   m_ObjectHideFlags: 0

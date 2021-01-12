@@ -7,6 +7,7 @@ public class Chariot_PoisonZone : AttackEvent
 {
     [SerializeField] private GameObject poisonParent;
     [SerializeField] private Transform damageArea;
+    [SerializeField] private Transform[] poisonSpawn;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -15,12 +16,24 @@ public class Chariot_PoisonZone : AttackEvent
 
     protected override void OnEnter_Attack()
     {
-        poisonParent.SetActive(true);
+        switch (Chariot.Instance.health)
+        {
+            case 1:
+                damageArea.position = poisonSpawn[0].position;
+                break;
+            case 2:
+                damageArea.position = poisonSpawn[1].position;
+                break;
+            case 3:
+                damageArea.position = poisonSpawn[2].position;
+                break;
+        }
         base.OnEnter_Attack();
     }
 
     protected override void Attack()
     {
+        poisonParent.SetActive(true);
         //DOTween.Sequence()
         //    .AppendCallback(SpawnProjectile)
         //    .AppendCallback(SpawnProjectile)
