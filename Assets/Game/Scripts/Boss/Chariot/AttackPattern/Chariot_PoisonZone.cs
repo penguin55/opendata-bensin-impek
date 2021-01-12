@@ -17,18 +17,7 @@ public class Chariot_PoisonZone : AttackEvent
 
     protected override void OnEnter_Attack()
     {
-        switch (Chariot.Instance.health)
-        {
-            case 1:
-                damageArea.position = poisonSpawn[0].position;
-                break;
-            case 2:
-                damageArea.position = poisonSpawn[1].position;
-                break;
-            case 3:
-                damageArea.position = poisonSpawn[2].position;
-                break;
-        }
+        ChangePoisonPosition();
         base.OnEnter_Attack();
     }
 
@@ -47,5 +36,21 @@ public class Chariot_PoisonZone : AttackEvent
         collide.enabled = false;
         poisonParent.SetActive(false);
         base.OnExit_Attack();
+    }
+
+    public void ChangePoisonPosition()
+    {
+        switch (Chariot.Instance.health)
+        {
+            case 1:
+                damageArea.position = poisonSpawn[0].position;
+                break;
+            case 2:
+                damageArea.position = poisonSpawn[1].position;
+                break;
+            case 3:
+                damageArea.position = poisonSpawn[2].position;
+                break;
+        }
     }
 }
