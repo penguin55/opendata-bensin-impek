@@ -18162,18 +18162,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3f20a271b25df429bdafb99bbb7626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay_enter: 0
-  delay_prepare: 0
-  delay_animation: 0
-  delay_active: 0
-  delay_exit: 0
-  anim: {fileID: 0}
-  poisonParent: {fileID: 0}
-  poisonPosition1: {fileID: 0}
-  poisonPosition2: {fileID: 0}
-  poisonSpawn: []
-  collide1: {fileID: 0}
-  collide2: {fileID: 0}
+  delay_enter: 2
+  delay_prepare: 1
+  delay_animation: 0.4
+  delay_active: 0.5
+  delay_exit: 5
+  anim: {fileID: 3494481357032429281}
+  poisonParent: {fileID: 1978676706}
+  poisonPosition1: {fileID: 1320688060}
+  poisonPosition2: {fileID: 739824127994014616}
+  poisonSpawn:
+  - {fileID: 1669707288}
+  - {fileID: 636880096}
+  - {fileID: 734151130}
+  collide1: {fileID: 1501810279}
+  collide2: {fileID: 739824127994014622}
 --- !u!1 &565032103
 GameObject:
   m_ObjectHideFlags: 0
