@@ -8,6 +8,7 @@ public class Chariot_PoisonZone : AttackEvent
     [SerializeField] private GameObject poisonParent;
     [SerializeField] private Transform damageArea;
     [SerializeField] private Transform[] poisonSpawn;
+    [SerializeField] private Collider2D collide;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -33,22 +34,17 @@ public class Chariot_PoisonZone : AttackEvent
 
     protected override void Attack()
     {
-        poisonParent.SetActive(true);
-        //DOTween.Sequence()
-        //    .AppendCallback(SpawnProjectile)
-        //    .AppendCallback(SpawnProjectile)
-        //    .AppendInterval(fireRate)
-        //    .OnComplete(() =>
-        //    {
-        //        if (queueSpawn.Count > 0) Attack();
-        //        else base.Attack();
-        //    })
-        //    .SetId("BM_Missile");
+
+        DOTween.Sequence()
+            .AppendCallback(() => poisonParent.SetActive(true))
+            .AppendInterval(.5f)
+            .AppendCallback(() => collide.enabled = true);
         base.Attack();
     }
 
     protected override void OnExit_Attack()
     {
+        collide.enabled = false;
         poisonParent.SetActive(false);
         base.OnExit_Attack();
     }
