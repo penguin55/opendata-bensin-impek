@@ -35212,11 +35212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
-        type: 3}
-      propertyPath: bgmClips.Array.data[10].localVolume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
