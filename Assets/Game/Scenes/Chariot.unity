@@ -99569,7 +99569,7 @@ MonoBehaviour:
   - {fileID: 2022206323}
   machinegunParent: {fileID: 9072407224012312629}
   machinegunDothair: {fileID: 9072407223057345285}
-  machinegunDothair2: {fileID: 0}
+  machinegunDothair2: {fileID: 1293086230}
   particle: {fileID: 0}
   timeToMove: 2
   attack: {fileID: 0}
