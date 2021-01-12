@@ -7,6 +7,7 @@ public class Chariot_Machinegun : AttackEvent
     [SerializeField] private Transform[] movePosition;
     [SerializeField] private GameObject machinegunParent;
     [SerializeField] private Transform machinegunDothair;
+    [SerializeField] private Transform machinegunDothair2;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private float timeToMove;
     [SerializeField] private Animator attack;
@@ -31,6 +32,7 @@ public class Chariot_Machinegun : AttackEvent
         distance = movePosition[1].position.x - movePosition[0].position.x;
         machinegunParent.SetActive(true);
         machinegunDothair.position = movePosition[0].position;
+        machinegunDothair2.position = movePosition[2].position;
         base.OnEnter_Attack();
     }
 
@@ -40,6 +42,7 @@ public class Chariot_Machinegun : AttackEvent
 
         Sound("machine_gun");
         RotateFace();
+        machinegunDothair2.DOMove(movePosition[3].position, timeToMove).SetEase(Ease.Linear);
         machinegunDothair.DOMove(movePosition[1].position, timeToMove).SetEase(Ease.Linear).OnComplete(() => {
             machinegunParent.SetActive(false);
             base.Attack();
