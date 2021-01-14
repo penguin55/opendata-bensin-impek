@@ -91,7 +91,7 @@ public class BossBehaviour : MonoBehaviour
     public void ChariotCameraShake()
     {
         TWAudioController.PlaySFX("BOSS_SFX", "rocket_impact");
-        TWTransition.ScreenFlash(1, 0.1f);
+        TWTransition.ScreenFlash(1, 0.5f);
         CameraShake.instance.Shake(1, 3, 10);
     }
 
