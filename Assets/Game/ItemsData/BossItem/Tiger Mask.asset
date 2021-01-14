@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 8f57e1375395c6a4e95d2de2a905d9b2, type: 3}
   itemName: Tiger Mask
-  itemDesc: 
-  shortDesc: longer dash time
+  itemDesc: Topeng Macan or Tiger Mask, which is commonly used in "wayang orang"
+    dramas, acts as a forest guardian and has a character that likes to pounce on
+    people who disturb the forest of his power. <color=red> Hold dash button to dash
+    further
+  shortDesc: Longer dash time
   itemId: 6
   wasUsed: 0
   effect: 6
