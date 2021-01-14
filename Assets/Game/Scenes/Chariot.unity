@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.28, y: 3.1080668, z: 645.70703}
+  m_LocalPosition: {x: 47.5, y: 58.4, z: 645.70703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18267,6 +18267,8 @@ MonoBehaviour:
   - {fileID: 734151130}
   collide1: {fileID: 1501810279}
   collide2: {fileID: 739824127994014622}
+  poisonParticle1: {fileID: 1501810283}
+  poisonParticle2: {fileID: 739824127994014618}
 --- !u!1 &563890087
 GameObject:
   m_ObjectHideFlags: 0
@@ -40176,6 +40178,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009903531}
   m_CullTransparentMesh: 0
+--- !u!1 &1034088655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034088656}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1034088656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034088655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.66993, y: 65.23474, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041587671
 GameObject:
   m_ObjectHideFlags: 0
@@ -46555,7 +46587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300480570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.49, y: 3.1080668, z: 645.70703}
+  m_LocalPosition: {x: 27.2, y: 46.3, z: 645.70703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46762,6 +46794,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978676707}
     m_Modifications:
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4479892038576103126, guid: 5124ace7c40324d4390e3ef5270a4b9d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52046,6 +52108,12 @@ PolygonCollider2D:
       - {x: -10.381957, y: -7.12375}
       - {x: -0.21484709, y: -6.0755134}
       - {x: 2.4388113, y: 1.9991279}
+--- !u!198 &1501810283 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4479892038576103124, guid: 5124ace7c40324d4390e3ef5270a4b9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1320688059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1503451651
 GameObject:
   m_ObjectHideFlags: 0
@@ -52570,6 +52638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: end
   damage: 0
+  moveTool1: {fileID: 6466023}
+  moveTool2: {fileID: 1300480571}
+  moveTool3: {fileID: 1034088656}
 --- !u!4 &1573574181
 Transform:
   m_ObjectHideFlags: 0
@@ -59240,7 +59311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1978676707
 Transform:
   m_ObjectHideFlags: 0
@@ -69735,7 +69806,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 1
   autoRandomSeed: 1
   useRigidbodyForVelocity: 0

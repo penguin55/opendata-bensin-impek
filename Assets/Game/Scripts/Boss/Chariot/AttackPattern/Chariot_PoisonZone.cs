@@ -12,6 +12,8 @@ public class Chariot_PoisonZone : AttackEvent
     [SerializeField] private Transform[] poisonSpawn;
     [SerializeField] private Collider2D collide1;
     [SerializeField] private Collider2D collide2;
+    [SerializeField] private ParticleSystem poisonParticle1;
+    [SerializeField] private ParticleSystem poisonParticle2;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -29,7 +31,8 @@ public class Chariot_PoisonZone : AttackEvent
 
         DOTween.Sequence()
             .AppendCallback(()=> TWAudioController.PlaySFX("BOSS_SFX", "poison_gas"))
-            .AppendCallback(() => poisonParent.SetActive(true))
+            .AppendCallback(() => poisonParticle1.Play())
+            .AppendCallback(() => poisonParticle2.Play())
             .AppendInterval(.5f)
             .AppendCallback(() => collide1.enabled = true)
             .AppendCallback(() => collide2.enabled = true);
@@ -40,7 +43,8 @@ public class Chariot_PoisonZone : AttackEvent
     {
         collide1.enabled = false;
         collide2.enabled = false;
-        poisonParent.SetActive(false);
+        poisonParticle1.Stop();
+        poisonParticle2.Stop();
         base.OnExit_Attack();
     }
 
