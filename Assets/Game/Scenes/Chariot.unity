@@ -79323,10 +79323,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328628}
-  selectedCommands:
-  - {fileID: 4806305509244328648}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -79821,7 +79819,7 @@ MonoBehaviour:
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
-      objectValue: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
+      objectValue: {fileID: 11400000, guid: 758b54dd5e053fe4a9e20566925521a1, type: 2}
       spriteValue: {fileID: 0}
       textureValue: {fileID: 0}
       vector2Value: {x: 0, y: 0}
@@ -106701,7 +106699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28ea7431053b9448191467cceb8b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItem: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
+  dropItem: {fileID: 11400000, guid: 758b54dd5e053fe4a9e20566925521a1, type: 2}
   explosion: {fileID: 1494745212}
   health: 3
   whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}

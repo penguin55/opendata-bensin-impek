@@ -113,6 +113,14 @@ public class InGameUI : MonoBehaviour
         {
             activateItemImage.overrideSprite = terrorcopter;
         }
+        if (GameData.ActiveItem.itemName.Contains("Barong"))
+        {
+            activateItemImage.overrideSprite = chariot;
+        }
+        if (GameData.ActiveItem.itemName.Contains("Kalimantan"))
+        {
+            activateItemImage.overrideSprite = headhunter;
+        }
     }
 
     public void GameWin()
