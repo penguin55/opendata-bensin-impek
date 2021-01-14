@@ -79326,7 +79326,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 4806305509244328628}
   selectedCommands:
-  - {fileID: 4806305509244328642}
+  - {fileID: 4806305509244328648}
   variables: []
   description: 
   stepPause: 0
@@ -79370,8 +79370,6 @@ GameObject:
   - component: {fileID: 4806305509244328633}
   - component: {fileID: 4806305509244328632}
   - component: {fileID: 4806305509244328631}
-  - component: {fileID: 4806305509244328629}
-  - component: {fileID: 4806305509244328627}
   - component: {fileID: 4806305509244328641}
   - component: {fileID: 4806305509244328630}
   - component: {fileID: 4806305509244328645}
@@ -79380,6 +79378,13 @@ GameObject:
   - component: {fileID: 4806305509244328642}
   - component: {fileID: 4806305509244328646}
   - component: {fileID: 4806305509244328621}
+  - component: {fileID: 4806305509244328629}
+  - component: {fileID: 4806305509244328627}
+  - component: {fileID: 4806305509244328647}
+  - component: {fileID: 4806305509244328635}
+  - component: {fileID: 4806305509244328650}
+  - component: {fileID: 4806305509244328649}
+  - component: {fileID: 4806305509244328648}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -79794,17 +79799,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 38
+  itemId: 49
   indentLevel: 0
   description: 
-  targetObject: {fileID: 1850809808}
-  targetComponentAssemblyName: UnityEngine.Playables.PlayableDirector, UnityEngine.DirectorModule,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  targetObject: {fileID: 1810792070}
+  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: PlayableDirector
-  targetMethod: Play
-  targetMethodText: 'Play (): Void'
-  methodParameters: []
+  targetComponentText: InGameUI
+  targetMethod: RenderObtainDrop
+  targetMethodText: 'RenderObtainDrop (ItemData): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: ItemData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      typeFullname: ItemData
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -79825,7 +79847,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 112.1382
-    y: -35.092773
+    y: -36.312286
     width: 130.9756
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -79846,12 +79868,17 @@ MonoBehaviour:
   - {fileID: 4806305509244328633}
   - {fileID: 4806305509244328644}
   - {fileID: 4806305509244328643}
-  - {fileID: 4806305509244328621}
+  - {fileID: 4806305509244328647}
   - {fileID: 4806305509244328631}
   - {fileID: 4806305509244328642}
   - {fileID: 4806305509244328630}
+  - {fileID: 4806305509244328621}
   - {fileID: 4806305509244328629}
   - {fileID: 4806305509244328627}
+  - {fileID: 4806305509244328635}
+  - {fileID: 4806305509244328650}
+  - {fileID: 4806305509244328649}
+  - {fileID: 4806305509244328648}
   suppressAllAutoSelections: 0
 --- !u!114 &4806305509244328629
 MonoBehaviour:
@@ -79865,23 +79892,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 37
+  itemId: 48
   indentLevel: 0
   description: 
-  targetObject: {fileID: 2425233952247457738}
-  targetComponentAssemblyName: Fungus.DialogInput, Fungus, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1810792070}
+  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: DialogInput
-  targetMethod: ChangeClickMode
-  targetMethodText: 'ChangeClickMode (ClickMode): Void'
+  targetComponentText: InGameUI
+  targetMethod: OpenItemPanel
+  targetMethodText: 'OpenItemPanel (Boolean): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: Fungus.ClickMode, Fungus, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      typeFullname: Fungus.ClickMode
-      intValue: 1
-      boolValue: 0
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
       floatValue: 0
       stringValue: 
       colorValue: {r: 0, g: 0, b: 0, a: 0}
@@ -80047,6 +80074,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &4806305509244328635
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 9072407224048406395}
+  targetComponentAssemblyName: Chariot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Chariot
+  targetMethod: DropItems
+  targetMethodText: 'DropItems (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 1
+  callMode: 0
 --- !u!114 &4806305509244328636
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -80377,6 +80432,115 @@ MonoBehaviour:
   _duration:
     floatRef: {fileID: 0}
     floatVal: 1
+  durationOLD: 0
+--- !u!114 &4806305509244328647
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
+--- !u!114 &4806305509244328648
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1810792070}
+  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: InGameUI
+  targetMethod: BackToPanelBoss
+  targetMethodText: 'BackToPanelBoss (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &4806305509244328649
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1810792070}
+  targetComponentAssemblyName: InGameUI, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: InGameUI
+  targetMethod: OpenItemPanel
+  targetMethodText: 'OpenItemPanel (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &4806305509244328650
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806305509244328613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 52
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 2
   durationOLD: 0
 --- !u!1 &4956345704234931495
 GameObject:
@@ -106537,7 +106701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28ea7431053b9448191467cceb8b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItem: {fileID: 0}
+  dropItem: {fileID: 11400000, guid: 6507c4572c4e01f4da685109c065a292, type: 2}
   explosion: {fileID: 1494745212}
   health: 3
   whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
