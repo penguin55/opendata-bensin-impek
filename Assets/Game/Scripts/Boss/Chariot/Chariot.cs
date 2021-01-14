@@ -54,6 +54,11 @@ public class Chariot : BossBehaviour
         InGameUI.instance.UpdateHpBos(health);
     }
 
+    public Vector3 GetActiveGerbong()
+    {
+        return activeGerbong.gerbong.transform.position;
+    }
+
     public override void TakeDamage()
     {
         activeGerbong.dead = true;

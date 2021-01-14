@@ -11,6 +11,7 @@ TagManager:
   - laser_cannon
   - button_interact
   - poison
+  - dynamite
   layers:
   - Default
   - TransparentFX

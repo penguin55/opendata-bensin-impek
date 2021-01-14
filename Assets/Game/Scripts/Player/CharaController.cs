@@ -1,4 +1,5 @@
-﻿using TomWill;
+﻿using Fungus;
+using TomWill;
 using UnityEngine;
 
 public class CharaController : CharaBehaviour

@@ -36,6 +36,7 @@ public class CharaBehaviour : MonoBehaviour
 
     [SerializeField] private CharaInteract interact;
     [SerializeField]private bool clamp;
+    [SerializeField] private Transform placeholderHand;
 
 
     public void Init()
@@ -139,6 +140,7 @@ public class CharaBehaviour : MonoBehaviour
                 interact.DashingProjectile(lastDirection, data.DashSpeed);
                 interact.DashingGun();
                 interact.DashingButtonInteract();
+                interact.DashingDynamite();
             }
         }
     }
@@ -220,6 +222,11 @@ public class CharaBehaviour : MonoBehaviour
         return dashDelay;
     }
 
+    public Vector3 GetHandPlaceholder()
+    {
+        return placeholderHand.position;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("projectiles"))
@@ -237,9 +244,18 @@ public class CharaBehaviour : MonoBehaviour
         {
             interact.buttonInteract = collision.gameObject;
         }
+
         if (collision.CompareTag("poison"))
         {
             TakeDamage();
+        }
+
+        if (collision.CompareTag("dynamite"))
+        {
+            interact.SetDynamite(collision.gameObject);
+            interact.dynamiteDetect.GetComponent<DynamiteChariot>().GetDynamite();
+            interact.dynamiteDetect.transform.parent = placeholderHand;
+            interact.dynamiteDetect.transform.localPosition = Vector2.zero;
         }
     }
 

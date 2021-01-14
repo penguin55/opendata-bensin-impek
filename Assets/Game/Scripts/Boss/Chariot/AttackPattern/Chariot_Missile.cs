@@ -11,6 +11,7 @@ public class Chariot_Missile : AttackEvent
     [SerializeField] protected float fireRate;
 
     [SerializeField] private Animator attack;
+    [SerializeField] private Chariot_Dynamite dynamiteChariot;
 
     private int randomSpawn;
 
@@ -30,6 +31,7 @@ public class Chariot_Missile : AttackEvent
     protected override void OnEnter_Attack()
     {
         missileParent.SetActive(true);
+        dynamiteChariot.SpawnDynamite();
   
         queueSpawn.AddRange(spawnProjectilePosition);
 

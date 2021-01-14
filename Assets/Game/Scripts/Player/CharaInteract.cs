@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class CharaInteract : MonoBehaviour
     [HideInInspector] public GameObject projectileDetect;
     [HideInInspector] public GameObject gunDetect;
     [HideInInspector] public GameObject buttonInteract;
+    [HideInInspector] public GameObject dynamiteDetect;
+
+    [HideInInspector] public bool cancelDynamiteInteract;
 
     public void DashingProjectile(Vector3 lastDirection, float dashSpeed)
     {
@@ -49,5 +53,23 @@ public class CharaInteract : MonoBehaviour
         {
             buttonInteract.GetComponent<TLEO_Button>().Interact();
         }
+    }
+
+    public void DashingDynamite()
+    {
+        if (!cancelDynamiteInteract && dynamiteDetect)
+        {
+            dynamiteDetect.GetComponent<DynamiteChariot>().ThrowDynamite();
+            dynamiteDetect = null;
+        }
+
+        cancelDynamiteInteract = false;
+    }
+
+    public void SetDynamite(GameObject dynamite)
+    {
+        dynamiteDetect = dynamite;
+        cancelDynamiteInteract = true;
+        DOVirtual.DelayedCall(1f, ()=> { cancelDynamiteInteract = false; }).SetId("CancellationDynamite");
     }
 }
