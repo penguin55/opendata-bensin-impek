@@ -57,7 +57,7 @@ public class BossBehaviour : MonoBehaviour
         isDead = true;
 
         GameData.ActiveBossData.wasDie = true;
-        
+
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:
@@ -65,7 +65,7 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => { explosion.Play(); })
                     .AppendCallback(() => { CameraShake.instance.Shake(explosion.main.duration, 3, 10); })
                     .AppendInterval(explosion.main.duration / 2)
-                    .AppendCallback(()=> TWTransition.ScreenFlash(1, 0.2f))
+                    .AppendCallback(() => TWTransition.ScreenFlash(1, 0.2f))
                     .AppendCallback(() => { gameObject.SetActive(false); })
                     .AppendInterval(explosion.main.duration)
                     .AppendCallback(() => fungus.NextBlock("Dialog_1"));
@@ -79,10 +79,20 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => director.Play());
                 break;
             case GameData.BossType.UNHOLYCHARIOT:
+                DOTween.Sequence()
+                    .AppendCallback(() => director.Play())
+                    .AppendCallback(() => explosion.Play());
                 break;
             case GameData.BossType.HEADHUNTER:
                 break;
         }
+    }
+
+    public void ChariotCameraShake()
+    {
+        TWAudioController.PlaySFX("BOSS_SFX", "rocket_impact");
+        TWTransition.ScreenFlash(1, 0.1f);
+        CameraShake.instance.Shake(1, 3, 10);
     }
 
     public virtual void TakeDamage()

@@ -3,6 +3,7 @@ using System.Linq;
 using TomWill;
 using UnityEngine;
 using DG.Tweening;
+using Fungus;
 
 public class Chariot : BossBehaviour
 {
@@ -35,6 +36,7 @@ public class Chariot : BossBehaviour
     private State_Chariot currentState;
     [SerializeField] private State_Chariot [] stateSequences;
     private int stateIndex;
+    [SerializeField] ParticleSystem explosions;
 
     private void Start()
     {
@@ -55,21 +57,25 @@ public class Chariot : BossBehaviour
     public override void TakeDamage()
     {
         activeGerbong.dead = true;
-
-        explosion.transform.position = activeGerbong.gerbong.transform.position;
-        explosion.Play();
-        CameraShake.instance.Shake(explosion.main.duration, 3, 10);
-
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_damage");
-        if (health >= 1)
+        if (health > 1)
         {
+            explosions.transform.position = activeGerbong.gerbong.transform.position;
+            explosions.Play();
+            CameraShake.instance.Shake(explosion.main.duration, 3, 10);
             DOTween.Sequence()
            .AppendCallback(() => { TWTransition.ScreenFlash(1, 0.2f); })
            .AppendInterval(0.1f)
-           .AppendCallback(() => DestroyGerbong());
+           .AppendCallback(() => {
+               DestroyGerbong();
+           });
             health -= 1;
             InGameUI.instance.UpdateHpBos(health);
-
+        }
+        else
+        {
+            TWTransition.ScreenFlash(1, .2f);
+            health -= 1;
             if (health < 1)
             {
                 DOTween.Kill("BM_Missile");
@@ -151,7 +157,7 @@ public class Chariot : BossBehaviour
 
     protected override void Die()
     {
-        //base.Die();
+        base.Die();
     }
 
     
