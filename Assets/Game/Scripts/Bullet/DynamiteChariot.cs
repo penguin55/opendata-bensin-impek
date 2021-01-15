@@ -48,6 +48,7 @@ public class DynamiteChariot : MonoBehaviour
     {
         onHand = true;
         DOTween.Kill("DropDynamite");
+        TWAudioController.PlaySFX("SFX_PROJECTILE", "dynamite_obtained");
         ActivateTickDynamite();
         anim.SetTrigger("OnHand");
     }
@@ -80,6 +81,7 @@ public class DynamiteChariot : MonoBehaviour
 
     private void ThrowingDynamite()
     {
+        TWAudioController.PlaySFX("SFX_PROJECTILE", "dynamite_throw");
         Chariot boss = (BossBehaviour.Instance as Chariot);
         Vector2 controlPoint = ExtendMath.GetPerpendicular(transform.position, boss.GetActiveGerbong(), 7f, ExtendMath.PerpendicularType.ALWAYS_UP);
 
@@ -91,6 +93,7 @@ public class DynamiteChariot : MonoBehaviour
 
     private void Explode(bool explodeOnHand)
     {
+        TWAudioController.PlaySFX("SFX_PROJECTILE", "rocket_impact");
         if (explodeOnHand)
         {
             CharaController.instance.TakeDamage();
