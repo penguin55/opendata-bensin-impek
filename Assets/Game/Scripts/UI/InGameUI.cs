@@ -270,6 +270,7 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
+        BGMStop();
         BackToPanelItem();
     }
 
@@ -279,12 +280,15 @@ public class InGameUI : MonoBehaviour
         {
             case GameData.BossType.GATEKEEPER:
                 TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+                
                 break;
             case GameData.BossType.TERRORCOPTER:
+                TWAudioController.StopBGMPlayed("ENGINE_COPTER", true);
                 TWAudioController.StopBGMPlayed("BGM_BOSS", true);
                 break;
             case GameData.BossType.UNHOLYCHARIOT:
                 TWAudioController.StopBGMPlayed("ENGINE_BIKE", true);
+                TWAudioController.StopBGMPlayed("ENGINE_TRAIN", true);
                 TWAudioController.StopBGMPlayed("BGM_ADVANCED", true);
                 break;
             case GameData.BossType.HEADHUNTER:

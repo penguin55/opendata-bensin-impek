@@ -32,7 +32,7 @@ public class BirdMask : BossBehaviour
 
         Sprite = GetComponent<SpriteRenderer>();
         Init();
-        TWAudioController.PlayBGM("BGM_BOSS", "helicopter_blades", TWAudioController.PlayType.TRANSITION);
+        TWAudioController.PlayBGM("ENGINE_COPTER", "helicopter_blades", TWAudioController.PlayType.TRANSITION);
         UpdateState();
         InGameUI.instance.UpdateHpBos(health);
     }

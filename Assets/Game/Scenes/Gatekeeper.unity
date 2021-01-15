@@ -29498,6 +29498,8 @@ MonoBehaviour:
   projectileDetect: {fileID: 0}
   gunDetect: {fileID: 0}
   buttonInteract: {fileID: 0}
+  dynamiteDetect: {fileID: 0}
+  cancelDynamiteInteract: 0
 --- !u!1001 &934369561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65933,6 +65935,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3208914842311055096, guid: eac637af8ac64c245b0c6cf79f1324f2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7474957987520150401, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_IsActive
