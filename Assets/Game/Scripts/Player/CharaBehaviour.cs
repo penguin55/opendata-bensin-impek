@@ -32,7 +32,7 @@ public class CharaBehaviour : MonoBehaviour
     float posisibaruX, posisibaruY;
 
     [SerializeField] protected Animator anim;
-    [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
+    [SerializeField] protected ParticleSystem walkDustParticle,walkDustParticle2, dashDustParticle;
 
     [SerializeField] private CharaInteract interact;
     [SerializeField]private bool clamp;
@@ -65,6 +65,15 @@ public class CharaBehaviour : MonoBehaviour
 
         InGameUI.instance?.UpdateLive();
         InGameUI.instance?.UpdateShield();
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.UNHOLYCHARIOT:
+                walkDustParticle2.Play();
+                walkDustParticle.Play();
+                break;
+            default:
+                break;
+        }
     }
 
     protected void Clamp()
@@ -97,7 +106,15 @@ public class CharaBehaviour : MonoBehaviour
 
     protected void Movement(float accelerate)
     {
-        if (direction == Vector2.zero) walkDustParticle.Stop();
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.UNHOLYCHARIOT:
+                break;
+            default:
+                if (direction == Vector2.zero) walkDustParticle.Stop();
+                break;
+        }
+        
         float newSpeed = data.Speed * (GameVariables.SPEED_BUFF > 0 ? GameVariables.SPEED_BUFF : 1);
         transform.Translate(direction * newSpeed * GameTime.PlayerTime * accelerate);
     }
