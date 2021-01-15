@@ -84787,8 +84787,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 4806305509244328628}
+  selectedCommands:
+  - {fileID: 4806305509244328636}
   variables: []
   description: 
   stepPause: 0
@@ -85104,7 +85106,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 7074999583322714915}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: cba316e08625e2f418e635a24fab8a73, type: 3}
+  portrait: {fileID: 21300000, guid: e4eac2e6b25b8e54e9a2be78d627fddc, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 6424593295188166379}
@@ -105657,7 +105659,7 @@ GameObject:
   - component: {fileID: 7074999583322714912}
   - component: {fileID: 7074999583322714915}
   m_Layer: 0
-  m_Name: Terrorcopter
+  m_Name: Twin Railman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105675,11 +105677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Terrorcopter
+  nameText: Twin Railman
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: cba316e08625e2f418e635a24fab8a73, type: 3}
+  - {fileID: 21300000, guid: e4eac2e6b25b8e54e9a2be78d627fddc, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
