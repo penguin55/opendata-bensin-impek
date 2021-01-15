@@ -18,7 +18,10 @@ public class FungusController : MonoBehaviour
         }
 
         if (GameVariables.DIALOG_START_MESSAGE.Equals("MISSION_START")) lastActiveBlock = "MissionStart";
-        else if (GameVariables.DIALOG_START_MESSAGE.Equals("BOSS_PANEL")) lastActiveBlock = "pick Boss";
+        else if (GameVariables.DIALOG_START_MESSAGE.Equals("BOSS_PANEL"))
+        {
+            lastActiveBlock = "pick Boss";
+        }
         else if (GameVariables.DIALOG_START_MESSAGE.Equals("ITEM_PANEL")) lastActiveBlock = "pick Item";
 
         flowchart.ExecuteBlock(lastActiveBlock);

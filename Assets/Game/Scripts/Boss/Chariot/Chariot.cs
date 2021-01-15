@@ -40,6 +40,7 @@ public class Chariot : BossBehaviour
 
     private void Start()
     {
+        GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
         Instance = this;
         stateIndex = 0;
         currentState = State_Chariot.PREPARATION;
@@ -83,6 +84,7 @@ public class Chariot : BossBehaviour
             health -= 1;
             if (health < 1)
             {
+                InGameUI.instance.UpdateHpBos(health);
                 DOTween.Kill("BM_Missile");
                 Die();
             }
@@ -162,6 +164,7 @@ public class Chariot : BossBehaviour
 
     protected override void Die()
     {
+        TWAudioController.StopBGMPlayed("ENGINE_TRAIN", false);
         base.Die();
     }
 

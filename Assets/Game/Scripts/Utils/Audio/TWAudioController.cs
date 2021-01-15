@@ -168,9 +168,10 @@ namespace TomWill
 
             if (audio.isPlaying)
             {
+                ClipDetail clipDetail = audioLibrary.GetBGMClip(musicName);
                 DOVirtual.Float(1, 0, timeFade, (x) =>
                 {
-                    audio.volume = globalBGMVolume * x;
+                    audio.volume = globalBGMVolume * clipDetail.localVolume * x;
                 }).OnComplete(() => playBGMInTransition(audio, musicName, loop));
             } else
             {
@@ -232,9 +233,10 @@ namespace TomWill
 
             if (audio.isPlaying)
             {
+                ClipDetail clipDetail = audioLibrary.GetBGMClip(audio.clip);
                 DOVirtual.Float(1, 0, timeFade, (x) =>
                 {
-                    audio.volume = globalBGMVolume * x;
+                    audio.volume = globalBGMVolume  * clipDetail.localVolume * x;
                 }).OnComplete(() => playBGMInTransitionAdvance(audio, musicName, loopType, start, end));
             }
             else
@@ -315,6 +317,8 @@ namespace TomWill
             var audioSourceData = audioSources.GetAudio(audioSource);
             AudioSource audio = audioSourceData.audio;
             AudioLoopCallbacks callback = audioSourceData.callback;
+
+            Debug.Log(audio + " " + audioSourceData);
 
             if (!audio || !audio.isPlaying) return;
                 

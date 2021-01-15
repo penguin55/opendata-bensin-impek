@@ -33,6 +33,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
         GameTime.GlobalTimeScale = 1;
         GameVariables.GAME_OVER = false;
         index = 0;
@@ -65,7 +66,7 @@ public class InGameUI : MonoBehaviour
 
     public void PlayBGM(string name)
     {
-        TWAudioController.PlayBGM("BGM", name, TWAudioController.PlayType.TRANSITION);
+        TWAudioController.PlayBGM("BGM_BOSS", name, TWAudioController.PlayType.TRANSITION);
     }
   
 
@@ -272,11 +273,31 @@ public class InGameUI : MonoBehaviour
         BackToPanelItem();
     }
 
+    public void BGMStop()
+    {
+        switch (GameData.ActiveBoss)
+        {
+            case GameData.BossType.GATEKEEPER:
+                TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+                break;
+            case GameData.BossType.TERRORCOPTER:
+                TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+                break;
+            case GameData.BossType.UNHOLYCHARIOT:
+                TWAudioController.StopBGMPlayed("ENGINE_BIKE", true);
+                TWAudioController.StopBGMPlayed("BGM_ADVANCED", true);
+                break;
+            case GameData.BossType.HEADHUNTER:
+                TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+                break;
+        }
+    }
+
     public void BackToMenu()
     {
         ItemManager.instance.ItemNull();
         GameTime.GlobalTimeScale = 1f;
-        TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+        BGMStop();
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
         TWAudioController.PlaySFX("UI", "transition");
@@ -286,6 +307,7 @@ public class InGameUI : MonoBehaviour
     {
         GameTime.GlobalTimeScale = 1f;
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
+        BGMStop();
         TWAudioController.PlaySFX("UI", "click");
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
         TWAudioController.PlaySFX("UI", "transition");

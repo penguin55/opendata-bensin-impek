@@ -17,6 +17,8 @@ public class JustTest : MonoBehaviour
 
     private List<Vector2> positionCurve = new List<Vector2>();
 
+    public bool stopBGM;
+
     private void Update()
     {
         //Chariot boss = BossBehaviour.Instance as Chariot;
@@ -31,6 +33,14 @@ public class JustTest : MonoBehaviour
         moveTool3.position = controlPoint;
         ExtendMath.BezierCurve(ref positionCurve, moveTool1.position, moveTool2.position, moveTool3.position, 10);
         
+        if (stopBGM)
+        {
+            stopBGM = !stopBGM;
+            TWAudioController.StopBGMPlayed("ENGINE_TRAIN", true);
+            TWAudioController.StopBGMPlayed("ENGINE_BIKE", true);
+            TWAudioController.StopBGMPlayed("BGM_ADVANCED", false);
+            TWAudioController.StopBGMPlayed("BGM", false);
+        }
     }
 
     private void OnDrawGizmos()
