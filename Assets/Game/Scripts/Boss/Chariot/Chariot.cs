@@ -49,6 +49,7 @@ public class Chariot : BossBehaviour
 
         Sprite = GetComponent<SpriteRenderer>();
         Init();
+        animationTweening.MoveTrain("out_end", 0f);
         TWAudioController.PlayBGM("ENGINE_TRAIN", "train_engine", TWAudioController.PlayType.DEFAULT);
         TWAudioController.PlayBGM("ENGINE_BIKE", "bike_engine", TWAudioController.PlayType.DEFAULT);
         UpdateState();
@@ -158,8 +159,7 @@ public class Chariot : BossBehaviour
         base.Preparation();
 
         animationTweening.MoveTrain("end", 4);
-
-        NextState();
+        DOVirtual.DelayedCall(4f, ()=> { NextState(); });
     }
 
     protected override void Die()

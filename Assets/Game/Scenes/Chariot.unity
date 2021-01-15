@@ -51816,7 +51816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340270161}
   m_LocalRotation: {x: 0.20204629, y: -0.5455129, z: 0.28445047, w: 0.76202416}
-  m_LocalPosition: {x: -21.12, y: 0.8, z: 4.09}
+  m_LocalPosition: {x: -44.62, y: 1.26, z: 4.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 739824127994014616}
@@ -57400,6 +57400,7 @@ MonoBehaviour:
   moveTool1: {fileID: 6466023}
   moveTool2: {fileID: 1300480571}
   moveTool3: {fileID: 1034088656}
+  stopBGM: 0
 --- !u!4 &1573574181
 Transform:
   m_ObjectHideFlags: 0
@@ -74557,13 +74558,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739824127994014617}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 12
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 1
@@ -74801,7 +74802,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.6
+      scalar: 2.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -79341,7 +79342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPathUpdating: 0
   hasRandomStartingPoints: 0
-  pathWidth: 2.06
+  pathWidth: 1.59
 --- !u!60 &739824127994014622
 PolygonCollider2D:
   m_ObjectHideFlags: 0
