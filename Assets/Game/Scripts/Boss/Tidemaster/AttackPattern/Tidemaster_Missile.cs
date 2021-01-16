@@ -75,29 +75,9 @@ public class Tidemaster_Missile : AttackEvent
         randomSpawn = Random.Range(0, queueSpawn.Count);
         spawnChoicePosition = queueSpawn[randomSpawn];
         queueSpawn.Remove(spawnChoicePosition);
-
-        bool activeMissile = true;
-
-        if (!deactiveMissileWasLaunch)
-        {
-            if (queueSpawn.Count == 0)
-            {
-                deactiveMissileWasLaunch = true;
-                activeMissile = false;
-            }
-            else
-            {
-                int randomValue = Random.Range(0, 100);
-                activeMissile = randomValue % 2 == 1;
-                if (!activeMissile) deactiveMissileWasLaunch = true;
-            }
-        }
-
-        if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileTM>();
-
+        deactiveMissileParent = spawnChoicePosition.GetComponent<MissileTM>();
         GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
-        spawnChoicePosition.GetComponent<MissileTM>().Launch(missile, .1f, activeMissile);
-
-        if (!activeMissile) deactiveMissileProjectile = missile;
+        spawnChoicePosition.GetComponent<MissileTM>().Launch(missile, .1f);
+        deactiveMissileProjectile = missile;
     }
 }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5230600447869723714}
   m_Layer: 0
   m_Name: Projectile_Missile Tidemaster
-  m_TagString: projectiles
+  m_TagString: missile_tidemaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
