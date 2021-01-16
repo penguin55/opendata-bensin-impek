@@ -12,6 +12,7 @@ TagManager:
   - button_interact
   - poison
   - dynamite
+  - missile_tidemaster
   layers:
   - Default
   - TransparentFX

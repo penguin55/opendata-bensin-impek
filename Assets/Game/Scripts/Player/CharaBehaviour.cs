@@ -158,6 +158,7 @@ public class CharaBehaviour : MonoBehaviour
                 interact.DashingGun();
                 interact.DashingButtonInteract();
                 interact.DashingDynamite();
+                interact.DashingMissileTidemaster();
             }
         }
     }
@@ -257,6 +258,11 @@ public class CharaBehaviour : MonoBehaviour
             collision.GetComponent<CannonGK>()?.Explode();
         }
 
+        if (collision.CompareTag("missile_tidemaster"))
+        {
+            interact.missileTidemasterDetect = collision.gameObject;
+        }
+
         if (collision.CompareTag("button_interact"))
         {
             interact.buttonInteract = collision.gameObject;
@@ -286,6 +292,11 @@ public class CharaBehaviour : MonoBehaviour
         if (interact.buttonInteract && collision.CompareTag("button_interact"))
         {
             interact.buttonInteract = null;
+        }
+
+        if(interact.missileTidemasterDetect && collision.CompareTag("missile_tidemaster"))
+        {
+            interact.missileTidemasterDetect = null;
         }
     }
 

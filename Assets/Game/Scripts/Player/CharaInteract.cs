@@ -10,6 +10,7 @@ public class CharaInteract : MonoBehaviour
     [HideInInspector] public GameObject gunDetect;
     [HideInInspector] public GameObject buttonInteract;
     [HideInInspector] public GameObject dynamiteDetect;
+    [HideInInspector] public GameObject missileTidemasterDetect;
 
     [HideInInspector] public bool cancelDynamiteInteract;
 
@@ -36,6 +37,22 @@ public class CharaInteract : MonoBehaviour
                 DOVirtual.DelayedCall(2f, () => Destroy(temp)).timeScale = GameTime.PlayerTimeScale;
             }
             projectileDetect = null;
+        }
+    }
+
+    public void DashingMissileTidemaster()
+    {
+        if (missileTidemasterDetect)
+        {
+            GameObject temp = missileTidemasterDetect;
+            temp.transform.parent.GetComponent<MissileTM>().DashDeactiveMissile();
+            temp.transform.up = temp.transform.position - BossBehaviour.Instance.transform.position;
+            float distance = Mathf.Sqrt((BossBehaviour.Instance.transform.position - temp.transform.position).sqrMagnitude);
+            temp.transform.DOMove(BossBehaviour.Instance.transform.position, distance / 20f).SetEase(Ease.Linear).OnComplete(() =>
+            {
+                temp.transform.parent.GetComponent<MissileTM>().Explode();
+            }).timeScale = GameTime.PlayerTimeScale;
+            missileTidemasterDetect = null;
         }
     }
 
