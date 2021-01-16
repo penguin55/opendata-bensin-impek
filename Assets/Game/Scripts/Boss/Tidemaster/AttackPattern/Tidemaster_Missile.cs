@@ -19,7 +19,7 @@ public class Tidemaster_Missile : AttackEvent
 
     private bool deactiveMissileWasLaunch;
     private GameObject deactiveMissileProjectile;
-    private MissileBM deactiveMissileParent;
+    private MissileTM deactiveMissileParent;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -95,10 +95,10 @@ public class Tidemaster_Missile : AttackEvent
             }
         }
 
-        if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileBM>();
+        if (!activeMissile) deactiveMissileParent = spawnChoicePosition.GetComponent<MissileTM>();
 
         GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
-        spawnChoicePosition.GetComponent<MissileBM>().Launch(missile, .1f, activeMissile);
+        spawnChoicePosition.GetComponent<MissileTM>().Launch(missile, .1f, activeMissile);
 
         if (!activeMissile) deactiveMissileProjectile = missile;
     }
