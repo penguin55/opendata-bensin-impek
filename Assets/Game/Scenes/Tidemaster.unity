@@ -54594,8 +54594,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 4806305509244328611}
-  selectedCommands:
-  - {fileID: 4806305509244328615}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -88882,6 +88881,8 @@ MonoBehaviour:
   projectileDetect: {fileID: 0}
   gunDetect: {fileID: 0}
   buttonInteract: {fileID: 0}
+  dynamiteDetect: {fileID: 0}
+  cancelDynamiteInteract: 0
 --- !u!199 &7617955505021132804
 ParticleSystemRenderer:
   serializedVersion: 6
