@@ -54592,8 +54592,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4806305509244328611}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -54704,7 +54703,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &4806305509244328614
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -54722,7 +54721,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &4806305509244328615
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -96549,36 +96548,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9072407224048406391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072407224048406395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510e3ec2d54c0b34593c69ba6701e42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropItem: {fileID: 11400000, guid: bcb80e1765a3af0418e6ea4e961c5b31, type: 2}
-  explosion: {fileID: 1494745212}
-  health: 3
-  whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
-  flashDelay: 0.5
-  director: {fileID: 0}
-  patterns:
-  - attackName: Missile
-    attackEvent: {fileID: 9072407223697624652}
-  - attackName: Swipe
-    attackEvent: {fileID: 9072407222962520098}
-  - attackName: Laser
-    attackEvent: {fileID: 9072407223894612671}
-  - attackName: Machinegun
-    attackEvent: {fileID: 9072407222481301218}
-  fungus: {fileID: 2425233952247457736}
-  isDead: 0
-  stateSequences: 000000000500000004000000070000000600000001000000
 --- !u!4 &9072407224048406394
 Transform:
   m_ObjectHideFlags: 0
@@ -96602,9 +96571,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9072407224048406394}
-  - component: {fileID: 9072407224048406391}
   - component: {fileID: 9072407224048406388}
   - component: {fileID: 9072407224048406389}
+  - component: {fileID: 9072407224048406396}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -96612,6 +96581,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9072407224048406396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072407224048406395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3724f8e9356d54da5d80dc00a41303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItem: {fileID: 11400000, guid: ddf8a69579a3a92448c83827cf9439f0, type: 2}
+  explosion: {fileID: 1494745212}
+  health: 3
+  whiteFlash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
+  flashDelay: 0.5
+  director: {fileID: 0}
+  patterns:
+  - attackName: Missile
+    attackEvent: {fileID: 0}
+  - attackName: Torpedo
+    attackEvent: {fileID: 0}
+  - attackName: Energy Balls
+    attackEvent: {fileID: 0}
+  fungus: {fileID: 2425233952247457736}
+  isDead: 0
+  stateSequences: 
 --- !u!1001 &9079938215941457196
 PrefabInstance:
   m_ObjectHideFlags: 0
