@@ -81,6 +81,7 @@ public class MissileTM : DamageArea
     {
         alertProjectileSprite.enabled = false;
         DOTween.Kill("Timer_Missile");
+        CharaController.instance.TakeDamage();
         Destroy(projectile);
     }
 
