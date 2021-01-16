@@ -95675,51 +95675,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8888889, y: 0.88515854}
   m_EdgeRadius: 0
---- !u!114 &9072407223697624652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072407223697624690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43cb9880d800f3045b8f1f11ef741dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay_enter: 2
-  delay_prepare: 1
-  delay_animation: 0.4
-  delay_active: 0
-  delay_exit: 0.5
-  anim: {fileID: 3494481357032429281}
-  missileParent: {fileID: 9072407223555732738}
-  spawnProjectilePosition:
-  - {fileID: 9072407223447514358}
-  - {fileID: 9072407223715913986}
-  - {fileID: 9072407223866460760}
-  - {fileID: 9072407223923498252}
-  - {fileID: 9072407223365369620}
-  - {fileID: 212627067}
-  - {fileID: 58914851}
-  - {fileID: 670046188}
-  - {fileID: 1114656777}
-  - {fileID: 790471779}
-  - {fileID: 1229995834}
-  - {fileID: 740585404}
-  - {fileID: 1705493763}
-  - {fileID: 357249148}
-  - {fileID: 1304529872}
-  - {fileID: 239852728}
-  - {fileID: 816920531}
-  - {fileID: 1736234687}
-  - {fileID: 1905382864}
-  - {fileID: 625068126}
-  - {fileID: 1438250830}
-  projectilePrefabs: {fileID: 2267514720433620907, guid: ac3794d9f3ac5d843988dabc5dca869b,
-    type: 3}
-  fireRate: 1
-  attack: {fileID: 9072407224048406389}
 --- !u!4 &9072407223697624653
 Transform:
   m_ObjectHideFlags: 0
@@ -95744,7 +95699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9072407223697624653}
-  - component: {fileID: 9072407223697624652}
+  - component: {fileID: 9072407223697624691}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -95752,6 +95707,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9072407223697624691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072407223697624690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02951a0d4fe866a4794f1118ff907456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay_enter: 2
+  delay_prepare: 1
+  delay_animation: 0.4
+  delay_active: 0
+  delay_exit: 0.5
+  anim: {fileID: 3494481357032429281}
+  missileParent: {fileID: 9072407223555732738}
+  spawnProjectilePosition: []
+  projectilePrefabs: {fileID: 0}
+  fireRate: 1
+  attack: {fileID: 9072407224048406389}
 --- !u!4 &9072407223702572800
 Transform:
   m_ObjectHideFlags: 0
@@ -96601,7 +96579,7 @@ MonoBehaviour:
   director: {fileID: 0}
   patterns:
   - attackName: Missile
-    attackEvent: {fileID: 0}
+    attackEvent: {fileID: 9072407223697624691}
   - attackName: Torpedo
     attackEvent: {fileID: 0}
   - attackName: Energy Balls
