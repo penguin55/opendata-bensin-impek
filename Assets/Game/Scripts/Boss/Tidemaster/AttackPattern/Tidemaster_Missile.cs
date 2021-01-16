@@ -44,12 +44,10 @@ public class Tidemaster_Missile : AttackEvent
     {
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
-            .AppendCallback(SpawnProjectile)
             .AppendInterval(fireRate)
             .OnComplete(() =>
             {
-                if (queueSpawn.Count > 0) Attack();
-                else base.Attack();
+                base.Attack();
             })
             .SetId("BM_Missile");
     }
