@@ -65,6 +65,7 @@ public class MissileTM : DamageArea
         CameraShake.instance.Shake(duration, strength, vibrato);
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () =>
         {
+            CharaController.instance.TakeDamage();
             Destroy(projectile);
         });
     }
@@ -81,7 +82,6 @@ public class MissileTM : DamageArea
     {
         alertProjectileSprite.enabled = false;
         DOTween.Kill("Timer_Missile");
-        CharaController.instance.TakeDamage();
         Destroy(projectile);
     }
 
