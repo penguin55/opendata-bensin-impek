@@ -44,9 +44,13 @@ public class Tidemaster_EnergyBalls : AttackEvent
     {
         DOTween.Sequence()
             .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
             .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
             .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
             .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
             .AppendInterval(fireRate)
             .OnComplete(() =>
             {
