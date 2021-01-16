@@ -71,10 +71,6 @@ public class CharaBehaviour : MonoBehaviour
                 walkDustParticle2.Play();
                 walkDustParticle.Play();
                 break;
-            case GameData.BossType.HEADHUNTER:
-                CharaData.hp = 4;
-                CharaData.maxhp = 4;
-                break;
             default:
                 break;
         }
