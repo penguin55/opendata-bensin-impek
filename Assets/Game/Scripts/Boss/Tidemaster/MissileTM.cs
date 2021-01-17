@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using TomWill;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MissileTM : DamageArea
 {
@@ -16,6 +17,18 @@ public class MissileTM : DamageArea
     [SerializeField] private int vibrato;
 
     private bool deactiveMissileDashed;
+    private Tidemaster_Missile.SpawnProjectileArea spawnAreaData;
+    private UnityAction onExplodeCallback;
+
+    public void InitData(Tidemaster_Missile.SpawnProjectileArea spawnAreaData)
+    {
+        this.spawnAreaData = spawnAreaData;
+    }
+
+    public void OnExplodeCallback(UnityAction action)
+    {
+        onExplodeCallback = action;
+    }
 
     public void Launch(GameObject projectile, float timeToLaunch)
     {
@@ -25,6 +38,7 @@ public class MissileTM : DamageArea
         collider = GetComponent<Collider2D>();
         alertProjectileSprite = GetComponent<SpriteRenderer>();
         collider.enabled = false;
+        sign.enabled = false;
         alertProjectileSprite.enabled = true;
         this.projectile = projectile;
         alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
@@ -43,7 +57,10 @@ public class MissileTM : DamageArea
             smoke.Stop();
             projectile.GetComponent<Animator>().SetTrigger("Jammed");
             sign.enabled = true;
-            projectile.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            projectile.GetComponent<SpriteRenderer>().sortingOrder = 13;
+
+            CameraShake.instance.Shake(duration, strength, vibrato);
+
             DOVirtual.DelayedCall(timer, () => { if (!deactiveMissileDashed) OnExit_State(); }).SetId("Timer_Missile");
             
         });
@@ -53,6 +70,8 @@ public class MissileTM : DamageArea
     {
         base.OnExit_State();
 
+        sign.enabled = false;
+
         DOVirtual.DelayedCall(0.2f, () =>
         {
             alertProjectileSprite.enabled = false;
@@ -60,12 +79,18 @@ public class MissileTM : DamageArea
         projectile.GetComponent<SpriteRenderer>().enabled = false;
         ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
         particle.Play();
-        sign.enabled = false;
+        
         TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
         CameraShake.instance.Shake(duration, strength, vibrato);
+
+        spawnAreaData.platform.GetComponent<SpriteRenderer>().color = Color.red;
+        spawnAreaData.cannon.TakeDamage();
+        CharaController.instance.TakeDamage();
+
+        onExplodeCallback.Invoke();
+
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () =>
         {
-            CharaController.instance.TakeDamage();
             Destroy(projectile);
         });
     }

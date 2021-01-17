@@ -11,6 +11,7 @@ public class CharaInteract : MonoBehaviour
     [HideInInspector] public GameObject buttonInteract;
     [HideInInspector] public GameObject dynamiteDetect;
     [HideInInspector] public GameObject missileTidemasterDetect;
+    [HideInInspector] public GameObject cannonTidemasterDetect;
 
     [HideInInspector] public bool cancelDynamiteInteract;
 
@@ -81,6 +82,14 @@ public class CharaInteract : MonoBehaviour
         }
 
         cancelDynamiteInteract = false;
+    }
+
+    public void DashingCannonTidemaster()
+    {
+        if (cannonTidemasterDetect)
+        {
+            cannonTidemasterDetect.GetComponent<CannonShipInteractDetect>().Interact();
+        }
     }
 
     public void SetDynamite(GameObject dynamite)

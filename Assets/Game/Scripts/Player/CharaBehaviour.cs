@@ -159,6 +159,7 @@ public class CharaBehaviour : MonoBehaviour
                 interact.DashingButtonInteract();
                 interact.DashingDynamite();
                 interact.DashingMissileTidemaster();
+                interact.DashingCannonTidemaster();
             }
         }
     }
@@ -258,11 +259,6 @@ public class CharaBehaviour : MonoBehaviour
             collision.GetComponent<CannonGK>()?.Explode();
         }
 
-        if (collision.CompareTag("missile_tidemaster"))
-        {
-            interact.missileTidemasterDetect = collision.gameObject;
-        }
-
         if (collision.CompareTag("button_interact"))
         {
             interact.buttonInteract = collision.gameObject;
@@ -293,11 +289,6 @@ public class CharaBehaviour : MonoBehaviour
         {
             interact.buttonInteract = null;
         }
-
-        if(interact.missileTidemasterDetect && collision.CompareTag("missile_tidemaster"))
-        {
-            interact.missileTidemasterDetect = null;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -305,7 +296,17 @@ public class CharaBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("gun"))
         {
             interact.gunDetect = collision.gameObject;
-        } 
+        }
+
+        if (collision.gameObject.CompareTag("cannon"))
+        {
+            interact.cannonTidemasterDetect = collision.gameObject;
+        }
+
+        if (collision.gameObject.CompareTag("missile_tidemaster"))
+        {
+            interact.missileTidemasterDetect = collision.gameObject;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -313,6 +314,16 @@ public class CharaBehaviour : MonoBehaviour
         if (interact.gunDetect && collision.gameObject.CompareTag("gun"))
         {
             interact.gunDetect = null;
+        }
+
+        if (interact.cannonTidemasterDetect && collision.gameObject.CompareTag("cannon"))
+        {
+            interact.cannonTidemasterDetect = null;
+        }
+
+        if (interact.missileTidemasterDetect && collision.gameObject.CompareTag("missile_tidemaster"))
+        {
+            interact.missileTidemasterDetect = null;
         }
     }
 }

@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 7824270320105111656}
   - component: {fileID: 2025477358137630185}
   - component: {fileID: 5230600447869723714}
-  m_Layer: 15
-  m_Name: Projectile_Missile Tidemaster
-  m_TagString: missile_tidemaster
+  m_Layer: 0
+  m_Name: energy_balls
+  m_TagString: projectiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,14 +77,14 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 5
-  m_Sprite: {fileID: -8215201969662046217, guid: 98a9bc5a5614eec4492d702a696a6ee7,
+  m_SortingOrder: 12
+  m_Sprite: {fileID: -1820812062127319808, guid: fc3ec4db9a5259f42aaf3ae53ab4e011,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7777778, y: 3}
+  m_Size: {x: 0.8888889, y: 0.8888889}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,15 +100,15 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7777778, y: 3}
-    newSize: {x: 1.7777778, y: 3}
+    oldSize: {x: 1.2222222, y: 2.3333333}
+    newSize: {x: 0.8888889, y: 0.8888889}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 2267514720433620907}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9d54c260ed87f245960402e846b786c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2e92994bc1a75dc43b991d1d2be88a7b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2267514720433620907}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4952,7 +4952,7 @@ GameObject:
   - component: {fileID: 2779206040980018167}
   - component: {fileID: 1401216205639905578}
   - component: {fileID: 516639337942956194}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: smoketrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9676,7 +9676,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingOrder: 12
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9762,6 +9762,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3822063339221556482, guid: 211dcab5954c2524fa8acf584da217c7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8151571821326025621, guid: 211dcab5954c2524fa8acf584da217c7,
         type: 3}
       propertyPath: m_Name
@@ -9771,11 +9776,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8151571821326025621, guid: 211dcab5954c2524fa8acf584da217c7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211dcab5954c2524fa8acf584da217c7, type: 3}
@@ -9802,10 +9802,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1021415486233990807, guid: 7512100171dec2046b38a2db1fcafc93,
+    - target: {fileID: 5334033013022885888, guid: 7512100171dec2046b38a2db1fcafc93,
         type: 3}
-      propertyPath: m_Layer
-      value: 15
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7168396522216777839, guid: 7512100171dec2046b38a2db1fcafc93,
         type: 3}

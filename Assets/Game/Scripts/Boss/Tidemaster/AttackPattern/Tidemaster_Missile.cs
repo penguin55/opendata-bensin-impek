@@ -5,21 +5,30 @@ using UnityEngine.Events;
 
 public class Tidemaster_Missile : AttackEvent
 {
+    [System.Serializable]
+    public struct SpawnProjectileArea
+    {
+        public Transform centerPlatform;
+        public GameObject platform;
+        public CannonShipBehaviour cannon;
+    }
+
     [SerializeField] private GameObject missileParent;
-    [SerializeField] private Transform[] spawnProjectilePosition;
+    [SerializeField] private SpawnProjectileArea[] spawnProjectileArea;
     [SerializeField] private GameObject projectilePrefabs;
     [SerializeField] protected float fireRate;
 
     [SerializeField] private Animator attack;
 
-    private int randomSpawn;
+    private SpawnProjectileArea activeSpawnArea;
 
-    private List<Transform> queueSpawn;
-    private Transform spawnChoicePosition;
+    private int priorityChoose;
 
-    private bool deactiveMissileWasLaunch;
-    private GameObject deactiveMissileProjectile;
-    private MissileTM deactiveMissileParent;
+    private GameObject missileTMProjectile;
+    private MissileTM missileTMParent;
+
+    // Store random priority
+    private List<int> availablePriority;
 
     public override void ExecutePattern(UnityAction onComplete)
     {
@@ -28,14 +37,17 @@ public class Tidemaster_Missile : AttackEvent
 
     private void Start()
     {
-        queueSpawn = new List<Transform>();
+        availablePriority = new List<int>();
+
+        for (int i = 0; i < spawnProjectileArea.Length; i++ )
+        {
+            availablePriority.Add(i);
+        }
     }
 
     protected override void OnEnter_Attack()
     {
         missileParent.SetActive(true);
-        deactiveMissileWasLaunch = false;
-        queueSpawn.AddRange(spawnProjectilePosition);
 
         base.OnEnter_Attack();
     }
@@ -54,10 +66,9 @@ public class Tidemaster_Missile : AttackEvent
 
     protected override void OnExit_Attack()
     {
-        deactiveMissileWasLaunch = false;
-        if (!deactiveMissileParent.DeactiveMissileDashed())
+        if (!missileTMParent.DeactiveMissileDashed())
         {
-            Destroy(deactiveMissileProjectile);
+            Destroy(missileTMProjectile);
             missileParent.SetActive(false);
         }
         else
@@ -65,19 +76,39 @@ public class Tidemaster_Missile : AttackEvent
             DOVirtual.DelayedCall(3f, () => missileParent.SetActive(false));
         }
 
-        deactiveMissileProjectile = null;
+        activeSpawnArea.cannon.Activate(false);
+
+        missileTMProjectile = null;
 
         base.OnExit_Attack();
     }
 
     private void SpawnProjectile()
     {
-        randomSpawn = Random.Range(0, queueSpawn.Count);
-        spawnChoicePosition = queueSpawn[randomSpawn];
-        queueSpawn.Remove(spawnChoicePosition);
-        deactiveMissileParent = spawnChoicePosition.GetComponent<MissileTM>();
-        GameObject missile = Instantiate(projectilePrefabs, (spawnChoicePosition.position + Vector3.up * 30), Quaternion.identity, spawnChoicePosition);
-        spawnChoicePosition.GetComponent<MissileTM>().Launch(missile, .1f);
-        deactiveMissileProjectile = missile;
+        RandomPriority();
+
+        missileTMParent = activeSpawnArea.centerPlatform.GetComponent<MissileTM>();
+        GameObject missile = Instantiate(projectilePrefabs, (activeSpawnArea.centerPlatform.position + Vector3.up * 30), Quaternion.identity, activeSpawnArea.centerPlatform);
+        missileTMParent.InitData(activeSpawnArea);
+        missileTMParent.OnExplodeCallback(() => RemovePriority());
+        missileTMParent.Launch(missile, .1f);
+
+        activeSpawnArea.cannon.Activate(true);
+
+        missileTMProjectile = missile;
+    }
+
+    private void RandomPriority()
+    {
+        int minPriority = availablePriority[0];
+        int maxPriority = availablePriority[availablePriority.Count - 1];
+
+        priorityChoose = Random.Range(0, 101) % 2 == 0 ? minPriority : maxPriority;
+        activeSpawnArea = spawnProjectileArea[priorityChoose];
+    }
+
+    private void RemovePriority()
+    {
+        availablePriority.Remove(priorityChoose);
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - poison
   - dynamite
   - missile_tidemaster
+  - cannon
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - Environment-Shade
   - foreground
   - Overlay
-  - 
-  - 
+  - Projectile
+  - InteractableGun
   - 
   - 
   - 
