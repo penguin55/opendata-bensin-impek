@@ -46,6 +46,7 @@ public class CharaInteract : MonoBehaviour
         if (missileTidemasterDetect)
         {
             GameObject temp = missileTidemasterDetect;
+            temp.GetComponent<Animator>().SetTrigger("Dash");
             temp.transform.parent.GetComponent<MissileTM>().DashDeactiveMissile();
             temp.transform.up = temp.transform.position - BossBehaviour.Instance.transform.position;
             float distance = Mathf.Sqrt((BossBehaviour.Instance.transform.position - temp.transform.position).sqrMagnitude);
