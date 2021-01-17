@@ -31,7 +31,7 @@ public class TimelineManager : MonoBehaviour
             case GameData.BossType.UNHOLYCHARIOT:
                 currentDirector = unholyChariot;
                 break;
-            case GameData.BossType.HEADHUNTER:
+            case GameData.BossType.TIDEMASTER:
                 currentDirector = headhunter;
                 break;
         }

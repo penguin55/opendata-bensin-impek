@@ -93,10 +93,10 @@ public class DialogMainMenu : MonoBehaviour
                 GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
                 GameData.ActiveBossData = bossManager.bossesData[2];
                 break;
-            case "HeadHunter":
+            case "Tidemaster":
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
-                GameData.ActiveBoss = GameData.BossType.HEADHUNTER;
+                GameData.ActiveBoss = GameData.BossType.TIDEMASTER;
                 GameData.ActiveBossData = bossManager.bossesData[3];
                 break;
         }
@@ -123,7 +123,7 @@ public class DialogMainMenu : MonoBehaviour
                 grass.SetActive(false);
                 railTrack.SetActive(true);
                 break;
-            case GameData.BossType.HEADHUNTER:
+            case GameData.BossType.TIDEMASTER:
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 break;
@@ -147,7 +147,7 @@ public class DialogMainMenu : MonoBehaviour
                 bossIndex = 2;
                 BossDesc();
                 break;
-            case "HeadHunter":
+            case "Tidemaster":
                 bossIndex = 3;
                 BossDesc();
                 break;

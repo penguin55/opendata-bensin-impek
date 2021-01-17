@@ -83,7 +83,7 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => director.Play())
                     .AppendCallback(() => explosion.Play());
                 break;
-            case GameData.BossType.HEADHUNTER:
+            case GameData.BossType.TIDEMASTER:
                 break;
         }
     }

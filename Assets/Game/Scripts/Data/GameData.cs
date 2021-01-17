@@ -11,7 +11,7 @@ public static class GameData
     public enum BossType
     {
         TERRORCOPTER,
-        HEADHUNTER,
+        TIDEMASTER,
         GATEKEEPER,
         UNHOLYCHARIOT
     }

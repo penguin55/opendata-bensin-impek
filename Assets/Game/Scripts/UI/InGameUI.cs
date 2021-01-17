@@ -20,7 +20,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private int index = 0;
     [SerializeField] private Text dialog, chara;
 
-    [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, headhunter;
+    [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, tidemaster;
     [SerializeField] private Image activateItemImage;
 
     [Header("Obtain Drop UI")]
@@ -120,7 +120,7 @@ public class InGameUI : MonoBehaviour
         }
         if (GameData.ActiveItem.itemName.Contains("Kalimantan"))
         {
-            activateItemImage.overrideSprite = headhunter;
+            activateItemImage.overrideSprite = tidemaster;
         }
     }
 
@@ -291,7 +291,7 @@ public class InGameUI : MonoBehaviour
                 TWAudioController.StopBGMPlayed("ENGINE_TRAIN", true);
                 TWAudioController.StopBGMPlayed("BGM_ADVANCED", true);
                 break;
-            case GameData.BossType.HEADHUNTER:
+            case GameData.BossType.TIDEMASTER:
                 TWAudioController.StopBGMPlayed("BGM_BOSS", true);
                 break;
         }

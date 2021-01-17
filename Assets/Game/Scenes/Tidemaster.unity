@@ -26306,7 +26306,7 @@ MonoBehaviour:
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
-  bgm: terrorcopter
+  bgm: tidemaster
 --- !u!4 &1810792072
 Transform:
   m_ObjectHideFlags: 0
@@ -98095,7 +98095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9072407222221417255}
   m_Layer: 0
-  m_Name: 'Boss '
+  m_Name: Tidemaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
