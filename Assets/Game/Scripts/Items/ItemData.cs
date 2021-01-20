@@ -12,7 +12,8 @@ public class ItemData : ScriptableObject
         HEAL,
         SACRIFICE,
         LOWERDASHDELAY,
-        CHARGEDASH
+        CHARGEDASH,
+        INVISIBLE
     }
 
     public Sprite image;
@@ -50,9 +51,23 @@ public class ItemData : ScriptableObject
                 return LowerDashDelay();
             case ItemEffect.CHARGEDASH:
                 return ChargeDashEffect();
+            case ItemEffect.INVISIBLE:
+                return InvisibleEffect();
             default:
                 return false;
         }
+    }
+
+    public bool InvisibleEffect()
+    {
+        CharaController.instance.InvisibleFrame(amountEffect);
+        wasUsed = true;
+        GameVariables.PLAYER_IMMUNE = true;
+        DOVirtual.DelayedCall(timeEffect, () => {
+            GameVariables.PLAYER_IMMUNE = false;
+            CharaController.instance.InvisibleFrame(1);
+        });
+        return true;
     }
 
     public bool LowerDashDelay()

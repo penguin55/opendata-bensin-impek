@@ -18,8 +18,8 @@ MonoBehaviour:
   shortDesc: 
   itemId: 6
   wasUsed: 0
-  effect: 6
-  timeEffect: 0
+  effect: 7
+  timeEffect: 30
   amountEffect: 5
   cost: 0
   oneTimeUse: 1
