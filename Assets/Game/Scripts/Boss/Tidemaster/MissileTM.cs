@@ -83,7 +83,7 @@ public class MissileTM : DamageArea
         TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
         CameraShake.instance.Shake(duration, strength, vibrato);
 
-        spawnAreaData.platform.GetComponent<SpriteRenderer>().color = Color.red;
+        spawnAreaData.platform.SetActive(true);
         spawnAreaData.cannon.TakeDamage();
         CharaController.instance.TakeDamage();
 

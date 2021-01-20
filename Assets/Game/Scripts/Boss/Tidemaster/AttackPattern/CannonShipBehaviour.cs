@@ -27,6 +27,7 @@ public class CannonShipBehaviour : MonoBehaviour
     {
         isDamaged = true;
         Activate(false);
+        gameObject.SetActive(false);
     }
 
     protected void Launch()
