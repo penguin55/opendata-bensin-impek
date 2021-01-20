@@ -8,8 +8,17 @@ public class UIMiniGameTidemaster : MonoBehaviour
     [SerializeField] private Image bottomButtonActivated;
     [SerializeField] private Image leftButtonActivated;
     [SerializeField] private Image topButtonActivated;
-    [SerializeField] private Text timerInfo;
     [SerializeField] private Image timeFill;
+
+    [System.Serializable]
+    public struct SpriteDataShield
+    {
+        public Sprite active;
+        public Sprite inactive;
+    }
+
+    [Header("Sprite Detail")]
+    [SerializeField] private SpriteDataShield[] spriteDatas;
 
     public void ActivateMiniGame(bool flag, bool rightActivate = false, bool bottomActivate = false, bool leftActivate = false, bool topActivate = false)
     {
@@ -23,26 +32,26 @@ public class UIMiniGameTidemaster : MonoBehaviour
 
     public void ActivateRightButton(bool flag)
     {
-        if (flag) rightButtonActivated.color = Color.white;
-        else rightButtonActivated.color = Color.red;
+        if (flag) rightButtonActivated.sprite = spriteDatas[0].active;
+        else rightButtonActivated.sprite = spriteDatas[0].inactive;
     }
 
     public void ActivateBottomButton(bool flag)
     {
-        if (flag) bottomButtonActivated.color = Color.white;
-        else bottomButtonActivated.color = Color.red;
+        if (flag) bottomButtonActivated.sprite = spriteDatas[1].active;
+        else bottomButtonActivated.sprite = spriteDatas[1].inactive;
     }
 
     public void ActivateLeftButton(bool flag)
     {
-        if (flag) leftButtonActivated.color = Color.white;
-        else leftButtonActivated.color = Color.red;
+        if (flag) leftButtonActivated.sprite = spriteDatas[2].active;
+        else leftButtonActivated.sprite = spriteDatas[2].inactive;
     }
 
     public void ActivateTopButton(bool flag)
     {
-        if (flag) topButtonActivated.color = Color.white;
-        else topButtonActivated.color = Color.red;
+        if (flag) topButtonActivated.sprite = spriteDatas[3].active;
+        else topButtonActivated.sprite = spriteDatas[3].inactive;
     }
 
     public void UpdateTimerInfo(float baseTime, float time)
