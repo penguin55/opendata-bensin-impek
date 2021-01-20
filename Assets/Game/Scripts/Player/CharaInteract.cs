@@ -48,13 +48,14 @@ public class CharaInteract : MonoBehaviour
             GameObject temp = missileTidemasterDetect;
             temp.GetComponent<Animator>().SetTrigger("Dash");
             temp.transform.parent.GetComponent<MissileTM>().DashDeactiveMissile();
-            temp.transform.up = temp.transform.position - BossBehaviour.Instance.transform.position;
-            float distance = Mathf.Sqrt((BossBehaviour.Instance.transform.position - temp.transform.position).sqrMagnitude);
-            temp.transform.DOMove(BossBehaviour.Instance.transform.position, distance / 20f).SetEase(Ease.Linear).OnComplete(() =>
+            Vector2 startTempPos = temp.transform.position;
+            temp.transform.up = (Vector2) temp.transform.position - (startTempPos + (Vector2.up * 3f));
+            temp.transform.DOScale(Vector2.one * 0.5f, 0.65f).SetEase(Ease.InBack);
+            temp.transform.DOMove(startTempPos + (Vector2.up * 3f), 0.7f).SetEase(Ease.OutCubic).OnComplete(() =>
             {
                 temp.transform.parent.GetComponent<MissileTM>().Explode();
+                missileTidemasterDetect = null;
             }).timeScale = GameTime.PlayerTimeScale;
-            missileTidemasterDetect = null;
         }
     }
 
