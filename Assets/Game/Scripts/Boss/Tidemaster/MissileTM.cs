@@ -61,7 +61,14 @@ public class MissileTM : DamageArea
 
             CameraShake.instance.Shake(duration, strength, vibrato);
 
-            DOVirtual.DelayedCall(timer, () => { if (!deactiveMissileDashed) OnExit_State(); }).SetId("Timer_Missile");
+            DOVirtual.DelayedCall(timer, () =>
+            {
+                if (!deactiveMissileDashed) OnExit_State();
+                else
+                {
+                    Destroy(projectile);
+                }
+            });
             
         });
     }
@@ -106,8 +113,7 @@ public class MissileTM : DamageArea
     public void Explode()
     {
         alertProjectileSprite.enabled = false;
-        DOTween.Kill("Timer_Missile");
-        Destroy(projectile);
+        projectile.SetActive(false);
     }
 
     public bool DeactiveMissileDashed()
