@@ -26301,7 +26301,7 @@ MonoBehaviour:
   terrorcopter: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
   gatekeeper: {fileID: 21300000, guid: 7c918ca808b93644da96dd8d1829474f, type: 3}
   chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
-  headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
+  tidemaster: {fileID: 0}
   activateItemImage: {fileID: 1169302560}
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
