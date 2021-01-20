@@ -50,6 +50,8 @@ public class InGameUI : MonoBehaviour
         {
             case GameData.BossType.UNHOLYCHARIOT:
                 break;
+            case GameData.BossType.TIDEMASTER:
+                break;
             default:
                 PlayBGM(bgm);
                 break;

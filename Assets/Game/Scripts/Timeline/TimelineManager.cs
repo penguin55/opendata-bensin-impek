@@ -8,7 +8,7 @@ public class TimelineManager : MonoBehaviour
     public static TimelineManager instance;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private RuntimeAnimatorController runtime;
-    [SerializeField] private PlayableDirector terrorcopter, gatekeeper, headhunter, unholyChariot;
+    [SerializeField] private PlayableDirector terrorcopter, gatekeeper, tidemaster, unholyChariot;
     private PlayableDirector currentDirector;
     public PlayableDirector Director { get => currentDirector; set => currentDirector = value; }
 
@@ -32,7 +32,7 @@ public class TimelineManager : MonoBehaviour
                 currentDirector = unholyChariot;
                 break;
             case GameData.BossType.TIDEMASTER:
-                currentDirector = headhunter;
+                currentDirector = tidemaster;
                 break;
         }
         currentDirector.Play();
