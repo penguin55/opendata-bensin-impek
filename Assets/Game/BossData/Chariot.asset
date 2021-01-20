@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae19f6642d8546649a61e34b6945b814, type: 3}
   m_Name: Chariot
   m_EditorClassIdentifier: 
-  wasDie: 0
+  wasDie: 1
   bossLoseImage: {fileID: 21300000, guid: 5e37ae3168089754aa4fcf985067d86e, type: 3}
