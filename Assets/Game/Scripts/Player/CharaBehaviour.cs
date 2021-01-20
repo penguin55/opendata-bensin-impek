@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using TomWill;
 using UnityEngine;
 
@@ -86,6 +87,13 @@ public class CharaBehaviour : MonoBehaviour
 
         posisibaruY = Mathf.Clamp(posisilamaY, minY, maxY);
         transform.position = new Vector3(posisibaruX, posisibaruY, 0f);
+    }
+
+    public void InvisibleFrame(float value)
+    {
+        Color temp = sprite.color;
+        temp.a = value;
+        sprite.color = temp;
     }
 
     protected void MoveAccelerate()
