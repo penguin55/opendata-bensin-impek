@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Gate Keeper
   m_EditorClassIdentifier: 
   wasDie: 0
+  bossLoseImage: {fileID: 21300000, guid: ef2871065f776f945bd73b2567f2c33c, type: 3}

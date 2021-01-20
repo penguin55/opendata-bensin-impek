@@ -177,6 +177,10 @@ public class DialogMainMenu : MonoBehaviour
         for (int i = 0; i < bosses.Length; i++)
         {
             bosses[i].interactable = !bossManager.bossesData[i].wasDie;
+            if (bossManager.bossesData[i].wasDie)
+            {
+                bosses[i].GetComponent<Image>().sprite = bossManager.bossesData[i].bossLoseImage;
+            }
         }
     }
 

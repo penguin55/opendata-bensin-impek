@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Terrorcopter
   m_EditorClassIdentifier: 
   wasDie: 0
+  bossLoseImage: {fileID: 21300000, guid: ec1530931d02d53438684f00ca55e3f4, type: 3}

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Tide Master
   m_EditorClassIdentifier: 
   wasDie: 0
+  bossLoseImage: {fileID: 21300000, guid: bbb20e479d4e63f45b8cc667cc7a4a33, type: 3}
