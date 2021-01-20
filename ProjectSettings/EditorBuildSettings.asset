@@ -20,9 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Chariot.unity
     guid: 6475d27e6e71a6f4b990ccc8bdede171
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Game/Scenes/Tidemaster.unity
+    guid: 27c958e873fc20446a52137a04dbf477
   - enabled: 1
     path: Assets/Game/Scenes/TrainingRoom_Item.unity
     guid: 558645418030ca34e8fa65e95e5d1f17

@@ -13,7 +13,7 @@ public class DialogMainMenu : MonoBehaviour
     [SerializeField] private BossManager bossManager;
     [SerializeField] private Button[] bosses;
     [SerializeField] Camera mainCamera;
-    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass, railTrack, cannon;
+    [SerializeField] private GameObject bossChoicePanel, itemChoicePanel, dialogPanel, narasiPanel, environment, grass, railTrack, cannon, shipPlatform;
     [SerializeField] private GameObject tv, tv1, tv2;
     [SerializeField] private FungusController fungusController;
     [SerializeField] private ListItemUIManager listUIManager;
@@ -47,6 +47,11 @@ public class DialogMainMenu : MonoBehaviour
         TWAudioController.PlayBGMAdvanced("BGM_ADVANCED", "chariot_cutscene", AudioLoop.LoopType.LOOP_WITH_INTRO, 190.35f, 361f);
     }
 
+    public void PlayBGMTidemaster()
+    {
+        TWAudioController.PlayBGM("BGM", "tidemaster");
+    }
+
     public void ConfirmSelectedBoss()
     {
         OpenBossPanel(false);
@@ -68,6 +73,7 @@ public class DialogMainMenu : MonoBehaviour
         tv2.SetActive(false);
         cannon.SetActive(false);
         railTrack.SetActive(false);
+        shipPlatform.SetActive(false);
         switch (activeBoss)
         {
             case "Terrorcopter":
@@ -94,8 +100,9 @@ public class DialogMainMenu : MonoBehaviour
                 GameData.ActiveBossData = bossManager.bossesData[2];
                 break;
             case "Tidemaster":
+                grass.SetActive(false);
+                shipPlatform.SetActive(true);
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
-                grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 GameData.ActiveBoss = GameData.BossType.TIDEMASTER;
                 GameData.ActiveBossData = bossManager.bossesData[3];
                 break;
