@@ -36,8 +36,9 @@ public class CharaBehaviour : MonoBehaviour
     [SerializeField] protected ParticleSystem walkDustParticle,walkDustParticle2, dashDustParticle;
 
     [SerializeField] private CharaInteract interact;
-    [SerializeField]private bool clamp;
+    [SerializeField] private bool clamp;
     [SerializeField] private Transform placeholderHand;
+    [SerializeField] private GameObject markDown;
 
 
     public void Init()
@@ -94,6 +95,20 @@ public class CharaBehaviour : MonoBehaviour
         Color temp = sprite.color;
         temp.a = value;
         sprite.color = temp;
+    }
+
+    public void MarkDown(bool flag)
+    {
+        if (flag)
+        {
+            markDown.transform.position = transform.position;
+            markDown.SetActive(true);
+        }
+        else if (!flag)
+        {
+            transform.position = markDown.transform.position;
+            markDown.SetActive(false);
+        }
     }
 
     protected void MoveAccelerate()

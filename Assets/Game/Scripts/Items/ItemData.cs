@@ -13,7 +13,8 @@ public class ItemData : ScriptableObject
         SACRIFICE,
         LOWERDASHDELAY,
         CHARGEDASH,
-        INVISIBLE
+        INVISIBLE,
+        GETBACK
     }
 
     public Sprite image;
@@ -53,9 +54,21 @@ public class ItemData : ScriptableObject
                 return ChargeDashEffect();
             case ItemEffect.INVISIBLE:
                 return InvisibleEffect();
+            case ItemEffect.GETBACK:
+                return GetBackEffect();
             default:
                 return false;
         }
+    }
+
+    public bool GetBackEffect()
+    {
+        CharaController.instance.MarkDown(true);
+        DOVirtual.DelayedCall(timeEffect, () =>
+        {
+            CharaController.instance.MarkDown(false);
+        });
+        return true;
     }
 
     public bool InvisibleEffect()

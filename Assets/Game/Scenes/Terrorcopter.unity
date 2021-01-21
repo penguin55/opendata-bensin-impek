@@ -23427,6 +23427,12 @@ MonoBehaviour:
   onExitEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1669500678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6058475600129594587, guid: 364816af2e01b9a40a61e1ed571789e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6058475601731918813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1669522504
 Animator:
   serializedVersion: 3
@@ -23990,7 +23996,7 @@ MonoBehaviour:
   terrorcopter: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
   gatekeeper: {fileID: 21300000, guid: 7c918ca808b93644da96dd8d1829474f, type: 3}
   chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
-  headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
+  tidemaster: {fileID: 0}
   activateItemImage: {fileID: 1169302560}
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
@@ -69017,6 +69023,75 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &6058475601731918813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594581, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058475600129594587, guid: 364816af2e01b9a40a61e1ed571789e8,
+        type: 3}
+      propertyPath: m_Name
+      value: Mark Down
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 364816af2e01b9a40a61e1ed571789e8, type: 3}
 --- !u!212 &6293562873476618241
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88794,6 +88869,11 @@ PrefabInstance:
       propertyPath: chargeDash
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7474957988376242867, guid: eac637af8ac64c245b0c6cf79f1324f2,
+        type: 3}
+      propertyPath: markDown
+      value: 
+      objectReference: {fileID: 1669500678}
     - target: {fileID: 7474957988376242869, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88888,6 +88968,8 @@ MonoBehaviour:
   gunDetect: {fileID: 0}
   buttonInteract: {fileID: 0}
   dynamiteDetect: {fileID: 0}
+  missileTidemasterDetect: {fileID: 0}
+  cannonTidemasterDetect: {fileID: 0}
   cancelDynamiteInteract: 0
 --- !u!199 &7617955505021132804
 ParticleSystemRenderer:

@@ -16,12 +16,12 @@ MonoBehaviour:
   itemName: Barong Tengkok
   itemDesc: 
   shortDesc: 
-  itemId: 6
+  itemId: 7
   wasUsed: 0
-  effect: 6
-  timeEffect: 0
-  amountEffect: 5
+  effect: 8
+  timeEffect: 5
+  amountEffect: 0
   cost: 0
   oneTimeUse: 1
-  activateOnStart: 1
+  activateOnStart: 0
   onDelay: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Kalimantan Mask
   itemDesc: 
   shortDesc: 
-  itemId: 6
+  itemId: 8
   wasUsed: 0
   effect: 7
   timeEffect: 30
