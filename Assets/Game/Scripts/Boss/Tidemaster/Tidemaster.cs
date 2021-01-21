@@ -22,8 +22,7 @@ public class Tidemaster : BossBehaviour
     private State_Tidemaster currentState;
     [SerializeField] private State_Tidemaster[] stateSequences;
     private int stateIndex;
-    [SerializeField] private Sprite environmentTideMaster;
-    [SerializeField] private GameObject tidemasterWater;
+    [SerializeField] private SpriteRenderer dirtyWater;
 
     private void Start()
     {
@@ -68,7 +67,7 @@ public class Tidemaster : BossBehaviour
 
     public void ChangeEnvironment()
     {
-        tidemasterWater.GetComponent<SpriteRenderer>().sprite = environmentTideMaster;
+        dirtyWater.DOFade(0, 1);
     }
 
 
