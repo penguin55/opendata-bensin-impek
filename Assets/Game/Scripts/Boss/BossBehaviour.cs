@@ -84,6 +84,9 @@ public class BossBehaviour : MonoBehaviour
                     .AppendCallback(() => explosion.Play());
                 break;
             case GameData.BossType.TIDEMASTER:
+                DOTween.Sequence()
+                    .AppendCallback(() => director.Play())
+                    .AppendCallback(() => explosion.Play());
                 break;
         }
     }
