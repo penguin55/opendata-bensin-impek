@@ -7300,7 +7300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay_enter: 2
   delay_prepare: 1
-  delay_animation: 0
+  delay_animation: 0.4
   delay_active: 0
   delay_exit: 4.5
   anim: {fileID: 3494481357032429281}
@@ -19831,7 +19831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7356534250296921465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.8, z: 0}
+  m_LocalPosition: {x: 5.4, y: -5.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 9072407222221417255}
@@ -21022,7 +21022,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &4806305509244328644
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -23278,7 +23278,7 @@ MonoBehaviour:
     attackEvent: {fileID: 1770321040}
   fungus: {fileID: 2425233952247457736}
   isDead: 0
-  stateSequences: 000000000400000005000000060000000400000001000000
+  stateSequences: 0000000005000000060000000400000001000000
   dirtyWater: {fileID: 199146101}
 --- !u!114 &9072407224048406397
 MonoBehaviour:
