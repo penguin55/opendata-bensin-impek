@@ -32,8 +32,8 @@ TagManager:
   - Overlay
   - Projectile
   - InteractableGun
-  - 
-  - 
+  - DamageAreaShipPlatform
+  - Player
   - 
   - 
   - 

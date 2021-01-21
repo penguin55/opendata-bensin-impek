@@ -9,6 +9,12 @@ public class Tidemaster_Shield : AttackEvent
     [SerializeField] private float shieldTimer;
     [SerializeField] private UIMiniGameTidemaster uiMiniGame;
 
+    [SerializeField] private Transform startLaunchPos;
+    [SerializeField] private GameObject projectileTorpedo;
+    [SerializeField] private float durationExplodeTorpedo;
+    [SerializeField] private float strengthExplodeTorpedo;
+    [SerializeField] private int vibratoExplodeTorpedo;
+
     private bool miniGameActive;
     // Button status
     private bool rightButtonIsActive;
@@ -61,8 +67,13 @@ public class Tidemaster_Shield : AttackEvent
 
     protected override void Attack()
     {
-        Debug.Log(playerShipImmune ? "Immune" : "Damage Taken");
-        base.Attack();
+        if (playerShipImmune)
+        {
+            base.Attack();
+        } else
+        {
+            Launch(() => base.Attack());
+        }
     }
 
     protected override void OnExit_Attack()
@@ -72,26 +83,30 @@ public class Tidemaster_Shield : AttackEvent
 
     private void OnInputMiniGame()
     {
-        if (Input.GetKey(InputManager.instance.moveRight))
+        if (Input.GetKeyDown(InputManager.instance.moveRight))
         {
+            Validate(rightButtonIsActive);
             rightButtonIsActive = true;
             uiMiniGame.ActivateRightButton(true);
         }
 
-        if (Input.GetKey(InputManager.instance.moveDown))
+        if (Input.GetKeyDown(InputManager.instance.moveDown))
         {
+            Validate(bottomButtonIsActive);
             bottomButtonIsActive = true;
             uiMiniGame.ActivateBottomButton(true);
         }
 
-        if (Input.GetKey(InputManager.instance.moveLeft))
+        if (Input.GetKeyDown(InputManager.instance.moveLeft))
         {
+            Validate(leftButtonIsActive);
             leftButtonIsActive = true;
             uiMiniGame.ActivateLeftButton(true);
         }
 
-        if (Input.GetKey(InputManager.instance.moveUp))
+        if (Input.GetKeyDown(InputManager.instance.moveUp))
         {
+            Validate(topButtonIsActive);
             topButtonIsActive = true;
             uiMiniGame.ActivateTopButton(true);
         }
@@ -140,5 +155,28 @@ public class Tidemaster_Shield : AttackEvent
     private bool CheckAllButtonActive()
     {
         return rightButtonIsActive && bottomButtonIsActive && leftButtonIsActive && topButtonIsActive;
+    }
+
+    private void Launch(UnityAction action)
+    {
+        projectileTorpedo.transform.position = startLaunchPos.position;
+        projectileTorpedo.SetActive(true);
+
+        projectileTorpedo.transform.DOLocalMoveY(-4f, 2f).SetEase(Ease.InOutQuart)
+            .OnComplete(()=>
+            {
+                CameraShake.instance.Shake(durationExplodeTorpedo, strengthExplodeTorpedo, vibratoExplodeTorpedo);
+                projectileTorpedo.transform.position = startLaunchPos.position;
+                projectileTorpedo.SetActive(false);
+                action.Invoke();
+            });
+    }
+
+    private void Validate(bool flag)
+    {
+        if (flag)
+        {
+            CameraShake.instance.Shake(0.2f, 1, 50);
+        }
     }
 }
