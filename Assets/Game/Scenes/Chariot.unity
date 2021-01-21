@@ -40342,7 +40342,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -84400,7 +84400,7 @@ PrefabInstance:
     - target: {fileID: 3029883795090811892, guid: 4cfb819674b285f468b29c458e75b2ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -2.24
       objectReference: {fileID: 0}
     - target: {fileID: 3029883795090811892, guid: 4cfb819674b285f468b29c458e75b2ad,
         type: 3}
@@ -84480,7 +84480,7 @@ PrefabInstance:
     - target: {fileID: 3029883795978286090, guid: 4cfb819674b285f468b29c458e75b2ad,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3029883795978286091, guid: 4cfb819674b285f468b29c458e75b2ad,
         type: 3}
