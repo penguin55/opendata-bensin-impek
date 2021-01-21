@@ -22,6 +22,8 @@ public class InGameUI : MonoBehaviour
 
     [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, tidemaster;
     [SerializeField] private Image activateItemImage;
+    [SerializeField] private GameObject timerObject;
+    [SerializeField] private Image timeFill;
 
     [Header("Obtain Drop UI")]
     [SerializeField] private Image dropImage;
@@ -367,5 +369,19 @@ public class InGameUI : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void UpdateCooldownTimer(float baseTime, float time)
+    {
+        //timerInfo.text = "Torpedo Launch in " + (int) time - 1 + " seconds";
+        //timeFill.fillAmount = time / baseTime;
+        float offset = time / baseTime; ;
+        Vector2 scaleFill = new Vector2(offset, 1f);
+        timeFill.rectTransform.localScale = scaleFill;
+    }
+
+    public void ActivatedCooldownTimer(bool flag)
+    {
+        timerObject.SetActive(flag);
     }
 }

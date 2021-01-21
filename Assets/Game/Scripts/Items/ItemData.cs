@@ -26,6 +26,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private ItemEffect effect;
     [SerializeField] private float timeEffect;
     [SerializeField] private float amountEffect;
+    [SerializeField] private float timeCooldown;
     [SerializeField] private float cost;
     [SerializeField] private bool oneTimeUse;
     [SerializeField] private bool activateOnStart;
@@ -67,6 +68,17 @@ public class ItemData : ScriptableObject
         DOVirtual.DelayedCall(timeEffect, () =>
         {
             CharaController.instance.MarkDown(false);
+        }).OnComplete(() =>
+        {
+            DOVirtual.Float(0, timeCooldown, timeCooldown, (time) =>
+            {
+                InGameUI.instance.ActivatedCooldownTimer(true);
+                InGameUI.instance.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
+            }).OnComplete(() =>
+            {
+                InGameUI.instance.ActivatedCooldownTimer(false);
+                wasUsed = false;
+            });
         });
         return true;
     }

@@ -21,7 +21,8 @@ MonoBehaviour:
   effect: 8
   timeEffect: 5
   amountEffect: 0
+  timeCooldown: 30
   cost: 0
-  oneTimeUse: 1
+  oneTimeUse: 0
   activateOnStart: 0
   onDelay: 0
