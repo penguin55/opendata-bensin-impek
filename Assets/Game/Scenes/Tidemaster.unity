@@ -1182,6 +1182,10 @@ PlayableDirector:
     value: {fileID: 7474957988985871383}
   - key: {fileID: 7817096744018269821, guid: 7fc61f6c8a5065340a48659eebcaaece, type: 2}
     value: {fileID: 7474957988985871387}
+  - key: {fileID: -9097974259846764666, guid: 7fc61f6c8a5065340a48659eebcaaece, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5371551293499852309, guid: 7fc61f6c8a5065340a48659eebcaaece, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &70183149
@@ -1445,7 +1449,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96276229}
-  - component: {fileID: 96276230}
   m_Layer: 0
   m_Name: CamParent
   m_TagString: Untagged
@@ -1468,19 +1471,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &96276230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96276228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd2002e10811bb48abd1863289400b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectFloat: {fileID: 1667657531}
 --- !u!1 &107333335
 GameObject:
   m_ObjectHideFlags: 0
@@ -16562,6 +16552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1667657532}
   - component: {fileID: 1667657533}
+  - component: {fileID: 1667657534}
   m_Layer: 0
   m_Name: PlatformShip
   m_TagString: Untagged
@@ -16636,6 +16627,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1667657534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667657531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f3063cc5b915b4485b5b99d85a6471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectFloat: {fileID: 1667657531}
 --- !u!95 &1669522504
 Animator:
   serializedVersion: 3
@@ -20325,9 +20329,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 4806305509244328626}
+  - {fileID: 4806305509244328615}
   selectedCommands:
-  - {fileID: 4806305509244328628}
+  - {fileID: 4806305509244328621}
   variables: []
   description: 
   stepPause: 0
@@ -20448,7 +20452,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.4382
     y: 55.40721
-    width: 134
+    width: 94
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20622,7 +20626,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 7074999583322714915}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: cba316e08625e2f418e635a24fab8a73, type: 3}
+  portrait: {fileID: 21300000, guid: a23ff8d31c7e7644aa5540016e9e1c4e, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 6424593295188166379}
@@ -20800,7 +20804,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 145.9382
     y: 97.40721
-    width: 140.4
+    width: 100.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -22267,7 +22271,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: cba316e08625e2f418e635a24fab8a73, type: 3}
+  - {fileID: 21300000, guid: a23ff8d31c7e7644aa5540016e9e1c4e, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
@@ -22464,7 +22468,7 @@ PrefabInstance:
     - target: {fileID: 7474957988376242869, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7474957988376242869, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}

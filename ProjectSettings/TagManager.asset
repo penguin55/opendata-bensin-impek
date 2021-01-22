@@ -14,6 +14,7 @@ TagManager:
   - dynamite
   - missile_tidemaster
   - cannon
+  - energyball
   layers:
   - Default
   - TransparentFX
