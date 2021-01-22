@@ -22,7 +22,7 @@ public class EnergyBalssTM : DamageArea
         collider.enabled = false;
         this.projectile = projectile;
         projectile.GetComponent<Collider2D>().enabled = true;
-        TWAudioController.PlaySFX("SFX_BOSS", "rocket_launch");
+        TWAudioController.PlaySFX("SFX_BOSS", "energyball_launch");
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
 
@@ -49,7 +49,7 @@ public class EnergyBalssTM : DamageArea
         projectile.GetComponent<SpriteRenderer>().enabled = false;
         ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
         particle.Play();
-        TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
+        TWAudioController.PlaySFX("SFX_BOSS", "energyball_impact");
         CameraShake.instance.Shake(duration, strength, vibrato);
         DOVirtual.DelayedCall(particle.main.startLifetimeMultiplier, () =>
         {

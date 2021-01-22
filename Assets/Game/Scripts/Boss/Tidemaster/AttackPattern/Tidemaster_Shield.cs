@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,6 +32,7 @@ public class Tidemaster_Shield : AttackEvent
 
     protected override void OnEnter_Attack()
     {
+        TWAudioController.PlaySFX("BOSS_SFX", "shield_popup");
         miniGameActive = true;
         GameVariables.FREEZE_INPUT = true;
 
@@ -159,6 +161,7 @@ public class Tidemaster_Shield : AttackEvent
 
     private void Launch(UnityAction action)
     {
+        TWAudioController.PlaySFX("BOSS_SFX", "torpedo_launch");
         projectileTorpedo.transform.position = startLaunchPos.position;
         projectileTorpedo.SetActive(true);
 
@@ -166,6 +169,8 @@ public class Tidemaster_Shield : AttackEvent
             .OnComplete(()=>
             {
                 CameraShake.instance.Shake(durationExplodeTorpedo, strengthExplodeTorpedo, vibratoExplodeTorpedo);
+                TWAudioController.PlaySFX("BOSS_SFX", "torpedo_impact");
+                CharaController.instance.TakeDamage();
                 projectileTorpedo.transform.position = startLaunchPos.position;
                 projectileTorpedo.SetActive(false);
                 action.Invoke();
@@ -176,7 +181,12 @@ public class Tidemaster_Shield : AttackEvent
     {
         if (flag)
         {
+            TWAudioController.PlaySFX("BOSS_SFX", "shield_wrong");
             CameraShake.instance.Shake(0.2f, 1, 50);
+        }
+        else
+        {
+            TWAudioController.PlaySFX("BOSS_SFX", "shield_right");
         }
     }
 }

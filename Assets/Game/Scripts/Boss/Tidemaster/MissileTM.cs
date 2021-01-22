@@ -42,7 +42,7 @@ public class MissileTM : DamageArea
         alertProjectileSprite.enabled = true;
         this.projectile = projectile;
         alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
-        TWAudioController.PlaySFX("SFX_BOSS", "rocket_launch");
+        TWAudioController.PlaySFX("SFX_BOSS", "bigrocket_launch");
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
 
@@ -87,7 +87,7 @@ public class MissileTM : DamageArea
         ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();
         particle.Play();
         
-        TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
+        TWAudioController.PlaySFX("SFX_BOSS", "bigrocket_explosion");
         CameraShake.instance.Shake(duration, strength, vibrato);
 
         spawnAreaData.platform.SetActive(true);
