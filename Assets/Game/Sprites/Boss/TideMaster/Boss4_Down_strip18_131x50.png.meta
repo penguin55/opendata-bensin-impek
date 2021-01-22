@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 7dab5092abab2344db2ecdbcd9aab046
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8367191763376591400
+    second: Boss4_Down_strip18_131x50_0
+  - first:
+      213: 7363663595982523007
+    second: Boss4_Down_strip18_131x50_1
+  - first:
+      213: -1217491064965861415
+    second: Boss4_Down_strip18_131x50_2
+  - first:
+      213: 95037993971105303
+    second: Boss4_Down_strip18_131x50_3
+  - first:
+      213: 5648344571307065689
+    second: Boss4_Down_strip18_131x50_4
+  - first:
+      213: -4664320998613742266
+    second: Boss4_Down_strip18_131x50_5
+  - first:
+      213: 4415735180030682459
+    second: Boss4_Down_strip18_131x50_6
+  - first:
+      213: 3738136164224101031
+    second: Boss4_Down_strip18_131x50_7
+  - first:
+      213: -3732846779286871777
+    second: Boss4_Down_strip18_131x50_8
+  - first:
+      213: -1098519334162068682
+    second: Boss4_Down_strip18_131x50_9
+  - first:
+      213: 6438958203409180575
+    second: Boss4_Down_strip18_131x50_10
+  - first:
+      213: -6711219534638373550
+    second: Boss4_Down_strip18_131x50_11
+  - first:
+      213: 7001176813309428903
+    second: Boss4_Down_strip18_131x50_12
+  - first:
+      213: 7143065831736770968
+    second: Boss4_Down_strip18_131x50_13
+  - first:
+      213: -2082465141802215652
+    second: Boss4_Down_strip18_131x50_14
+  - first:
+      213: 8106251639184514522
+    second: Boss4_Down_strip18_131x50_15
+  - first:
+      213: 3598021378895652596
+    second: Boss4_Down_strip18_131x50_16
+  - first:
+      213: 4232509148478750926
+    second: Boss4_Down_strip18_131x50_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 9
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd2d582c63c1eb80800000000000000
+      internalID: -8367191763376591400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a8304b60df03660800000000000000
+      internalID: 7363663595982523007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df6f73b35a9a1fe0800000000000000
+      internalID: -1217491064965861415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e30de4d84a15100800000000000000
+      internalID: 95037993971105303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95183cd1673f26e40800000000000000
+      internalID: 5648344571307065689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_5
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d8b3fa3c0054fb0800000000000000
+      internalID: -4664320998613742266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_6
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55aceb20c7d74d30800000000000000
+      internalID: 4415735180030682459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_7
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa6e9e290780e330800000000000000
+      internalID: 3738136164224101031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_8
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1125a7b1a3423cc0800000000000000
+      internalID: -3732846779286871777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_9
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b0f5c5c7641c0f0800000000000000
+      internalID: -1098519334162068682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_10
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97aac5fe56cb5950800000000000000
+      internalID: 6438958203409180575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_11
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255a73c0465fcd2a0800000000000000
+      internalID: -6711219534638373550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_12
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a48207c73d292160800000000000000
+      internalID: 7001176813309428903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_13
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89186e34784412360800000000000000
+      internalID: 7143065831736770968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_14
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17deb5acf89913e0800000000000000
+      internalID: -2082465141802215652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_15
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add5585cae03f7070800000000000000
+      internalID: 8106251639184514522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_16
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f62657816dbee130800000000000000
+      internalID: 3598021378895652596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss4_Down_strip18_131x50_17
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 0
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0caaf45a4ecba30800000000000000
+      internalID: 4232509148478750926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

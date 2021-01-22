@@ -29157,6 +29157,10 @@ MonoBehaviour:
   projectileDetect: {fileID: 0}
   gunDetect: {fileID: 0}
   buttonInteract: {fileID: 0}
+  dynamiteDetect: {fileID: 0}
+  missileTidemasterDetect: {fileID: 0}
+  cannonTidemasterDetect: {fileID: 0}
+  cancelDynamiteInteract: 0
 --- !u!95 &7648650783478661042
 Animator:
   serializedVersion: 3
