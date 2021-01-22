@@ -22,8 +22,10 @@ MonoBehaviour:
   itemId: 4
   wasUsed: 0
   effect: 0
-  timeEffect: 3
+  timeEffect: 15
   amountEffect: 0
+  timeCooldown: 0
   cost: 0
   oneTimeUse: 1
   activateOnStart: 0
+  onDelay: 0
