@@ -29,7 +29,7 @@ public class Tidemaster : BossBehaviour
         Instance = this;
         stateIndex = 0;
         currentState = State_Tidemaster.PREPARATION;
-
+        TWAudioController.PlayBGM("ENGINE_SHIP", "submarine_engine", TWAudioController.PlayType.DEFAULT);
         Sprite = GetComponent<SpriteRenderer>();
         Init();
         UpdateState();
