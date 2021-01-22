@@ -90,6 +90,7 @@ public class Tidemaster : BossBehaviour
 
     protected override void Die()
     {
+        DOTween.Kill("MissileTM");
         base.Die();
     }
 

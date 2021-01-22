@@ -20428,9 +20428,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 4806305509244328615}
+  - {fileID: 4806305509244328626}
   selectedCommands:
-  - {fileID: 4806305509244328621}
+  - {fileID: 4806305509244328637}
   variables: []
   description: 
   stepPause: 0
@@ -20551,7 +20551,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.4382
     y: 55.40721
-    width: 94
+    width: 132
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20903,7 +20903,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 145.9382
     y: 97.40721
-    width: 100.4
+    width: 138
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21269,8 +21269,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -21299,8 +21299,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0

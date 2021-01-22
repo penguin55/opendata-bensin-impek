@@ -12,6 +12,10 @@ public class CharaController : CharaBehaviour
     //[SerializeField] private KeyCode moveLeft;
     //[SerializeField] private KeyCode dash;
 
+    private void Awake()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -193,5 +197,15 @@ public class CharaController : CharaBehaviour
         {
             UseItem();
         }
+    }
+
+    private void OnEnable()
+    {
+        instance = this;
+    }
+
+    private void OnDisable()
+    {
+        instance = null;
     }
 }

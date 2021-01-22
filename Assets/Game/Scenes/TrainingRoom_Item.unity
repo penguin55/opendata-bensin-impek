@@ -22771,9 +22771,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 3987098111272281574}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1712173870308042964
 GameObject:
   m_ObjectHideFlags: 0
@@ -22881,9 +22881,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 829076386605751476}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &1712173870366079914
 Transform:
   m_ObjectHideFlags: 0
@@ -23049,9 +23049,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 6033292489350385009}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &1712173870409739518
 Transform:
   m_ObjectHideFlags: 0
@@ -23117,9 +23117,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 3987049690527959716}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &1712173870907431346
 Transform:
   m_ObjectHideFlags: 0
@@ -23319,9 +23319,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 4427686370633121447}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!1 &1712173871274120100
 GameObject:
   m_ObjectHideFlags: 0
@@ -24282,8 +24282,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 4806305509244328656}
+  selectedCommands:
+  - {fileID: 4806305509244328647}
   variables: []
   description: 
   stepPause: 0
@@ -24492,7 +24494,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 10.933428
     y: 143.18703
-    width: 138.76715
+    width: 140.41098
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24840,8 +24842,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -24870,8 +24872,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -24900,8 +24902,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -24923,7 +24925,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 99.18085
     y: 91.64061
-    width: 89.45207
+    width: 91.0959
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -25013,8 +25015,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -25479,8 +25481,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -25509,8 +25511,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -25733,7 +25735,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 159.59317
     y: 206.07356
-    width: 87.260284
+    width: 88.35617
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -25828,8 +25830,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -25858,8 +25860,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -26110,7 +26112,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.93344
     y: 144.21796
-    width: 106.98631
+    width: 108.90413
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26336,8 +26338,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -26366,8 +26368,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -26590,7 +26592,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 23.716928
     y: 202.98083
-    width: 114.657555
+    width: 117.12331
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26792,7 +26794,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -230.64262
     y: 118.44475
-    width: 88.35617
+    width: 89.72604
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26903,8 +26905,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -26933,8 +26935,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -27275,8 +27277,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -27692,7 +27694,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -105.76761
     y: 114.321014
-    width: 113.56166
+    width: 115.75344
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -27821,8 +27823,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -28132,7 +28134,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -237.93259
     y: 177.2076
-    width: 86.1644
+    width: 86.98631
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -28223,8 +28225,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -28420,7 +28422,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -181.64392
     y: 236.3236
-    width: 105.89043
+    width: 107.53426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -28619,7 +28621,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -134.36801
     y: 176.1767
-    width: 137.67126
+    width: 139.04112
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29736,9 +29738,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785193456828}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650783486243146
 Transform:
   m_ObjectHideFlags: 0
@@ -29854,9 +29856,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784020437832}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650783508147960
 Transform:
   m_ObjectHideFlags: 0
@@ -29922,9 +29924,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784015459116}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650783614321346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30396,9 +30398,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784538876601}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650783665260826
 Transform:
   m_ObjectHideFlags: 0
@@ -30566,9 +30568,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783631833159}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650783876239730
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30888,9 +30890,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784339659019}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650784091348610
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31075,9 +31077,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783638064901}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650784163117598
 Transform:
   m_ObjectHideFlags: 0
@@ -31226,9 +31228,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785084534355}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650784211044570
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31413,9 +31415,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783794172960}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650784314152666
 Transform:
   m_ObjectHideFlags: 0
@@ -31840,9 +31842,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784182776689}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650784551809126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31924,9 +31926,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785322027226}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650784596435874
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32251,9 +32253,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783478661043}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650784931066742
 Transform:
   m_ObjectHideFlags: 0
@@ -32402,9 +32404,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784411818634}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!58 &7648650785172338348
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32793,9 +32795,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650785198885606}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650785261383030
 Transform:
   m_ObjectHideFlags: 0
@@ -32892,9 +32894,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650784748185490}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!4 &7648650785321245084
 Transform:
   m_ObjectHideFlags: 0
@@ -33162,9 +33164,9 @@ MonoBehaviour:
   damage: 0
   projectileTimeToMove: 0.5
   sign: {fileID: 7648650783650148019}
-  duration: 0
-  strength: 0
-  vibrato: 0
+  duration: 1
+  strength: 3
+  vibrato: 5
 --- !u!95 &7648650785527732353
 Animator:
   serializedVersion: 3

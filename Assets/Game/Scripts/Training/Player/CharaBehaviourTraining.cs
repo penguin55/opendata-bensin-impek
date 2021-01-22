@@ -102,11 +102,17 @@ public class CharaBehaviourTraining : MonoBehaviour
     {
         if (flag)
         {
-            sprite.material = whiteflash;
-            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+            DOTween.Sequence()
+                .AppendCallback(() => sprite.material = whiteflash)
+                .AppendInterval(flashDelay)
+                .AppendCallback(() => { sprite.material = defaultMaterial; })
+                .AppendInterval(flashDelay)
+                .SetLoops(-1, LoopType.Restart)
+                .SetId("ImmuneFrame");
         }
         else
         {
+            DOTween.Kill("ImmuneFrame");
             sprite.material = defaultMaterial;
         }
     }
@@ -181,7 +187,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (!GameVariables.PLAYER_IMMUNE)
+        if (!(GameVariables.PLAYER_IMMUNE || GameVariables.EFFECT_IMMUNE))
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;

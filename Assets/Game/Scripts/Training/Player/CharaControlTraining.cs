@@ -190,4 +190,14 @@ public class CharaControlTraining : CharaBehaviourTraining
             }
         }
     }
+
+    private void OnEnable()
+    {
+        instance = this;
+    }
+
+    private void OnDisable()
+    {
+        instance = null;
+    }
 }

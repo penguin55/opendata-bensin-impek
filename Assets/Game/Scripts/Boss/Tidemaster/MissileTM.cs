@@ -20,6 +20,8 @@ public class MissileTM : DamageArea
     private Tidemaster_Missile.SpawnProjectileArea spawnAreaData;
     private UnityAction onExplodeCallback;
 
+    private bool isBusyDash;
+
     public void InitData(Tidemaster_Missile.SpawnProjectileArea spawnAreaData)
     {
         this.spawnAreaData = spawnAreaData;
@@ -64,11 +66,7 @@ public class MissileTM : DamageArea
             DOVirtual.DelayedCall(timer, () =>
             {
                 if (!deactiveMissileDashed) OnExit_State();
-                else
-                {
-                    Destroy(projectile);
-                }
-            });
+            }).SetId("MissileTM");
             
         });
     }
@@ -76,7 +74,7 @@ public class MissileTM : DamageArea
     protected override void OnExit_State()
     {
         base.OnExit_State();
-
+        isBusyDash = true;
         sign.enabled = false;
 
         DOVirtual.DelayedCall(0.2f, () =>
@@ -104,16 +102,20 @@ public class MissileTM : DamageArea
 
     public void DashDeactiveMissile()
     {
-        sign.enabled = false;
-        deactiveMissileDashed = true;
-        ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
-        smoke.Play();
+        if (!isBusyDash)
+        {
+            sign.enabled = false;
+            deactiveMissileDashed = true;
+            alertProjectileSprite.enabled = false;
+            ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
+            smoke.Play();
+        }
     }
 
     public void Explode()
     {
-        alertProjectileSprite.enabled = false;
         projectile.SetActive(false);
+        Destroy(projectile,2f);
     }
 
     public bool DeactiveMissileDashed()

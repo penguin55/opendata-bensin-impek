@@ -26683,6 +26683,7 @@ MonoBehaviour:
   trainingManager: {fileID: 1086147008}
   data: {fileID: 1683682977}
   startDashTime: 0.1
+  isCharged: 0
   rb: {fileID: 1683682980}
   whiteflash: {fileID: 2100000, guid: 0d978f0ce14e71c48bfc81f62406c1f8, type: 2}
   flashDelay: 0.5
@@ -26694,6 +26695,7 @@ MonoBehaviour:
   walkDustParticle: {fileID: 951855454}
   dashDustParticle: {fileID: 1499719576}
   interact: {fileID: 7474957988985871384}
+  markDown: {fileID: 0}
 --- !u!61 &1683682982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27015,6 +27017,8 @@ MonoBehaviour:
   chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
   headhunter: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   activateItemImage: {fileID: 1169302560}
+  timerObject: {fileID: 0}
+  timeFill: {fileID: 0}
   dropImage: {fileID: 645948505}
   dropItemNameText: {fileID: 53130545}
   dropItemDescText: {fileID: 1208065035}
@@ -29236,7 +29240,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 4806305509244328622}
   selectedCommands:
-  - {fileID: 4806305509244328630}
+  - {fileID: 4806305509244328694}
   variables: []
   description: 
   stepPause: 0
@@ -29375,7 +29379,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 186.4382
     y: 28.407211
-    width: 105.2
+    width: 104
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29616,9 +29620,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -6089.7637
+    x: -6090.7637
     y: -556.83905
-    width: 87.6
+    width: 87
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29917,7 +29921,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5929.991
     y: -556.8388
-    width: 95.6
+    width: 95
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30003,13 +30007,13 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
   shiftIntoPlace: 0
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &4806305509244328634
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -30054,7 +30058,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5811.9453
     y: -559.1117
-    width: 94.8
+    width: 94
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30421,7 +30425,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5930.172
     y: -503.42963
-    width: 92.4
+    width: 92
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30537,13 +30541,13 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
   shiftIntoPlace: 0
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &4806305509244328651
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -30875,7 +30879,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5809.9453
     y: -502.1117
-    width: 91.6
+    width: 91
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31158,8 +31162,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -5937.172
-    y: -440.42963
-    width: 106.8
+    y: -439.42963
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31273,13 +31277,13 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
   shiftIntoPlace: 0
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &4806305509244328675
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -31296,7 +31300,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5814.9453
     y: -442.1117
-    width: 106
+    width: 105
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31751,7 +31755,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5682.7637
     y: -563.83905
-    width: 84.4
+    width: 83
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31866,8 +31870,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -31896,13 +31900,13 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
   shiftIntoPlace: 0
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &4806305509244328695
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -31947,8 +31951,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -31998,8 +32002,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0
@@ -32220,8 +32224,8 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
   facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
+  useDefaultSettings: 0
+  fadeDuration: 0
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 0

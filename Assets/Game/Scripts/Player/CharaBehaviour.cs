@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class CharaBehaviour : MonoBehaviour
 {
+    [SerializeField] private bool usingBike;
     [SerializeField] protected CharaData data;
     [SerializeField] protected Vector2 direction, lastDirection;
     [SerializeField] protected float startDashTime, dashTime;
@@ -43,6 +44,9 @@ public class CharaBehaviour : MonoBehaviour
 
     public void Init()
     {
+        GameVariables.EFFECT_IMMUNE = false;
+        GameVariables.PLAYER_IMMUNE = false;
+
         Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;
@@ -51,7 +55,6 @@ public class CharaBehaviour : MonoBehaviour
         data.Hp = 3;
         GameTime.PlayerTimeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
         defaultMaterial = sprite.material;
         anim = GetComponent<Animator>();
         minX = kiriatas.transform.position.x;
@@ -115,11 +118,17 @@ public class CharaBehaviour : MonoBehaviour
     {
         if (flag)
         {
-            sprite.material = whiteflash;
-            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+            DOTween.Sequence()
+                .AppendCallback(()=> sprite.material = whiteflash)
+                .AppendInterval(flashDelay)
+                .AppendCallback(() => { sprite.material = defaultMaterial; })
+                .AppendInterval(flashDelay)
+                .SetLoops(-1, LoopType.Restart)
+                .SetId("ImmuneFrame");
         }
         else
         {
+            DOTween.Kill("ImmuneFrame");
             sprite.material = defaultMaterial;
         }
     }
@@ -208,7 +217,7 @@ public class CharaBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (!GameVariables.PLAYER_IMMUNE)
+        if (!(GameVariables.PLAYER_IMMUNE || GameVariables.EFFECT_IMMUNE))
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;
@@ -250,9 +259,12 @@ public class CharaBehaviour : MonoBehaviour
 
     public void UpdateAnimationWalk(float x, float y, float speed)
     {
-        anim.SetFloat("x", x);
-        anim.SetFloat("y", y);
-        anim.SetFloat("speed", speed);
+        if (!usingBike)
+        {
+            anim.SetFloat("x", x);
+            anim.SetFloat("y", y);
+            anim.SetFloat("speed", speed);
+        }
     }
 
     protected void UseItem()

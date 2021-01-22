@@ -93,13 +93,13 @@ public class ItemData : ScriptableObject
     public bool InvisibleEffect()
     {
         wasUsed = true;
-        GameVariables.PLAYER_IMMUNE = true;
+        GameVariables.EFFECT_IMMUNE = true;
 
         CharaController.instance?.InvisibleFrame(amountEffect);
         CharaControlTraining.instance?.InvisibleFrame(amountEffect);
         DOVirtual.DelayedCall(timeEffect, () =>
         {
-            GameVariables.PLAYER_IMMUNE = false;
+            GameVariables.EFFECT_IMMUNE = false;
             CharaController.instance?.InvisibleFrame(1);
             CharaControlTraining.instance?.InvisibleFrame(1);
         });
@@ -134,24 +134,20 @@ public class ItemData : ScriptableObject
     private bool Immune_Effect()
     {
         wasUsed = true;
-        GameVariables.PLAYER_IMMUNE = true;
+        GameVariables.EFFECT_IMMUNE = true;
+        CharaController.instance?.ImmuneFrame(true);
+        CharaControlTraining.instance?.ImmuneFrame(true);
 
-        DOVirtual.Float(0, timeEffect, timeEffect, (time) =>
-        {
-
-            CharaController.instance?.ImmuneFrame(true);
-            CharaControlTraining.instance?.ImmuneFrame(true);
-
-        }).OnComplete(() =>
+        DOVirtual.DelayedCall(timeEffect, ()=>
         {
             CharaController.instance?.ImmuneFrame(false);
             CharaControlTraining.instance?.ImmuneFrame(false);
-            GameVariables.PLAYER_IMMUNE = false;
+            GameVariables.EFFECT_IMMUNE = false;
         });
 
-        
+
         //DOVirtual.DelayedCall(timeEffect, () => { 
-        //    GameVariables.PLAYER_IMMUNE = false; 
+        //    GameVariables.EFFECT_IMMUNE = false; 
         //});
         return true;
     }
