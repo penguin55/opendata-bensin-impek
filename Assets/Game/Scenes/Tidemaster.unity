@@ -2040,6 +2040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -2235,6 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -3579,6 +3581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -4839,6 +4842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -6062,6 +6066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -6241,6 +6246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -10286,6 +10292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -10777,6 +10784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -11219,6 +11227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -11442,6 +11451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -16864,6 +16874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -17376,6 +17387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -17493,6 +17505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -17736,6 +17749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -17927,6 +17941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -18473,6 +18488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -18963,6 +18979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -19126,6 +19143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -19425,6 +19443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
@@ -19579,6 +19598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileTimeToMove: 5
+  explodeClip: {fileID: 7400000, guid: 3f2637faea555404c94e34f944554a6c, type: 2}
   duration: 1
   strength: 3
   vibrato: 5
