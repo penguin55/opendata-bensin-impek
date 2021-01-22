@@ -16,6 +16,8 @@ public class TrainingUI : MonoBehaviour
     [SerializeField] private Sprite oldsprite, oldboss;
     [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, headhunter;
     [SerializeField] private Image activateItemImage;
+    [SerializeField] private GameObject timerObject;
+    [SerializeField] private Image timeFill;
 
     [Header("Obtain Drop UI")]
     [SerializeField] private Image dropImage;
@@ -243,5 +245,19 @@ public class TrainingUI : MonoBehaviour
     public void ActivateHeart(bool active)
     {
         heartContainer.SetActive(active);
+    }
+
+    public void UpdateCooldownTimer(float baseTime, float time)
+    {
+        //timerInfo.text = "Torpedo Launch in " + (int) time - 1 + " seconds";
+        //timeFill.fillAmount = time / baseTime;
+        float offset = time / baseTime; ;
+        Vector2 scaleFill = new Vector2(offset, 1f);
+        timeFill.rectTransform.localScale = scaleFill;
+    }
+
+    public void ActivatedCooldownTimer(bool flag)
+    {
+        timerObject.SetActive(flag);
     }
 }

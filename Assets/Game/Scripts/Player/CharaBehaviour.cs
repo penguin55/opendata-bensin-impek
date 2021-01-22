@@ -111,6 +111,19 @@ public class CharaBehaviour : MonoBehaviour
         }
     }
 
+    public void ImmuneFrame(bool flag)
+    {
+        if (flag)
+        {
+            sprite.material = whiteflash;
+            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+        }
+        else
+        {
+            sprite.material = defaultMaterial;
+        }
+    }
+
     protected void MoveAccelerate()
     {
         if (isDashed) return;
@@ -162,7 +175,7 @@ public class CharaBehaviour : MonoBehaviour
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
-                immune = false;
+                GameVariables.PLAYER_IMMUNE = false;
                 DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
                 DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;
             }
@@ -195,7 +208,7 @@ public class CharaBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (!immune)
+        if (!GameVariables.PLAYER_IMMUNE)
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;
@@ -203,9 +216,9 @@ public class CharaBehaviour : MonoBehaviour
 
             if (data.Hp >= 1)
             {
-                immune = true;
+                GameVariables.PLAYER_IMMUNE = true;
                 DOTween.Kill("ImmuneDamage");
-                DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage").timeScale = GameTime.PlayerTimeScale;
+                DOVirtual.DelayedCall(2f, () => { GameVariables.PLAYER_IMMUNE = false; }).SetId("ImmuneDamage").timeScale = GameTime.PlayerTimeScale;
 
                 if (data.Shield > 0)
                 {
@@ -276,7 +289,7 @@ public class CharaBehaviour : MonoBehaviour
             interact.projectileDetect = collision.gameObject;
         }
 
-        if (collision.CompareTag("damage area") && !immune)
+        if (collision.CompareTag("damage area") && !GameVariables.PLAYER_IMMUNE)
         {
             TakeDamage();
             collision.GetComponent<CannonGK>()?.Explode();

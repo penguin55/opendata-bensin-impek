@@ -29,7 +29,7 @@ public class CharaControlTraining : CharaBehaviourTraining
     {
         direction = Vector2.zero;
 
-        if (!GameVariables.FREEZE_INPUT)
+        if (!GameVariables.FREEZE_INPUT && !isCharged)
         {
             /*note : 1 : up , 2 : down, 3 : left , 4 : right*/
             if (Input.GetKey(InputManager.instance.moveUp))
@@ -103,18 +103,78 @@ public class CharaControlTraining : CharaBehaviourTraining
 
     public void Action()
     {
-        if (Input.GetKeyDown(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT)
+        if (data.ChargeDash)
         {
-            if (canDash)
+            if (data.CanChargeDash)
             {
-                trainingManager.CompleteActiveTLE("dash");
-                TWAudioController.PlaySFX("SFX_PLAYER", "dash");
-                dashTime = startDashTime;
-                isDashed = true;
-                data.IsDashing = true;
-                canDash = false;
+                if (Input.GetKey(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT && data.ChargeTimeDash <= data.MaxChargeTimeDash)
+                {
+                    isCharged = true;
+                    data.ChargeTimeDash += Time.deltaTime;
+                    //anim.SetBool("dash", true);
+                    if (walkDustParticle.isPlaying) walkDustParticle.Stop();
+                    dashDustParticle.Play();
+                }
+                else if (Input.GetKeyDown(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT)
+                {
+                    if (canDash)
+                    {
+                        Debug.Log("MASUK SINI");
+                        TWAudioController.PlaySFX("SFX_PLAYER", "dash");
+                        dashTime = startDashTime;
+                        isDashed = true;
+                        data.IsDashing = true;
+                        canDash = false;
 
-                immune = true;
+                        GameVariables.PLAYER_IMMUNE = true;
+                    }
+                }
+
+                if (Input.GetKeyUp(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT && data.ChargeTimeDash > 0)
+                {
+                    data.DashSpeed += data.ChargeTimeDash;
+
+                    TWAudioController.PlaySFX("SFX_PLAYER", "dash");
+                    dashTime = startDashTime;
+                    isDashed = true;
+                    data.IsDashing = true;
+                    canDash = false;
+                    data.CanChargeDash = false;
+
+                    GameVariables.PLAYER_IMMUNE = true;
+                }
+
+                if (data.ChargeTimeDash >= data.MaxChargeTimeDash && !GameVariables.FREEZE_INPUT)
+                {
+                    data.ChargeTimeDash = data.MaxChargeTimeDash;
+                    data.DashSpeed += data.ChargeTimeDash;
+
+                    TWAudioController.PlaySFX("SFX_PLAYER", "dash");
+                    dashTime = startDashTime;
+                    isDashed = true;
+                    data.IsDashing = true;
+                    canDash = false;
+                    data.CanChargeDash = false;
+
+                    GameVariables.PLAYER_IMMUNE = true;
+                }
+
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT)
+            {
+                if (canDash)
+                {
+                    TWAudioController.PlaySFX("SFX_PLAYER", "dash");
+                    dashTime = startDashTime;
+                    isDashed = true;
+                    data.IsDashing = true;
+                    canDash = false;
+
+                    GameVariables.PLAYER_IMMUNE = true;
+                }
             }
         }
     }

@@ -64,41 +64,56 @@ public class ItemData : ScriptableObject
 
     public bool GetBackEffect()
     {
-        CharaController.instance.MarkDown(true);
+
+        CharaController.instance?.MarkDown(true);
+        CharaControlTraining.instance?.MarkDown(true);
         DOVirtual.DelayedCall(timeEffect, () =>
         {
-            CharaController.instance.MarkDown(false);
+            CharaController.instance?.MarkDown(false);
+            CharaControlTraining.instance?.MarkDown(false);
         }).OnComplete(() =>
         {
             DOVirtual.Float(0, timeCooldown, timeCooldown, (time) =>
             {
-                InGameUI.instance.ActivatedCooldownTimer(true);
-                InGameUI.instance.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
+                InGameUI.instance?.ActivatedCooldownTimer(true);
+                InGameUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
+                TrainingUI.instance?.ActivatedCooldownTimer(true);
+                TrainingUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
             }).OnComplete(() =>
             {
-                InGameUI.instance.ActivatedCooldownTimer(false);
+                InGameUI.instance?.ActivatedCooldownTimer(false);
+                TrainingUI.instance?.ActivatedCooldownTimer(false);
                 wasUsed = false;
             });
         });
+               
         return true;
     }
 
     public bool InvisibleEffect()
     {
-        CharaController.instance.InvisibleFrame(amountEffect);
         wasUsed = true;
         GameVariables.PLAYER_IMMUNE = true;
-        DOVirtual.DelayedCall(timeEffect, () => {
+
+        CharaController.instance?.InvisibleFrame(amountEffect);
+        CharaControlTraining.instance?.InvisibleFrame(amountEffect);
+        DOVirtual.DelayedCall(timeEffect, () =>
+        {
             GameVariables.PLAYER_IMMUNE = false;
-            CharaController.instance.InvisibleFrame(1);
+            CharaController.instance?.InvisibleFrame(1);
+            CharaControlTraining.instance?.InvisibleFrame(1);
         });
+                
         return true;
     }
 
     public bool LowerDashDelay()
     {
         wasUsed = true;
-        CharaController.instance.SetDashDelay(CharaController.instance.GetDashDelay() / amountEffect);
+
+        CharaController.instance?.SetDashDelay(CharaController.instance.GetDashDelay() / amountEffect);
+        CharaControlTraining.instance?.SetDashDelay(CharaControlTraining.instance.GetDashDelay() / amountEffect);
+
         return true;
     }
 
@@ -120,9 +135,24 @@ public class ItemData : ScriptableObject
     {
         wasUsed = true;
         GameVariables.PLAYER_IMMUNE = true;
-        DOVirtual.DelayedCall(timeEffect, () => { 
-            GameVariables.PLAYER_IMMUNE = false; 
+
+        DOVirtual.Float(0, timeEffect, timeEffect, (time) =>
+        {
+
+            CharaController.instance?.ImmuneFrame(true);
+            CharaControlTraining.instance?.ImmuneFrame(true);
+
+        }).OnComplete(() =>
+        {
+            CharaController.instance?.ImmuneFrame(false);
+            CharaControlTraining.instance?.ImmuneFrame(false);
+            GameVariables.PLAYER_IMMUNE = false;
         });
+
+        
+        //DOVirtual.DelayedCall(timeEffect, () => { 
+        //    GameVariables.PLAYER_IMMUNE = false; 
+        //});
         return true;
     }
 
