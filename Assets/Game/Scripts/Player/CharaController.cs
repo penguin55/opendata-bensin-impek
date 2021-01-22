@@ -134,7 +134,7 @@ public class CharaController : CharaBehaviour
                         data.IsDashing = true;
                         canDash = false;
 
-                        immune = true;
+                        GameVariables.PLAYER_IMMUNE = true;
                     }
                 }
 
@@ -149,7 +149,7 @@ public class CharaController : CharaBehaviour
                     canDash = false;
                     data.CanChargeDash = false;
 
-                    immune = true;
+                    GameVariables.PLAYER_IMMUNE = true;
                 }
 
                 if (data.ChargeTimeDash >= data.MaxChargeTimeDash && !GameVariables.FREEZE_INPUT)
@@ -164,7 +164,7 @@ public class CharaController : CharaBehaviour
                     canDash = false;
                     data.CanChargeDash = false;
 
-                    immune = true;
+                    GameVariables.PLAYER_IMMUNE = true;
                 }
                                
             }
@@ -181,7 +181,7 @@ public class CharaController : CharaBehaviour
                     data.IsDashing = true;
                     canDash = false;
 
-                    immune = true;
+                    GameVariables.PLAYER_IMMUNE = true;
                 }
             }
         }

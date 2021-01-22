@@ -13,6 +13,7 @@ public class CharaBehaviourTraining : MonoBehaviour
     protected bool isDashed, immune, canDash, insight = false;
     private bool dead;
     protected float dashDelay;
+    [SerializeField] protected bool isCharged = false;
     [SerializeField] protected Rigidbody2D rb;
 
     protected SpriteRenderer sprite;
@@ -32,6 +33,7 @@ public class CharaBehaviourTraining : MonoBehaviour
     [SerializeField] protected ParticleSystem walkDustParticle, dashDustParticle;
 
     [SerializeField] private CharaInteract interact;
+    [SerializeField] private GameObject markDown;
 
 
     public void Init()
@@ -73,6 +75,40 @@ public class CharaBehaviourTraining : MonoBehaviour
 
         posisibaruY = Mathf.Clamp(posisilamaY, minY, maxY);
         transform.position = new Vector3(posisibaruX, posisibaruY, 0f);
+    }
+
+    public void InvisibleFrame(float value)
+    {
+        Color temp = sprite.color;
+        temp.a = value;
+        sprite.color = temp;
+    }
+
+    public void MarkDown(bool flag)
+    {
+        if (flag)
+        {
+            markDown.transform.position = transform.position;
+            markDown.SetActive(true);
+        }
+        else if (!flag)
+        {
+            transform.position = markDown.transform.position;
+            markDown.SetActive(false);
+        }
+    }
+
+    public void ImmuneFrame(bool flag)
+    {
+        if (flag)
+        {
+            sprite.material = whiteflash;
+            DOVirtual.DelayedCall(flashDelay, () => { sprite.material = defaultMaterial; });
+        }
+        else
+        {
+            sprite.material = defaultMaterial;
+        }
     }
 
     protected void MoveAccelerate()
@@ -117,7 +153,7 @@ public class CharaBehaviourTraining : MonoBehaviour
                 data.IsDashing = false;
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
-                immune = false;
+                GameVariables.PLAYER_IMMUNE = false;
                 DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
             }
             else
@@ -142,7 +178,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (!immune)
+        if (!GameVariables.PLAYER_IMMUNE)
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
             sprite.material = whiteflash;
@@ -150,9 +186,9 @@ public class CharaBehaviourTraining : MonoBehaviour
 
             if (data.Hp >= 1)
             {
-                immune = true;
+                GameVariables.PLAYER_IMMUNE = true;
                 DOTween.Kill("ImmuneDamage");
-                DOVirtual.DelayedCall(2f, () => { immune = false; }).SetId("ImmuneDamage").timeScale = GameTime.PlayerTimeScale;
+                DOVirtual.DelayedCall(2f, () => { GameVariables.PLAYER_IMMUNE = false; }).SetId("ImmuneDamage").timeScale = GameTime.PlayerTimeScale;
 
                 if (data.Shield > 0)
                 {
@@ -201,7 +237,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("damage area") && !immune)
+        if (collision.CompareTag("damage area") && !GameVariables.PLAYER_IMMUNE)
         {
             TakeDamage();
             collision.GetComponent<CannonGK>()?.Explode();
