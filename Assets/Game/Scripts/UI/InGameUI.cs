@@ -333,7 +333,7 @@ public class InGameUI : MonoBehaviour
         if (GameTrackRate.BossKilled == 4)
         {
             TWAudioController.PlaySFX("UI", "click");
-            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("EndingScene"));
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("ToBeContinued"));
             TWAudioController.PlaySFX("UI", "transition");
         } else
         {
