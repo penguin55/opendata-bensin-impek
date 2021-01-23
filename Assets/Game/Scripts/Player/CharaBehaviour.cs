@@ -47,7 +47,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         GameVariables.EFFECT_IMMUNE = false;
         GameVariables.PLAYER_IMMUNE = false;
-
+        data.ResetStatus();
         Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;

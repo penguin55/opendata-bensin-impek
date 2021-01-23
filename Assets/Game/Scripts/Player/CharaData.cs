@@ -21,4 +21,10 @@ public class CharaData : MonoBehaviour
     public bool CanChargeDash { get => canChargeDash; set => canChargeDash = value; }
     public bool ChargeDash { get => chargeDash; set => chargeDash = value; }
     public float MaxChargeTimeDash { get => maxChargeTimeDash; set => maxChargeTimeDash = value; }
+
+    public void ResetStatus()
+    {
+        canChargeDash = false;
+        chargeDash = false;
+    }
 }
