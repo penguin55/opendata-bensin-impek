@@ -15,6 +15,7 @@ public class Tidemaster_Missile : AttackEvent
 
     [SerializeField] private GameObject missileParent;
     [SerializeField] private SpawnProjectileArea[] spawnProjectileArea;
+    [SerializeField] private ParticleSystem[] smoke;
     [SerializeField] private GameObject projectilePrefabs;
     [SerializeField] protected float fireRate;
 
@@ -105,6 +106,7 @@ public class Tidemaster_Missile : AttackEvent
 
         priorityChoose = Random.Range(0, 101) % 2 == 0 ? minPriority : maxPriority;
         activeSpawnArea = spawnProjectileArea[priorityChoose];
+        smoke[priorityChoose].Play();
     }
 
     private void RemovePriority()

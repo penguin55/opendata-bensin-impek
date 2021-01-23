@@ -9,6 +9,7 @@ public class Tidemaster_EnergyBalls : AttackEvent
     [SerializeField] private Transform[] spawnProjectilePosition;
     [SerializeField] private GameObject projectilePrefabs;
     [SerializeField] protected float fireRate;
+    [SerializeField] private ParticleSystem [] muzzleFlash;
 
     [SerializeField] private Animator attack;
 
@@ -81,6 +82,8 @@ public class Tidemaster_EnergyBalls : AttackEvent
 
     private void SpawnProjectile()
     {
+        int randomParticle = Random.Range(0, 4);
+        muzzleFlash[randomParticle].Play();
         randomSpawn = Random.Range(0, queueSpawn.Count);
         spawnChoicePosition = queueSpawn[randomSpawn];
         queueSpawn.Remove(spawnChoicePosition);
