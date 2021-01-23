@@ -291,7 +291,7 @@ public class CharaBehaviour : MonoBehaviour
 
             GameData.ShiftItemList();
         }
-        else
+        else if (!GameData.ActiveItem.CheckIsOneTimeUse())
         {
             if (GameData.ActiveItem.TakeEffect())
             {

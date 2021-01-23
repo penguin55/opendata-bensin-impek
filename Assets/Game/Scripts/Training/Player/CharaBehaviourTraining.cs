@@ -241,7 +241,7 @@ public class CharaBehaviourTraining : MonoBehaviour
             GameData.ActiveItem.TakeEffect();
             TrainingUI.instance.UpdateItemImage();
         }
-        else
+        else if (!GameData.ActiveItem.CheckIsOneTimeUse())
         {
             if (GameData.ActiveItem.TakeEffect())
             {
