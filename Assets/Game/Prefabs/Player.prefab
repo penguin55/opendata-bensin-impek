@@ -4898,6 +4898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5f350ceac9a2b4b96b1ab219bf55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingBike: 0
   data: {fileID: 7474957988376242871}
   direction: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
@@ -4915,9 +4916,13 @@ MonoBehaviour:
   kananbawah: {fileID: 0}
   anim: {fileID: 7474957988376242878}
   walkDustParticle: {fileID: 7474957989125076296}
+  walkDustParticle2: {fileID: 0}
   dashDustParticle: {fileID: 7474957987520150414}
   interact: {fileID: 0}
   clamp: 0
+  placeholderHand: {fileID: 0}
+  markDown: {fileID: 0}
+  markdownParticle: {fileID: 0}
 --- !u!114 &7474957988376242871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,6 +4937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 25
+  baseDashSpeed: 25
   baseDashDelay: 0
 --- !u!114 &7474957988376242865
 MonoBehaviour:

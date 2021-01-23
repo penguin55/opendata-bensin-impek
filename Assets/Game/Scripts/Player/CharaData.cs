@@ -5,11 +5,11 @@ using UnityEngine;
 public class CharaData : MonoBehaviour
 {
    private bool isDashing;
-   [SerializeField]private float speed, dashSpeed, baseDashDelay;
+   [SerializeField]private float speed, dashSpeed, baseDashSpeed, baseDashDelay;
 
     public static bool canChargeDash, chargeDash;
 
-    public static  float hp = 3, maxhp = 3, shield = 0, chargeTimeDash, maxChargeTimeDash;
+    public static  float hp = 3, maxhp = 3, shield = 0, chargeTimeDash, maxChargeTimeDash, multiplierChargeDash;
 
     public bool IsDashing { get => isDashing; set => isDashing = value; }
     public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
@@ -21,6 +21,8 @@ public class CharaData : MonoBehaviour
     public bool CanChargeDash { get => canChargeDash; set => canChargeDash = value; }
     public bool ChargeDash { get => chargeDash; set => chargeDash = value; }
     public float MaxChargeTimeDash { get => maxChargeTimeDash; set => maxChargeTimeDash = value; }
+    public float BaseDashSpeed { get => baseDashSpeed; set => baseDashSpeed = value; }
+    public float MultiplierChargeDash { get => multiplierChargeDash; set => multiplierChargeDash = value; }
 
     public void ResetStatus()
     {
