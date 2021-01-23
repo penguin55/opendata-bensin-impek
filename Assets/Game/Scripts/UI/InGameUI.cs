@@ -322,9 +322,18 @@ public class InGameUI : MonoBehaviour
         GameTime.GlobalTimeScale = 1f;
         GameVariables.DIALOG_START_MESSAGE = "BOSS_PANEL";
         BGMStop();
-        TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
-        TWAudioController.PlaySFX("UI", "transition");
+
+        if (GameTrackRate.BossKilled == 4)
+        {
+            TWAudioController.PlaySFX("UI", "click");
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("EndingScene"));
+            TWAudioController.PlaySFX("UI", "transition");
+        } else
+        {
+            TWAudioController.PlaySFX("UI", "click");
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("dialogFungus"));
+            TWAudioController.PlaySFX("UI", "transition");
+        }
     }
 
     public void BackToPanelItem()

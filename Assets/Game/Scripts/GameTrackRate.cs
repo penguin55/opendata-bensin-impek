@@ -6,6 +6,7 @@ public static class GameTrackRate
     private static float gameplayTimeBoss;
     private static int gameplayDeathCount;
     private static List<ItemData> gameplayItemUsed = new List<ItemData>();
+    private static int bossKill;
 
     private static float startTime;
     private static float endTime;
@@ -14,6 +15,13 @@ public static class GameTrackRate
     {
         get{ return gameplayTimeBoss; }
     }
+
+    public static void BossKill()
+    {
+        bossKill += 1;
+    }
+
+    public static int BossKilled { get { return bossKill; } }
 
     public static int DeathCount
     {
@@ -45,5 +53,13 @@ public static class GameTrackRate
     public static void CalculateTime()
     {
         gameplayTimeBoss += (endTime - startTime);
+    }
+
+    public static void ResetTrack()
+    {
+        bossKill = 0;
+        gameplayDeathCount = 0;
+        gameplayItemUsed.Clear();
+        gameplayTimeBoss = 0;
     }
 }

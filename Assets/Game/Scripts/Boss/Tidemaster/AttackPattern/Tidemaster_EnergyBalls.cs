@@ -82,6 +82,12 @@ public class Tidemaster_EnergyBalls : AttackEvent
 
     private void SpawnProjectile()
     {
+        if (GameData.ActiveBossData.wasDie)
+        {
+            DOTween.Kill("EnergyBallsSpawn");
+            return;
+        }
+
         int randomParticle = Random.Range(0, 4);
         muzzleFlash[randomParticle].Play();
         randomSpawn = Random.Range(0, queueSpawn.Count);
