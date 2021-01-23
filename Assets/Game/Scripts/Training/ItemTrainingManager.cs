@@ -48,6 +48,19 @@ public class ItemTrainingManager : TrainingManager
             case "Pustaha Lak Lak":
                 fungusController.NextBlock("S_Pustaha");
                 break;
+            case "Barong Tengkok":
+                fungusController.NextBlock("S_Barong");
+                break;
+            case "Kalimantan Mask":
+                fungusController.NextBlock("S_Kalimantan");
+                break;
+            case "Tiger Mask":
+                fungusController.NextBlock("S_Tiger");
+                break;
+            case "Bird Mask":
+                fungusController.NextBlock("S_Bird");
+                break;
+
         }
     }
 
@@ -86,6 +99,18 @@ public class ItemTrainingManager : TrainingManager
                 break;
             case "Pustaha Lak Lak":
                 fungusController.NextBlock("F_Pustaha");
+                break;
+            case "Barong Tengkok":
+                fungusController.NextBlock("F_Barong");
+                break;
+            case "Kalimantan Mask":
+                fungusController.NextBlock("F_Kalimantan");
+                break;
+            case "Tiger Mask":
+                fungusController.NextBlock("F_Tiger");
+                break;
+            case "Bird Mask":
+                fungusController.NextBlock("F_Bird");
                 break;
         }
     }
@@ -141,6 +166,15 @@ public class ItemTrainingManager : TrainingManager
                 obstacleType = "missile";
                 break;
             case "Bird Mask":
+                obstacleType = "missile";
+                break;
+            case "Barong Tengkok":
+                obstacleType = "missile";
+                break;
+            case "Kalimantan Mask":
+                obstacleType = "missile";
+                break;
+            case "Tiger Mask":
                 obstacleType = "missile";
                 break;
         }

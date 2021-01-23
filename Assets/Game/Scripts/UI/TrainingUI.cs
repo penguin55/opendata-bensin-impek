@@ -14,7 +14,7 @@ public class TrainingUI : MonoBehaviour
     [SerializeField] private GameObject shields;
     [SerializeField] private Sprite newsprite, newboss;
     [SerializeField] private Sprite oldsprite, oldboss;
-    [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, headhunter;
+    [SerializeField] private Sprite aPair, axe, deer, helmet, laklak, terrorcopter, gatekeeper, chariot, tidemaster;
     [SerializeField] private Image activateItemImage;
     [SerializeField] private GameObject timerObject;
     [SerializeField] private Image timeFill;
@@ -92,6 +92,22 @@ public class TrainingUI : MonoBehaviour
         if (GameData.ActiveItem.itemName.Contains("Pair"))
         {
             activateItemImage.overrideSprite = aPair;
+        }
+        if (GameData.ActiveItem.itemName.Contains("Tiger"))
+        {
+            activateItemImage.overrideSprite = gatekeeper;
+        }
+        if (GameData.ActiveItem.itemName.Contains("Bird"))
+        {
+            activateItemImage.overrideSprite = terrorcopter;
+        }
+        if (GameData.ActiveItem.itemName.Contains("Barong"))
+        {
+            activateItemImage.overrideSprite = chariot;
+        }
+        if (GameData.ActiveItem.itemName.Contains("Kalimantan"))
+        {
+            activateItemImage.overrideSprite = tidemaster;
         }
     }
 
