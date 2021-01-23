@@ -117,10 +117,13 @@ public class DialogMainMenu : MonoBehaviour
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:
+                mainCamera.backgroundColor = blue;
                 environment.GetComponent<SpriteRenderer>().sprite = environments[0];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[0];
                 break;
             case GameData.BossType.GATEKEEPER:
+                cannon.SetActive(true);
+                mainCamera.backgroundColor = blue;
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 break;

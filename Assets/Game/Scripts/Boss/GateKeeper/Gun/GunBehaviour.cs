@@ -12,6 +12,7 @@ public class GunBehaviour : MonoBehaviour
 
     public void StartGunEntrance()
     {
+        ResetToEntranceState();
         if (eachGun) SequenceEach();
         else SequenceAll();
     }
@@ -28,13 +29,15 @@ public class GunBehaviour : MonoBehaviour
 
     private void SequenceEach(int index)
     {
-        guns[index].transform.DOMove(finals[index].position, fallDuration).SetEase(Ease.InExpo).OnComplete(()=>
-        {
-            guns[index].GetComponent<SpriteRenderer>().sortingLayerName = "Game";
-            TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
-            CameraShake.instance.Shake(1, 2, 10);
-        });
-        guns[index].transform.DOScale(finals[index].localScale, fallDuration).SetEase(Ease.InExpo);
+        DOTween.Sequence()
+            .Append(guns[index].transform.DOMove(finals[index].position, fallDuration).SetEase(Ease.InExpo))
+            .Join(guns[index].transform.DOScale(finals[index].localScale, fallDuration).SetEase(Ease.InExpo))
+            .OnComplete(()=>
+            {
+                guns[index].GetComponent<SpriteRenderer>().sortingLayerName = "Game";
+                TWAudioController.PlaySFX("SFX_BOSS", "rocket_impact");
+                CameraShake.instance.Shake(1, 2, 10);
+            });
     }
 
     private void SequenceEach()
