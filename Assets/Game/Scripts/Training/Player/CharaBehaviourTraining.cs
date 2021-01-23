@@ -34,6 +34,7 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     [SerializeField] private CharaInteract interact;
     [SerializeField] private GameObject markDown;
+    [SerializeField] private ParticleSystem markdownParticle;
 
 
     public void Init()
@@ -94,7 +95,13 @@ public class CharaBehaviourTraining : MonoBehaviour
         else if (!flag)
         {
             transform.position = markDown.transform.position;
-            markDown.SetActive(false);
+            markdownParticle.gameObject.SetActive(true);
+            markdownParticle.Play();
+            DOVirtual.DelayedCall(markdownParticle.main.startLifetimeMultiplier, () =>
+            {
+                markdownParticle.gameObject.SetActive(false);
+                markDown.SetActive(false);
+            });
         }
     }
 
@@ -225,12 +232,19 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     protected void UseItem()
     {
-        if (!GameData.ActiveItem.wasUsed)
+        if (!GameData.ActiveItem.wasUsed && GameData.ActiveItem.CheckIsOneTimeUse())
         {
             TWAudioController.PlaySFX("BOSS_SFX", "item_used");
             GameData.ActiveItem.TakeEffect();
-            TrainingUI.instance.UpdateItemImage();
-            Debug.Log(GameData.ActiveItem.itemName);
+            InGameUI.instance.UpdateItemImage();
+        }
+        else
+        {
+            if (GameData.ActiveItem.TakeEffect())
+            {
+                TWAudioController.PlaySFX("BOSS_SFX", "item_used");
+                InGameUI.instance.UpdateItemImage();
+            }
         }
     }
 

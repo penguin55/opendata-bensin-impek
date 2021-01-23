@@ -10917,6 +10917,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1476422505}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1476422507 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 86727504328890138, guid: 364816af2e01b9a40a61e1ed571789e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476422505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494745210
 GameObject:
   m_ObjectHideFlags: 0
@@ -20890,6 +20896,7 @@ MonoBehaviour:
   dashDustParticle: {fileID: 1499719576}
   interact: {fileID: 7474957988985871384}
   markDown: {fileID: 1476422506}
+  markdownParticle: {fileID: 1476422507}
 --- !u!61 &1683682982
 BoxCollider2D:
   m_ObjectHideFlags: 0

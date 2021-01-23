@@ -5713,6 +5713,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 66542800}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &66542802 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 86727504328890138, guid: 364816af2e01b9a40a61e1ed571789e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 66542800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76547553
 GameObject:
   m_ObjectHideFlags: 0
@@ -66425,6 +66431,11 @@ PrefabInstance:
       propertyPath: markDown
       value: 
       objectReference: {fileID: 66542801}
+    - target: {fileID: 7474957988376242867, guid: eac637af8ac64c245b0c6cf79f1324f2,
+        type: 3}
+      propertyPath: markdownParticle
+      value: 
+      objectReference: {fileID: 66542802}
     - target: {fileID: 7474957988376242868, guid: eac637af8ac64c245b0c6cf79f1324f2,
         type: 3}
       propertyPath: m_SortingOrder

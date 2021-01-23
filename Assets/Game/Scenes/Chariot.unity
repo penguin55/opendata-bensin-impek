@@ -64122,6 +64122,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1997479031}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1997479033 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 86727504328890138, guid: 364816af2e01b9a40a61e1ed571789e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1997479031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004173958
 GameObject:
   m_ObjectHideFlags: 0
@@ -84330,6 +84336,11 @@ PrefabInstance:
       propertyPath: usingBike
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3029883795090811890, guid: 4cfb819674b285f468b29c458e75b2ad,
+        type: 3}
+      propertyPath: markdownParticle
+      value: 
+      objectReference: {fileID: 1997479033}
     - target: {fileID: 3029883795090811892, guid: 4cfb819674b285f468b29c458e75b2ad,
         type: 3}
       propertyPath: m_LocalPosition.x
