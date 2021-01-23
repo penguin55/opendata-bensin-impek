@@ -30,6 +30,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private float cost;
     [SerializeField] private bool oneTimeUse;
     [SerializeField] private bool activateOnStart;
+    private bool isActivated;
 
     public bool onDelay;
 
@@ -64,34 +65,46 @@ public class ItemData : ScriptableObject
 
     public bool GetBackEffect()
     {
+        if (onDelay) return false;
+        isActivated = !isActivated;
+        if (isActivated)
+        {
+            CharaController.instance?.MarkDown(true);
+            CharaControlTraining.instance?.MarkDown(true);
 
-        CharaController.instance?.MarkDown(true);
-        CharaControlTraining.instance?.MarkDown(true);
-        DOVirtual.DelayedCall(timeEffect, () =>
+            wasUsed = true;
+        }
+        else
         {
             CharaController.instance?.MarkDown(false);
             CharaControlTraining.instance?.MarkDown(false);
-        }).OnComplete(() =>
-        {
+
+            InGameUI.instance?.ActivatedCooldownTimer(true);
+            TrainingUI.instance?.ActivatedCooldownTimer(true);
+
             DOVirtual.Float(0, timeCooldown, timeCooldown, (time) =>
             {
-                InGameUI.instance?.ActivatedCooldownTimer(true);
+                onDelay = true;
+                //InGameUI.instance?.ActivatedCooldownTimer(true);
                 InGameUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
-                TrainingUI.instance?.ActivatedCooldownTimer(true);
+                //TrainingUI.instance?.ActivatedCooldownTimer(true);
                 TrainingUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
             }).OnComplete(() =>
             {
+                onDelay = false;
                 InGameUI.instance?.ActivatedCooldownTimer(false);
                 TrainingUI.instance?.ActivatedCooldownTimer(false);
                 wasUsed = false;
             });
-        });
-               
-        return true;
+        }
+        
+        return isActivated;
     }
 
     public bool InvisibleEffect()
     {
+        if (onDelay) return false;
+        onDelay = true;
         wasUsed = true;
         GameVariables.EFFECT_IMMUNE = true;
 
@@ -102,8 +115,23 @@ public class ItemData : ScriptableObject
             GameVariables.EFFECT_IMMUNE = false;
             CharaController.instance?.InvisibleFrame(1);
             CharaControlTraining.instance?.InvisibleFrame(1);
+
+            InGameUI.instance?.ActivatedCooldownTimer(true);
+            TrainingUI.instance?.ActivatedCooldownTimer(true);
+
+            DOVirtual.Float(0, timeCooldown, timeCooldown, (time) =>
+            {
+                InGameUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
+                TrainingUI.instance?.UpdateCooldownTimer(timeCooldown, (timeCooldown - time));
+            }).OnComplete(() =>
+            {
+                onDelay = false;
+                InGameUI.instance?.ActivatedCooldownTimer(false);
+                TrainingUI.instance?.ActivatedCooldownTimer(false);
+                wasUsed = false;
+            });
         });
-                
+
         return true;
     }
 

@@ -57,7 +57,10 @@ public class BossBehaviour : MonoBehaviour
         isDead = true;
 
         GameData.ActiveBossData.wasDie = true;
-
+        if (!GameData.ActiveItem.CheckIsOneTimeUse())
+        {
+            GameData.ShiftItemList();
+        }
         switch (GameData.ActiveBoss)
         {
             case GameData.BossType.TERRORCOPTER:

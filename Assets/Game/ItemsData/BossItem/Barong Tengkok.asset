@@ -21,7 +21,7 @@ MonoBehaviour:
   itemId: 7
   wasUsed: 0
   effect: 8
-  timeEffect: 5
+  timeEffect: 0
   amountEffect: 0
   timeCooldown: 30
   cost: 0
