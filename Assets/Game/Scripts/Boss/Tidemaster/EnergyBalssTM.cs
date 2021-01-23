@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnergyBalssTM : DamageArea
 {
     [SerializeField] private float projectileTimeToMove;
-    private Collider2D collider;  
+    private Collider2D collider;
+    private SpriteRenderer alertProjectileSprite;
     private GameObject projectile;
     private Animator anim;
     [SerializeField] private AnimationClip explodeClip;
@@ -22,9 +23,15 @@ public class EnergyBalssTM : DamageArea
         deactiveMissileDashed = false;
         anim = projectile.GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        alertProjectileSprite = GetComponent<SpriteRenderer>();
         collider.enabled = false;
+        DOVirtual.DelayedCall(4f, () =>
+        {
+            alertProjectileSprite.enabled = true;
+        });
         this.projectile = projectile;
         projectile.GetComponent<Collider2D>().enabled = true;
+        alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
         TWAudioController.PlaySFX("SFX_BOSS", "energyball_launch");
         DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
     }
@@ -50,6 +57,7 @@ public class EnergyBalssTM : DamageArea
         DOVirtual.DelayedCall(0.2f, () =>
         {
             collider.enabled = false;
+            alertProjectileSprite.enabled = false;
         });
         //projectile.GetComponent<SpriteRenderer>().enabled = false;
         //ParticleSystem particle = projectile.transform.GetChild(0).GetComponent<ParticleSystem>();

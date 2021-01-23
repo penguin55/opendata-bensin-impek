@@ -26,5 +26,5 @@ MonoBehaviour:
   timeCooldown: 0
   cost: 0
   oneTimeUse: 1
-  activateOnStart: 1
+  activateOnStart: 0
   onDelay: 0

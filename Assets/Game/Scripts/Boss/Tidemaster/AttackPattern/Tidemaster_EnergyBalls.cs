@@ -51,6 +51,17 @@ public class Tidemaster_EnergyBalls : AttackEvent
             .AppendInterval(.2f)
             .AppendCallback(SpawnProjectile)
             .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
+            .AppendInterval(.2f)
+            .AppendCallback(SpawnProjectile)
             .AppendInterval(fireRate)
             .OnComplete(() =>
             {

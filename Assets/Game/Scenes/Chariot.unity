@@ -45079,7 +45079,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: sfxClips.Array.size
-      value: 50
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -45099,7 +45099,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: bgmClips.Array.data[11].localVolume
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -45271,6 +45271,36 @@ PrefabInstance:
       propertyPath: sfxClips.Array.data[49].clip
       value: 
       objectReference: {fileID: 8300000, guid: 59fc9de873b933e4d8879a9075df4803, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[50].name
+      value: cannon_impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[50].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[50].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d505ec3253a38f74e9e606ea776f2f97, type: 3}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[51].name
+      value: cannon_launch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[51].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[51].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f01e12fa42e612b42a747332bc487e7b, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
