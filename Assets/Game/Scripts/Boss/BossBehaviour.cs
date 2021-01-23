@@ -41,7 +41,7 @@ public class BossBehaviour : MonoBehaviour
 
     protected virtual void Preparation()
     {
-
+        GameTrackRate.StartTimePlay = Time.time;
     }
 
     protected virtual void Final()
@@ -51,6 +51,9 @@ public class BossBehaviour : MonoBehaviour
 
     protected virtual void Die()
     {
+        GameTrackRate.EndTimePlay = Time.time;
+        GameTrackRate.CalculateTime();
+
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed_2");

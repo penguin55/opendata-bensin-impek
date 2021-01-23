@@ -5,6 +5,7 @@ using TomWill;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Fungus;
 
 public class TrainingUI : MonoBehaviour
 {
@@ -63,12 +64,12 @@ public class TrainingUI : MonoBehaviour
     {
         if (GameData.ActiveItem.wasUsed)
         {
-            activateItemImage.color = Color.red;
-        }
-        else
+            activateItemImage.DOFade(0.5f , 0);
+        } else
         {
-            activateItemImage.color = Color.white;
+            activateItemImage.DOFade(1f, 0);
         }
+
     }
 
     public void ItemImage()

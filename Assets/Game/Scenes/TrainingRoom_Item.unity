@@ -21230,7 +21230,7 @@ MonoBehaviour:
   terrorcopter: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
   gatekeeper: {fileID: 21300000, guid: 7c918ca808b93644da96dd8d1829474f, type: 3}
   chariot: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
-  tidemaster: {fileID: 0}
+  tidemaster: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   activateItemImage: {fileID: 1169302560}
   timerObject: {fileID: 1553699612}
   timeFill: {fileID: 1553699611}
@@ -24320,9 +24320,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 4806305509244328802}
+  - {fileID: 4806305509244328629}
   selectedCommands:
-  - {fileID: 4806305509244328803}
+  - {fileID: 4806305509244328639}
   variables: []
   description: 
   stepPause: 0
@@ -24635,7 +24635,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 10.933428
     y: 143.18703
-    width: 98.76715
+    width: 140.41098
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -25066,7 +25066,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 99.18085
     y: 91.64061
-    width: 60
+    width: 91.0959
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -25876,7 +25876,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 159.59317
     y: 204.7037
-    width: 60
+    width: 88.35617
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26253,7 +26253,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.93344
     y: 144.21796
-    width: 66.98631
+    width: 108.90413
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26733,7 +26733,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 23.716928
     y: 202.98083
-    width: 74.657555
+    width: 117.12331
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -26935,7 +26935,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -242.97137
     y: 115.70502
-    width: 60
+    width: 89.72604
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -27835,7 +27835,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -105.76761
     y: 114.321014
-    width: 73.56166
+    width: 115.75344
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -28092,7 +28092,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -240.69388
     y: 53.575912
-    width: 60.410973
+    width: 102.05481
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -28357,7 +28357,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -237.93259
     y: 175.83774
-    width: 60
+    width: 86.98631
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -28760,7 +28760,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -181.64392
     y: 233.58388
-    width: 65.89043
+    width: 107.53426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29236,7 +29236,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -134.36801
     y: 176.1767
-    width: 97.67126
+    width: 139.04112
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29443,7 +29443,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 31.634933
     y: 254.94571
-    width: 61.506866
+    width: 103.424675
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29507,7 +29507,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 134.10066
     y: 256.31546
-    width: 84.52057
+    width: 125.34249
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29927,7 +29927,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -103.70766
     y: 60.425262
-    width: 83.42468
+    width: 123.972626
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30361,11 +30361,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 39.580116
     y: 315.21976
-    width: 60
+    width: 92.46577
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 282
+  itemId: 468
   blockName: S_Tiger
   description: 
   eventHandler: {fileID: 0}
@@ -30752,11 +30752,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: -101.51579
     y: 12.479992
-    width: 60
+    width: 91.0959
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 360
+  itemId: 469
   blockName: F_Tiger
   description: 
   eventHandler: {fileID: 0}
@@ -31140,11 +31140,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 141.7034
     y: 313.8499
-    width: 60
+    width: 85.61645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 282
+  itemId: 470
   blockName: S_Bird
   description: 
   eventHandler: {fileID: 0}
@@ -31829,11 +31829,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: -239.11832
     y: 2.8908477
-    width: 60
+    width: 84.24658
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 360
+  itemId: 471
   blockName: F_Bird
   description: 
   eventHandler: {fileID: 0}

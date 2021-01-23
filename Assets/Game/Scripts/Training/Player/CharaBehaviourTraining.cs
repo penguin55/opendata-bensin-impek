@@ -39,6 +39,9 @@ public class CharaBehaviourTraining : MonoBehaviour
 
     public void Init()
     {
+        sprite = GetComponent<SpriteRenderer>();
+
+        if (GameData.ActiveItem) GameData.ActiveItem.ResetStatusItem();
         Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;
@@ -47,7 +50,7 @@ public class CharaBehaviourTraining : MonoBehaviour
         data.Hp = 3;
         GameTime.PlayerTimeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        
         defaultMaterial = sprite.material;
         anim = GetComponent<Animator>();
         minX = kiriatas.transform.position.x;
@@ -251,6 +254,11 @@ public class CharaBehaviourTraining : MonoBehaviour
     public void SetDashDelay(float time)
     {
         dashDelay = time;
+    }
+
+    public void ResetBaseDelay()
+    {
+        dashDelay = data.BaseDashDelay;
     }
 
     public float GetDashDelay()

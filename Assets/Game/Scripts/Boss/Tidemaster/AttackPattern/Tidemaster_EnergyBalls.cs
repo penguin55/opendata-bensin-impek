@@ -68,7 +68,7 @@ public class Tidemaster_EnergyBalls : AttackEvent
                 if (queueSpawn.Count > 0) Attack();
                 else base.Attack();
             })
-            .SetId("BM_Missile");
+            .SetId("EnergyBallsSpawn");
     }
 
     protected override void OnExit_Attack()

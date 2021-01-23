@@ -35,6 +35,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameData.ActiveItem) GameData.ActiveItem.ResetStatusItem();
         //GameData.ActiveBoss = GameData.BossType.UNHOLYCHARIOT;
         GameTime.GlobalTimeScale = 1;
         GameVariables.GAME_OVER = false;
@@ -82,9 +83,13 @@ public class InGameUI : MonoBehaviour
 
     public void UpdateItemImage()
     {
-        if (GameData.ActiveItem.CheckIsOneTimeUse())
+        if (GameData.ActiveItem.wasUsed)
         {
-            activateItemImage.color = Color.red;
+            activateItemImage.DOFade(0.5f, 0);
+        }
+        else
+        {
+            activateItemImage.DOFade(1f, 0);
         }
     }
 

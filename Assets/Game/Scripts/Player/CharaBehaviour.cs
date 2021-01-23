@@ -47,6 +47,7 @@ public class CharaBehaviour : MonoBehaviour
     {
         GameVariables.EFFECT_IMMUNE = false;
         GameVariables.PLAYER_IMMUNE = false;
+        if (GameData.ActiveItem) GameData.ActiveItem.ResetStatusItem();
         data.ResetStatus();
         Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
@@ -224,6 +225,8 @@ public class CharaBehaviour : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (GameData.ActiveBossData.wasDie) return; 
+
         if (!(GameVariables.PLAYER_IMMUNE || GameVariables.EFFECT_IMMUNE))
         {
             TWAudioController.PlaySFX("SFX_PLAYER", "player_damaged");
@@ -247,6 +250,10 @@ public class CharaBehaviour : MonoBehaviour
 
                 if (data.Hp < 1)
                 {
+                    GameTrackRate.DeathCount = 1;
+                    GameTrackRate.EndTimePlay = Time.time;
+                    GameTrackRate.CalculateTime();
+
                     GameData.ShiftItemList();
                     dead = true;
                     anim.SetBool("dead", true);
@@ -369,10 +376,6 @@ public class CharaBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("missile_tidemaster"))
         {
             interact.missileTidemasterDetect = collision.gameObject;
-            if (collision.gameObject.GetComponent<MissileTM>().exploded)
-            {
-                TakeDamage();
-            }
         }
     }
 

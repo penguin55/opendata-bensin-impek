@@ -71,11 +71,10 @@ public class ItemData : ScriptableObject
         {
             CharaController.instance?.MarkDown(true);
             CharaControlTraining.instance?.MarkDown(true);
-
-            wasUsed = true;
         }
         else
         {
+            wasUsed = true;
             CharaController.instance?.MarkDown(false);
             CharaControlTraining.instance?.MarkDown(false);
 
@@ -95,6 +94,9 @@ public class ItemData : ScriptableObject
                 InGameUI.instance?.ActivatedCooldownTimer(false);
                 TrainingUI.instance?.ActivatedCooldownTimer(false);
                 wasUsed = false;
+
+                InGameUI.instance?.UpdateItemImage();
+                TrainingUI.instance?.UpdateItemImage();
             });
         }
         
@@ -129,6 +131,9 @@ public class ItemData : ScriptableObject
                 InGameUI.instance?.ActivatedCooldownTimer(false);
                 TrainingUI.instance?.ActivatedCooldownTimer(false);
                 wasUsed = false;
+
+                InGameUI.instance?.UpdateItemImage();
+                TrainingUI.instance?.UpdateItemImage();
             });
         });
 
@@ -230,5 +235,23 @@ public class ItemData : ScriptableObject
         TrainingUI.instance?.UpdateLive();
         GameVariables.SPEED_BUFF = amountEffect;
         return true;
+    }
+
+    public void ResetStatusItem()
+    {
+        GameTime.LocalTimeScale = 1;
+        GameVariables.SLOW_MO = false;
+        GameVariables.SPEED_BUFF = 0;
+        CharaData.shield = 0;
+        GameVariables.EFFECT_IMMUNE = false;
+
+        CharaData.canChargeDash = false;
+        CharaData.chargeDash = false;
+
+        CharaControlTraining.instance?.ResetBaseDelay();
+        CharaControlTraining.instance?.InvisibleFrame(1f);
+
+        onDelay = false;
+        wasUsed = false;
     }
 }

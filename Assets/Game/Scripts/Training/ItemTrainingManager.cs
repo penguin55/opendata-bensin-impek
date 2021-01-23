@@ -26,7 +26,7 @@ public class ItemTrainingManager : TrainingManager
         GameVariables.FREEZE_INPUT = false;
         CheckActiveItem();
         trainingItem.InitEventListener(obstacleType, true);
-        StartDialog();
+        DOVirtual.DelayedCall(5f, () => StartDialog());
     }
 
     public void StartDialog()

@@ -20,6 +20,8 @@ public static class GameData
         if (ItemHolds == null && ItemUsed == null) return;
         if (update)
         {
+            GameTrackRate.ItemUsed.Add(ActiveItem);
+
             ActiveItem.wasUsed = true;
             if (ItemHolds.Contains(ActiveItem)) ItemHolds.Remove(ActiveItem);
             if (!ItemUsed.Contains(ActiveItem)) ItemUsed.Add(ActiveItem);
