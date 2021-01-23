@@ -41,12 +41,21 @@ public class GunBehaviour : MonoBehaviour
     {
         // Terjadi race condition, maka dari itu diubah sequence manual
 
-        int index = 0;
+        /*int index = 0;
         DOVirtual.DelayedCall(nextGunDuration, () =>
         {
             SequenceEach(index);
             index++;
-        }).SetLoops(guns.Length);
+        }).SetLoops(guns.Length);*/
+
+        DOTween.Sequence()
+            .AppendCallback(() => SequenceEach(0))
+            .AppendInterval(nextGunDuration)
+            .AppendCallback(() => SequenceEach(1))
+            .AppendInterval(nextGunDuration)
+            .AppendCallback(() => SequenceEach(2))
+            .AppendInterval(nextGunDuration)
+            .AppendCallback(() => SequenceEach(3));
     }
 
     private void SequenceAll()

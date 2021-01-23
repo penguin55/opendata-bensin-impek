@@ -75,6 +75,8 @@ public class ItemData : ScriptableObject
         else
         {
             wasUsed = true;
+            InGameUI.instance?.UpdateItemImage();
+
             CharaController.instance?.MarkDown(false);
             CharaControlTraining.instance?.MarkDown(false);
 
