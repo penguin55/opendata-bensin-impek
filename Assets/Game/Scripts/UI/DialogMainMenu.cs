@@ -131,6 +131,8 @@ public class DialogMainMenu : MonoBehaviour
                 railTrack.SetActive(true);
                 break;
             case GameData.BossType.TIDEMASTER:
+                grass.SetActive(false);
+                shipPlatform.SetActive(true);
                 environment.GetComponent<SpriteRenderer>().sprite = environments[3];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[3];
                 break;
