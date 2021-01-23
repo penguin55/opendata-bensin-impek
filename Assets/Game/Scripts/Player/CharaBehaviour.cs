@@ -354,6 +354,7 @@ public class CharaBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("missile_tidemaster"))
         {
             interact.missileTidemasterDetect = collision.gameObject;
+            TakeDamage();
         }
     }
 

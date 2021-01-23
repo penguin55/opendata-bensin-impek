@@ -90,7 +90,6 @@ public class MissileTM : DamageArea
 
         spawnAreaData.platform.SetActive(true);
         spawnAreaData.cannon.TakeDamage();
-        CharaController.instance.TakeDamage();
 
         onExplodeCallback.Invoke();
 
