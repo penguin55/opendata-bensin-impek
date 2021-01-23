@@ -15,7 +15,15 @@ public class BGScrollingImage : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(direction * speed * BGScrollingManager.instance.GlobalSpeed * Time.deltaTime);
+        if (GameVariables.SLOW_MO)
+        {
+            transform.Translate(direction * speed * BGScrollingManager.instance.GlobalSpeed * GameTime.LocalTimeScale *Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(direction * speed * BGScrollingManager.instance.GlobalSpeed * Time.deltaTime);
+        }
+        
         DeteksiBatas();
     }
 
