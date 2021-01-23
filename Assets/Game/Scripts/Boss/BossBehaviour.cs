@@ -54,6 +54,7 @@ public class BossBehaviour : MonoBehaviour
         GameTrackRate.EndTimePlay = Time.time;
         GameTrackRate.CalculateTime();
         GameTrackRate.BossKill();
+        InGameUI.instance?.FreezeInput(true);
 
         GameVariables.GAME_OVER = true;
         TWAudioController.PlaySFX("SFX_BOSS", "helicopter_destroyed");

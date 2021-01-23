@@ -119,10 +119,14 @@ public class TrainingUI : MonoBehaviour
         dropItemDescText.text = data.shortDesc;
     }
 
+    public void FreezeInput(bool flag)
+    {
+        GameVariables.FREEZE_INPUT = flag;
+    }
 
     public void OpenPauseMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameVariables.FREEZE_INPUT)
         {
             if (isPaused)
             {
@@ -138,16 +142,19 @@ public class TrainingUI : MonoBehaviour
     public void OpenDialogPanel(bool active)
     {
         dialogFungus.SetActive(active);
+        FreezeInput(active);
     }
 
     public void TryAgain(bool active)
     {
         dialogtry.SetActive(active);
+        FreezeInput(active);
     }
 
     public void OpenItemPanel(bool active)
     {
         obtainItemBoss.SetActive(active);
+        FreezeInput(false);
     }
 
     public void PlaySFX(string name)

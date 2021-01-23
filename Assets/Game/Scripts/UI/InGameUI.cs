@@ -208,10 +208,16 @@ public class InGameUI : MonoBehaviour
         dropItemDescText.text = data.shortDesc;
     }
 
+    public void FreezeInput(bool flag)
+    {
+        GameVariables.FREEZE_INPUT = flag;
+    }
 
     public void OpenPauseMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (GameData.ActiveBossData.wasDie) return;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameVariables.FREEZE_INPUT)
         {
             if (isPaused)
             {
@@ -227,6 +233,7 @@ public class InGameUI : MonoBehaviour
     public void OpenDialogPanel(bool active)
     {
         dialogFungus.SetActive(active);
+        FreezeInput(active);
     }
 
     public void OpenItemPanel(bool active)
