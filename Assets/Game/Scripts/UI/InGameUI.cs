@@ -297,6 +297,7 @@ public class InGameUI : MonoBehaviour
                 break;
             case GameData.BossType.TIDEMASTER:
                 TWAudioController.StopBGMPlayed("BGM_BOSS", true);
+                TWAudioController.StopBGMPlayed("ENGINE_SHIP", true);
                 break;
         }
     }
