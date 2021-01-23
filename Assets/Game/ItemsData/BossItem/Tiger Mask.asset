@@ -20,10 +20,11 @@ MonoBehaviour:
     further
   shortDesc: Longer dash time
   itemId: 6
-  wasUsed: 0
+  wasUsed: 1
   effect: 6
-  timeEffect: 0
-  amountEffect: 5
+  timeEffect: 2
+  amountEffect: 2.5
+  timeCooldown: 0
   cost: 0
   oneTimeUse: 1
   activateOnStart: 1

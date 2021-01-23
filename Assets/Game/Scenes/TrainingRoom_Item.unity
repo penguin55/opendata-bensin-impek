@@ -17593,7 +17593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -637, y: -20}
+  m_AnchoredPosition: {x: -637, y: -20.00003}
   m_SizeDelta: {x: 1280, y: 384}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1167570415
@@ -28471,6 +28471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 25
+  baseDashSpeed: 25
   baseDashDelay: 1
 --- !u!212 &1683682978
 SpriteRenderer:
@@ -31561,7 +31562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -637, y: -20}
+  m_AnchoredPosition: {x: -637, y: -20.00003}
   m_SizeDelta: {x: 1280, y: 384}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2957492687004742169

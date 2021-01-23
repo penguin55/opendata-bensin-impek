@@ -4929,6 +4929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5f350ceac9a2b4b96b1ab219bf55b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingBike: 0
   data: {fileID: 3029883795090811894}
   direction: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
@@ -4946,10 +4947,13 @@ MonoBehaviour:
   kananbawah: {fileID: 0}
   anim: {fileID: 0}
   walkDustParticle: {fileID: 3029883795978286089}
+  walkDustParticle2: {fileID: 0}
   dashDustParticle: {fileID: 3029883794336299727}
   interact: {fileID: 5598024835121529167}
   clamp: 1
   placeholderHand: {fileID: 755969726187929654}
+  markDown: {fileID: 0}
+  markdownParticle: {fileID: 0}
 --- !u!114 &3029883795090811894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,6 +4968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 25
+  baseDashSpeed: 25
   baseDashDelay: 1
 --- !u!114 &3029883795090811888
 MonoBehaviour:
@@ -5031,6 +5036,9 @@ MonoBehaviour:
   gunDetect: {fileID: 0}
   buttonInteract: {fileID: 0}
   dynamiteDetect: {fileID: 0}
+  missileTidemasterDetect: {fileID: 0}
+  cannonTidemasterDetect: {fileID: 0}
+  cancelDynamiteInteract: 0
 --- !u!95 &3029883795090811903
 Animator:
   serializedVersion: 3
