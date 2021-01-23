@@ -12583,7 +12583,7 @@ PrefabInstance:
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: sfxClips.Array.data[51].localVolume
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
@@ -27241,7 +27241,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.4382
     y: 55.40721
-    width: 132
+    width: 94
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -27593,7 +27593,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 145.9382
     y: 97.40721
-    width: 138
+    width: 100.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

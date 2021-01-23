@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using TomWill;
 using UnityEngine;
 
 public class CannonShipBehaviour : MonoBehaviour
@@ -37,7 +38,12 @@ public class CannonShipBehaviour : MonoBehaviour
             canInteract = false;
             interactSign.SetActive(canInteract);
             transform.DOPunchScale(baseScale * modifierScaling, 0.5f, 1);
-            BossBehaviour.Instance.TakeDamage();
+            TWAudioController.PlaySFX("BOSS_SFX", "cannon_launch");
+            DOVirtual.DelayedCall(2, ()=> {
+                TWAudioController.PlaySFX("BOSS_SFX", "cannon_impact");
+                BossBehaviour.Instance.TakeDamage();
+            });
+            
         }
     }
 }

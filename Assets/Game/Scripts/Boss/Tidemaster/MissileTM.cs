@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Fungus;
 using TomWill;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,6 +18,7 @@ public class MissileTM : DamageArea
     [SerializeField] private int vibrato;
 
     private bool deactiveMissileDashed;
+    public bool exploded;
     private Tidemaster_Missile.SpawnProjectileArea spawnAreaData;
     private UnityAction onExplodeCallback;
 
@@ -36,6 +38,7 @@ public class MissileTM : DamageArea
     {
         ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
         smoke.Play();
+        exploded = false;
         deactiveMissileDashed = false;
         collider = GetComponent<Collider2D>();
         alertProjectileSprite = GetComponent<SpriteRenderer>();
@@ -87,7 +90,7 @@ public class MissileTM : DamageArea
         
         TWAudioController.PlaySFX("SFX_BOSS", "bigrocket_explosion");
         CameraShake.instance.Shake(duration, strength, vibrato);
-
+        exploded = true;
         spawnAreaData.platform.SetActive(true);
         spawnAreaData.cannon.TakeDamage();
 
@@ -103,6 +106,7 @@ public class MissileTM : DamageArea
     {
         if (!isBusyDash)
         {
+            exploded = false;
             sign.enabled = false;
             deactiveMissileDashed = true;
             alertProjectileSprite.enabled = false;
