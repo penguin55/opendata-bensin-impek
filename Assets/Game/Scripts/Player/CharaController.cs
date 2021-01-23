@@ -144,7 +144,7 @@ public class CharaController : CharaBehaviour
 
                 if (Input.GetKeyUp(InputManager.instance.dash) && !GameVariables.FREEZE_INPUT && data.ChargeTimeDash > 0)
                 {
-                    data.DashSpeed += data.ChargeTimeDash;
+                    data.DashSpeed = data.BaseDashSpeed * (1f + ((Mathf.Clamp(data.ChargeTimeDash, 0f, data.MaxChargeTimeDash) / data.MaxChargeTimeDash) * (data.MultiplierChargeDash - 1f)));
 
                     TWAudioController.PlaySFX("SFX_PLAYER", "dash");
                     dashTime = startDashTime;
@@ -159,7 +159,7 @@ public class CharaController : CharaBehaviour
                 if (data.ChargeTimeDash >= data.MaxChargeTimeDash && !GameVariables.FREEZE_INPUT)
                 {
                     data.ChargeTimeDash = data.MaxChargeTimeDash;
-                    data.DashSpeed += data.ChargeTimeDash;
+                    data.DashSpeed = data.BaseDashSpeed * data.MultiplierChargeDash;
 
                     TWAudioController.PlaySFX("SFX_PLAYER", "dash");
                     dashTime = startDashTime;

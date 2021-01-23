@@ -49,6 +49,7 @@ public class CharaBehaviour : MonoBehaviour
         GameVariables.PLAYER_IMMUNE = false;
         if (GameData.ActiveItem) GameData.ActiveItem.ResetStatusItem();
         data.ResetStatus();
+        data.DashSpeed = data.BaseDashSpeed;
         Time.timeScale = 1f;
         dashDelay = data.BaseDashDelay;
         GameVariables.STILL_ALIVE = true;
@@ -193,6 +194,7 @@ public class CharaBehaviour : MonoBehaviour
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
                 GameVariables.PLAYER_IMMUNE = false;
+                data.ChargeTimeDash = 0f;
                 /*DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
                 DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;*/
                 StartCoroutine(DashRecover());
@@ -205,8 +207,7 @@ public class CharaBehaviour : MonoBehaviour
                 timeMoveElapsed = 0f;
                 dashTime -= GameTime.PlayerTime;
                 rb.velocity = lastDirection * data.DashSpeed;
-                data.ChargeTimeDash = 0f;
-                data.DashSpeed = 25f;
+                Debug.Log(data.DashSpeed);
 
                 interact.DashingProjectile(lastDirection, data.DashSpeed);
                 interact.DashingGun();
@@ -223,6 +224,7 @@ public class CharaBehaviour : MonoBehaviour
         yield return new WaitForSeconds(dashDelay);
         canDash = true;
         data.CanChargeDash = true;
+        data.DashSpeed = data.BaseDashSpeed;
     }
 
     public bool PlayerDashing()

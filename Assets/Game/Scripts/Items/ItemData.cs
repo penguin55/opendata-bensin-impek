@@ -155,9 +155,10 @@ public class ItemData : ScriptableObject
     public bool ChargeDashEffect()
     {
         CharaData.canChargeDash = true;
-        CharaData.maxChargeTimeDash = amountEffect;
+        CharaData.maxChargeTimeDash = timeEffect;
         CharaData.chargeDash = true;
         CharaData.chargeTimeDash = 0f;
+        CharaData.multiplierChargeDash = amountEffect;
         return true;
     }
 
