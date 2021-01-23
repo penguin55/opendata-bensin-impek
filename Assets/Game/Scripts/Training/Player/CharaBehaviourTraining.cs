@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using System.Collections;
 using TomWill;
 using UnityEngine;
 
@@ -171,8 +172,9 @@ public class CharaBehaviourTraining : MonoBehaviour
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
                 GameVariables.PLAYER_IMMUNE = false;
-                DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
-                DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;
+                //DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
+                //DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;
+                StartCoroutine(DashRecover());
             }
             else
             {
@@ -187,6 +189,13 @@ public class CharaBehaviourTraining : MonoBehaviour
                 interact.DashingButtonInteract();
             }
         }
+    }
+
+    IEnumerator DashRecover()
+    {
+        yield return new WaitForSeconds(dashDelay);
+        canDash = true;
+        data.CanChargeDash = true;
     }
 
     public bool PlayerDashing()
@@ -241,7 +250,7 @@ public class CharaBehaviourTraining : MonoBehaviour
             GameData.ActiveItem.TakeEffect();
             TrainingUI.instance.UpdateItemImage();
         }
-        else
+        else if (!GameData.ActiveItem.CheckIsOneTimeUse())
         {
             if (GameData.ActiveItem.TakeEffect())
             {

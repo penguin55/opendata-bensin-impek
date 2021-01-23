@@ -193,8 +193,9 @@ public class CharaBehaviour : MonoBehaviour
                 anim.SetBool("dash", false);
                 dashDustParticle.Stop();
                 GameVariables.PLAYER_IMMUNE = false;
-                DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
-                DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;
+                /*DOVirtual.DelayedCall(dashDelay, () => canDash = true).timeScale = GameTime.PlayerTimeScale;
+                DOVirtual.DelayedCall(dashDelay, () => data.CanChargeDash = true).timeScale = GameTime.PlayerTimeScale;*/
+                StartCoroutine(DashRecover());
             }
             else
             {
@@ -215,6 +216,13 @@ public class CharaBehaviour : MonoBehaviour
                 interact.DashingCannonTidemaster();
             }
         }
+    }
+
+    IEnumerator DashRecover()
+    {
+        yield return new WaitForSeconds(dashDelay);
+        canDash = true;
+        data.CanChargeDash = true;
     }
 
     public bool PlayerDashing()
@@ -291,7 +299,7 @@ public class CharaBehaviour : MonoBehaviour
 
             GameData.ShiftItemList();
         }
-        else
+        else if (!GameData.ActiveItem.CheckIsOneTimeUse())
         {
             if (GameData.ActiveItem.TakeEffect())
             {
