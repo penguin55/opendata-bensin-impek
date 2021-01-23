@@ -20,6 +20,7 @@ public class GateKeeper_LaserDamage : MonoBehaviour
     {
         if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
         {
+            arrowAnim.gameObject.SetActive(true);
             arrowAnim.SetInteger("state", randomIndex);
             activeGun = gun;
             TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_gettingready");
@@ -76,6 +77,7 @@ public class GateKeeper_LaserDamage : MonoBehaviour
     {
         lasersGateKeeper[randomIndex].laser.SetActive(false);
         active_attack = false;
+        arrowAnim.gameObject.SetActive(false);
     }
 
     private void ScaleGun(float time, int scaleMultiplier)

@@ -32,7 +32,6 @@ public class GateKeeper : BossBehaviour
     private float currentRotation;
     private bool immuneState;
     [SerializeField] private Animator anim;
-    [SerializeField] private Animator arrowAnim;
 
     private void Start()
     {
@@ -209,7 +208,6 @@ public class GateKeeper : BossBehaviour
             activeRotateStates = newRotateStates;
             renderSpriteBody.sprite = activeRotateStates.sprite;
             anim.SetInteger("state", newRotateStates.animationID);
-            arrowAnim.SetInteger("state", newRotateStates.animationID);
             activeRotateStates.collider.enabled = true;
         }
     }
