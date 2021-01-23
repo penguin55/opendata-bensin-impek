@@ -19,10 +19,10 @@ MonoBehaviour:
     for 5 seconds (Can only be used once)."
   shortDesc: 
   itemId: 2
-  wasUsed: 0
+  wasUsed: 1
   effect: 2
   timeEffect: 5
-  amountEffect: 0.5
+  amountEffect: 0.2
   timeCooldown: 0
   cost: 0
   oneTimeUse: 1

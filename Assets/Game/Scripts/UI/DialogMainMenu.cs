@@ -84,8 +84,8 @@ public class DialogMainMenu : MonoBehaviour
                 GameData.ActiveBossData = bossManager.bossesData[0];
                 break;
             case "GateKeeper":
-                mainCamera.backgroundColor = blue;
                 cannon.SetActive(true);
+                mainCamera.backgroundColor = blue;
                 environment.GetComponent<SpriteRenderer>().sprite = environments[1];
                 grass.GetComponent<SpriteRenderer>().sprite = grasses[1];
                 GameData.ActiveBoss = GameData.BossType.GATEKEEPER;

@@ -79292,7 +79292,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2074901245
   m_SortingLayer: 5
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -84914,7 +84914,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 109.9382
     y: -84.59277
-    width: 126.829254
+    width: 84.14633
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -85326,7 +85326,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 112.1382
     y: -36.312286
-    width: 134.14633
+    width: 90.9756
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
