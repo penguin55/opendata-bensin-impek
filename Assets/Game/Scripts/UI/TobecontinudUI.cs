@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TomWill;
+using UnityEngine.Playables;
+
 public class TobecontinudUI : MonoBehaviour
 {
+    [SerializeField] private GameObject dialogFungus;
+    [SerializeField] private PlayableDirector end;
     void Start()
     {
         TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_OUT);
@@ -22,14 +26,27 @@ public class TobecontinudUI : MonoBehaviour
 
     IEnumerator ToMainMenu()
     {
-        if (TimelineManager.instance.Director.duration >= 21)
+        if (end.duration >= 21)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("MainMenu"));
+                BackToMenu();
             }
         }
-        yield return new WaitForSeconds((float)TimelineManager.instance.Director.duration);
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, 1f, () => TWLoading.LoadScene("MainMenu"));
+        yield return new WaitForSeconds((float)end.duration);
+        BackToMenu();
+    }
+
+    public void OpenDialogPanel(bool active)
+    {
+        dialogFungus.SetActive(active);
+    }
+
+    public void BackToMenu()
+    {
+        GameTime.GlobalTimeScale = 1f;
+        TWAudioController.PlaySFX("UI", "click");
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
+        TWAudioController.PlaySFX("UI", "transition");
     }
 }
