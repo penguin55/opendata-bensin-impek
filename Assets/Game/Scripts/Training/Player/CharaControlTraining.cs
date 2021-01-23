@@ -167,6 +167,7 @@ public class CharaControlTraining : CharaBehaviourTraining
             {
                 if (canDash)
                 {
+                    trainingManager.CompleteActiveTLE("dash");
                     TWAudioController.PlaySFX("SFX_PLAYER", "dash");
                     dashTime = startDashTime;
                     isDashed = true;

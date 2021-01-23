@@ -6,7 +6,7 @@ public class CannonShipBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject interactSign;
     [SerializeField] private ParticleSystem particleShoot;
-    [SerializeField] private Animator cannonAnim;
+    [SerializeField] private ParticleSystem cannonAnim;
     [SerializeField] private float modifierScaling;
     [SerializeField] private Vector2 movePosition;
 
@@ -43,6 +43,7 @@ public class CannonShipBehaviour : MonoBehaviour
             TWAudioController.PlaySFX("BOSS_SFX", "cannon_launch");
             particleShoot.Play();
             DOVirtual.DelayedCall(2, ()=> {
+                cannonAnim.Play();
                 TWAudioController.PlaySFX("BOSS_SFX", "cannon_impact");
                 BossBehaviour.Instance.TakeDamage();
             });
