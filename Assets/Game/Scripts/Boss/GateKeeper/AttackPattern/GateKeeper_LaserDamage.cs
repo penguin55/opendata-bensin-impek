@@ -14,11 +14,13 @@ public class GateKeeper_LaserDamage : MonoBehaviour
 
     private bool canActiveLaser;
     private bool active_attack;
+    [SerializeField] private Animator arrowAnim;
 
     public void ActivateLaser(GunInteractDetect gun)
     {
         if (canActiveLaser && gun == lasersGateKeeper[randomIndex].gun)
         {
+            arrowAnim.SetInteger("state", randomIndex);
             activeGun = gun;
             TWAudioController.PlaySFX("BOSS_SFX", "laserbeam_gettingready");
             activeGun.transform.DOPunchScale(Vector3.one * 0.25f, 0.2f, 1, 0);
