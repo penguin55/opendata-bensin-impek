@@ -29,13 +29,18 @@ public class CharaController : CharaBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameVariables.GAME_OVER) return;
-        Clamp();
-        Dash();
-        KeyboardMovement();
+        direction = Vector2.zero;
+
+        if (!GameVariables.GAME_OVER)
+        {
+            Clamp();
+            Dash();
+            KeyboardMovement();
+            Action();
+            ActivateItem();
+        }
+
         UpdateAnimationWalk(lastDirection.x, lastDirection.y, direction.sqrMagnitude);
-        Action();
-        ActivateItem();
     }
     public void KeyboardMovement()
     {

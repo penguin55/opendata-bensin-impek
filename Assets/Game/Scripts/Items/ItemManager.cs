@@ -56,6 +56,8 @@ public class ItemManager : MonoBehaviour
             GameData.ItemHolds.Clear();
             GameData.ItemUsed.Clear();
 
+            GameTrackRate.ResetTrack();
+
             ResetBaseItem();
 
             LoadItem(baseItems);

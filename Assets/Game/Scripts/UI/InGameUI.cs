@@ -29,6 +29,9 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private Image dropImage;
     [SerializeField] private Text dropItemNameText;
     [SerializeField] private Text dropItemDescText;
+
+    [Header("Button Restart")]
+    [SerializeField] private Button buttonRestart;
     public static InGameUI instance;
 
     // Start is called before the first frame update
@@ -243,6 +246,15 @@ public class InGameUI : MonoBehaviour
         if (CharaController.instance.dead)
         {
             gameOverUI.SetActive(true);
+
+            if (GameData.ItemHolds.Count == 0)
+            {
+                buttonRestart.interactable = false;
+            } else
+            {
+                buttonRestart.interactable = true;
+            }
+
             GameTime.GlobalTimeScale = 0f;
         }
         else

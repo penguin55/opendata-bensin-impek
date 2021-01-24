@@ -160,7 +160,7 @@ public class RatingUIManager : MonoBehaviour
     {
         ratingImagePanel.SetActive(true);
 
-        int indexStamp = GetStampValue();
+        int indexStamp = GetStampIndex();
 
         switch (indexStamp)
         {
@@ -225,41 +225,19 @@ public class RatingUIManager : MonoBehaviour
         if (!elementAnchor) elementAnchor = instanceObject.GetComponent<RectTransform>();
     }
 
-    private int GetStampValue()
+    private int GetStampIndex()
     {
-        int stampTime = GetTimeStamp();
-        int stampDeath = GetDeathStamp();
+        int stampTime = (int) GameTrackRate.Time;
+        int stampDeath = GameTrackRate.DeathCount;
 
-        int finalStamp = Mathf.FloorToInt((stampTime + stampDeath) / 2f);
+        int finalStampScore = 5000 - (stampTime * (stampDeath + 1));
+        int index = -1;
 
-        return finalStamp;
-    }
+        if (finalStampScore > 4000) index = 0;
+        else if (finalStampScore > 2750 && finalStampScore <= 4000) index = 1;
+        else if (finalStampScore > 1000 && finalStampScore <= 2750) index = 2;
+        else index = 3;
 
-    private int GetTimeStamp()
-    {
-        int stamp = -1;
-
-        float timer = GameTrackRate.Time;
-
-        if (timer <= 30f) stamp = 1;
-        else if (timer > 30f && timer <= 45f) stamp = 2;
-        else if (timer > 45f && timer <= 50f) stamp = 3;
-        else stamp = 4;
-
-        return stamp;
-    }
-
-    private int GetDeathStamp()
-    {
-        int stamp = -1;
-
-        int deathCount = GameTrackRate.DeathCount;
-
-        if (deathCount == 0) stamp = 0;
-        else if (deathCount >= 1 && deathCount <= 2) stamp = 1;
-        else if (deathCount >= 3 && deathCount <= 4) stamp = 2;
-        else stamp = 3;
-
-        return stamp;
+        return index;
     }
 }

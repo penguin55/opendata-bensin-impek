@@ -30,4 +30,11 @@ public class DebugTrackGame : MonoBehaviour
         itemUsed = GameTrackRate.ItemUsed;
         time = GameTrackRate.CurrentTime;
     }
+
+    [ContextMenu("Remove Item Holds")]
+    private void RemoveItemHold()
+    {
+        GameData.ItemHolds.Clear();
+        GameData.ItemUsed.Clear();
+    }
 }

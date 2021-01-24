@@ -91,8 +91,11 @@ MonoBehaviour:
     localVolume: 0.219
     clip: {fileID: 8300000, guid: 3869ef60e6fa71f49b41bbefbbca06be, type: 3}
   - name: chariot_cutscene
-    localVolume: 1
-    clip: {fileID: 8300000, guid: 2fb07eb75c149a444ba5cc2af7384c5c, type: 3}
+    localVolume: 0.219
+    clip: {fileID: 8300000, guid: 2c4447bd39e27174f99a0ef8c57d4620, type: 3}
+  - name: submarine_engine
+    localVolume: 0.05
+    clip: {fileID: 8300000, guid: d8fdabe28f391104b8bc3e9247dfa06b, type: 3}
   sfxClips:
   - name: click
     localVolume: 0.541
@@ -211,9 +214,54 @@ MonoBehaviour:
   - name: bike_engine
     localVolume: 0.5
     clip: {fileID: 8300000, guid: 58902568ba054654a9342e0de024f038, type: 3}
-  - name: rating_count_step
+  - name: teleport
+    localVolume: 0.3
+    clip: {fileID: 8300000, guid: c34ec986bce50194198caeff288fdbb5, type: 3}
+  - name: bigrocket_explosion
     localVolume: 0.5
-    clip: {fileID: 8300000, guid: c500f20ac0525de4fb43bb6e2e5b49ab, type: 3}
+    clip: {fileID: 8300000, guid: 8c74b6f0ea00c364f9c8841e7577f053, type: 3}
+  - name: bigrocket_launch
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 0d8219a9592812441b94e1802f8d9a52, type: 3}
+  - name: energyball_impact
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 4e2b1cf614ffc3746b716bde887bcb61, type: 3}
+  - name: energyball_launch
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 7f0fb9721ec57ad438bbcbd73dac7174, type: 3}
+  - name: shield_popup
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 26374310bfd82b7448ef216ed39eb018, type: 3}
+  - name: shield_right
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 9a2bda02d0a324c47a6221821d303a37, type: 3}
+  - name: shield_wrong
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: cb5906a24d7a4884799734998f0b9335, type: 3}
+  - name: tidemaster_ambient
+    localVolume: 0.1
+    clip: {fileID: 8300000, guid: d0f0cf5dd7a0e2e4fb7fadf11b0f8f2d, type: 3}
+  - name: torpedo_impact
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 23f3c94afbfb86f4fb077f318f137272, type: 3}
+  - name: torpedo_launch
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 59fc9de873b933e4d8879a9075df4803, type: 3}
+  - name: cannon_impact
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: d505ec3253a38f74e9e606ea776f2f97, type: 3}
+  - name: cannon_launch
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: f01e12fa42e612b42a747332bc487e7b, type: 3}
+  - name: rating_appear
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 2e20f648dba30db4b8100bb9f02a4e80, type: 3}
+  - name: rating_big_panel_appear
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 3aa6cd6db912a12408de1bbdf36d1807, type: 3}
+  - name: rating_stamp_s
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 57c22b9055ba9d14389a6c639d8f1e86, type: 3}
   - name: rating_stamp_a
     localVolume: 0.5
     clip: {fileID: 8300000, guid: 37d11d3e157b1624783a122635c759f2, type: 3}
@@ -223,15 +271,9 @@ MonoBehaviour:
   - name: rating_stamp_c
     localVolume: 0.5
     clip: {fileID: 8300000, guid: e8b4d65b09f64134b94815d63a805a24, type: 3}
-  - name: rating_stamp_s
+  - name: rating_count_step
     localVolume: 0.5
-    clip: {fileID: 8300000, guid: 57c22b9055ba9d14389a6c639d8f1e86, type: 3}
-  - name: rating_big_panel_appear
-    localVolume: 0.5
-    clip: {fileID: 8300000, guid: 3aa6cd6db912a12408de1bbdf36d1807, type: 3}
-  - name: rating_appear
-    localVolume: 0.5
-    clip: {fileID: 8300000, guid: 2e20f648dba30db4b8100bb9f02a4e80, type: 3}
+    clip: {fileID: 8300000, guid: c500f20ac0525de4fb43bb6e2e5b49ab, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
   m_ObjectHideFlags: 0

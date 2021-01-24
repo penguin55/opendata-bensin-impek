@@ -23,7 +23,7 @@ MonoBehaviour:
     Replenish health during battle."
   shortDesc: 
   itemId: 0
-  wasUsed: 1
+  wasUsed: 0
   effect: 3
   timeEffect: 0
   amountEffect: 0
