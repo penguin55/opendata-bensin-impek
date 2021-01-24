@@ -25,7 +25,7 @@ MonoBehaviour:
   wasUsed: 0
   effect: 4
   timeEffect: 0
-  amountEffect: 0
+  amountEffect: 2
   timeCooldown: 0
   cost: 1
   oneTimeUse: 1
