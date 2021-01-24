@@ -8,6 +8,8 @@ public class ItemManager : MonoBehaviour
     public static ItemManager instance;
     [SerializeField] private ItemData[] baseItems;
 
+    [SerializeField] private ItemData[] itemCollections;
+
     private void Start()
     {
         instance = this;
@@ -19,7 +21,7 @@ public class ItemManager : MonoBehaviour
             GameData.ItemHolds = new List<ItemData>();
             GameData.ItemUsed = new List<ItemData>();
 
-            ResetBaseItem();
+            ResetAllItem();
 
             LoadItem(baseItems);
         }
@@ -62,6 +64,15 @@ public class ItemManager : MonoBehaviour
     public void ResetBaseItem()
     {
         foreach (ItemData data in baseItems)
+        {
+            data.wasUsed = false;
+            data.onDelay = false;
+        }
+    }
+
+    public void ResetAllItem()
+    {
+        foreach (ItemData data in itemCollections)
         {
             data.wasUsed = false;
             data.onDelay = false;

@@ -246,7 +246,7 @@ namespace TomWill
 
         private IEnumerator loadSceneCoroutineAuto()
         {
-            while (!currentOperation.isDone)
+            while (currentOperation != null && !currentOperation.isDone)
             {
                 yield return null;
             }
@@ -264,7 +264,7 @@ namespace TomWill
 
         private IEnumerator loadSceneCoroutineManual()
         {
-            while (!currentOperation.isDone)
+            while (currentOperation != null && !currentOperation.isDone)
             {
                 yield return null;
             }

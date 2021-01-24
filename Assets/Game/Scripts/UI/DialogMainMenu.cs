@@ -175,12 +175,12 @@ public class DialogMainMenu : MonoBehaviour
 
     public void GoToScene(string nameScene, TWTransition.TransitionType type)
     {
-        TWTransition.ScreenTransition(type, .5f, () => DOVirtual.DelayedCall(0.5f, ()=> SceneManager.LoadScene(nameScene))); 
+        TWTransition.ScreenTransition(type, .5f, ()=> SceneManager.LoadScene(nameScene)); 
     }
 
     public void GoToScene(string nameScene)
     {
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => DOVirtual.DelayedCall(0.5f, () => SceneManager.LoadScene(nameScene)));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_IN, .5f, () => SceneManager.LoadScene(nameScene));
     }
 
     public void OpenBossPanel(bool active)
