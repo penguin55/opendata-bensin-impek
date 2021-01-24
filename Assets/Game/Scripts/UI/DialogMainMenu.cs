@@ -49,7 +49,7 @@ public class DialogMainMenu : MonoBehaviour
 
     public void PlayBGM(string bgmName)
     {
-        TWAudioController.PlayBGM("BGM", bgmName);
+        TWAudioController.PlayBGM("BGM_BOSS", bgmName);
     }
 
     public void ConfirmSelectedBoss()
