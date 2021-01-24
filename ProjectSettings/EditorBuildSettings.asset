@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/TrainingRoom_Basic.unity
     guid: 9c92cc4736024b24cba433a4ed94dd31
   - enabled: 1
-    path: Assets/Game/Scenes/EndingScene.unity
-    guid: 183e849ad4834fe4b9caf79ce49a4efc
+    path: Assets/Game/Scenes/ToBeContinued.unity
+    guid: 1306035bb4fd5a3448eb69f4cc8d3988
   m_configObjects: {}
