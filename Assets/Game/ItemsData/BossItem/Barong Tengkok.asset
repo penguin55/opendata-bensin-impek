@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Barong Tengkok
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f64a9d8e64677f84aa5090d457266ee5, type: 3}
+  smallImage: {fileID: 21300000, guid: 3c85cd8f6fbfe5548951e03c9ddb798f, type: 3}
   itemName: Barong Tengkok
   itemDesc: Barong Tengkok is a term for a show that is usually served in an event
     to accompany the bride and groom to a wedding, which functions as entertainment.
