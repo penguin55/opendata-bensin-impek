@@ -47,9 +47,9 @@ public class DialogMainMenu : MonoBehaviour
         TWAudioController.PlayBGMAdvanced("BGM_ADVANCED", "chariot_cutscene", AudioLoop.LoopType.LOOP_WITH_INTRO, 190.35f, 361f);
     }
 
-    public void PlayBGMTidemaster()
+    public void PlayBGM(string bgmName)
     {
-        TWAudioController.PlayBGM("BGM", "tidemaster");
+        TWAudioController.PlayBGM("BGM", bgmName);
     }
 
     public void ConfirmSelectedBoss()

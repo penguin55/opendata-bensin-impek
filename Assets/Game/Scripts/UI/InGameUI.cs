@@ -29,7 +29,6 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private Image dropImage;
     [SerializeField] private Text dropItemNameText;
     [SerializeField] private Text dropItemDescText;
-    [SerializeField] private string bgm;
     public static InGameUI instance;
 
     // Start is called before the first frame update
@@ -48,17 +47,6 @@ public class InGameUI : MonoBehaviour
                 GameVariables.FREEZE_INPUT = false;
             });
         });
-
-        switch (GameData.ActiveBoss)
-        {
-            case GameData.BossType.UNHOLYCHARIOT:
-                break;
-            case GameData.BossType.TIDEMASTER:
-                break;
-            default:
-                PlayBGM(bgm);
-                break;
-        }
         
         ItemImage();
     }
@@ -66,12 +54,6 @@ public class InGameUI : MonoBehaviour
     private void OnDisable()
     {
         instance = null;
-    }
-
-
-    public void PlayBGM(string name)
-    {
-        TWAudioController.PlayBGM("BGM_BOSS", name, TWAudioController.PlayType.TRANSITION);
     }
   
 
