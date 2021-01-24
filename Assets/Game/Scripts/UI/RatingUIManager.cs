@@ -44,7 +44,6 @@ public class RatingUIManager : MonoBehaviour
         if (activeTween != null && Input.GetKeyDown(KeyCode.Space))
         {
             activeTween.Complete();
-            activeTween = null;
         }
     }
 
@@ -111,6 +110,7 @@ public class RatingUIManager : MonoBehaviour
             }
         }).OnComplete(()=>
         {
+            activeTween = null;
             currentCount = (int) targetCount;
 
             seconds = currentCount % 60;
@@ -142,6 +142,7 @@ public class RatingUIManager : MonoBehaviour
             }
         }).OnComplete(() =>
         {
+            activeTween = null;
             currentCount = targetCount;
 
             deathCount.text = ": " + currentCount;
