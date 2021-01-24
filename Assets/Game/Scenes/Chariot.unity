@@ -84705,7 +84705,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 109.9382
     y: -84.59277
-    width: 84.14633
+    width: 124.14633
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -85117,7 +85117,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 112.1382
     y: -36.312286
-    width: 90.9756
+    width: 130.9756
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -95346,7 +95346,7 @@ MonoBehaviour:
   dimPortraits: 1
   dimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   fadeDuration: 0.75
-  moveDuration: 1
+  moveDuration: 0
   fadeEaseType: 4
   shiftOffset: {x: 0, y: 0}
   defaultPosition: {fileID: 6424593294868475932}

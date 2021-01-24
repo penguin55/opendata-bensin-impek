@@ -31500,7 +31500,7 @@ MonoBehaviour:
   dimPortraits: 1
   dimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   fadeDuration: 0.75
-  moveDuration: 1
+  moveDuration: 0
   fadeEaseType: 4
   shiftOffset: {x: 0, y: 0}
   defaultPosition: {fileID: 1100434250}

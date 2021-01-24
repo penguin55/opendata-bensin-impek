@@ -28761,7 +28761,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 186.4382
     y: 28.407211
-    width: 104
+    width: 105.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29004,7 +29004,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -6090.7637
     y: -556.83905
-    width: 87
+    width: 87.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29303,7 +29303,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5929.991
     y: -556.8388
-    width: 95
+    width: 95.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29440,7 +29440,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5811.9453
     y: -559.1117
-    width: 94
+    width: 94.8
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29807,7 +29807,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5930.172
     y: -503.42963
-    width: 92
+    width: 92.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30261,7 +30261,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5809.9453
     y: -502.1117
-    width: 91
+    width: 91.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30545,7 +30545,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5937.172
     y: -439.42963
-    width: 106
+    width: 106.8
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30682,7 +30682,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5814.9453
     y: -442.1117
-    width: 105
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31137,7 +31137,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -5682.7637
     y: -563.83905
-    width: 83
+    width: 84.4
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31974,7 +31974,7 @@ MonoBehaviour:
   dimPortraits: 1
   dimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   fadeDuration: 0.75
-  moveDuration: 1
+  moveDuration: 0
   fadeEaseType: 4
   shiftOffset: {x: 0, y: 0}
   defaultPosition: {fileID: 6424593294868475932}
