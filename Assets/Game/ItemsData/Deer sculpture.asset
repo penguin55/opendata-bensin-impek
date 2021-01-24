@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Deer sculpture
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: c92e6033272a46e4b89dd4d6c8320df9, type: 3}
+  smallImage: {fileID: 21300000, guid: 0e16bcf1acdebe14c81d8d46ec6e3fa1, type: 3}
   itemName: Deer Sculpture
   itemDesc: "Deer sculpture  \r\nThe deer statue in the life of the Keraton nobility
     is symbolized as a \rsymbol of vigilance against enemy threats. \rSlow Down time

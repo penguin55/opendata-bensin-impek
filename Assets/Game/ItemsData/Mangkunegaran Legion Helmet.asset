@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mangkunegaran Legion Helmet
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 82dad98c0a86da148bc9894cdf6e68c2, type: 3}
+  smallImage: {fileID: 21300000, guid: 8a9531f5c15328d44b18f55d7fb17a66, type: 3}
   itemName: Mangkunegaran Legion Helmet
   itemDesc: 'Mangkunegaran Legion Helmet
 

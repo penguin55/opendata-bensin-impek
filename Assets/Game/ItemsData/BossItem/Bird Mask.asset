@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bird Mask
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 38069236cf15a394ebb1db0a8ec3ab80, type: 3}
+  smallImage: {fileID: 21300000, guid: 423ded88f56956548a42ff9a07858386, type: 3}
   itemName: Bird Mask
   itemDesc: 'Bird Mask
 
@@ -26,6 +27,8 @@ MonoBehaviour:
   effect: 5
   timeEffect: 0
   amountEffect: 2
+  timeCooldown: 0
   cost: 0
   oneTimeUse: 1
   activateOnStart: 0
+  onDelay: 0

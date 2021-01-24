@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pustaha Lak Lak
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 27d4ff840a5a32743b98a51f27584639, type: 3}
+  smallImage: {fileID: 21300000, guid: a24eafad6d415ea4ba2d45bfe5201da3, type: 3}
   itemName: Pustaha Lak Lak
   itemDesc: "Pustaha Lak Lak\r\nAn ancient holy book called Pustaha which comes from
     Batak. \rContains writings on traditional medical treatment methods, magic, \ron

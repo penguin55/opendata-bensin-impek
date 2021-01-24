@@ -17,7 +17,7 @@ public class ItemData : ScriptableObject
         GETBACK
     }
 
-    public Sprite image;
+    public Sprite image, smallImage;
     public string itemName;
     [TextArea(2,20)] public string itemDesc;
     [TextArea(2, 20)] public string shortDesc;

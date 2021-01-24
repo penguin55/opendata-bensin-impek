@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Kalimantan Mask
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: cd581c6170f54fa40a477c26428feef7, type: 3}
+  smallImage: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   itemName: Kalimantan Mask
   itemDesc: Mysterious mask from kalimantan commonly is used in traditional traditional
     ceremonies in Kalimantan and imbued with some some magical powers. Turn invisible

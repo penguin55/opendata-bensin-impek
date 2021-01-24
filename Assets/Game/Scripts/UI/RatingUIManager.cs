@@ -160,7 +160,7 @@ public class RatingUIManager : MonoBehaviour
         GameObject instanceObject = Instantiate(placeholderItem, contentViewList);
         Image instanceImage = instanceObject.GetComponent<Image>();
 
-        instanceImage.sprite = data.image;
+        instanceImage.sprite = data.smallImage;
         if (!elementAnchor) elementAnchor = instanceObject.GetComponent<RectTransform>();
     }
 

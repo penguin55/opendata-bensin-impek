@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: A Pair of loro blonyo
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f3657b642c9a33d4990f256cefe9c344, type: 3}
+  smallImage: {fileID: 21300000, guid: 0ef1db3c3543220449e42a7e846866b8, type: 3}
   itemName: A Pair of Loro Blonyo
   itemDesc: "A Pair of loro blonyo\r\nA pair of loro blonyo statues comes from a
     village in Ponorogo \rwhich is believed to be the embodiment of a pair of ancestors
