@@ -48,7 +48,7 @@ public class MissileTM : DamageArea
         this.projectile = projectile;
         alertProjectileSprite.DOFade(0.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetId("Alert" + transform.GetInstanceID());
         TWAudioController.PlaySFX("SFX_BOSS", "bigrocket_launch");
-        DOVirtual.DelayedCall(timeToLaunch, OnEnter_State);
+        DOVirtual.DelayedCall(timeToLaunch+2, OnEnter_State);
     }
 
     protected override void OnEnter_State()
