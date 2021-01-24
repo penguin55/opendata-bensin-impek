@@ -44124,7 +44124,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.9073
     y: 103.90721
-    width: 98.453606
+    width: 96.18556
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -44190,7 +44190,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1914658740}
   selectedCommands:
-  - {fileID: 1914658762}
+  - {fileID: 1914658768}
   variables: []
   description: 
   stepPause: 0
@@ -44928,7 +44928,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 1
+    floatVal: 2
   durationOLD: 0
 --- !u!114 &1914658769
 MonoBehaviour:
