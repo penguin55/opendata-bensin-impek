@@ -41,7 +41,7 @@ public class RatingUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (activeTween != null && Input.GetKeyDown(KeyCode.Space))
         {
             activeTween.Complete();
             activeTween = null;
