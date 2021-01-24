@@ -33,7 +33,7 @@ public class Chariot_PoisonZone : AttackEvent
             .AppendCallback(()=> TWAudioController.PlaySFX("BOSS_SFX", "poison_gas"))
             .AppendCallback(() => poisonParticle1.Play())
             .AppendCallback(() => poisonParticle2.Play())
-            .AppendInterval(.5f)
+            .AppendInterval(1f)
             .AppendCallback(() => collide1.enabled = true)
             .AppendCallback(() => collide2.enabled = true);
         base.Attack();
