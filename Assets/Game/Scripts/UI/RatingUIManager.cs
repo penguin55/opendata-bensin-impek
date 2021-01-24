@@ -1,0 +1,204 @@
+﻿using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
+using TomWill;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class RatingUIManager : MonoBehaviour
+{
+    [SerializeField] private bool debuggingMode;
+    [SerializeField, Range(0f,1f)] private float timeCountPercentage;
+
+    [SerializeField] private RectTransform ratingPanel;
+    [SerializeField] private GameObject timerPanel;
+    [SerializeField] private GameObject deathInfoPanel;
+    [SerializeField] private GameObject ratingImagePanel;
+    [SerializeField] private GameObject itemUsedPanel;
+    [SerializeField] private GameObject nextButton;
+    [SerializeField] private Text timer;
+    [SerializeField] private Text deathCount;
+    [SerializeField] private Image ratingImage;
+    [SerializeField] private Sprite[] rateStamps;
+    
+    [Header("Item UI")]
+    [SerializeField] private GameObject placeholderItem;
+    [SerializeField] private Transform contentViewList;
+    [SerializeField] private ScrollRect scrollRect;
+    private RectTransform elementAnchor;
+    private float baseSize = 5;
+
+    private void Start()
+    {
+        TWLoading.OnSuccessLoad(()=>
+        {
+            TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, 1f, ()=> OpenPanelRating());
+        });
+    }
+
+    public void RenderRating()
+    {
+        DOTween.Sequence()
+            .AppendInterval(1f)
+            .AppendCallback(RenderTimerInfo)
+            .AppendInterval((GameTrackRate.Time * timeCountPercentage) + 0.5f)
+            .AppendCallback(RenderDeathInfo)
+            .AppendInterval((GameTrackRate.DeathCount * timeCountPercentage) + 0.5f)
+            .AppendCallback(RenderItemScroll)
+            .AppendInterval(.5f)
+            .AppendCallback(RenderRatingStamp)
+            .AppendInterval(.5f)
+            .AppendCallback(() => nextButton.SetActive(true));
+    }
+
+    public void GoToMainMenu()
+    {
+        TWAudioController.PlaySFX("UI", "click");
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
+        TWAudioController.PlaySFX("UI", "transition");
+    }
+
+    private void OpenPanelRating()
+    {
+        ratingPanel.gameObject.SetActive(true);
+
+        CameraShake.instance.Shake(1, 3, 5);
+        //TWAudioController.PlaySFX("SFX", "click");
+
+        ratingPanel.DOShakeAnchorPos(1, 7, 9);
+
+        if (!debuggingMode) RenderRating();
+        else RatingDebugger.Instance.InitToGame(); // Debug purpose
+    }
+
+    private void RenderTimerInfo()
+    {
+        timerPanel.SetActive(true);
+
+        float targetCount = GameTrackRate.Time;
+        int currentCount = -1;
+        int hours = 0, minutes = 0, seconds = 0;
+
+        DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time)=>
+        {
+            if ((int) time != currentCount)
+            {
+                currentCount = (int)time;
+
+                seconds = currentCount % 60;
+                minutes = (currentCount / 60) % 60;
+                hours = (currentCount / 60) / 60;
+
+                timer.text = ": " + hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+
+                TWAudioController.PlaySFX("SFX", "rating_count_step");
+            }
+        }).SetEase(Ease.Linear);
+    }
+
+    private void RenderDeathInfo()
+    {
+        deathInfoPanel.SetActive(true);
+
+        int targetCount = GameTrackRate.DeathCount;
+        int currentCount = -1;
+
+        DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time) =>
+        {
+            if ((int)time != currentCount)
+            {
+                currentCount = (int)time;
+
+                deathCount.text = ": " + currentCount;
+                TWAudioController.PlaySFX("SFX", "rating_count_step");
+            }
+        }).SetEase(Ease.Linear);
+    }
+
+    private void RenderRatingStamp()
+    {
+        ratingImagePanel.SetActive(true);
+
+        int indexStamp = GetStampValue();
+
+        ratingImage.sprite = rateStamps[indexStamp];
+        CameraShake.instance.Shake(1,3,5);
+        //TWAudioController.PlaySFX("SFX", "click");
+
+        ratingPanel.DOShakeAnchorPos(1, 7, 9);
+    }
+
+    private void RenderItemScroll()
+    {
+        itemUsedPanel.SetActive(true);
+        int itemsSize = GameTrackRate.ItemUsed != null ? GameTrackRate.ItemUsed.Count : 0;
+
+        if (GameTrackRate.ItemUsed != null)
+        {
+            //TWAudioController.PlaySFX("SFX", "click");
+            foreach (ItemData item in GameTrackRate.ItemUsed)
+            {
+                SetPlaceholder(item);
+            }
+        }
+
+        SetStartPosition(itemsSize);
+    }
+
+    private void SetStartPosition(int itemSize)
+    {
+        if (itemSize > baseSize)
+        {
+            float widthModify = (elementAnchor.sizeDelta.x + 15f) * (itemSize - baseSize);
+            scrollRect.content.sizeDelta = new Vector2(widthModify, scrollRect.content.sizeDelta.y);
+            scrollRect.horizontalNormalizedPosition = 0.5f;
+        }
+    }
+
+    private void SetPlaceholder(ItemData data)
+    {
+        GameObject instanceObject = Instantiate(placeholderItem, contentViewList);
+        Image instanceImage = instanceObject.GetComponent<Image>();
+
+        instanceImage.sprite = data.image;
+        if (!elementAnchor) elementAnchor = instanceObject.GetComponent<RectTransform>();
+    }
+
+    private int GetStampValue()
+    {
+        int stampTime = GetTimeStamp();
+        int stampDeath = GetDeathStamp();
+
+        int finalStamp = Mathf.FloorToInt((stampTime + stampDeath) / 2f);
+
+        return finalStamp;
+    }
+
+    private int GetTimeStamp()
+    {
+        int stamp = -1;
+
+        float timer = GameTrackRate.Time;
+
+        if (timer <= 30f) stamp = 1;
+        else if (timer > 30f && timer <= 45f) stamp = 2;
+        else if (timer > 45f && timer <= 50f) stamp = 3;
+        else stamp = 4;
+
+        return stamp;
+    }
+
+    private int GetDeathStamp()
+    {
+        int stamp = -1;
+
+        int deathCount = GameTrackRate.DeathCount;
+
+        if (deathCount == 0) stamp = 0;
+        else if (deathCount >= 1 && deathCount <= 2) stamp = 1;
+        else if (deathCount >= 3 && deathCount <= 4) stamp = 2;
+        else stamp = 3;
+
+        return stamp;
+    }
+}

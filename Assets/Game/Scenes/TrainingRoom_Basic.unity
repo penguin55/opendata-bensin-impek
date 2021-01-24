@@ -26609,6 +26609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dashSpeed: 25
+  baseDashSpeed: 25
   baseDashDelay: 1
 --- !u!212 &1683682978
 SpriteRenderer:

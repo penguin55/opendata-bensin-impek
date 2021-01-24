@@ -46,7 +46,7 @@ public class TobecontinudUI : MonoBehaviour
     {
         GameTime.GlobalTimeScale = 1f;
         TWAudioController.PlaySFX("UI", "click");
-        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("MainMenu"));
+        TWTransition.ScreenTransition(TWTransition.TransitionType.DEFAULT_IN, .5f, () => TWLoading.LoadScene("EndingScene"));
         TWAudioController.PlaySFX("UI", "transition");
     }
 }
