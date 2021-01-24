@@ -16,8 +16,8 @@ MonoBehaviour:
   smallImage: {fileID: 21300000, guid: 2189fb46154fd924c85cc413eeacc0fd, type: 3}
   itemName: Kalimantan Mask
   itemDesc: Mysterious mask from kalimantan commonly is used in traditional traditional
-    ceremonies in Kalimantan and imbued with some some magical powers. Turn invisible
-    for 30 seconds
+    ceremonies in Kalimantan and imbued with some some magical powers. <color=red>Turn
+    invisible for 30 seconds </color>
   shortDesc: Turn invisible for 30 seconds
   itemId: 8
   wasUsed: 0

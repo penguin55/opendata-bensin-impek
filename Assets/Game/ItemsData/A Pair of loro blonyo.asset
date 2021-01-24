@@ -20,7 +20,7 @@ MonoBehaviour:
     \rwho are believed to protect, help and heal various diseases, \rwhich is said
     to be according to the story if someone is sick, \rby taking a little of the
     face of the statue and giving a prayer a ritual \r then the disease will be cured.
-    Replenish health during battle."
+    <color=red>Replenish health during battle.</color>"
   shortDesc: 
   itemId: 0
   wasUsed: 0

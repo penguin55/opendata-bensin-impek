@@ -18,7 +18,7 @@ MonoBehaviour:
   itemDesc: "Pustaha Lak Lak\r\nAn ancient holy book called Pustaha which comes from
     Batak. \rContains writings on traditional medical treatment methods, magic, \ron
     how to ward off evil (poda), incantations and prayers for \rgood things in order
-    to achieve certain goals. Invicibility for 15 Seconds"
+    to achieve certain goals. <color=red>Invicibility for 15 Seconds</color>"
   shortDesc: 
   itemId: 4
   wasUsed: 0

@@ -18,10 +18,10 @@ MonoBehaviour:
   itemDesc: Topeng Macan or Tiger Mask, which is commonly used in "wayang orang"
     dramas, acts as a forest guardian and has a character that likes to pounce on
     people who disturb the forest of his power. <color=red> Hold dash button to dash
-    further
+    further </color>
   shortDesc: Longer dash time
   itemId: 6
-  wasUsed: 1
+  wasUsed: 0
   effect: 6
   timeEffect: 2
   amountEffect: 2.5

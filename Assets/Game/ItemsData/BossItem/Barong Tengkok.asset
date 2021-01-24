@@ -17,7 +17,7 @@ MonoBehaviour:
   itemName: Barong Tengkok
   itemDesc: Barong Tengkok is a term for a show that is usually served in an event
     to accompany the bride and groom to a wedding, which functions as entertainment.
-    Teleport back to marked position.
+    <color=red>Teleport back to marked position.</color>
   shortDesc: Teleport back to marked position.
   itemId: 7
   wasUsed: 0
