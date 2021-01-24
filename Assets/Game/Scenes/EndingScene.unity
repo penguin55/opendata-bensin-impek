@@ -3149,7 +3149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74638bddc98b76d4d981a85e8a1f2250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuggingMode: 1
+  debuggingMode: 0
   timeCountPercentage: 0.03
   timePerStep: 0.7
   ratingPanel: {fileID: 2074740164}

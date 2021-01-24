@@ -22,6 +22,7 @@ public class ItemManager : MonoBehaviour
             GameData.ItemUsed = new List<ItemData>();
 
             ResetAllItem();
+            GameTrackRate.ResetTrack();
 
             LoadItem(baseItems);
         }

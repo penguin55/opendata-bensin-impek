@@ -253,6 +253,8 @@ public class InGameUI : MonoBehaviour
 
     public void Resume()
     {
+        GameTrackRate.StartTimePlay = Time.time;
+
         TWAudioController.PlaySFX("UI", "click");
         pauseMenuUI.SetActive(false);
         GameTime.GlobalTimeScale = 1f;
@@ -261,6 +263,9 @@ public class InGameUI : MonoBehaviour
 
     public void Pause()
     {
+        GameTrackRate.EndTimePlay = Time.time;
+        GameTrackRate.CalculateTime();
+
         pauseMenuUI.SetActive(true);
         GameTime.GlobalTimeScale = 0f;
         isPaused = true;
@@ -268,6 +273,9 @@ public class InGameUI : MonoBehaviour
 
     public void Restart()
     {
+        GameTrackRate.EndTimePlay = Time.time;
+        GameTrackRate.CalculateTime();
+
         BGMStop();
         BackToPanelItem();
     }
