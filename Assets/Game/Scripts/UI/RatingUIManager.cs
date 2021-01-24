@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TomWill;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class RatingUIManager : MonoBehaviour
@@ -28,6 +29,8 @@ public class RatingUIManager : MonoBehaviour
     private RectTransform elementAnchor;
     private float baseSize = 5;
 
+    private Tween activeTween;
+
     private void Start()
     {
         TWLoading.OnSuccessLoad(()=>
@@ -36,9 +39,18 @@ public class RatingUIManager : MonoBehaviour
         });
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            activeTween.Complete();
+            activeTween = null;
+        }
+    }
+
     public void RenderRating()
     {
-        DOTween.Sequence()
+        /*DOTween.Sequence()
             .AppendInterval(1f)
             .AppendCallback(RenderTimerInfo)
             .AppendInterval((GameTrackRate.Time * timeCountPercentage) + 0.5f)
@@ -48,7 +60,11 @@ public class RatingUIManager : MonoBehaviour
             .AppendInterval(.5f)
             .AppendCallback(RenderRatingStamp)
             .AppendInterval(.5f)
-            .AppendCallback(() => nextButton.SetActive(true));
+            .AppendCallback(() => nextButton.SetActive(true));*/
+
+        DOTween.Sequence()
+            .AppendInterval(1f)
+            .AppendCallback(RenderTimerInfo);
     }
 
     public void GoToMainMenu()
@@ -79,7 +95,7 @@ public class RatingUIManager : MonoBehaviour
         int currentCount = -1;
         int hours = 0, minutes = 0, seconds = 0;
 
-        DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time)=>
+        activeTween = DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time)=>
         {
             if ((int) time != currentCount)
             {
@@ -93,7 +109,19 @@ public class RatingUIManager : MonoBehaviour
 
                 TWAudioController.PlaySFX("SFX", "rating_count_step");
             }
-        }).SetEase(Ease.Linear);
+        }).OnComplete(()=>
+        {
+            currentCount = (int) targetCount;
+
+            seconds = currentCount % 60;
+            minutes = (currentCount / 60) % 60;
+            hours = (currentCount / 60) / 60;
+
+            timer.text = ": " + hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+
+            RenderDeathInfo();
+        })
+        .SetEase(Ease.Linear);
     }
 
     private void RenderDeathInfo()
@@ -103,7 +131,7 @@ public class RatingUIManager : MonoBehaviour
         int targetCount = GameTrackRate.DeathCount;
         int currentCount = -1;
 
-        DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time) =>
+        activeTween = DOVirtual.Float(0, targetCount, targetCount * timeCountPercentage, (time) =>
         {
             if ((int)time != currentCount)
             {
@@ -112,7 +140,15 @@ public class RatingUIManager : MonoBehaviour
                 deathCount.text = ": " + currentCount;
                 TWAudioController.PlaySFX("SFX", "rating_count_step");
             }
-        }).SetEase(Ease.Linear);
+        }).OnComplete(() =>
+        {
+            currentCount = targetCount;
+
+            deathCount.text = ": " + currentCount;
+
+            RenderItemScroll();
+        })
+        .SetEase(Ease.Linear);
     }
 
     private void RenderRatingStamp()
@@ -126,6 +162,8 @@ public class RatingUIManager : MonoBehaviour
         //TWAudioController.PlaySFX("SFX", "click");
 
         ratingPanel.DOShakeAnchorPos(1, 7, 9);
+
+        nextButton.SetActive(true);
     }
 
     private void RenderItemScroll()
@@ -143,6 +181,8 @@ public class RatingUIManager : MonoBehaviour
         }
 
         SetStartPosition(itemsSize);
+
+        RenderRatingStamp();
     }
 
     private void SetStartPosition(int itemSize)
