@@ -22,7 +22,7 @@ public static class GameData
         {
             if (!GameTrackRate.ItemUsed.Contains(ActiveItem)) GameTrackRate.ItemUsed.Add(ActiveItem);
 
-            ActiveItem.wasUsed = true;
+            if (ActiveItem.CheckIsOneTimeUse()) ActiveItem.wasUsed = true;
             if (ItemHolds.Contains(ActiveItem)) ItemHolds.Remove(ActiveItem);
             if (!ItemUsed.Contains(ActiveItem)) ItemUsed.Add(ActiveItem);
         } else

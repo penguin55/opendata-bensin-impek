@@ -305,6 +305,7 @@ public class CharaBehaviour : MonoBehaviour
         {
             if (GameData.ActiveItem.TakeEffect())
             {
+                GameData.ShiftItemList();
                 TWAudioController.PlaySFX("BOSS_SFX", "item_used");
                 InGameUI.instance.UpdateItemImage();
             }

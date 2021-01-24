@@ -23,6 +23,7 @@ public class ItemData : ScriptableObject
     [TextArea(2, 20)] public string shortDesc;
     public int itemId;
     public bool wasUsed;
+    public int useTime;
     [SerializeField] private ItemEffect effect;
     [SerializeField] private float timeEffect;
     [SerializeField] private float amountEffect;
