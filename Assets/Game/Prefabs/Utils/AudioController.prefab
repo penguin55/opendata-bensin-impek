@@ -212,8 +212,26 @@ MonoBehaviour:
     localVolume: 0.5
     clip: {fileID: 8300000, guid: 58902568ba054654a9342e0de024f038, type: 3}
   - name: rating_count_step
-    localVolume: 0.2
-    clip: {fileID: 8300000, guid: f3c8ce25895e8684fb7d4dc21c35ad48, type: 3}
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: c500f20ac0525de4fb43bb6e2e5b49ab, type: 3}
+  - name: rating_stamp_a
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 37d11d3e157b1624783a122635c759f2, type: 3}
+  - name: rating_stamp_b
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 4a3161faecd2a5342890ed8ef711898c, type: 3}
+  - name: rating_stamp_c
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: e8b4d65b09f64134b94815d63a805a24, type: 3}
+  - name: rating_stamp_s
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 57c22b9055ba9d14389a6c639d8f1e86, type: 3}
+  - name: rating_big_panel_appear
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 3aa6cd6db912a12408de1bbdf36d1807, type: 3}
+  - name: rating_appear
+    localVolume: 0.5
+    clip: {fileID: 8300000, guid: 2e20f648dba30db4b8100bb9f02a4e80, type: 3}
 --- !u!114 &5958740494214816576
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class RatingUIManager : MonoBehaviour
 {
     [SerializeField] private bool debuggingMode;
     [SerializeField, Range(0f,1f)] private float timeCountPercentage;
+    [SerializeField] private float timePerStep;
 
     [SerializeField] private RectTransform ratingPanel;
     [SerializeField] private GameObject timerPanel;
@@ -30,6 +31,7 @@ public class RatingUIManager : MonoBehaviour
     private float baseSize = 5;
 
     private Tween activeTween;
+    private string rateType;
 
     private void Start()
     {
@@ -78,7 +80,7 @@ public class RatingUIManager : MonoBehaviour
         ratingPanel.gameObject.SetActive(true);
 
         CameraShake.instance.Shake(1, 3, 5);
-        //TWAudioController.PlaySFX("SFX", "click");
+        TWAudioController.PlaySFX("SFX", "rating_big_panel_appear");
 
         ratingPanel.DOShakeAnchorPos(1, 7, 9);
 
@@ -89,6 +91,7 @@ public class RatingUIManager : MonoBehaviour
     private void RenderTimerInfo()
     {
         timerPanel.SetActive(true);
+        TWAudioController.PlaySFX("SFX", "rating_appear");
 
         float targetCount = GameTrackRate.Time;
         int currentCount = -1;
@@ -119,7 +122,7 @@ public class RatingUIManager : MonoBehaviour
 
             timer.text = ": " + hours.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
 
-            RenderDeathInfo();
+            DOVirtual.DelayedCall(timePerStep, RenderDeathInfo);
         })
         .SetEase(Ease.Linear);
     }
@@ -127,6 +130,7 @@ public class RatingUIManager : MonoBehaviour
     private void RenderDeathInfo()
     {
         deathInfoPanel.SetActive(true);
+        TWAudioController.PlaySFX("SFX", "rating_appear");
 
         int targetCount = GameTrackRate.DeathCount;
         int currentCount = -1;
@@ -147,7 +151,7 @@ public class RatingUIManager : MonoBehaviour
 
             deathCount.text = ": " + currentCount;
 
-            RenderItemScroll();
+            DOVirtual.DelayedCall(timePerStep, RenderItemScroll);
         })
         .SetEase(Ease.Linear);
     }
@@ -158,9 +162,25 @@ public class RatingUIManager : MonoBehaviour
 
         int indexStamp = GetStampValue();
 
+        switch (indexStamp)
+        {
+            case 0:
+                rateType = "rating_stamp_s";
+                break;
+            case 1:
+                rateType = "rating_stamp_a";
+                break;
+            case 2:
+                rateType = "rating_stamp_b";
+                break;
+            default:
+                rateType = "rating_stamp_c";
+                break;
+        }
+
         ratingImage.sprite = rateStamps[indexStamp];
         CameraShake.instance.Shake(1,3,5);
-        //TWAudioController.PlaySFX("SFX", "click");
+        TWAudioController.PlaySFX("SFX", rateType);
 
         ratingPanel.DOShakeAnchorPos(1, 7, 9);
 
@@ -170,11 +190,11 @@ public class RatingUIManager : MonoBehaviour
     private void RenderItemScroll()
     {
         itemUsedPanel.SetActive(true);
+        TWAudioController.PlaySFX("SFX", "rating_appear");
         int itemsSize = GameTrackRate.ItemUsed != null ? GameTrackRate.ItemUsed.Count : 0;
 
         if (GameTrackRate.ItemUsed != null)
         {
-            //TWAudioController.PlaySFX("SFX", "click");
             foreach (ItemData item in GameTrackRate.ItemUsed)
             {
                 SetPlaceholder(item);
@@ -183,7 +203,7 @@ public class RatingUIManager : MonoBehaviour
 
         SetStartPosition(itemsSize);
 
-        RenderRatingStamp();
+        DOVirtual.DelayedCall(timePerStep, RenderRatingStamp);
     }
 
     private void SetStartPosition(int itemSize)

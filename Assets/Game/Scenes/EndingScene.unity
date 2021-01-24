@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratingSystem: {fileID: 1791949185}
   time: 120
-  deathCount: 5
+  deathCount: 0
   items:
   - {fileID: 11400000, guid: b5351055839fac34aacf5f4651a8ac8c, type: 2}
   - {fileID: 11400000, guid: 99a5fc47be465414bab80229bf67c9fe, type: 2}
@@ -3151,6 +3151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuggingMode: 1
   timeCountPercentage: 0.03
+  timePerStep: 0.7
   ratingPanel: {fileID: 2074740164}
   timerPanel: {fileID: 631970680}
   deathInfoPanel: {fileID: 675144106}
