@@ -22,7 +22,9 @@ public class DialogMainMenu : MonoBehaviour
     [SerializeField] private Text boss, item;
     [SerializeField] private int index = 0, bossIndex, itemIndex;
     [SerializeField] private Sprite[] environments, grasses;
+    [SerializeField] private Text activeSkipText;
     private string activeBoss;
+    
     private void Start()
     {
         TWLoading.OnSuccessLoad(()=>
@@ -30,9 +32,18 @@ public class DialogMainMenu : MonoBehaviour
             fungusController.Init();
             TWTransition.ScreenTransition(TWTransition.TransitionType.DOWN_OUT, .5f);
         });
-        
+        ActivateSkipButton(false);
         instance = this;
     }
+
+    private void Update()
+    {
+        if (GameVariables.ACTIVE_SKIP_CUTSCENE)
+        {
+            Skip();
+        }
+    }
+
     public void ItemDesc(string desc)
     {
         item.text = desc;
@@ -50,6 +61,35 @@ public class DialogMainMenu : MonoBehaviour
     public void PlayBGM(string bgmName)
     {
         TWAudioController.PlayBGM("BGM_BOSS", bgmName);
+    }
+
+    public void ActivateSkipButton(bool flag)
+    {
+        GameVariables.ACTIVE_SKIP_CUTSCENE = flag;
+        activeSkipText.gameObject.SetActive(flag);
+    }
+
+    public void Skip()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ActivateSkipButton(false);
+            switch (GameData.ActiveBoss)
+            {
+                case GameData.BossType.TERRORCOPTER:
+                    GoToScene("Terrorcopter", TWTransition.TransitionType.DOWN_IN);
+                    break;
+                case GameData.BossType.GATEKEEPER:
+                    GoToScene("Gatekeeper", TWTransition.TransitionType.DOWN_IN);
+                    break;
+                case GameData.BossType.UNHOLYCHARIOT:
+                    GoToScene("Chariot", TWTransition.TransitionType.DOWN_IN);
+                    break;
+                case GameData.BossType.TIDEMASTER:
+                    GoToScene("Tidemaster", TWTransition.TransitionType.DOWN_IN);
+                    break;
+            }
+        }
     }
 
     public void ConfirmSelectedBoss()

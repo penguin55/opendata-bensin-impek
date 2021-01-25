@@ -10,6 +10,7 @@ public class InGameUI : MonoBehaviour
 {
     private bool isPaused;
     [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, obtainItemBoss;
+    [SerializeField] private Text activeSkipText;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] [TextArea(0, 30)] private string[] chat;
@@ -64,6 +65,11 @@ public class InGameUI : MonoBehaviour
     void Update()
     {
         OpenPauseMenu();
+
+        if (GameVariables.ACTIVE_SKIP_CUTSCENE)
+        {
+            Skip();
+        }
     }
 
     public void UpdateItemImage()
@@ -115,6 +121,35 @@ public class InGameUI : MonoBehaviour
         if (GameData.ActiveItem.itemName.Contains("Kalimantan"))
         {
             activateItemImage.overrideSprite = tidemaster;
+        }
+    }
+
+    public void ActivateSkipButton(bool flag)
+    {
+        GameVariables.ACTIVE_SKIP_CUTSCENE = flag;
+        activeSkipText.gameObject.SetActive(flag);
+    }
+
+    public void Skip()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ActivateSkipButton(false);
+            switch (GameData.ActiveBoss)
+            {
+                case GameData.BossType.TERRORCOPTER:
+                    BackToPanelBoss();
+                    break;
+                case GameData.BossType.GATEKEEPER:
+                    BackToPanelBoss();
+                    break;
+                case GameData.BossType.UNHOLYCHARIOT:
+                    BackToPanelBoss();
+                    break;
+                case GameData.BossType.TIDEMASTER:
+                    BackToPanelBoss();
+                    break;
+            }
         }
     }
 

@@ -188,6 +188,11 @@ namespace Fungus
             clickMode = click;
         }
 
+        public virtual void ActivateCancelEnabled(bool flag)
+        {
+            cancelEnabled = flag;
+        }
+
         #endregion
     }
 }

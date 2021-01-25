@@ -49,4 +49,9 @@ public class FungusController : MonoBehaviour
     {
         dialogInput.ChangeClickMode(clicked);
     }
+
+    public void ActivateCancelEnabled(bool flag)
+    {
+        dialogInput.ActivateCancelEnabled(flag);
+    }
 }

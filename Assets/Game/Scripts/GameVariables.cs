@@ -9,4 +9,5 @@
     public static bool GAME_FREEZE;
     public static bool GAME_OVER;
     public static bool STILL_ALIVE;
+    public static bool ACTIVE_SKIP_CUTSCENE;
 }
