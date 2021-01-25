@@ -61,6 +61,7 @@ public class MissileTM : DamageArea
             ParticleSystem smoke = projectile.transform.GetChild(2).GetComponent<ParticleSystem>();
             smoke.Stop();
             projectile.GetComponent<Animator>().SetTrigger("Jammed");
+            TWAudioController.PlaySFX("SFX_BOSS", "bigrocket_impact");
             sign.enabled = true;
             projectile.GetComponent<SpriteRenderer>().sortingOrder = 13;
 

@@ -45224,6 +45224,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].name
+      value: bigrocket_impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05bd23755023dee4fbba83b72574e54d, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
@@ -84849,7 +84869,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 109.9382
     y: -84.59277
-    width: 124.14633
+    width: 84.14633
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -85261,7 +85281,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 112.1382
     y: -36.312286
-    width: 130.9756
+    width: 90.9756
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

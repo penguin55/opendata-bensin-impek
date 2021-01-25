@@ -660,6 +660,136 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioController
       objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[39].localVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[52].name
+      value: rating_appear
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[52].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[52].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e20f648dba30db4b8100bb9f02a4e80, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[53].name
+      value: rating_big_panel_appear
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[53].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[53].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aa6cd6db912a12408de1bbdf36d1807, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[54].name
+      value: rating_stamp_s
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[54].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[54].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 57c22b9055ba9d14389a6c639d8f1e86, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[55].name
+      value: rating_stamp_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[55].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[55].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 37d11d3e157b1624783a122635c759f2, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[56].name
+      value: rating_stamp_b
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[56].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[56].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a3161faecd2a5342890ed8ef711898c, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[57].name
+      value: rating_stamp_c
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[57].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[57].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8b4d65b09f64134b94815d63a805a24, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[58].name
+      value: rating_count_step
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[58].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[58].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c500f20ac0525de4fb43bb6e2e5b49ab, type: 3}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].name
+      value: bigrocket_impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584690177293449867, guid: fa9e241ad23118846ab2b67ba4ece3f3,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05bd23755023dee4fbba83b72574e54d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa9e241ad23118846ab2b67ba4ece3f3, type: 3}
 --- !u!1 &814267603
@@ -8469,7 +8599,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 174.4382
     y: 45.40721
-    width: 77.25275
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8788,7 +8918,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 173.4382
     y: 91.90721
-    width: 78.13187
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

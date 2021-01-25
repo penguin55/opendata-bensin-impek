@@ -2350,7 +2350,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 144.64874
     y: 95.35655
-    width: 89.06251
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2805,7 +2805,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204.20358
     y: 143.6587
-    width: 106.250015
+    width: 70.000015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3341,7 +3341,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 211.49344
     y: 204.14468
-    width: 85.93751
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3856,7 +3856,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 75.61725
     y: 200.78247
-    width: 114.062515
+    width: 78.750015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4289,7 +4289,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 91.48046
     y: 314.66052
-    width: 90.62501
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4636,7 +4636,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 83.53528
     y: 254.38669
-    width: 100.000015
+    width: 63.75001
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5063,7 +5063,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 184.36162
     y: 255.75644
-    width: 121.875015
+    width: 86.250015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5493,7 +5493,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 191.96436
     y: 314.85318
-    width: 84.37501
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5950,7 +5950,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 62.833725
     y: 142.62778
-    width: 135.93752
+    width: 102.50002
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6326,7 +6326,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -256.31348
     y: -3.5515976
-    width: 82.81251
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6726,7 +6726,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -118.711105
     y: 6.0375443
-    width: 89.06251
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7154,7 +7154,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -120.902985
     y: 53.982803
-    width: 120.312515
+    width: 86.250015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7529,7 +7529,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -255.14932
     y: 47.133453
-    width: 98.437515
+    width: 63.75001
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7902,7 +7902,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -122.96294
     y: 107.87857
-    width: 112.500015
+    width: 78.750015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8329,7 +8329,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -255.12775
     y: 169.39526
-    width: 84.37501
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8762,7 +8762,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -258.7967
     y: 110.63244
-    width: 87.50001
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9137,7 +9137,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -198.83907
     y: 227.14145
-    width: 104.687515
+    width: 70.000015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9423,7 +9423,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -151.56334
     y: 169.73422
-    width: 134.37502
+    width: 102.50002
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -17879,6 +17879,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].name
+      value: bigrocket_impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].localVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058161449474547030, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
+        type: 3}
+      propertyPath: sfxClips.Array.data[59].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05bd23755023dee4fbba83b72574e54d, type: 3}
     - target: {fileID: 7059652787528974241, guid: cdb0c18a9d91f2e4ba966c2cabdf7b81,
         type: 3}
       propertyPath: m_Name
