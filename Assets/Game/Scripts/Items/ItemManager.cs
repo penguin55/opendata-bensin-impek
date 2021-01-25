@@ -70,6 +70,7 @@ public class ItemManager : MonoBehaviour
         {
             data.wasUsed = false;
             data.onDelay = false;
+            data.isActivated = false;
         }
     }
 
@@ -79,6 +80,7 @@ public class ItemManager : MonoBehaviour
         {
             data.wasUsed = false;
             data.onDelay = false;
+            data.isActivated = false;
         }
     }
 

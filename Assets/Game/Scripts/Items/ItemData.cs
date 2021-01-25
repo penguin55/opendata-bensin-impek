@@ -31,7 +31,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private float cost;
     [SerializeField] private bool oneTimeUse;
     [SerializeField] private bool activateOnStart;
-    private bool isActivated;
+    [SerializeField] public bool isActivated;
 
     public bool onDelay;
 

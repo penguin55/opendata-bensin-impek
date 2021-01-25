@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public static class GameData
 {
@@ -23,6 +24,7 @@ public static class GameData
             if (!GameTrackRate.ItemUsed.Contains(ActiveItem)) GameTrackRate.ItemUsed.Add(ActiveItem);
 
             if (ActiveItem.CheckIsOneTimeUse()) ActiveItem.wasUsed = true;
+
             if (ItemHolds.Contains(ActiveItem)) ItemHolds.Remove(ActiveItem);
             if (!ItemUsed.Contains(ActiveItem)) ItemUsed.Add(ActiveItem);
         } else

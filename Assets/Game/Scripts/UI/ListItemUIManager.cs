@@ -24,7 +24,7 @@ public class ListItemUIManager : MonoBehaviour
         if (GameData.ItemHolds != null) {
             foreach (ItemData item in GameData.ItemHolds)
             {
-                SetPlaceholder(item);
+                SetPlaceholder(item, true);
             }
         }
 
@@ -32,7 +32,7 @@ public class ListItemUIManager : MonoBehaviour
         {
             foreach (ItemData item in GameData.ItemUsed)
             {
-                SetPlaceholder(item);
+                SetPlaceholder(item, false);
             }
         }
 
@@ -50,16 +50,16 @@ public class ListItemUIManager : MonoBehaviour
         }
     }
 
-    private void SetPlaceholder(ItemData data)
+    private void SetPlaceholder(ItemData data, bool active)
     {
         GameObject instanceObject = Instantiate(placeholderItem, contentViewList);
         Image instanceImage = instanceObject.GetComponent<Image>();
         Button instanceButton = instanceObject.GetComponent<Button>();
 
         instanceImage.sprite = data.image;
-        instanceImage.color = data.wasUsed ? unavailableItemColor : availableItemColor;
+        instanceImage.color = active ? availableItemColor : unavailableItemColor;
         instanceButton.onClick.AddListener(() => DialogMainMenu.instance.SelectItem(data));
-        instanceButton.onClick.AddListener(() => confirmChooseItem.gameObject.SetActive(!data.wasUsed));
+        instanceButton.onClick.AddListener(() => confirmChooseItem.gameObject.SetActive(active));
         instanceButton.onClick.AddListener(() => tryItem.gameObject.SetActive(true));
 
         if (!elementAnchor) elementAnchor = instanceObject.GetComponent<RectTransform>();
