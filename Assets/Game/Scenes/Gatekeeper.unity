@@ -44268,7 +44268,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.9073
     y: 103.90721
-    width: 96.18556
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -45778,17 +45778,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: Dialog_1
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1810792071}
-          m_MethodName: ActivateSkipButton
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &2101746900
 GameObject:

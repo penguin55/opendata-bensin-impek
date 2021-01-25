@@ -758,8 +758,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Active
   m_Markers:
-    m_Objects:
-    - {fileID: 5757625229037204901}
+    m_Objects: []
   m_PostPlaybackState: 3
 --- !u!114 &9042295163519428035
 MonoBehaviour:
