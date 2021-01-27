@@ -40018,6 +40018,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3811373776587502001, guid: ebdd5e65279d836429312327a05aec6c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811373776587502001, guid: ebdd5e65279d836429312327a05aec6c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811373776587502001, guid: ebdd5e65279d836429312327a05aec6c,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 5480932299268308105, guid: ebdd5e65279d836429312327a05aec6c,
         type: 3}
       propertyPath: m_Name
@@ -84869,7 +84884,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 109.9382
     y: -84.59277
-    width: 84.14633
+    width: 124.14633
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -85281,7 +85296,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 112.1382
     y: -36.312286
-    width: 90.9756
+    width: 130.9756
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -95745,10 +95760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 1200}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
