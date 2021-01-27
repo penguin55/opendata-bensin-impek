@@ -11,6 +11,7 @@ public class TrainingUI : MonoBehaviour
 {
     private bool isPaused;
     [SerializeField] private GameObject pauseMenuUI, gameOverUI, dialogUI, dialogFungus, dialogtry, obtainItemBoss, heartContainer;
+    [SerializeField] private GameObject skipText;
     [SerializeField] private GameObject[] hearts, heartsBos;
     [SerializeField] private GameObject shields;
     [SerializeField] private Sprite newsprite, newboss;
@@ -264,6 +265,12 @@ public class TrainingUI : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void SkipActivate(bool active)
+    {
+        skipText.SetActive(active);
+        ActivateHeart(!active);
     }
 
     public void ActivateHeart(bool active)
